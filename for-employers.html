@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hire Talent | Streamline Recruiting</title>
+</head>
+<body>
+    <header>
+        <div class="logo-wrap"><img src="Logo.png" alt="Streamline Recruiting"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="for-employers.html" class="active">Hire Talent</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section class="hero-box" style="background-image: url('hero 2.jpg');">
+        <div class="glass-box">
+            <h1 style="font-size: 3.2rem;">High-Performance <span class="accent">Talent</span></h1>
+            <p style="font-size: 1.1rem; margin-bottom: 25px;">We place the engineers and leaders that AI, robotics, emerging technology, and advanced manufacturing companies need to scale. Permanent placements only. No temp fills, no keyword matching.</p>
+            <a href="#hiring-form" class="btn">Initiate Talent Search</a>
+            <button class="btn" onclick="openModal()" style="background:none; border: 1px solid var(--blue); color: var(--blue); margin-left:10px;">View Success Stories</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <div style="max-width: 900px; margin-bottom: 60px;">
+            <h2 style="font-size: 2.2rem;">We recruit for where your industry is <span class="accent">going</span>, not where it's been.</h2>
+            <p>That means we understand the work, the environment, and what separates a good hire from a transformative one before you finish explaining it.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3 class="accent">Why Streamline</h3>
+                <p>We specialize in the roles that are hardest to fill. Machine learning and AI engineers, computer vision specialists, controls and automation engineers, software, mechanical, electrical, and the operational leaders who tie it all together.</p>
+            </div>
+            <div class="card">
+                <h3 class="accent">Contingency Based</h3>
+                <p>Every candidate is fully vetted and interviewed before they reach you. We screen for technical depth, hands-on experience, and whether this role is actually the right move for them. You only pay when we deliver.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: rgba(255,255,255,0.02); padding: 80px 10%;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Proof of <span class="accent">Performance</span></h2>
+            <div class="grid">
+                <div class="card">
+                    <p><strong>Senior Perception Engineer:</strong> Architected real-time spatial perception system; 40% better obstacle avoidance.</p>
+                    <p><strong>Senior AI Engineer:</strong> Engineered secure fine-tuned RAG framework; 50% cut in report generation time.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Chief Executive Officer:</strong> Captured 20% market share increase in 18 months via digital health pivot.</p>
+                    <p><strong>Plant Manager:</strong> Transformed operational efficiency driving a 10% increase in production capacity.</p>
+                </div>
+                <div class="card">
+                    <p><strong>Electrical Engineer:</strong> Architected systems for lithography equipment, drastically reducing line downtime.</p>
+                    <p><strong>CNC Programmer:</strong> Optimized tool paths for 5-axis geometries, reducing waste by 10%.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px; font-style: italic; opacity: 0.8;">
+                Building the future requires excellence across every function. Our reach extends to C-suite, Finance, HR, and Global Logistics leadership.
+            </div>
+        </div>
+    </section>
+
+    <section id="hiring-form" class="container">
+        <div class="grid">
+            <div>
+                <h2 style="font-size: 2.5rem;">Secure Your <span class="accent">Excellence.</span></h2>
+                <p>Placements that stick are the only ones worth making. Fill out the form to start the vetting process for your next critical hire.</p>
+                <div style="margin-top: 20px;">
+                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" class="accent" download>Download The 5 Steps Hiring Guide →</a>
+                </div>
+            </div>
+            <div class="card">
+                <form action="https://formspree.io/f/your-id" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Work Email" required>
+                    <input type="text" name="role" placeholder="Role Needed (e.g. Senior AI Engineer)">
+                    <textarea name="message" rows="5" placeholder="Tell us about the project or role..."></textarea>
+                    <button type="submit" class="btn">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 class="accent" style="margin-bottom: 30px;">Success Stories</h2>
+            
+            <p><strong>"Streamline Recruiting was instrumental in helping us quickly scale. They provided high-impact engineers who truly accelerated our timelines."</strong><br><small>— Brian H.</small></p>
+            <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+            
+            <p><strong>"They found a specialist who fit the team perfectly when three other firms couldn't. Definitely using them again."</strong><br><small>— Mark D., Controls Engineering</small></p>
+            <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+            
+            <p><strong>"Jackie sent over two people who were both great for our surgical robotics niche. Huge win for our team."</strong><br><small>— Sarah K., Robotics Lead</small></p>
+            <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+
+            <p><strong>"Gigi found the exact person we needed to keep us on track with our roadmap and compliance. Simple as that."</strong><br><small>— Greg W., Fintech</small></p>
+            <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+
+            <p><strong>"They found us a Lead who can actually manage a team and not just code. Streamline changed our search in two weeks."</strong><br><small>— Chris W.</small></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() { document.getElementById('modal-overlay').style.display = 'flex'; }
+        function closeModal() { document.getElementById('modal-overlay').style.display = 'none'; }
+    </script>
+</body>
+</html>
