@@ -1,9 +1,8 @@
-
-/* 1. GLOBAL SETTINGS & THEME */
+/* 1. CORE THEME & RESET */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Your exact logo background color */
+    --navy: #041530; /* The exact navy from your logo */
     --blue: #00d2ff;
     --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
@@ -13,7 +12,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: var(--navy) !important; /* Forces the whole page to stay dark */
+    background-color: var(--navy) !important; /* Kills the white background forever */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -21,7 +20,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO FIX */
+/* 2. HEADER & LOGO AUTO-FIX */
 header {
     background-color: var(--navy);
     width: 100%;
@@ -31,11 +30,11 @@ header {
     padding: 0;
 }
 
-/* This creates a specific banner-sized window for your logo */
+/* This creates a fixed-size window for your banner logo */
 .logo-wrap {
     width: 100%;
-    max-width: 500px;
-    height: 160px; /* Limits the logo size so it doesn't take over the page */
+    max-width: 500px; /* Restricts width so it doesn't take over the page */
+    height: 140px;    /* Restricts height to a professional banner size */
     background-image: url('SLR Header.png'); 
     background-size: contain;
     background-repeat: no-repeat;
@@ -43,12 +42,12 @@ header {
     margin: 20px auto;
 }
 
-/* Hides the broken image icons from the HTML */
+/* This hides the broken <img> icons and typos in your HTML files automatically */
 .logo-wrap img {
     display: none;
 }
 
-/* 3. NAVIGATION */
+/* 3. NAVIGATION BAR */
 nav {
     display: flex;
     justify-content: center;
@@ -60,12 +59,12 @@ nav {
 }
 
 nav a {
-    padding: 20px 30px;
+    padding: 18px 25px;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
@@ -79,7 +78,7 @@ nav a.active {
     font-weight: bold;
 }
 
-/* 4. CONTAINERS & GRIDS */
+/* 4. MAIN CONTAINERS & GRIDS */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -95,30 +94,32 @@ nav a.active {
 
 /* 5. HERO SECTION (HOME PAGE) */
 .hero-box {
-    padding: 80px 10%;
+    padding: 60px 10%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: var(--navy);
-    min-height: 50vh;
+    min-height: 40vh;
 }
 
 .glass-box {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    padding: 50px;
+    padding: 40px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    max-width: 900px;
+    max-width: 850px;
 }
 
-/* 6. CARDS (FOR REVIEWS/SUCCESS STORIES) */
+/* 6. CARDS (FOR FAQ & SUCCESS STORIES) */
 .card {
     background: var(--glass);
     border: 1px solid var(--border);
     padding: 30px;
     border-radius: 8px;
+    margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -130,7 +131,7 @@ nav a.active {
 /* 7. BUTTONS */
 .btn {
     display: inline-block;
-    padding: 12px 35px;
+    padding: 12px 30px;
     background: var(--blue);
     color: var(--navy);
     text-decoration: none;
@@ -140,20 +141,14 @@ nav a.active {
     border: none;
     cursor: pointer;
     margin: 10px;
-    font-size: 1rem;
-}
-
-.btn:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
 }
 
 /* 8. TYPOGRAPHY */
-h1, h2, h3, h4 { margin-top: 0; color: #fff; }
-h1 { font-size: 3rem; line-height: 1.1; }
+h1, h2, h3 { margin-top: 0; color: #fff; }
+h1 { font-size: 2.8rem; line-height: 1.2; }
 .accent { color: var(--blue); }
 
-/* 9. FORMS (CONTACT PAGE) */
+/* 9. FORMS */
 input, textarea {
     width: 100%;
     padding: 12px;
@@ -166,16 +161,15 @@ input, textarea {
 
 /* 10. FOOTER */
 footer {
-    padding: 60px 0;
+    padding: 40px 0;
     border-top: 1px solid var(--border);
     text-align: center;
     background-color: var(--navy);
 }
 
-/* 11. MOBILE RESPONSIVENESS */
+/* 11. MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
-    .logo-wrap { max-width: 90%; height: 120px; }
-    nav a { padding: 15px 10px; font-size: 0.7rem; }
-    h1 { font-size: 2.2rem !important; }
-    .glass-box { padding: 30px; }
+    .logo-wrap { max-width: 90%; height: 100px; }
+    h1 { font-size: 2rem !important; }
+    nav a { padding: 12px 10px; font-size: 0.75rem; }
 }
