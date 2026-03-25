@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Featured Jobs | Streamline Recruiting</title>
+</head>
+<body>
+    <header>
+        <div class="logo-wrap"><img src="Logo.png" alt="Streamline Recruiting"></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="for-employers.html">Hire Talent</a>
+            <a href="jobs.html" class="active">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <section class="container" style="padding-top: 40px;">
+        <h1 style="text-align: center; margin-bottom: 40px;">Featured <span class="accent">Opportunities</span></h1>
+        
+        <div class="jobs-wrapper" style="width: 100%; min-height: 800px;">
+            <iframe scrolling="yes" id="recruiterflow-jobs-iframe" 
+                src="https://recruiterflow.com/db_65824b288d1334229391f2b76469bc79/jobs-page-widget" 
+                style="width:100%; border:0; height:800px; overflow-y:scroll !important; display:block;">
+            </iframe>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+            <script>iFrameResize({ log: true }, '#recruiterflow-jobs-iframe')</script>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Streamline Recruiting | High-Performance Engineering Search</p>
+    </footer>
+</body>
+</html>
