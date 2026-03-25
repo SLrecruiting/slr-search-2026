@@ -1,9 +1,15 @@
-/* 1. RESET & BASE COLORS */
+No, that was a snippet focusing on the header fix. Here is the absolute full CSS file with everything included—the logo fix, the colors, the mobile settings, and the grid for your testimonials.
+
+Copy this entire block and replace everything in your style.css file.
+
+CSS
+/* 1. GLOBAL SETTINGS & RESET */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Your exact logo navy */
+    --navy: #041530; /* Matches your SLR Header.png exactly */
     --blue: #00d2ff;
+    --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
 }
 
@@ -11,52 +17,67 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh;
-    background-color: var(--navy); /* This kills the white bar at the bottom */
+    background-color: var(--navy); /* This ensures NO white at the bottom */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO */
+/* 2. THE SMART HEADER (FIXES ALL PAGES AT ONCE) */
 header {
     background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0 0 0;
+    padding-top: 20px;
 }
 
+/* This pulls the logo in via CSS so you don't have to fix the %20 in your HTML */
 .logo-wrap {
     width: 100%;
     max-width: 500px;
-    padding: 10px;
+    height: 180px; 
+    background-image: url('SLR Header.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
 }
 
+/* Hides the broken image icons currently in your HTML */
 .logo-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
+    display: none;
 }
 
 /* 3. NAVIGATION */
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     width: 100%;
+    margin-top: 10px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    padding: 15px 20px;
+    padding: 20px 30px;
     color: white;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: var(--glass);
+    color: var(--blue);
 }
 
 nav a.active {
@@ -64,32 +85,53 @@ nav a.active {
     font-weight: bold;
 }
 
-/* 4. THE HERO (HOME PAGE ONLY) */
+/* 4. CONTAINERS & GRIDS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* 5. HERO SECTION (HOME PAGE) */
 .hero-box {
-    width: 100%;
-    min-height: 70vh; /* Keeps the content centered and visible */
+    padding: 100px 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgba(4,21,48,0.7), rgba(4,21,48,0.7)), url('hero.jpg');
-    background-size: cover;
-    background-position: center;
     text-align: center;
-    padding: 40px 20px;
+    background: var(--navy);
+    min-height: 60vh;
 }
 
 .glass-box {
-    background: rgba(4, 21, 48, 0.9);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 60px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    max-width: 800px;
 }
 
-/* 5. TYPOGRAPHY & BUTTONS */
-h1 { font-size: 2.5rem; margin-bottom: 20px; }
-.accent { color: var(--blue); }
+/* 6. CARDS (USED FOR REVIEWS) */
+.card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+}
+
+/* 7. BUTTONS */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -97,13 +139,36 @@ h1 { font-size: 2.5rem; margin-bottom: 20px; }
     color: var(--navy);
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    margin: 10px;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
-/* 6. CONTAINERS (FOR OTHER PAGES) */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
+/* 8. TYPOGRAPHY */
+h1, h2, h3, h4 { margin-top: 0; color: #fff; }
+.accent { color: var(--blue); }
+
+/* 9. FORMS (CONTACT PAGE) */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: white;
+    border-radius: 4px;
+}
+
+/* 10. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .logo-wrap { max-width: 90%; height: 120px; }
+    nav a { padding: 15px 10px; font-size: 0.7rem; }
+    h1 { font-size: 2.2rem !important; }
+}
+
+footer {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
 }
