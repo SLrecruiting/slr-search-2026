@@ -1,138 +1,95 @@
-Got it. Since your file in GitHub is exactly SLR Header.png, that is the "source of truth" we will use for the entire site. I have adjusted the colors in this CSS to match the background of that specific image so the white bar disappears forever.
+/* 1. RESET & BASE COLORS */
+* { box-sizing: border-box; }
 
-1. The Updated style.css
-Copy this entire block and overwrite your current file in GitHub.
-
-CSS
-/* GLOBAL SETTINGS */
 :root {
-    --navy: #041530; /* Adjusted to match your specific SLR Header background */
+    --navy: #041530; /* Your exact logo navy */
     --blue: #00d2ff;
-    --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
+html, body {
     margin: 0;
-    background: var(--navy);
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--navy); /* This kills the white bar at the bottom */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
-/* HEADER & LOGO AREA */
+/* 2. THE HEADER & LOGO */
 header {
-    background-color: var(--navy) !important;
-    margin: 0;
-    padding: 0; /* Removed top padding to pull logo to the very top */
+    background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px 0 0 0;
 }
 
 .logo-wrap {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: var(--navy);
-    padding: 20px 0;
+    max-width: 500px;
+    padding: 10px;
 }
 
 .logo-wrap img {
     width: 100%;
-    max-width: 650px; /* Made the header logo larger and more prominent */
     height: auto;
     display: block;
-    object-fit: contain;
 }
 
-/* NAVIGATION BAR */
+/* 3. NAVIGATION */
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03); 
+    background: rgba(255, 255, 255, 0.05);
     width: 100%;
-    margin-top: 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    margin-top: 20px;
 }
 
 nav a {
-    padding: 20px 30px;
+    padding: 15px 20px;
     color: white;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: var(--glass);
-    color: var(--blue);
+    letter-spacing: 1px;
 }
 
 nav a.active {
-    background: var(--blue);
-    color: var(--navy);
+    color: var(--blue);
     font-weight: bold;
 }
 
-/* CONTAINERS & GRIDS */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-/* CARDS & GLASS EFFECTS */
-.card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--blue);
-}
-
-/* HERO SECTION */
+/* 4. THE HERO (HOME PAGE ONLY) */
 .hero-box {
-    padding: 100px 10%;
+    width: 100%;
+    min-height: 70vh; /* Keeps the content centered and visible */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    background-image: linear-gradient(rgba(4,21,48,0.7), rgba(4,21,48,0.7)), url('hero.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 60vh;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 .glass-box {
-    background: rgba(4, 21, 48, 0.85); /* Matched to the new navy */
-    backdrop-filter: blur(10px);
-    padding: 60px;
+    background: rgba(4, 21, 48, 0.9);
+    padding: 40px;
     border: 1px solid var(--border);
     border-radius: 12px;
+    max-width: 800px;
 }
 
-/* BUTTONS */
+/* 5. TYPOGRAPHY & BUTTONS */
+h1 { font-size: 2.5rem; margin-bottom: 20px; }
+.accent { color: var(--blue); }
+
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -140,52 +97,13 @@ nav a.active {
     color: var(--navy);
     text-decoration: none;
     font-weight: bold;
-    border-radius: 4px;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
 }
 
-.btn:hover {
-    filter: brightness(1.2);
-    transform: scale(1.05);
-}
-
-/* TYPOGRAPHY */
-h1, h2, h3, h4 {
-    margin-top: 0;
-    color: #fff;
-}
-
-.accent {
-    color: var(--blue);
-}
-
-/* FORMS */
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    color: white;
-    border-radius: 4px;
-}
-
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--blue);
-}
-
-footer {
-    padding: 60px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .logo-wrap img { max-width: 90%; }
-    nav a { padding: 15px 10px; font-size: 0.7rem; }
-    h1 { font-size: 2.2rem !important; }
+/* 6. CONTAINERS (FOR OTHER PAGES) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
