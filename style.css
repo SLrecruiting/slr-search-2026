@@ -1,5 +1,9 @@
-/* 1. GLOBAL & RESET */
-* { box-sizing: border-box; }
+/* 1. RESET & CORE SETTINGS */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 :root {
     --navy: #041530; 
@@ -8,79 +12,106 @@
 }
 
 body {
-    margin: 0;
     background-color: var(--navy);
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* 2. HEADER & NAV (Full Width Fix) */
+/* 2. SLIM HEADER & NAVIGATION */
 header {
     background-color: var(--navy);
     width: 100%;
-    padding: 30px 0 0 0;
+    padding-top: 15px;
     text-align: center;
 }
 
 .logo-wrap img {
-    max-width: 350px;
-    width: 90%;
+    max-width: 280px; /* Professional size, not massive */
+    width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 nav {
     background: rgba(255, 255, 255, 0.05);
     border-top: 1px solid var(--border);
-    padding: 15px 0;
+    padding: 12px 0;
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 1px;
 }
 
-nav a.active { color: var(--blue); font-weight: bold; }
+nav a.active { 
+    color: var(--blue); 
+    font-weight: bold; 
+}
 
-/* 3. CONTAINERS & GRIDS */
+/* 3. MAIN LAYOUT CONTAINERS */
 .container {
-    max-width: 1100px;
+    max-width: 1100px; /* Keeps content wide but readable */
     width: 90%;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 40px 0;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
+/* 4. CARDS & SECTIONS */
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
     padding: 30px;
     border-radius: 8px;
+    height: 100%;
 }
 
-/* 4. FORMS & BUTTONS */
+.glass-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* 5. FORM ELEMENTS (High Contrast) */
+label {
+    display: block;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
 input, textarea {
     width: 100%;
     padding: 12px;
-    margin-top: 8px;
-    background: #fff;
-    color: #041530;
+    background: #ffffff; /* Solid white for legibility */
+    color: #041530; /* Dark text */
     border: none;
     border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
 }
 
+/* 6. BUTTONS */
 .btn {
     display: inline-block;
     background: var(--blue);
@@ -90,6 +121,27 @@ input, textarea {
     font-weight: bold;
     border-radius: 4px;
     text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-footer { text-align: center; padding: 40px; opacity: 0.5; border-top: 1px solid var(--border); }
+.btn:hover {
+    background: #ffffff;
+}
+
+/* 7. TYPOGRAPHY */
+h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+h2 { font-size: 2.2rem; margin-bottom: 20px; }
+h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--blue); }
+.accent { color: var(--blue); }
+
+/* 8. FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+}
