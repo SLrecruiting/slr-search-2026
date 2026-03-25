@@ -1,13 +1,12 @@
-Here is the complete, consolidated style.css.
+Got it. Since your file in GitHub is exactly SLR Header.png, that is the "source of truth" we will use for the entire site. I have adjusted the colors in this CSS to match the background of that specific image so the white bar disappears forever.
 
-I have cleaned up the layout so your SLR Header.jpg sits centered and large at the top, with the navigation bar neatly tucked underneath it. This eliminates the "tiny logo" problem and makes the site look like a high-end executive search firm.
-
-Action: Copy this entire block and overwrite everything currently in your style.css file on GitHub.
+1. The Updated style.css
+Copy this entire block and overwrite your current file in GitHub.
 
 CSS
 /* GLOBAL SETTINGS */
 :root {
-    --navy: #0a0b1e;
+    --navy: #041530; /* Adjusted to match your specific SLR Header background */
     --blue: #00d2ff;
     --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
@@ -24,44 +23,47 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* HEADER & LOGO AREA */
 header {
-    background-color: #0a0b1e !important;
+    background-color: var(--navy) !important;
     margin: 0;
-    padding: 20px 0 0 0;
+    padding: 0; /* Removed top padding to pull logo to the very top */
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 200px; /* Forces the area to stay Navy even if image is missing */
 }
 
 .logo-wrap {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #0a0b1e;
+    background-color: var(--navy);
+    padding: 20px 0;
 }
 
 .logo-wrap img {
-    width: auto;
-    max-width: 500px;
-    height: 120px; /* Controlled height to prevent the "giant square" */
-    object-fit: contain;
+    width: 100%;
+    max-width: 650px; /* Made the header logo larger and more prominent */
+    height: auto;
     display: block;
+    object-fit: contain;
 }
 
+/* NAVIGATION BAR */
 nav {
     display: flex;
     justify-content: center;
-    background: #16183d; /* Slightly lighter navy for contrast */
+    background: rgba(255, 255, 255, 0.03); 
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
+
 nav a {
     padding: 20px 30px;
     color: white;
@@ -79,7 +81,7 @@ nav a:hover {
 
 nav a.active {
     background: var(--blue);
-    color: white;
+    color: var(--navy);
     font-weight: bold;
 }
 
@@ -123,7 +125,7 @@ nav a.active {
 }
 
 .glass-box {
-    background: rgba(10, 11, 30, 0.85);
+    background: rgba(4, 21, 48, 0.85); /* Matched to the new navy */
     backdrop-filter: blur(10px);
     padding: 60px;
     border: 1px solid var(--border);
@@ -183,7 +185,7 @@ footer {
 
 /* MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-    .logo-wrap img { max-width: 80%; }
+    .logo-wrap img { max-width: 90%; }
     nav a { padding: 15px 10px; font-size: 0.7rem; }
     h1 { font-size: 2.2rem !important; }
 }
