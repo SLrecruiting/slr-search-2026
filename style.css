@@ -1,36 +1,38 @@
 :root {
     --navy: #0a0b1e;
     --blue: #00d2ff;
-    --glass: rgba(255, 255, 255, 0.08);
-    --border: rgba(255, 255, 255, 0.15);
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
 }
 
-body { margin: 0; background: var(--navy); color: #e6f1ff; font-family: 'Inter', sans-serif; line-height: 1.6; }
+body { margin: 0; background: var(--navy); color: #e6f1ff; font-family: 'Inter', sans-serif; line-height: 1.6; scroll-behavior: smooth; }
 
 /* HEADER */
 header { background: #161b33; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
 .logo-wrap { padding: 15px; }
 .logo-wrap img { height: 65px; width: auto; }
 nav { display: flex; width: 100%; border-top: 1px solid var(--border); }
-nav a { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; border-right: 1px solid var(--border); transition: 0.3s; }
+nav a { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-right: 1px solid var(--border); transition: 0.3s; }
 nav a:hover, nav a.active { background: white; color: black; }
 
-/* HERO SECTIONS */
+/* HERO */
 .hero-box { height: 80vh; display: flex; justify-content: center; align-items: center; background-size: cover; background-position: center; position: relative; }
 .hero-box::after { content:''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(10,11,30,0.5); z-index:1; }
 .glass-box { position: relative; z-index: 2; background: var(--glass); backdrop-filter: blur(15px); padding: 50px; border-radius: 4px; border: 1px solid var(--border); max-width: 850px; text-align: center; }
 
 /* GRID & CARDS */
 .container { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
-.card { background: var(--glass); padding: 40px; border: 1px solid var(--border); border-radius: 8px; transition: 0.3s; }
-.card:hover { border-color: var(--blue); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+.card { background: var(--glass); padding: 35px; border: 1px solid var(--border); border-radius: 8px; position: relative; }
+.accent { color: var(--blue); font-weight: bold; }
 
 /* FORM & BUTTONS */
-input, textarea { width: 100%; padding: 15px; margin: 10px 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; border-radius: 4px; box-sizing: border-box; }
-.btn { background: var(--blue); color: black; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; border: none; text-transform: uppercase; }
+input, textarea { width: 100%; padding: 15px; margin: 10px 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: white; border-radius: 4px; box-sizing: border-box; font-family: inherit; }
+.btn { background: var(--blue); color: black; padding: 16px 32px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 1px; }
 
 /* MODAL */
-#modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; justify-content: center; align-items: center; }
-.modal-content { background: #161b33; padding: 50px; border-radius: 8px; border: 1px solid var(--blue); max-width: 650px; position: relative; text-align: center; }
+#modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 3000; justify-content: center; align-items: center; padding: 20px; }
+.modal-content { background: #161b33; padding: 50px; border-radius: 8px; border: 1px solid var(--blue); max-width: 750px; width: 100%; position: relative; max-height: 80vh; overflow-y: auto; }
 .close-modal { position: absolute; top: 15px; right: 25px; font-size: 2.5rem; color: var(--blue); cursor: pointer; }
+
+footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); font-size: 0.8rem; opacity: 0.6; }
