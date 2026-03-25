@@ -19,50 +19,58 @@
     </header>
 
     <main class="container">
-        <div class="grid" style="margin-bottom: 60px; align-items: start;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 80px;">
             <div>
-                <h1 style="font-size: 3rem; line-height: 1.1;">High-Performance <span style="color:var(--blue)">Talent</span></h1>
-                <p style="font-size: 1.2rem; margin-top: 20px;">We place the engineers and leaders that AI, robotics, and advanced manufacturing companies need to scale.</p>
-                <p style="border-left: 3px solid var(--blue); padding-left: 20px; font-style: italic; margin-top: 25px;">"We recruit for where your industry is going, not where it’s been."</p>
+                <h1 style="font-size: 3.5rem; margin-bottom: 20px;">High-Performance <br><span style="color:var(--blue)">Talent</span></h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 20px;">We place the engineers and leaders that AI, robotics, and advanced manufacturing companies need to scale.</p>
+                <p style="border-left: 3px solid var(--blue); padding-left: 20px; font-style: italic;">"We recruit for where your industry is going, not where it’s been."</p>
+                
+                <h2 style="color:var(--blue); margin-top: 40px; margin-bottom: 15px;">Why Streamline</h2>
+                <p>We specialize in the roles that are hardest to fill. Every candidate is fully vetted and interviewed before they reach you.</p>
             </div>
+            
             <div class="card">
-                <h3>Initiate a Search</h3>
+                <h3 style="margin-bottom: 20px;">Initiate a Search</h3>
                 <form action="#" method="POST">
-                    <label>Full Name</label><input type="text" name="name" required>
-                    <label>Work Email</label><input type="email" name="email" required>
-                    <label>Hiring Challenge</label><textarea name="message" rows="4"></textarea>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Contact Us</button>
+                    <label style="color:var(--blue); font-weight:bold;">Full Name</label>
+                    <input type="text" name="name" required>
+                    <label style="color:var(--blue); font-weight:bold; display:block; margin-top:15px;">Work Email</label>
+                    <input type="email" name="email" required>
+                    <label style="color:var(--blue); font-weight:bold; display:block; margin-top:15px;">Hiring Challenge</label>
+                    <textarea name="message" rows="5"></textarea>
+                    <button type="submit" class="btn" style="margin-top:20px;">Contact Us</button>
                 </form>
             </div>
         </div>
 
-        <div class="card" style="margin-bottom: 60px; text-align: center; background: rgba(0, 210, 255, 0.02);">
-            <h2 style="margin-bottom: 30px;">Client <span style="color:var(--blue)">Reviews</span></h2>
-            <div id="reviews-widget">
-                <p style="opacity: 0.7;">[Testimonials & Metrics Integration]</p>
+        <div class="card" style="text-align: center; margin-bottom: 80px;">
+            <h2 style="margin-bottom: 40px;">What Our <span style="color:var(--blue)">Partners</span> Say</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="padding: 20px; border-right: 1px solid var(--border); text-align: left;">
+                    <p style="font-style: italic;">"Streamline understands the technical depth required for AI roles. They are our go-to partner for complex engineering hires."</p>
+                </div>
+                <div style="padding: 20px; text-align: left;">
+                    <p style="font-style: italic;">"The most efficient search process we've experienced in manufacturing leadership. They deliver precisely what they promise."</p>
+                </div>
             </div>
         </div>
 
-        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2rem;">Proof of <span style="color:var(--blue)">Performance</span></h2>
-        <div class="grid">
-            <div class="card"><strong>Senior Perception Engineer</strong><br><small>Robotics Stealth Startup</small></div>
-            <div class="card"><strong>Senior AI Engineer</strong><br><small>LLMs & Generative AI</small></div>
-            <div class="card"><strong>Product Manager</strong><br><small>AI/ML InsurTech</small></div>
+        <h2 style="text-align: center; margin-bottom: 40px;">Proof of <span style="color:var(--blue)">Performance</span></h2>
+        <div class="grid-3">
+            <div class="card"><h3>Senior Perception Engineer</h3><p>Robotics Stealth Startup</p></div>
+            <div class="card"><h3>Senior AI Engineer</h3><p>LLMs & Generative AI</p></div>
+            <div class="card"><h3>Product Manager</h3><p>AI/ML InsurTech</p></div>
             
-            <div class="card"><strong>Chief Executive Officer</strong><br><small>Medical Device Manufacturing</small></div>
-            <div class="card"><strong>Electrical Engineer</strong><br><small>Semiconductor Manufacturing</small></div>
-            <div class="card"><strong>R&D Engineer</strong><br><small>Agritech Innovation</small></div>
+            <div class="card"><h3>Chief Executive Officer</h3><p>Medical Device Manufacturing</p></div>
+            <div class="card"><h3>Electrical Engineer</h3><p>Semiconductor Manufacturing</p></div>
+            <div class="card"><h3>R&D Engineer</h3><p>Agritech Innovation</p></div>
             
-            <div class="card"><strong>CNC Programmer</strong><br><small>Aerospace Machining</small></div>
-            <div class="card"><strong>Automation & Controls</strong><br><small>Robotics Integration</small></div>
-            <div class="card"><strong>Plant Manager</strong><br><small>High-Volume Manufacturing</small></div>
+            <div class="card"><h3>CNC Programmer</h3><p>Aerospace Machining</p></div>
+            <div class="card"><h3>Automation & Controls</h3><p>Robotics Integration</p></div>
+            <div class="card"><h3>Plant Manager</h3><p>High-Volume Manufacturing</p></div>
         </div>
     </main>
 
-    <footer>
-        <p style="text-align: center; padding: 40px; opacity: 0.5; border-top: 1px solid var(--border); margin-top: 40px;">
-            © 2026 Streamline Recruiting
-        </p>
-    </footer>
+    <footer>© 2026 Streamline Recruiting</footer>
 </body>
 </html>
