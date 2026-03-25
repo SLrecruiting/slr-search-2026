@@ -1,13 +1,16 @@
-No, that was a snippet focusing on the header fix. Here is the absolute full CSS file with everything included—the logo fix, the colors, the mobile settings, and the grid for your testimonials.
+You're right to be skeptical—I trimmed it down too much to focus on the immediate "fire" of the white bars and logo. If you use that short version, you’ll lose the styling for your buttons, the glass-box effects, and the mobile responsiveness we built earlier.
 
-Copy this entire block and replace everything in your style.css file.
+Here is the complete, full-length style.css. It includes the "Magic Logo Fix" (so you don't have to touch your HTML) and every single design element for the entire site.
+
+The Full "Bulletproof" style.css
+Action: Copy this entire block and replace everything in your style.css file on GitHub.
 
 CSS
 /* 1. GLOBAL SETTINGS & RESET */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Matches your SLR Header.png exactly */
+    --navy: #041530; /* Matches your SLR Header.png background exactly */
     --blue: #00d2ff;
     --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
@@ -17,7 +20,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: var(--navy); /* This ensures NO white at the bottom */
+    background-color: var(--navy) !important; /* Forces the navy to the very bottom of the page */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -25,7 +28,7 @@ html, body {
     min-height: 100vh;
 }
 
-/* 2. THE SMART HEADER (FIXES ALL PAGES AT ONCE) */
+/* 2. THE SMART HEADER (AUTO-FIXES LOGO ON ALL PAGES) */
 header {
     background-color: var(--navy);
     width: 100%;
@@ -35,7 +38,7 @@ header {
     padding-top: 20px;
 }
 
-/* This pulls the logo in via CSS so you don't have to fix the %20 in your HTML */
+/* This places the logo via CSS so you don't have to fix the %20 in your HTML */
 .logo-wrap {
     width: 100%;
     max-width: 500px;
@@ -48,7 +51,7 @@ header {
     justify-content: center;
 }
 
-/* Hides the broken image icons currently in your HTML */
+/* This hides the broken <img> icons and typos on every page automatically */
 .logo-wrap img {
     display: none;
 }
@@ -98,7 +101,7 @@ nav a.active {
     gap: 40px;
 }
 
-/* 5. HERO SECTION (HOME PAGE) */
+/* 5. HERO SECTION (INDEX PAGE) */
 .hero-box {
     padding: 100px 10%;
     display: flex;
@@ -117,7 +120,7 @@ nav a.active {
     border-radius: 12px;
 }
 
-/* 6. CARDS (USED FOR REVIEWS) */
+/* 6. CARDS (FOR REVIEWS/TESTIMONIALS) */
 .card {
     background: var(--glass);
     border: 1px solid var(--border);
@@ -143,6 +146,12 @@ nav a.active {
     transition: 0.3s;
     border: none;
     cursor: pointer;
+    margin: 10px;
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
 }
 
 /* 8. TYPOGRAPHY */
@@ -160,15 +169,17 @@ input, textarea {
     border-radius: 4px;
 }
 
-/* 10. MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-    .logo-wrap { max-width: 90%; height: 120px; }
-    nav a { padding: 15px 10px; font-size: 0.7rem; }
-    h1 { font-size: 2.2rem !important; }
-}
-
+/* 10. FOOTER */
 footer {
     padding: 60px 0;
     border-top: 1px solid var(--border);
     text-align: center;
+    background-color: var(--navy);
+}
+
+/* 11. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .logo-wrap { max-width: 90%; height: 120px; }
+    nav a { padding: 15px 10px; font-size: 0.7rem; }
+    h1 { font-size: 2.2rem !important; }
 }
