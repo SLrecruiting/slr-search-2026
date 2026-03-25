@@ -1,8 +1,8 @@
-/* 1. RESET & CORE THEME */
+/* 1. CORE THEME & RESET */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Matches SLR Header.png exactly */
+    --navy: #041530; /* Matches SLR Header.png */
     --blue: #00d2ff;
     --border: rgba(255, 255, 255, 0.1);
 }
@@ -14,29 +14,30 @@ html, body {
     background-color: var(--navy) !important;
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO FIX */
+/* 2. HEADER & LOGO SIZE FIX */
 header {
     background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 30px 0 10px 0;
 }
 
 .logo-wrap {
     width: 90%;
-    max-width: 600px; /* Increased to look better on wide screens */
+    max-width: 500px; /* Limits the logo specifically */
     margin: 0 auto;
 }
 
 .logo-wrap img {
     width: 100%;
     height: auto;
-    max-height: 150px; /* Hard limit on height */
+    max-height: 140px; /* Prevents giant logo */
     display: block;
     object-fit: contain;
 }
@@ -45,56 +46,52 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     width: 100%;
+    margin-top: 20px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    margin-top: 15px;
-    flex-wrap: wrap;
 }
 
 nav a {
     padding: 15px 25px;
     color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-nav a:hover { color: var(--blue); }
+nav a.active { color: var(--blue); font-weight: bold; }
 
-/* 4. THE "SQUEEZE" FIX (CONTAINERS) */
-.hero-box {
+/* 4. THE SQUEEZE KILLER (CONTAINER FIX) */
+.hero-box, .container {
     width: 100%;
-    padding: 60px 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* Centers the box */
+    padding: 60px 20px;
 }
 
-/* This is the critical change for the 25% zoom issue */
-.container, .glass-box {
-    width: 95%;        /* Uses almost the whole screen width */
-    max-width: 1200px;  /* But stops at a reasonable 1200px */
-    margin: 0 auto;
-    padding: 40px;
+/* This was the main problem - it was too narrow */
+.glass-box {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 90%;          /* Allows it to be wide on large screens */
+    max-width: 1100px;   /* But stops it from getting TOO wide */
     text-align: center;
 }
 
-.glass-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
 /* 5. TYPOGRAPHY & BUTTONS */
-h1 { font-size: 3rem; margin-bottom: 20px; }
-h2 { font-size: 2.2rem; margin-bottom: 20px; }
+h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
 .accent { color: var(--blue); }
 
 .btn {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 12px 35px;
     background: var(--blue);
     color: var(--navy);
     text-decoration: none;
@@ -103,8 +100,25 @@ h2 { font-size: 2.2rem; margin-bottom: 20px; }
     margin: 10px;
 }
 
+/* 6. FORMS & FOOTER */
+input, textarea {
+    width: 100%;
+    max-width: 600px; /* Limits form width specifically */
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: white;
+}
+
 footer {
+    padding: 40px 0;
     text-align: center;
-    padding: 40px;
     border-top: 1px solid var(--border);
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .glass-box { padding: 30px 15px; width: 95%; }
 }
