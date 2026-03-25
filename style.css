@@ -1,4 +1,4 @@
-/* --- THEME & RESET --- */
+/* --- 1. THEME & GLOBAL RESET --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
@@ -11,29 +11,23 @@
 body {
     background-color: var(--navy);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.6;
 }
 
 main { flex: 1; }
 
-/* Global container for standard pages */
+/* Standard container for most content */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-/* FIX FOR FEATURED JOBS PAGE: Allows the job board to be wide */
-.jobs-container {
-    max-width: 1200px; 
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* --- HEADER --- */
+/* --- 2. HEADER FIX (Logo Left / Nav Right) --- */
 header {
     padding: 20px 40px;
     border-bottom: 1px solid var(--border);
@@ -42,7 +36,11 @@ header {
     align-items: center;
 }
 
-.logo-wrap img { height: 48px; width: auto; }
+.logo-wrap img { 
+    height: 48px; 
+    width: auto; 
+    display: block;
+}
 
 nav { display: flex; gap: 25px; }
 
@@ -53,14 +51,40 @@ nav a {
     font-weight: 700;
     text-transform: uppercase;
     opacity: 0.7;
+    transition: 0.3s;
 }
 
-nav a.active { color: var(--blue); opacity: 1; }
+nav a.active, nav a:hover { color: var(--blue); opacity: 1; }
 
-/* --- HOME PAGE SPECIFIC --- */
+/* --- 3. BUTTONS --- */
+.btn {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--navy);
+    padding: 12px 26px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border: 1px solid var(--blue);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn:hover { background: transparent; color: var(--blue); }
+
+/* --- 4. JOBS PAGE FIX (Full Width) --- */
+.jobs-container {
+    max-width: 1300px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- 5. HOME PAGE SPECIFIC GRID --- */
 .home-split-grid {
     display: grid;
-    grid-template-columns: 1fr 380px; /* Fixed card width, flexible text */
+    grid-template-columns: 1fr 380px; /* Keeps the card a solid size, lets text breathe */
     gap: 60px;
     align-items: start;
     text-align: left;
@@ -73,22 +97,34 @@ nav a.active { color: var(--blue); opacity: 1; }
     border-radius: 8px;
 }
 
-/* --- BUTTONS --- */
-.btn {
-    display: inline-block;
-    background-color: var(--blue);
-    color: var(--navy);
-    padding: 12px 26px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 0.85rem;
-    text-transform: uppercase;
+/* Fallback for other 3-column grids */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-/* --- FOOTER --- */
+/* --- 6. FOOTER --- */
 footer {
     padding: 40px 0;
     border-top: 1px solid var(--border);
+    background: rgba(0,0,0,0.1);
     text-align: center;
 }
+
+footer p {
+    opacity: 0.5;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+footer a:hover { opacity: 1; color: var(--blue); }
