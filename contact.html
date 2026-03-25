@@ -19,36 +19,50 @@
     </header>
 
     <main class="container">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h1 style="font-size: 3rem;">Let's <span style="color:var(--blue)">Chat</span></h1>
-            <p>Ready to move the needle? Reach out below.</p>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 3rem;">Start the <span style="color:var(--blue)">Conversation</span></h1>
+            <p>Ready to find your next transformative hire?</p>
         </div>
 
         <div class="grid">
             <div class="card">
-                <h3>Contact Info</h3>
+                <h3 style="color:var(--blue)">Hiring Blueprint</h3>
+                <p>The 5 Steps to a Streamlined Hiring Process.</p>
+                <a href="#" style="color:white; font-weight:bold;">Download Ebook →</a>
+            </div>
+            <div class="card">
+                <h3 style="color:var(--blue)">Hiring Scorecard</h3>
+                <p>Empower your team to make data-driven decisions.</p>
+                <a href="#" style="color:white; font-weight:bold;">Get Scorecard →</a>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div style="display:flex; justify-content: space-around; margin-bottom: 30px; flex-wrap: wrap;">
                 <p><strong>Phone:</strong> (425) 818-3962</p>
                 <p><strong>Email:</strong> recruitment@slrsearch.com</p>
             </div>
 
-            <div class="card">
-                <form action="https://formspree.io/f/YOUR_ID" method="POST">
-                    <div>
-                        <label>Full Name</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div>
-                        <label>Email Address</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div>
-                        <label>Message</label>
-                        <textarea name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="field">
+                    <label>How can we help?</label>
+                    <textarea name="message" rows="5" placeholder="Tell us about your technical hiring needs..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </main>
+
+    <footer style="text-align:center; padding: 40px; opacity: 0.5;">
+        © 2026 Streamline Recruiting
+    </footer>
 </body>
 </html>
