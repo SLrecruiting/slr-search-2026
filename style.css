@@ -1,124 +1,67 @@
-/* 1. CORE THEME & RESET */
-* { box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Streamline Recruiting | High-Performance Engineering Search</title>
+</head>
+<body>
+    <header>
+        <div class="logo-wrap">
+            <img src="SLR Header.png" alt="Streamline Recruiting">
+        </div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="for-employers.html">Hire Talent</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-:root {
-    --navy: #041530; /* Matches SLR Header.png */
-    --blue: #00d2ff;
-    --border: rgba(255, 255, 255, 0.1);
-}
+    <section class="hero-box" style="background-image: linear-gradient(rgba(10,11,30,0.8), rgba(10,11,30,0.8)), url('hero.jpg'); background-size: cover; background-position: center; min-height: 80vh;">
+        <div class="glass-box">
+            <h1>The Future Belongs to Companies Who <span class="accent">Hire Ahead of It.</span></h1>
+            <p style="font-size: 1.4rem; opacity: 0.9;">We help AI, robotics, emerging technology, and advanced manufacturing companies find the engineers and leaders they actually need.</p>
+            <div style="margin-top: 40px;">
+                <a href="for-employers.html" class="btn">Hire Talent</a>
+                <a href="jobs.html" class="btn" style="background:none; border:1px solid var(--blue); color:var(--blue); margin-left:15px;">View Jobs</a>
+            </div>
+        </div>
+    </section>
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: var(--navy) !important;
-    color: #e6f1ff;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-}
+    <section class="container">
+        <div style="text-align: center;">
+            <h2>Precision Over <span class="accent">Volume.</span></h2>
+            <p style="font-size: 1.25rem;">Not a stack of resumes. Not keyword matches. We provide candidates who are vetted, interviewed, and genuinely aligned with your mission and team.</p>
+            <p style="font-size: 1.25rem; font-weight: bold; color: var(--blue);">We recruit for where your industry is going, not where it's been.</p>
+        </div>
+    </section>
 
-/* 2. HEADER & LOGO SIZE FIX */
-header {
-    background-color: var(--navy);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0 10px 0;
-}
+    <section class="container" style="background: var(--glass);">
+        <div class="grid">
+            <div>
+                <h2>Specialized <span class="accent">Intelligence.</span></h2>
+                <p>We understand the work, the environment, and what separates a good hire from a transformative one.</p>
+                <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                    <li><span class="accent">→</span> AI & Machine Learning Engineers</li>
+                    <li><span class="accent">→</span> Robotics & Computer Vision Specialists</li>
+                    <li><span class="accent">→</span> Controls & Automation Engineering</li>
+                    <li><span class="accent">→</span> 5-Axis Aerospace & Defense Machining</li>
+                </ul>
+                <a href="faq.html" class="accent" style="font-weight: bold; text-decoration: none;">Explore our full technical FAQ →</a>
+            </div>
+            <div class="card">
+                <h3 class="accent">The Streamline Standard</h3>
+                <p>Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a 90-day guarantee.</p>
+                <a href="contact.html" class="btn" style="width: 100%; text-align: center; margin-top: 20px;">Start a Search</a>
+            </div>
+        </div>
+    </section>
 
-.logo-wrap {
-    width: 90%;
-    max-width: 500px; /* Limits the logo specifically */
-    margin: 0 auto;
-}
-
-.logo-wrap img {
-    width: 100%;
-    height: auto;
-    max-height: 140px; /* Prevents giant logo */
-    display: block;
-    object-fit: contain;
-}
-
-/* 3. NAVIGATION */
-nav {
-    display: flex;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
-    width: 100%;
-    margin-top: 20px;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-nav a {
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-nav a.active { color: var(--blue); font-weight: bold; }
-
-/* 4. THE SQUEEZE KILLER (CONTAINER FIX) */
-.hero-box, .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers the box */
-    padding: 60px 20px;
-}
-
-/* This was the main problem - it was too narrow */
-.glass-box {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    padding: 50px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    width: 90%;          /* Allows it to be wide on large screens */
-    max-width: 1100px;   /* But stops it from getting TOO wide */
-    text-align: center;
-}
-
-/* 5. TYPOGRAPHY & BUTTONS */
-h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
-.accent { color: var(--blue); }
-
-.btn {
-    display: inline-block;
-    padding: 12px 35px;
-    background: var(--blue);
-    color: var(--navy);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 10px;
-}
-
-/* 6. FORMS & FOOTER */
-input, textarea {
-    width: 100%;
-    max-width: 600px; /* Limits form width specifically */
-    padding: 12px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    color: white;
-}
-
-footer {
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid var(--border);
-}
-
-/* MOBILE ADJUSTMENTS */
-@media (max-width: 768px) {
-    h1 { font-size: 2.2rem; }
-    .glass-box { padding: 30px 15px; width: 95%; }
-}
+    <footer>
+        <p>© 2026 Streamline Recruiting | Technical Search Excellence</p>
+    </footer>
+</body>
+</html>
