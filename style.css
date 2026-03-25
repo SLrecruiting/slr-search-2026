@@ -28,26 +28,27 @@ body {
 
 /* HEADER & LOGO AREA */
 header {
-    background-color: #0a0b1e !important; /* Forces Navy */
+    background-color: #0a0b1e !important;
     margin: 0;
-    padding: 0;
+    padding: 20px 0 0 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 200px; /* Forces the area to stay Navy even if image is missing */
 }
 
 .logo-wrap {
-    background-color: #0a0b1e;
     width: 100%;
     display: flex;
     justify-content: center;
+    background-color: #0a0b1e;
 }
 
 .logo-wrap img {
-    width: 100%;
-    max-width: 600px;
-    height: 180px;
+    width: auto;
+    max-width: 500px;
+    height: 120px; /* Controlled height to prevent the "giant square" */
     object-fit: contain;
     display: block;
 }
@@ -55,7 +56,9 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: #16183d; /* Slightly lighter navy for contrast */
+    width: 100%;
+    margin-top: 20px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
