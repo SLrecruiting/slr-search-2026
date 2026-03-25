@@ -1,10 +1,9 @@
-/* --- FOUNDATION --- */
+/* --- EMERGENCY RESET & THEME --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
     --text: #e6f1ff;
     --border: rgba(0, 210, 255, 0.2);
-    --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 * {
@@ -14,126 +13,65 @@
 }
 
 body {
-    background-color: var(--navy);
+    background-color: var(--navy) !important; /* Force background */
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 }
 
-main {
-    flex: 1;
+/* --- LOGO FIX (Prevents it from being a full page) --- */
+.logo-wrap img {
+    max-width: 250px !important; /* Explicitly caps logo size */
+    height: auto;
+    display: block;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
+header {
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* --- NAVIGATION --- */
-header {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.logo-wrap {
-    text-align: left;
-    margin-bottom: 0;
-}
-
-.logo-wrap img {
-    height: 45px;
-    width: auto;
-}
-
 nav {
-    float: right;
-    margin-top: -45px; /* Aligns with logo */
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 nav a {
     color: var(--text);
     text-decoration: none;
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    opacity: 0.8;
 }
 
-nav a.active, nav a:hover {
-    color: var(--blue);
-    opacity: 1;
+/* --- LAYOUT --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
 }
 
-/* --- TYPOGRAPHY & BUTTONS --- */
-h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
-h2 { font-size: 2.2rem; margin-bottom: 20px; }
-
-.btn {
-    display: inline-block;
-    background-color: var(--blue);
-    color: var(--navy);
-    padding: 14px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 700;
-    transition: 0.3s;
-    border: 1px solid var(--blue);
-}
-
-.btn:hover {
-    background: transparent;
-    color: var(--blue);
-}
-
-/* --- GRID & CARDS --- */
 .grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Fixed proportions for Specialized Intel */
-    gap: 60px;
-    align-items: start;
-    margin: 60px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 40px;
-    border-radius: 8px;
-}
-
-/* --- FOOTER FIX (No More Giant Footer) --- */
+/* --- FOOTER FIX --- */
 footer {
     padding: 40px 0;
-    border-top: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.3);
-    width: 100%;
-    margin-top: 80px;
-}
-
-footer .container {
-    max-width: 800px;
     text-align: center;
+    border-top: 1px solid var(--border);
+    width: 100%;
 }
 
 .footer-nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 15px;
-}
-
-.footer-nav a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.75rem;
-    opacity: 0.5;
-    font-weight: 600;
-    letter-spacing: 1px;
+    gap: 20px;
+    margin-top: 10px;
 }
