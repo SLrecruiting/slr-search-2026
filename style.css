@@ -10,7 +10,11 @@ body { margin: 0; background: var(--navy); color: #e6f1ff; font-family: 'Inter',
 /* HEADER */
 header { background: #161b33; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
 .logo-wrap { padding: 15px; }
-.logo-wrap img { height: 65px; width: auto; }
+.logo-wrap img {
+    height: 60px; /* Increased size */
+    width: auto;  /* Keeps it from looking squished */
+    display: block;
+}
 nav { display: flex; width: 100%; border-top: 1px solid var(--border); }
 nav a { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-right: 1px solid var(--border); transition: 0.3s; }
 nav a:hover, nav a.active { background: white; color: black; }
