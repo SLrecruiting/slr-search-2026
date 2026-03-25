@@ -1,9 +1,10 @@
-/* 1. CORE THEME & BACKGROUND */
+/* 1. GLOBAL SETTINGS & RESET */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Your exact logo background color */
+    --navy: #041530; /* Matches your SLR Header.png exactly */
     --blue: #00d2ff;
+    --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
 }
 
@@ -11,34 +12,35 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    /* This forces the navy color to fill the whole screen, killing white bars */
-    background-color: var(--navy) !important;
+    background-color: var(--navy) !important; /* Forces the navy background to the bottom */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
     min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO SIZE FIX */
+/* 2. THE HEADER & LOGO (FIXED) */
 header {
     background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0 20px 0;
+    padding: 30px 0 10px 0;
 }
 
 .logo-wrap {
-    width: 90%;
-    max-width: 450px; /* This controls the logo's max width on screen */
+    width: 100%;
+    max-width: 500px; /* Limits the horizontal size */
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* This is the SPECIFIC fix for the giant logo */
 .logo-wrap img {
-    width: 100%;       /* Fits inside the 450px container */
-    height: auto;      /* Prevents distortion */
-    max-height: 120px; /* Hard limit to prevent it from being giant */
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* ABSOLUTE LIMIT: Prevents the giant logo issue */
     display: block;
     object-fit: contain;
 }
@@ -47,78 +49,64 @@ header {
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     width: 100%;
+    margin-top: 20px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    margin-top: 30px;
     flex-wrap: wrap;
 }
 
 nav a {
-    padding: 15px 25px;
+    padding: 20px 30px;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: 0.3s;
 }
 
-nav a:hover { color: var(--blue); }
-nav a.active { color: var(--blue); font-weight: bold; }
-
-/* 4. CONTENT SECTIONS */
-.hero-box {
-    width: 100%;
-    padding: 80px 20px;
-    background-color: var(--navy);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+nav a:hover {
+    background: var(--glass);
+    color: var(--blue);
 }
 
+nav a.active {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+/* 4. CONTAINERS & GRIDS */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 80px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* 5. HERO SECTION */
+.hero-box {
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--navy);
+    min-height: 60vh;
 }
 
 .glass-box {
     background: rgba(255, 255, 255, 0.03);
-    padding: 50px;
+    backdrop-filter: blur(10px);
+    padding: 60px;
     border: 1px solid var(--border);
     border-radius: 12px;
     width: 100%;
-    max-width: 850px;
-    text-align: center;
-}
-
-/* 5. BUTTONS & TYPOGRAPHY */
-h1 { font-size: 3rem; margin-bottom: 20px; color: white; line-height: 1.1; }
-.accent { color: var(--blue); }
-
-.btn {
-    display: inline-block;
-    padding: 15px 35px;
-    background: var(--blue);
-    color: var(--navy);
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 10px;
-    font-size: 1rem;
-}
-
-footer {
-    text-align: center;
-    padding: 60px 0;
-    border-top: 1px solid var(--border);
-    background-color: var(--navy);
-}
-
-/* 6. MOBILE FIXES */
-@media (max-width: 768px) {
-    .logo-wrap { max-width: 300px; }
-    h1 { font-size: 2.2rem !important; }
+    max-width: 900px;
 }
