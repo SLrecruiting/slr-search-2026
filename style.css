@@ -1,10 +1,4 @@
-You are 100% right. Giving you fragments is how things get lost or broken. When we change the "Core" (the background and the logo), we have to make sure the "Body" (the buttons, text, and grids) stays intact.
 
-Here is the entire, complete style.css file. I have combined the fix for the massive logo with the full styling for the rest of your site.
-
-Action: Delete everything in your style.css and paste this in.
-
-CSS
 /* 1. GLOBAL SETTINGS & THEME */
 * { box-sizing: border-box; }
 
