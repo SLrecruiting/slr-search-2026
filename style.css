@@ -1,47 +1,139 @@
-/* 1. Global Layout Fix: Ensures footer stays at the bottom without being 'giant' */
+/* --- GLOBAL VARIABLES --- */
+:root {
+    --navy: #020b1a;
+    --blue: #00d2ff;
+    --text: #e6f1ff;
+    --border: rgba(0, 210, 255, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.03);
+}
+
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    background-color: var(--navy);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+    min-height: 100vh; /* Keeps footer at bottom even on short pages */
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Pushes footer down */
 }
 
-/* 2. The Footer Fix: Constraints the width and fixes the 'giant' feel */
-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.2); /* Dark but subtle */
-    width: 100%;
-}
-
-footer .container {
-    max-width: 800px; /* This stops it from looking 'giant' on wide screens */
+.container {
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
+    padding: 0 20px;
 }
 
-/* 3. Improved Footer Nav Style */
-.footer-nav {
+/* --- NAVIGATION --- */
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-wrap {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.logo-wrap img {
+    height: 50px; /* Adjust based on your SLR Header.png size */
+    width: auto;
+}
+
+nav {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    margin-top: 15px;
+    gap: 30px;
 }
 
-.footer-nav a {
-    color: #fff;
+nav a {
+    color: var(--text);
     text-decoration: none;
-    font-size: 0.75rem;
-    opacity: 0.5;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: 0.3s;
 }
 
-.footer-nav a:hover {
+nav a:hover, nav a.active {
     opacity: 1;
+    color: var(--blue);
 }
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1 { font-size: 3.5rem; line-height: 1.1; }
+h2 { font-size: 2.2rem; }
+span.color-blue { color: var(--blue); }
+
+/* --- GRIDS & CARDS --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid var(--blue);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--blue);
+}
+
+/* --- FORMS --- */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* --- FOOTER (FIXED) --- */
+footer {
+    padding: 60px 0;
+    border-top: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.
