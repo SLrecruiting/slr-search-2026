@@ -1,10 +1,9 @@
-/* 1. CORE THEME & RESET */
+/* 1. RESET & CORE THEME */
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* The exact navy from your logo */
+    --navy: #041530; /* Your exact logo background color */
     --blue: #00d2ff;
-    --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
 }
 
@@ -12,123 +11,73 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: var(--navy) !important; /* Kills the white background forever */
+    background-color: var(--navy); /* This stops the white bar at the bottom */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    scroll-behavior: smooth;
     min-height: 100vh;
 }
 
-/* 2. HEADER & LOGO AUTO-FIX */
+/* 2. THE HEADER & LOGO */
 header {
     background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
+    padding: 20px 0;
 }
 
-/* This creates a fixed-size window for your banner logo */
 .logo-wrap {
     width: 100%;
-    max-width: 500px; /* Restricts width so it doesn't take over the page */
-    height: 140px;    /* Restricts height to a professional banner size */
-    background-image: url('SLR Header.png'); 
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 20px auto;
+    max-width: 500px; /* Limits the logo size */
+    padding: 10px;
 }
 
-/* This hides the broken <img> icons and typos in your HTML files automatically */
 .logo-wrap img {
-    display: none;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* 3. NAVIGATION BAR */
+/* 3. NAVIGATION */
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     width: 100%;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 nav a {
-    padding: 18px 25px;
+    padding: 15px 20px;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    background: var(--glass);
-    color: var(--blue);
-}
+nav a.active { color: var(--blue); font-weight: bold; }
 
-nav a.active {
-    color: var(--blue);
-    font-weight: bold;
-}
-
-/* 4. MAIN CONTAINERS & GRIDS */
-.container {
-    max-width: 1200px;
+/* 4. CONTENT SECTIONS */
+.hero-box, .container {
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 60px 20px;
-    background-color: var(--navy);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-/* 5. HERO SECTION (HOME PAGE) */
-.hero-box {
-    padding: 60px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 40px 20px;
     text-align: center;
-    background: var(--navy);
-    min-height: 40vh;
 }
 
 .glass-box {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
+    background: rgba(4, 21, 48, 0.8); /* Dark but transparent */
     padding: 40px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    max-width: 850px;
 }
 
-/* 6. CARDS (FOR FAQ & SUCCESS STORIES) */
-.card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--blue);
-}
-
-/* 7. BUTTONS */
+/* 5. BUTTONS & TEXT */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -137,39 +86,14 @@ nav a.active {
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
     margin: 10px;
 }
 
-/* 8. TYPOGRAPHY */
-h1, h2, h3 { margin-top: 0; color: #fff; }
-h1 { font-size: 2.8rem; line-height: 1.2; }
+h1 { font-size: 2.5rem; margin-bottom: 20px; color: white; }
 .accent { color: var(--blue); }
 
-/* 9. FORMS */
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    color: white;
-    border-radius: 4px;
-}
-
-/* 10. FOOTER */
 footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
     text-align: center;
-    background-color: var(--navy);
-}
-
-/* 11. MOBILE ADJUSTMENTS */
-@media (max-width: 768px) {
-    .logo-wrap { max-width: 90%; height: 100px; }
-    h1 { font-size: 2rem !important; }
-    nav a { padding: 12px 10px; font-size: 0.75rem; }
+    padding: 40px;
+    border-top: 1px solid var(--border);
 }
