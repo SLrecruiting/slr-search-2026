@@ -2,7 +2,7 @@
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Your exact logo background color */
+    --navy: #041530; /* Matches your logo background exactly */
     --blue: #00d2ff;
     --border: rgba(255, 255, 255, 0.1);
 }
@@ -11,13 +11,13 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: var(--navy); /* This stops the white bar at the bottom */
+    background-color: var(--navy) !important; /* Forces the navy to the bottom, no white bars */
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO */
+/* 2. THE HEADER & LOGO FIX */
 header {
     background-color: var(--navy);
     width: 100%;
@@ -27,16 +27,21 @@ header {
     padding: 20px 0;
 }
 
+/* This is the container around your logo */
 .logo-wrap {
     width: 100%;
-    max-width: 500px; /* Limits the logo size */
+    max-width: 500px; /* Limits the logo width */
+    margin: 0 auto;
     padding: 10px;
 }
 
+/* THIS IS THE CRITICAL FIX for the giant logo */
 .logo-wrap img {
-    width: 100%;
-    height: auto;
+    width: 100%;       /* Makes it fit inside the 500px container */
+    height: auto;      /* Keeps it from distorting */
+    max-height: 150px; /* Absolutely prevents it from being giant */
     display: block;
+    object-fit: contain;
 }
 
 /* 3. NAVIGATION */
@@ -47,7 +52,7 @@ nav {
     width: 100%;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 nav a {
@@ -71,7 +76,7 @@ nav a.active { color: var(--blue); font-weight: bold; }
 }
 
 .glass-box {
-    background: rgba(4, 21, 48, 0.8); /* Dark but transparent */
+    background: rgba(4, 21, 48, 0.8);
     padding: 40px;
     border: 1px solid var(--border);
     border-radius: 12px;
