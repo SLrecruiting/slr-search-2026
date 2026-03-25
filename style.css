@@ -2,7 +2,7 @@
 * { box-sizing: border-box; }
 
 :root {
-    --navy: #041530; /* Matches your SLR Header.png exactly */
+    --navy: #041530; /* Matches SLR Header.png */
     --blue: #00d2ff;
     --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
@@ -12,35 +12,33 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: var(--navy) !important; /* Forces the navy background to the bottom */
+    background-color: var(--navy) !important;
     color: #e6f1ff;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    scroll-behavior: smooth;
     min-height: 100vh;
 }
 
-/* 2. THE HEADER & LOGO (FIXED) */
+/* 2. THE HEADER & LOGO FIX */
 header {
     background-color: var(--navy);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0 10px 0;
+    padding: 20px 0;
 }
 
 .logo-wrap {
-    width: 100%;
-    max-width: 500px; /* Limits the horizontal size */
+    width: 90%;
+    max-width: 450px; /* Limits how wide the logo gets */
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo-wrap img {
     width: 100%;
     height: auto;
-    max-height: 150px; /* ABSOLUTE LIMIT: Prevents the giant logo issue */
+    max-height: 120px; /* Limits how tall the logo gets */
     display: block;
     object-fit: contain;
 }
@@ -51,62 +49,78 @@ nav {
     justify-content: center;
     background: rgba(255, 255, 255, 0.03);
     width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
 }
 
 nav a {
-    padding: 20px 30px;
+    padding: 15px 25px;
     color: white;
     text-decoration: none;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
+    letter-spacing: 1px;
 }
 
-nav a:hover {
-    background: var(--glass);
-    color: var(--blue);
-}
+nav a:hover { color: var(--blue); }
+nav a.active { color: var(--blue); font-weight: bold; }
 
-nav a.active {
-    color: var(--blue);
-    font-weight: bold;
-}
-
-/* 4. CONTAINERS & GRIDS */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-/* 5. HERO SECTION */
+/* 4. THE "SQUEEZE" FIX (CONTAINERS) */
 .hero-box {
-    padding: 100px 10%;
+    width: 100%;
+    padding: 60px 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    text-align: center;
     background-color: var(--navy);
-    min-height: 60vh;
+}
+
+.container {
+    max-width: 1200px; /* Ensures content has room to breathe */
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
 }
 
 .glass-box {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    padding: 60px;
+    padding: 40px;
     border: 1px solid var(--border);
     border-radius: 12px;
     width: 100%;
-    max-width: 900px;
+    max-width: 900px; /* Stops the text from becoming a thin strip */
+}
+
+/* 5. TYPOGRAPHY & BUTTONS */
+h1 { font-size: 2.8rem; color: #fff; margin-bottom: 20px; }
+h2 { font-size: 2.2rem; color: #fff; }
+.accent { color: var(--blue); }
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--blue);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+/* 6. FORMS & FOOTER */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: white;
+}
+
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
 }
