@@ -1,10 +1,9 @@
-/* --- 1. THEME & RESET --- */
+/* --- GLOBAL THEME --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
     --text: #e6f1ff;
     --border: rgba(0, 210, 255, 0.2);
-    --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,29 +22,30 @@ main { flex: 1; }
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
-/* --- 2. HEADER (Logo Left / Nav Right) --- */
+/* --- HEADER: FORCING LOGO LEFT WITHOUT CHANGING HTML --- */
 header {
-    padding: 20px 0;
+    padding: 20px 40px; /* Gives it some breathing room from the edges */
     border-bottom: 1px solid var(--border);
+    overflow: hidden; /* Clears the floats below */
+    display: block; /* Ensures it acts as a full-width bar */
 }
 
-/* This is the magic line that fixes the logo position */
-header .container {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
+.logo-wrap {
+    float: left; /* Forces logo to the left side */
 }
 
 .logo-wrap img {
     height: 45px;
     width: auto;
-    display: block;
 }
 
-nav { display: flex; gap: 30px; }
+nav {
+    float: right; /* Forces navigation to the right side */
+    margin-top: 10px; /* Adjusts vertical alignment with logo */
+}
 
 nav a {
     color: var(--text);
@@ -53,50 +53,31 @@ nav a {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    opacity: 0.7;
-    transition: 0.3s;
+    margin-left: 25px; /* Creates spacing between links */
 }
 
-nav a:hover, nav a.active { color: var(--blue); opacity: 1; }
+nav a.active { color: var(--blue); }
 
-/* --- 3. GRID & LAYOUT --- */
-.grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    margin: 60px 0;
-    align-items: start;
-}
-
-.card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 35px;
-    border-radius: 8px;
-}
-
-/* --- 4. FOOTER (Tight & Slim) --- */
+/* --- FOOTER: KILLS THE GIANT LOOK --- */
 footer {
-    padding: 30px 0;
+    padding: 20px 0; /* Reduced from 60px to 20px */
     border-top: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.4);
-}
-
-footer .container {
+    background: rgba(0, 0, 0, 0.3);
     text-align: center;
+    clear: both;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 15px;
+footer p {
+    margin-bottom: 10px;
 }
 
-.footer-nav a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 0.75rem;
-    opacity: 0.5;
-    font-weight: 600;
+/* --- CONTACT FORM OVERLAP FIX --- */
+form input, form textarea {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: white;
 }
