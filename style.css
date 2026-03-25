@@ -1,3 +1,4 @@
+/* --- THEME & RESET --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
@@ -5,7 +6,6 @@
     --border: rgba(0, 210, 255, 0.2);
 }
 
-/* --- GLOBAL STYLES (Applies to ALL pages) --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -19,12 +19,21 @@ body {
 
 main { flex: 1; }
 
+/* Global container for standard pages */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
+/* FIX FOR FEATURED JOBS PAGE: Allows the job board to be wide */
+.jobs-container {
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER --- */
 header {
     padding: 20px 40px;
     border-bottom: 1px solid var(--border);
@@ -46,11 +55,30 @@ nav a {
     opacity: 0.7;
 }
 
+nav a.active { color: var(--blue); opacity: 1; }
+
+/* --- HOME PAGE SPECIFIC --- */
+.home-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px; /* Fixed card width, flexible text */
+    gap: 60px;
+    align-items: start;
+    text-align: left;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 8px;
+}
+
+/* --- BUTTONS --- */
 .btn {
     display: inline-block;
     background-color: var(--blue);
     color: var(--navy);
-    padding: 12px 24px;
+    padding: 12px 26px;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 800;
@@ -58,33 +86,9 @@ nav a {
     text-transform: uppercase;
 }
 
-/* --- PAGE SPECIFIC GRIDS --- */
-
-/* This is for your 3-column pages (Partners, Proof of Performance) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: 40px 0;
-}
-
-/* This NEW rule is ONLY for the Home Page Intelligence section */
-.home-split-grid {
-    display: grid; 
-    grid-template-columns: 1fr 350px; /* Fixed width for card, flexible for text */
-    gap: 60px; 
-    align-items: start;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 8px;
-}
-
+/* --- FOOTER --- */
 footer {
-    padding: 30px 0;
+    padding: 40px 0;
     border-top: 1px solid var(--border);
     text-align: center;
 }
