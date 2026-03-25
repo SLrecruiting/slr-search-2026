@@ -1,9 +1,10 @@
-/* --- GLOBAL THEME --- */
+/* --- 1. THEME & RESET (The Foundation) --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
     --text: #e6f1ff;
     --border: rgba(0, 210, 255, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.03);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,7 +12,8 @@
 body {
     background-color: var(--navy);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -22,62 +24,113 @@ main { flex: 1; }
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
-/* --- HEADER: FORCING LOGO LEFT WITHOUT CHANGING HTML --- */
+/* --- 2. HEADER: LOGO LEFT / NAV RIGHT (Fixed for your HTML) --- */
 header {
-    padding: 20px 40px; /* Gives it some breathing room from the edges */
+    padding: 25px 40px;
     border-bottom: 1px solid var(--border);
-    overflow: hidden; /* Clears the floats below */
-    display: block; /* Ensures it acts as a full-width bar */
+    overflow: hidden; /* Important: keeps the header from collapsing with floats */
+    width: 100%;
 }
 
 .logo-wrap {
-    float: left; /* Forces logo to the left side */
+    float: left; /* Forces logo to left edge */
 }
 
 .logo-wrap img {
-    height: 45px;
+    height: 55px; /* Restored size */
     width: auto;
 }
 
 nav {
-    float: right; /* Forces navigation to the right side */
-    margin-top: 10px; /* Adjusts vertical alignment with logo */
+    float: right; /* Forces nav to right edge */
+    margin-top: 15px; /* Centers it vertically with the logo */
 }
 
 nav a {
     color: var(--text);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-left: 25px; /* Creates spacing between links */
+    margin-left: 30px;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
-nav a.active { color: var(--blue); }
+nav a.active, nav a:hover {
+    color: var(--blue);
+    opacity: 1;
+}
 
-/* --- FOOTER: KILLS THE GIANT LOOK --- */
-footer {
-    padding: 20px 0; /* Reduced from 60px to 20px */
-    border-top: 1px solid var(--border);
-    background: rgba(0, 0, 0, 0.3);
+/* --- 3. BUTTONS (Restored) --- */
+.btn {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--navy);
+    padding: 14px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 1px solid var(--blue);
+    transition: 0.3s;
+    cursor: pointer;
     text-align: center;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--blue);
+}
+
+/* --- 4. GRIDS & CARDS (Restored) --- */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin: 60px 0;
+    align-items: center;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* --- 5. FOOTER (Tight & Professional) --- */
+footer {
+    padding: 25px 0; /* Strict padding to kill the "giant" look */
+    border-top: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 100%;
     clear: both;
 }
 
-footer p {
-    margin-bottom: 10px;
+footer p { margin-bottom: 10px; opacity: 0.6; font-size: 0.85rem; }
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0 15px;
+    opacity: 0.6;
 }
 
-/* --- CONTACT FORM OVERLAP FIX --- */
-form input, form textarea {
+/* --- 6. FORM FIELDS (Contact Page Fix) --- */
+input, textarea {
     width: 100%;
-    display: block;
-    padding: 12px;
+    padding: 15px;
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border);
     color: white;
+    border-radius: 4px;
 }
