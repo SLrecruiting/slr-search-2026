@@ -2,37 +2,43 @@
 :root { --navy: #041530; --blue: #00d2ff; --border: rgba(255, 255, 255, 0.1); }
 body { background-color: var(--navy); color: #e6f1ff; font-family: 'Inter', sans-serif; line-height: 1.5; }
 
-/* HEADER FIX: 0 padding on top/bottom, size is controlled by logo height */
+/* HEADER: Split layout */
 header { 
     background-color: var(--navy); 
-    padding: 5px 0; 
+    padding: 10px 5%; 
     border-bottom: 1px solid var(--border); 
-    text-align: center; 
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, nav right */
+    align-items: center; /* Vertically centers the nav with the logo */
 }
 
 .logo-wrap img { 
-    height: 110px; /* Adjust this number to make the logo bigger/smaller without affecting header bulk */
+    height: 80px; /* Adjust this to your liking; it won't bloat the nav height anymore */
     width: auto; 
     display: block;
-    margin: 0 auto;
 }
 
 nav { 
     display: flex; 
-    justify-content: center; 
-    gap: 25px; 
-    padding-top: 5px;
-    padding-bottom: 10px;
+    gap: 30px; 
 }
 
-nav a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-nav a.active { color: var(--blue); font-weight: bold; }
+nav a { 
+    color: #fff; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-size: 0.85rem; 
+    letter-spacing: 1px; 
+    transition: 0.3s;
+}
 
-/* LAYOUT & TILES */
-.container { max-width: 1200px; width: 95%; margin: 0 auto; padding: 40px 0; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-.card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 25px; border-radius: 8px; height: 100%; }
+nav a:hover, nav a.active { color: var(--blue); }
 
-/* BUTTONS */
-.btn { background: var(--blue); color: var(--navy); padding: 12px 24px; font-weight: bold; border-radius: 4px; border: none; cursor: pointer; width: 100%; margin-top: 10px; }
-footer { text-align: center; padding: 20px 0; border-top: 1px solid var(--border); font-size: 0.8rem; opacity: 0.6; }
+/* CONTENT & GRID */
+.container { max-width: 1200px; width: 95%; margin: 0 auto; padding: 50px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 30px; border-radius: 8px; }
+
+/* BUTTONS & FOOTER */
+.btn { background: var(--blue); color: var(--navy); padding: 12px 24px; font-weight: bold; border-radius: 4px; border: none; cursor: pointer; width: 100%; margin-top: 15px; }
+footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border); font-size: 0.8rem; opacity: 0.5; }
