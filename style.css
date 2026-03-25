@@ -8,15 +8,23 @@
 body { margin: 0; background: var(--navy); color: #e6f1ff; font-family: 'Inter', sans-serif; line-height: 1.6; scroll-behavior: smooth; }
 
 /* HEADER */
-header { background: #161b33; display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%; /* Give the logo some breathing room */
+    background: #0a0b1e; /* Your exact Navy */
+}
 .logo-wrap { padding: 15px; }
 .logo-wrap img {
-    height: 60px; /* Increased size */
-    width: auto;  /* Keeps it from looking squished */
+    height: 80px;      /* Force it larger */
+    width: auto;       /* Maintain proportions */
+    max-width: 300px;  /* Prevent it from taking over the whole screen */
     display: block;
+    object-fit: contain;
 }
-nav { display: flex; width: 100%; border-top: 1px solid var(--border); }
-nav a { flex: 1; text-align: center; padding: 15px; color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-right: 1px solid var(--border); transition: 0.3s; }
+nav { display: flex; gap: 20px; }
+nav a { padding: 10px 15px; color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 nav a:hover, nav a.active { background: white; color: black; }
 
 /* HERO */
