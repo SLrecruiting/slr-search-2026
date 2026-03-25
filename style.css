@@ -1,88 +1,47 @@
-/* RESET & CORE STYLES */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root { 
-    --navy: #041530; 
-    --blue: #00d2ff; 
-    --border: rgba(255, 255, 255, 0.1); 
-}
-
-html { scroll-behavior: smooth; }
-
-body { 
-    background-color: var(--navy); 
-    color: #e6f1ff; 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6; 
-}
-
-/* HEADER: Logo Left / Nav Right */
-header { 
-    background-color: var(--navy); 
-    padding: 15px 5%; 
-    border-bottom: 1px solid var(--border); 
+/* 1. Global Layout Fix: Ensures footer stays at the bottom without being 'giant' */
+body {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-.logo-wrap img { 
-    height: 60px; /* Adjust this to size your logo without bloating the header */
-    width: auto; 
-    display: block; 
+main {
+    flex: 1;
 }
 
-nav { display: flex; gap: 25px; }
-nav a { 
-    color: #fff; 
-    text-decoration: none; 
-    text-transform: uppercase; 
-    font-size: 0.85rem; 
-    letter-spacing: 1px; 
-    font-weight: 600; 
-}
-nav a:hover, nav a.active { color: var(--blue); }
-
-/* CONTAINERS & TYPOGRAPHY */
-.container { max-width: 1200px; width: 90%; margin: 0 auto; padding: 60px 0; }
-h1 { font-size: 3.5rem; margin-bottom: 20px; text-align: center; }
-h2 { font-size: 2.2rem; margin-bottom: 40px; text-align: center; }
-h4 { color: var(--blue); margin-bottom: 10px; font-size: 1.1rem; }
-
-/* TILE GRID SYSTEM */
-.grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-    gap: 25px; 
+/* 2. The Footer Fix: Constraints the width and fixes the 'giant' feel */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.2); /* Dark but subtle */
+    width: 100%;
 }
 
-.card { 
-    background: rgba(255, 255, 255, 0.03); 
-    border: 1px solid var(--border); 
-    padding: 30px; 
-    border-radius: 8px; 
-    height: 100%; 
+footer .container {
+    max-width: 800px; /* This stops it from looking 'giant' on wide screens */
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* BUTTONS & FORMS */
-.btn { 
-    background: var(--blue); 
-    color: var(--navy); 
-    padding: 16px 32px; 
-    font-weight: bold; 
-    text-decoration: none; 
-    border-radius: 4px; 
-    display: inline-block; 
-    border: none; 
-    cursor: pointer;
-    font-size: 1rem;
+/* 3. Improved Footer Nav Style */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-weight: 600;
+    letter-spacing: 1px;
     transition: opacity 0.3s;
 }
-.btn:hover { opacity: 0.9; }
 
-.form-section { background: rgba(0, 0, 0, 0.2); padding: 80px 0; border-top: 1px solid var(--border); }
-input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #fff; color: #000; border: none; border-radius: 4px; font-size: 1rem; }
-
-footer { text-align: center; padding: 40px 0; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid var(--border); }
+.footer-nav a:hover {
+    opacity: 1;
+}
