@@ -28,29 +28,28 @@ body {
 
 /* HEADER & LOGO AREA */
 header {
-    background: var(--navy);
-    padding: 40px 0 0 0; /* Space above the logo */
-    text-align: center;
+    background: #0a0b1e;
+    padding: 0; /* Remove top padding */
+    overflow: hidden;
 }
 
 .logo-wrap img {
     width: 100%;
-    max-width: 550px; /* Makes the logo large and readable */
-    height: auto;
+    max-width: 600px; /* Limits the width */
+    height: 180px;    /* Forces a sleek header height */
+    object-fit: contain; /* Keeps the logo from stretching */
+    margin-top: -20px;   /* Pulls it up to hide extra space */
+    margin-bottom: -20px; /* Pulls it up to hide extra space */
     display: inline-block;
 }
 
-/* NAVIGATION BAR */
 nav {
     display: flex;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.05);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
 }
-
 nav a {
     padding: 20px 30px;
     color: white;
