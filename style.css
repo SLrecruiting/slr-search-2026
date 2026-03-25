@@ -1,67 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Streamline Recruiting | High-Performance Engineering Search</title>
-</head>
-<body>
-    <header>
-        <div class="logo-wrap">
-            <img src="SLR Header.png" alt="Streamline Recruiting">
-        </div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="for-employers.html">Hire Talent</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+/* GLOBAL SETTINGS */
+* { box-sizing: border-box; }
 
-    <section class="hero-box" style="background-image: linear-gradient(rgba(10,11,30,0.8), rgba(10,11,30,0.8)), url('hero.jpg'); background-size: cover; background-position: center; min-height: 80vh;">
-        <div class="glass-box">
-            <h1>The Future Belongs to Companies Who <span class="accent">Hire Ahead of It.</span></h1>
-            <p style="font-size: 1.4rem; opacity: 0.9;">We help AI, robotics, emerging technology, and advanced manufacturing companies find the engineers and leaders they actually need.</p>
-            <div style="margin-top: 40px;">
-                <a href="for-employers.html" class="btn">Hire Talent</a>
-                <a href="jobs.html" class="btn" style="background:none; border:1px solid var(--blue); color:var(--blue); margin-left:15px;">View Jobs</a>
-            </div>
-        </div>
-    </section>
+:root {
+    --navy: #041530; 
+    --blue: #00d2ff;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+}
 
-    <section class="container">
-        <div style="text-align: center;">
-            <h2>Precision Over <span class="accent">Volume.</span></h2>
-            <p style="font-size: 1.25rem;">Not a stack of resumes. Not keyword matches. We provide candidates who are vetted, interviewed, and genuinely aligned with your mission and team.</p>
-            <p style="font-size: 1.25rem; font-weight: bold; color: var(--blue);">We recruit for where your industry is going, not where it's been.</p>
-        </div>
-    </section>
+body {
+    margin: 0;
+    background-color: var(--navy);
+    color: #e6f1ff;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
 
-    <section class="container" style="background: var(--glass);">
-        <div class="grid">
-            <div>
-                <h2>Specialized <span class="accent">Intelligence.</span></h2>
-                <p>We understand the work, the environment, and what separates a good hire from a transformative one.</p>
-                <ul style="list-style: none; padding: 0; line-height: 2.2;">
-                    <li><span class="accent">→</span> AI & Machine Learning Engineers</li>
-                    <li><span class="accent">→</span> Robotics & Computer Vision Specialists</li>
-                    <li><span class="accent">→</span> Controls & Automation Engineering</li>
-                    <li><span class="accent">→</span> 5-Axis Aerospace & Defense Machining</li>
-                </ul>
-                <a href="faq.html" class="accent" style="font-weight: bold; text-decoration: none;">Explore our full technical FAQ →</a>
-            </div>
-            <div class="card">
-                <h3 class="accent">The Streamline Standard</h3>
-                <p>Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a 90-day guarantee.</p>
-                <a href="contact.html" class="btn" style="width: 100%; text-align: center; margin-top: 20px;">Start a Search</a>
-            </div>
-        </div>
-    </section>
+/* LAYOUT: This fixes the 'Thin Pillar' */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
 
-    <footer>
-        <p>© 2026 Streamline Recruiting | Technical Search Excellence</p>
-    </footer>
-</body>
-</html>
+header { text-align: center; padding: 40px 0; background: var(--navy); }
+.logo-wrap img { max-width: 400px; width: 100%; height: auto; }
+
+nav { display: flex; justify-content: center; gap: 20px; padding: 20px; background: rgba(0,0,0,0.2); }
+nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+nav a.active { color: var(--blue); border-bottom: 1px solid var(--blue); }
+
+/* FORM FIXES: This solves the tiny white boxes */
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    background: #ffffff; /* Solid white for readability */
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: #333; /* Dark text on white background */
+    font-size: 1rem;
+}
+
+label { display: block; margin-bottom: 8px; color: var(--blue); font-weight: bold; }
+
+.btn {
+    background: var(--blue);
+    color: var(--navy);
+    padding: 15px 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* GRID FIXES */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { background: var(--glass); padding: 30px; border-radius: 8px; border: 1px solid var(--border); }
