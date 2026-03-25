@@ -28,19 +28,28 @@ body {
 
 /* HEADER & LOGO AREA */
 header {
-    background: #0a0b1e;
-    padding: 0; /* Remove top padding */
-    overflow: hidden;
+    background-color: #0a0b1e !important; /* Forces Navy */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-wrap {
+    background-color: #0a0b1e;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .logo-wrap img {
     width: 100%;
-    max-width: 600px; /* Limits the width */
-    height: 180px;    /* Forces a sleek header height */
-    object-fit: contain; /* Keeps the logo from stretching */
-    margin-top: -20px;   /* Pulls it up to hide extra space */
-    margin-bottom: -20px; /* Pulls it up to hide extra space */
-    display: inline-block;
+    max-width: 600px;
+    height: 180px;
+    object-fit: contain;
+    display: block;
 }
 
 nav {
