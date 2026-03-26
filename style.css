@@ -44,13 +44,14 @@ main {
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 40px; 
+    padding: 0 40px 0 0; /* Removed left padding (0) so logo touches the edge */
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px; 
-    background-color: var(--navy);
+    /* This matches the exact navy in your logo file */
+    background-color: #011638; 
 }
 
 .logo-wrap, .logo-wrap a { 
@@ -63,8 +64,8 @@ header {
     height: 100%; 
     width: auto; 
     display: block;
-    object-fit: cover; 
-    filter: brightness(1.1) contrast(1.1); 
+    object-fit: contain; /* Keeps the logo from stretching */
+    /* Removed the filter so we see the true colors of your logo */
 }
 
 nav { 
