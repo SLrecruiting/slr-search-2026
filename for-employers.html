@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>For Employers | Streamline Recruiting</title>
+    <style>
+        /* Ensuring form elements inside the card look professional */
+        .card form input, .card form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .card form textarea { resize: none; }
+    </style>
 </head>
 <body class="inner-page">
     <header>
@@ -35,12 +49,19 @@
                     <p style="opacity: 0.9;">Every candidate is fully vetted and interviewed before they reach you. We screen for technical depth, hands-on experience, and whether this role is actually the right move for them. Placements that stick are the only ones worth making.</p>
                     <p style="margin-top: 15px; font-weight: bold; color: var(--blue);">Contingency based. You only pay when we deliver.</p>
                 </div>
-                <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                    <h3 style="color:var(--blue); margin-bottom:15px;">Ready to Hire?</h3>
-                    <p style="margin-bottom: 20px;">Let's talk about your strategic talent needs.</p>
-                    <a href="contact.html" class="btn">Hire Talent Now</a>
+
+                <div class="card" style="text-align: left;">
+                    <h3 style="color:var(--blue); margin-bottom:15px; text-align: center;">Ready to Hire?</h3>
+                    <p style="margin-bottom: 20px; text-align: center; font-size: 0.9rem;">Briefly tell us what you're looking for.</p>
+                    
+                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Work Email" required>
+                        <textarea name="message" rows="3" placeholder="Role details (e.g. Senior AI Engineer)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Request</button>
+                    </form>
                 </div>
-            </div>
+                </div>
 
             <div style="margin-bottom: 80px;">
                 <h2 style="margin-bottom: 40px; border-left: 4px solid var(--blue); padding-left: 15px;">Proof of Performance</h2>
@@ -121,7 +142,7 @@
         </section>
     </main>
 
-  <footer>
+    <footer>
         <div class="container">
             <p>© 2026 Streamline Recruiting</p>
         </div>
