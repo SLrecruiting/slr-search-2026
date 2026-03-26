@@ -44,12 +44,10 @@ header {
 }
 
 .logo-wrap img { 
-    /* Now that it's cropped tight, 60px will look bold and readable */
-    height: 60px; 
+    height: 48px; /* With a tight crop, 48px is actually quite large and clean */
     width: auto; 
     display: block;
     object-fit: contain;
-    /* Keeps the white/blue text sharp against the navy background */
     filter: brightness(1.2) contrast(1.1); 
 }
 
