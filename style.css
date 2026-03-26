@@ -1,4 +1,3 @@
-/* --- 1. THEME & GLOBAL RESET --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
@@ -11,33 +10,26 @@
 body {
     background-color: var(--navy);
     color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Inter', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.6;
 }
 
 main { flex: 1; }
 
-/* Standard container for most content */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-/* --- 2. HEADER FIX (Logo Left / Nav Right) --- */
+/* HEADER: Logo Left, Nav Right. Balanced height. */
 header {
-    padding: 20px 40px;
+    padding: 10px 40px; /* Slimmer padding to keep header height low */
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 80px; /* Limits the total height of the bar */
 }
 
 .logo-wrap img { 
-    height: 48px; 
+    height: 60px; /* Big enough to read, small enough to fit a slim header */
     width: auto; 
     display: block;
 }
@@ -50,81 +42,53 @@ nav a {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    opacity: 0.7;
-    transition: 0.3s;
 }
 
-nav a.active, nav a:hover { color: var(--blue); opacity: 1; }
-
-/* --- 3. BUTTONS --- */
-.btn {
-    display: inline-block;
-    background-color: var(--blue);
-    color: var(--navy);
-    padding: 12px 26px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    border: 1px solid var(--blue);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.btn:hover { background: transparent; color: var(--blue); }
-
-/* --- 4. JOBS PAGE FIX (Full Width) --- */
-.jobs-container {
-    max-width: 1300px; 
-    margin: 40px auto;
+/* JOB BOARD: This forces the script to use the full available width */
+.jobs-full-width {
+    width: 100%;
+    max-width: 1400px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
-/* --- 5. HOME PAGE SPECIFIC GRID --- */
+/* HOME PAGE PROPORTIONS */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 .home-split-grid {
     display: grid;
-    grid-template-columns: 1fr 380px; /* Keeps the card a solid size, lets text breathe */
-    gap: 60px;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 50px;
     align-items: start;
-    text-align: left;
 }
 
 .card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border);
-    padding: 35px;
+    padding: 30px;
     border-radius: 8px;
 }
 
-/* Fallback for other 3-column grids */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-/* --- 6. FOOTER --- */
-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-    background: rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-footer p {
-    opacity: 0.5;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-footer a {
-    color: #fff;
+.btn {
+    display: inline-block;
+    background-color: var(--blue);
+    color: var(--navy);
+    padding: 12px 24px;
+    border-radius: 4px;
     text-decoration: none;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    font-weight: 600;
+    font-weight: 800;
+    font-size: 0.85rem;
     text-transform: uppercase;
 }
 
-footer a:hover { opacity: 1; color: var(--blue); }
+footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p { opacity: 0.5; font-size: 0.85rem; }
