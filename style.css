@@ -48,8 +48,8 @@ header {
     width: auto; 
     display: block;
     object-fit: contain;
-    /* ZOOM EFFECT: 1.4 makes it 40% bigger to crop out the empty space */
-    transform: scale(1.4); 
+    /* ZOOM EFFECT: 1.6 makes it 40% bigger to crop out the empty space Too big? Change 1.4 to 1.2. Too small? Change 1.4 to 1.6.*/
+    transform: scale(1.6); 
     transform-origin: left center; /* Keeps it pinned to the left while zooming */
     /* Brightens the "Recruiting" text */
     filter: brightness(1.2) contrast(1.1);
