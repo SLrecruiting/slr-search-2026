@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Featured Jobs | Streamline Recruiting</title>
     <style>
-        /* This helps transition your dark theme into the white iframe */
+        /* Widened the container and kept the professional card look */
         .job-board-container {
             background: #fff; 
             border-radius: 12px; 
             overflow: hidden; 
             margin-top: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 1200px; /* Increased width for a less narrow feel */
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -30,10 +34,10 @@
         </nav>
     </header>
 
-    <main class="container" style="padding-top: 80px; padding-bottom: 80px;">
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px; max-width: 1200px;">
         <div style="text-align: center; margin-bottom: 40px;">
-            <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Featured <span style="color:var(--blue)">Jobs.</span></h1>
-            <p style="opacity: 0.8; font-size: 1.1rem;">Explore current openings with our partners in AI, Robotics, and Defense.</p>
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Featured <span style="color:var(--blue)">Jobs.</span></h1>
+            <p style="opacity: 0.8; font-size: 1.2rem;">Explore current openings with our partners.</p>
         </div>
 
         <div class="job-board-container">
