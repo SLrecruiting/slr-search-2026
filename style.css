@@ -1,7 +1,7 @@
 
 /* --- 1. CORE THEME --- */
 :root {
-    --navy: #020b1a;
+    --navy: #001a33; /* Matches your logo background perfectly */
     --blue: #00d2ff;
     --text: #e6f1ff;
     --border: rgba(0, 210, 255, 0.2);
@@ -44,14 +44,13 @@ main {
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 40px 0 0; /* Removed left padding (0) so logo touches the edge */
+    padding: 0 40px 0 0; /* 0 on left lets logo touch the edge */
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px; 
-    /* This matches the exact navy in your logo file */
-    background-color: #011638; 
+    background-color: var(--navy); /* Now perfectly synced with the logo */
 }
 
 .logo-wrap, .logo-wrap a { 
@@ -64,13 +63,14 @@ header {
     height: 100%; 
     width: auto; 
     display: block;
-    object-fit: contain; /* Keeps the logo from stretching */
-    /* Removed the filter so we see the true colors of your logo */
+    object-fit: contain;
+    /* We'll remove the brightness filter so the logo's native blue shows through */
 }
 
 nav { 
     display: flex; 
-    gap: 30px; 
+    gap: 30px;
+    padding-right: 20px; /* Gives the nav links a little breathing room from the edge */
 }
 
 nav a {
