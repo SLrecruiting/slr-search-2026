@@ -1,9 +1,4 @@
-No problem at all! I have swapped the file extensions to .jpg in the code below.
 
-I also made sure the space in hero 2.jpg is handled correctly. In CSS, when a filename has a space, we wrap it in single quotes like this: 'hero 2.jpg'.
-
-The Final style.css with Hero Backgrounds
-CSS
 /* --- 1. CORE THEME --- */
 :root {
     --navy: #020b1a;
