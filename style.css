@@ -28,27 +28,31 @@ main {
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 40px; /* Top/bottom padding removed to let logo fill space */
+    padding: 0 40px; 
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Fixed height for a slim, professional profile */
+    height: 80px; 
+    overflow: hidden; /* This keeps the "zoomed" logo from spilling out */
 }
 
 .logo-wrap, .logo-wrap a { 
     display: flex;
     align-items: center;
-    height: 100%; /* Allows the link area to span the full header height */
+    height: 100%; 
 }
 
 .logo-wrap img { 
-    height: 100%; /* Logo fills the header top-to-bottom */
+    height: 100%; 
     width: auto; 
     display: block;
     object-fit: contain;
-    /* Brightens the "Recruiting" text for better visibility */
-    filter: brightness(1.1) contrast(1.1);
+    /* ZOOM EFFECT: 1.4 makes it 40% bigger to crop out the empty space */
+    transform: scale(1.4); 
+    transform-origin: left center; /* Keeps it pinned to the left while zooming */
+    /* Brightens the "Recruiting" text */
+    filter: brightness(1.2) contrast(1.1);
 }
 
 nav { 
@@ -135,11 +139,12 @@ footer p {
         flex-direction: column;
         padding: 20px;
         gap: 20px;
-        height: auto; /* Allows header to grow on mobile when stacked */
+        height: auto; 
     }
     
     .logo-wrap img {
-        height: 60px; /* Standard size for mobile view */
+        height: 60px;
+        transform: scale(1.2); /* Slightly less zoom for mobile so it fits */
     }
 
     nav {
