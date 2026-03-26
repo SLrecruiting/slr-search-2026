@@ -6,17 +6,23 @@
     <link rel="stylesheet" href="style.css">
     <title>Featured Jobs | Streamline Recruiting</title>
     <style>
-        /* Widened the container and kept the professional card look */
+        /* Mobile-friendly, adaptive container */
         .job-board-container {
             background: #fff; 
             border-radius: 12px; 
             overflow: hidden; 
             margin-top: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            width: 100%;
-            max-width: 1200px; /* Increased width for a less narrow feel */
+            width: 95%; /* Use 95% of the screen width */
+            max-width: 1400px; /* Limits how wide it gets on massive monitors */
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Adjusts padding for mobile phones */
+        @media (max-width: 768px) {
+            .job-header h1 { font-size: 2.2rem !important; }
+            .job-board-container { width: 100%; border-radius: 0; }
         }
     </style>
 </head>
@@ -34,8 +40,8 @@
         </nav>
     </header>
 
-    <main class="container" style="padding-top: 80px; padding-bottom: 80px; max-width: 1200px;">
-        <div style="text-align: center; margin-bottom: 40px;">
+    <main style="padding: 60px 0;">
+        <div class="job-header" style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
             <h1 style="font-size: 3rem; margin-bottom: 15px;">Featured <span style="color:var(--blue)">Jobs.</span></h1>
             <p style="opacity: 0.8; font-size: 1.2rem;">Explore current openings with our partners.</p>
         </div>
@@ -48,7 +54,7 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
-        <script>iFrameResize({ log: true }, '#recruiterflow-jobs-iframe')</script>
+        <script>iFrameResize({ log: true, checkOrigin: false }, '#recruiterflow-jobs-iframe')</script>
     </main>
 
     <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border);">
