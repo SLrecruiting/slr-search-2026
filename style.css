@@ -1,3 +1,10 @@
+No problem at all! I have swapped the file extensions to .jpg in the code below.
+
+I also made sure the space in hero 2.jpg is handled correctly. In CSS, when a filename has a space, we wrap it in single quotes like this: 'hero 2.jpg'.
+
+The Final style.css with Hero Backgrounds
+CSS
+/* --- 1. CORE THEME --- */
 :root {
     --navy: #020b1a;
     --blue: #00d2ff;
@@ -19,6 +26,21 @@ body {
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.6;
+    /* This ensures the background stays fixed and covers the whole screen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Home Page Background */
+body.home-page {
+    background-image: linear-gradient(rgba(2, 11, 26, 0.75), rgba(2, 11, 26, 0.75)), url('hero.jpg');
+}
+
+/* Other Pages Background */
+body.inner-page {
+    background-image: linear-gradient(rgba(2, 11, 26, 0.85), rgba(2, 11, 26, 0.85)), url('hero 2.jpg');
 }
 
 main { 
@@ -27,26 +49,26 @@ main {
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 40px; /* No top/bottom padding so image can touch borders */
+    padding: 0 40px; 
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Fixed height for the header bar */
+    height: 80px; 
     background-color: var(--navy);
 }
 
 .logo-wrap, .logo-wrap a { 
     display: flex;
     align-items: center;
-    height: 100%; /* Makes the container the full height of the header */
+    height: 100%;
 }
 
 .logo-wrap img { 
-    height: 100%; /* FORCES the image to fill the header from top to bottom */
+    height: 100%; 
     width: auto; 
     display: block;
-    object-fit: cover; /* This ensures the navy in your logo bleeds to the edges */
+    object-fit: cover; 
     filter: brightness(1.1) contrast(1.1); 
 }
 
@@ -93,11 +115,12 @@ nav a {
 
 /* --- 4. COMPONENTS --- */
 .card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(2, 11, 26, 0.6); /* Slightly darker for better contrast over photos */
     border: 1px solid var(--border);
     padding: 30px;
     border-radius: 8px;
     height: 100%;
+    backdrop-filter: blur(8px); /* The "Glass" effect */
 }
 
 .btn {
@@ -135,7 +158,7 @@ footer p {
     }
     
     .logo-wrap img {
-        height: 60px; /* Sizable but controlled on mobile */
+        height: 60px; 
     }
 
     nav {
