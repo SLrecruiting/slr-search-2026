@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Featured Jobs | Streamline Recruiting</title>
+    <style>
+        /* This helps transition your dark theme into the white iframe */
+        .job-board-container {
+            background: #fff; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="logo-wrap"><img src="SLR Header.png" alt="Streamline Recruiting"></div>
+        <div class="logo-wrap">
+            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="for-employers.html">Hire Talent</a>
@@ -18,16 +30,24 @@
         </nav>
     </header>
 
-    <main class="jobs-full-width">
-        <iframe scrolling="yes" id="recruiterflow-jobs-iframe" 
-                src="https://recruiterflow.com/db_65824b288d1334229391f2b76469bc79/jobs-page-widget" 
-                style="width:100%; border:0; height:800px; overflow-y:scroll !important; display:block;">
-        </iframe>
+    <main class="container" style="padding-top: 80px; padding-bottom: 80px;">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 15px;">Featured <span style="color:var(--blue)">Jobs.</span></h1>
+            <p style="opacity: 0.8; font-size: 1.1rem;">Explore current openings with our partners in AI, Robotics, and Defense.</p>
+        </div>
+
+        <div class="job-board-container">
+            <iframe scrolling="yes" id="recruiterflow-jobs-iframe" 
+                    src="https://recruiterflow.com/db_65824b288d1334229391f2b76469bc79/jobs-page-widget" 
+                    style="width:100%; border:0; min-height:800px; display:block;">
+            </iframe>
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
         <script>iFrameResize({ log: true }, '#recruiterflow-jobs-iframe')</script>
     </main>
 
-    <footer>
+    <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border);">
         <p>© 2026 Streamline Recruiting</p>
     </footer>
 </body>
