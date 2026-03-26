@@ -18,18 +18,17 @@ body {
 
 main { flex: 1; }
 
-/* HEADER: Logo Left, Nav Right. Balanced height. */
 header {
-    padding: 10px 40px; /* Slimmer padding to keep header height low */
+    padding: 10px 40px;
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px; /* Limits the total height of the bar */
+    min-height: 80px;
 }
 
 .logo-wrap img { 
-    height: 60px; /* Big enough to read, small enough to fit a slim header */
+    height: 60px;
     width: auto; 
     display: block;
 }
@@ -44,7 +43,6 @@ nav a {
     text-transform: uppercase;
 }
 
-/* JOB BOARD: This forces the script to use the full available width */
 .jobs-full-width {
     width: 100%;
     max-width: 1400px;
@@ -52,7 +50,6 @@ nav a {
     padding: 0 20px;
 }
 
-/* HOME PAGE PROPORTIONS */
 .container {
     max-width: 1100px;
     margin: 0 auto;
