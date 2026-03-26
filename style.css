@@ -18,6 +18,7 @@ body {
 
 main { flex: 1; }
 
+/* HEADER: Logo Left, Nav Right */
 header {
     padding: 10px 40px;
     border-bottom: 1px solid var(--border);
@@ -26,6 +27,8 @@ header {
     align-items: center;
     min-height: 80px;
 }
+
+.logo-wrap a { display: block; text-decoration: none; }
 
 .logo-wrap img { 
     height: 60px;
@@ -43,6 +46,7 @@ nav a {
     text-transform: uppercase;
 }
 
+/* JOB BOARD */
 .jobs-full-width {
     width: 100%;
     max-width: 1400px;
@@ -50,12 +54,14 @@ nav a {
     padding: 0 20px;
 }
 
+/* CONTAINERS */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
+/* HOME PAGE GRID */
 .home-split-grid {
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
@@ -80,6 +86,7 @@ nav a {
     font-weight: 800;
     font-size: 0.85rem;
     text-transform: uppercase;
+    text-align: center;
 }
 
 footer {
@@ -89,3 +96,32 @@ footer {
 }
 
 footer p { opacity: 0.5; font-size: 0.85rem; }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .home-split-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+}
