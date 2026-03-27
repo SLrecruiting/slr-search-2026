@@ -7,605 +7,270 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
     <style>
-    /* UPDATED FOR STREAMLINE BRAND COLORS */
     :root {
-        --dark-bg: #001a33;   /* Your exact Navy */
-        --card-bg: #00264d;   /* Slightly lighter navy for cards */
-        --text-main: #e6f1ff; /* Your exact Text color */
-        --accent-blue: #00d2ff; /* Your "Super Pretty" Blue */
-        --jump-bg: rgba(0, 210, 255, 0.1);
+        --dark-bg: #001a33;   /* Streamline Navy */
+        --card-bg: #00264d;   /* Lighter navy for cards */
+        --text-main: #e6f1ff; /* Main Text */
+        --accent-blue: #00d2ff; /* Streamline Blue */
+        --border: #233554;
     }
 
     body.inner-page {
         background-color: var(--dark-bg);
         color: var(--text-main);
+        font-family: 'Inter', -apple-system, sans-serif;
+        line-height: 1.6;
+        margin: 0;
     }
 
-    /* Fix the Jump Menu Links */
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+    /* Navigation Jump Menu */
+    .jump-menu {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+        position: sticky;
+        top: 20px;
+        z-index: 100;
+    }
+
     .jump-link { 
-        background: transparent; 
+        background: rgba(0, 26, 51, 0.9);
         color: var(--accent-blue); 
-        padding: 8px 16px; 
+        padding: 10px 20px; 
         text-decoration: none; 
         border-radius: 5px; 
-        font-size: 0.9rem; 
         font-weight: bold; 
         transition: all 0.3s ease;
         border: 1px solid var(--accent-blue);
+        backdrop-filter: blur(5px);
     }
 
     .jump-link:hover { 
-        background: var(--accent-blue); 
+        background: var(--accent-blue);
         color: var(--dark-bg);
         transform: translateY(-2px); 
     }
 
-    /* Fix Headings and Accents */
-    .card h4 { color: white; }
-    .card h5, .guide-label, .streamline-data { 
-        color: var(--accent-blue) !important; 
+    /* Content Cards */
+    .card { 
+        background: var(--card-bg); 
+        padding: 40px; 
+        border-radius: 12px; 
+        margin: 30px 0; 
+        border-left: 6px solid var(--accent-blue); 
     }
-    
+
+    h2 { color: var(--accent-blue); border-bottom: 2px solid var(--border); padding-bottom: 15px; font-size: 2.2rem; margin-top: 60px; }
+    h3 { color: white; margin-top: 40px; font-size: 1.8rem; }
+    h4 { color: white; margin-top: 0; font-size: 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 20px; }
+    h5 { color: var(--accent-blue); margin-top: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+
     .guide-label {
+        display: inline-block;
         background: rgba(0, 210, 255, 0.1);
         border: 1px solid var(--accent-blue);
+        color: var(--accent-blue);
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
     }
 
     .streamline-data {
         border-left: 4px solid var(--accent-blue);
         background: rgba(0, 210, 255, 0.05);
+        padding: 20px;
+        margin: 20px 0;
+        font-style: italic;
     }
 
-    /* Fix the Bottom Action Buttons */
-    .btn-primary-sl {
-        background: var(--accent-blue) !important;
-        color: var(--dark-bg) !important;
-        border: 2px solid var(--accent-blue) !important;
-    }
+    .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0,0,0,0.2); }
+    .data-table th, .data-table td { padding: 18px; text-align: left; border-bottom: 1px solid var(--border); }
+    .data-table th { color: var(--accent-blue); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
 
-    .btn-secondary-sl {
-        background: transparent !important;
-        color: var(--accent-blue) !important;
-        border: 2px solid var(--accent-blue) !important;
-    }
+    .red-flag { color: #ff4d4d; font-weight: bold; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 10px; }
 </style>
 </head>
 <body class="inner-page">
-    <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="for-employers.html">Hire Talent</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html" class="active">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <header style="text-align: center; padding: 40px 0;">
+        <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting" style="max-width: 300px;"></a>
     </header>
 
     <main class="container">
-        <h1 style="text-align: center; margin-top: 50px; margin-bottom: 10px;">Expert Insights & <span style="color:var(--accent-mint)">FAQs</span></h1>
-        <p style="text-align: center; opacity: 0.7; margin-bottom: 30px;">The Comprehensive 2026 Technical Hiring Guide</p>
+        <h1 style="text-align: center; margin-top: 20px;">Expert Insights & <span style="color:var(--accent-blue)">FAQs</span></h1>
+        <p style="text-align: center; opacity: 0.8;">The Comprehensive 2026 Technical Hiring Guide [cite: 1, 2]</p>
         
         <div class="jump-menu">
             <a href="#ai-ml" class="jump-link">AI & Machine Learning</a>
             <a href="#robotics" class="jump-link">Robotics & Mfg</a>
             <a href="#employers" class="jump-link">Employer Guide</a>
             <a href="#candidates" class="jump-link">Candidate Advice</a>
-            <a href="#market" class="jump-link">2026 Market Data</a>
+            <a href="#why-streamline" class="jump-link">Why Streamline?</a>
         </div>
-<section id="ai-ml" class="faq-section">
-            <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for AI and Machine Learning Roles</h2>
-            <p style="margin-bottom: 30px; font-weight: 500;">For companies building AI-powered products and for ML professionals evaluating their next opportunity.</p>
 
+        <section id="ai-ml">
+            <h2>Hiring for AI and Machine Learning Roles</h2>
+            
             <div class="card">
-                <span class="guide-label">Understanding the Landscape</span>
-                <h4>Why is it so hard to hire AI and ML talent right now?</h4>
-                <p>Supply and demand are severely mismatched. The number of companies integrating AI into their products has grown exponentially since 2022, but the pipeline of trained ML engineers and AI product managers hasn't kept pace. Most skilled AI professionals are already employed, well-compensated, and not actively looking. They're passive candidates — which means you can't find them on a job board.</p>
-                <p>Compounding this is the fact that the role definitions themselves keep shifting. An ML engineer hired in 2022 may have a very different skill set than what a company needs in 2026. Specializations like LLM fine-tuning, retrieval-augmented generation (RAG), and AI safety are in high demand but relatively new as standalone disciplines.</p>
+                <span class="guide-label">Market Landscape</span>
+                <h4>Why is it so hard to hire AI talent in 2026?</h4>
+                <p>Supply and demand are severely mismatched[cite: 3]. Most skilled AI professionals are already employed and well-compensated; they are "passive candidates" who cannot be found on job boards[cite: 4, 5].</p>
+                <p>Furthermore, role definitions are shifting. An ML engineer hired in 2022 has a different skill set than what is needed in 2026, where specializations like LLM fine-tuning and RAG (Retrieval-Augmented Generation) are now standalone disciplines[cite: 7].</p>
                 <div class="streamline-data">
-                    Streamline data point: In 2025, fewer than 18% of the AI/ML candidates we placed were actively job searching at the time we first contacted them. The rest required relationship-building over weeks or months before they were ready to engage.
+                    Streamline Insight: In 2025, fewer than 18% of the AI/ML candidates we placed were actively job searching[cite: 8].
                 </div>
             </div>
 
             <div class="card">
-                <h4>What's the difference between an AI engineer and an ML engineer?</h4>
-                <p>The terms are often used interchangeably, but there's a meaningful distinction. An <strong>ML engineer</strong> typically focuses on building, training, evaluating, and deploying machine learning models. They work with data pipelines, feature engineering, and optimization. They're comfortable in Python and understand statistics deeply.</p>
-                <p>An <strong>AI engineer</strong> is usually more application-focused. They take existing models — often foundation models or APIs — and build systems around them. Think prompt engineering, orchestration frameworks like LangChain, RAG pipelines, and integrating AI capabilities into production software. AI engineers often have stronger software engineering backgrounds than pure ML engineers.</p>
-                <p>For most companies that are not doing fundamental research, you need AI engineers far more than ML engineers. The distinction matters enormously when writing job descriptions.</p>
+                <h4>AI Engineer vs. ML Engineer vs. Researcher</h4>
+                <p><strong>ML Engineer:</strong> Focuses on building, training, and deploying models. Fluent in Python, PyTorch/TensorFlow, and statistics[cite: 12, 14].</p>
+                <p><strong>AI Engineer:</strong> Application-focused. They use foundation models and APIs to build systems like RAG pipelines or LangChain orchestrations[cite: 15, 16].</p>
+                <p><strong>AI Researcher:</strong> Pushes technical boundaries, often holding a PhD, and measures success in publications rather than production uptime[cite: 20, 21].</p>
             </div>
 
             <div class="card">
-                <h4>What's the difference between an AI engineer and an AI researcher?</h4>
-                <p>Researchers push the boundaries of what's technically possible. They typically have PhDs and measure success in publications and breakthroughs. Engineers productize. They take what's possible and turn it into reliable, scalable systems that work in the real world. They measure success in uptime, latency, and user outcomes.</p>
+                <span class="guide-label">Hiring Guide: ML Engineer</span>
+                <h4>How to Evaluate an ML Engineer</h4>
+                <p>The most reliable signal is a technical screen built around actual work, not abstract puzzles[cite: 30]. Ask them to walk through a project from problem definition to deployment[cite: 31].</p>
+                <h5>Key Probe Questions:</h5>
+                <ul>
+                    <li>What was the baseline? What did your model improve over? [cite: 31, 32]</li>
+                    <li>How did you handle class imbalance or data quality issues? [cite: 32]</li>
+                    <li>What went wrong, and how did you debug it? [cite: 33]</li>
+                </ul>
+                <p><span class="red-flag">Red Flag:</span> A resume that lists every framework but shows no evidence of shipping to production[cite: 39].</p>
             </div>
 
             <div class="card">
-                <span class="guide-label">Role-Specific Guide</span>
-                <h4>How to Hire an ML Engineer</h4>
-                <h5>What skills define a strong ML engineer in 2026?</h5>
-                <p>A strong ML engineer in 2026 combines classical machine learning fundamentals with modern infrastructure skills. Look for deep Python proficiency, PyTorch/JAX experience, fluency in MLOps tools (MLflow, W&B), and data engineering fluency. The best ML engineers are rigorous thinkers who can translate business problems into modeling problems.</p>
-                
-                <h5>How do you evaluate an ML engineer's work?</h5>
-                <p>The most reliable signal is a technical screen built around their actual work, not abstract puzzles. Ask them to walk through a project from problem definition to production deployment. Probe for specifics: baseline comparison, handling class imbalance, and how they decided the model was "good enough" to ship.</p>
-
-                <h5>What does a strong ML engineer resume look like?</h5>
-                <p>Strong resumes lead with impact, not tools. "Reduced model inference latency by 40% while maintaining accuracy" tells you far more than "experienced with PyTorch." Look for evidence of end-to-end ownership and a progression of scope over time.</p>
+                <span class="guide-label">Hiring Guide: AI Product Manager</span>
+                <h4>The Tiny Talent Pool of AI PMs</h4>
+                <p>You need someone at the intersection of product, data science, and engineering[cite: 42]. They must understand model limitations and what "good enough" accuracy looks like[cite: 43].</p>
+                <h5>Interview Scenarios:</h5>
+                <ul>
+                    <li>"How would you prioritize between a 2% accuracy improvement vs. a 30% reduction in inference cost?" [cite: 47]</li>
+                    <li>"How do you explain model limitations to a sales team that wants to overpromise?" [cite: 49]</li>
+                </ul>
             </div>
 
-            <div class="card" style="margin-top: 30px;">
-                <span class="guide-label">Role-Specific Guide</span>
-                <h4>How to Hire an AI Product Manager</h4>
-                <p>Hiring an AI PM is tricky because you need someone who can operate at the intersection of product management, data science, and engineering. Look for <strong>Machine Learning literacy</strong> (they don't need to build models, but they must understand their limitations), data fluency, and systems thinking.</p>
-                <p>Interview them using real scenarios: "How would you prioritize between improving model accuracy by 2% and reducing inference cost by 30%?" or "How do you explain a model's limitations to a sales team that wants to overpromise?"</p>
-            </div>
-
-            <div class="card">
-                <h4>Hiring for LLM and Generative AI Roles</h4>
-                <p>Since 2023, new roles have emerged: <strong>Prompt Engineers</strong>, <strong>RAG Engineers</strong>, <strong>Fine-tuning Engineers</strong> (specialists in LoRA and instruction tuning), and <strong>AI Safety Engineers</strong>. These are niche, high-demand disciplines in 2026.</p>
-            </div>
-
-            <div id="salary-ai" style="margin-top: 50px;">
-                <h3 style="color: var(--blue); margin-bottom: 20px;">Compensation Benchmarks: AI and ML Roles (2026)</h3>
-                <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 15px;">Salary ranges reflect base compensation for US-based roles. Total compensation (equity/bonus) is typically 20–60% higher.</p>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Role</th>
-                            <th>Seniority</th>
-                            <th>2026 Base Salary Range (US)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>ML Engineer</td><td>Mid-level</td><td>$160,000 – $195,000</td></tr>
-                        <tr><td>ML Engineer</td><td>Senior</td><td>$195,000 – $240,000</td></tr>
-                        <tr><td>ML Engineer</td><td>Staff / Principal</td><td>$240,000 – $310,000</td></tr>
-                        <tr><td>AI Engineer</td><td>Senior</td><td>$190,000 – $235,000</td></tr>
-                        <tr><td>LLM / RAG Engineer</td><td>Senior</td><td>$200,000 – $260,000</td></tr>
-                        <tr><td>AI Product Manager</td><td>Senior / Director</td><td>$180,000 – $240,000</td></tr>
-                        <tr><td>VP / Head of AI</td><td>Executive</td><td>$280,000 – $400,000+</td></tr>
-                    </tbody>
-                </table>
-                <p style="font-size: 0.85rem; font-style: italic;">Note: Roles in SF, Seattle, and NYC typically command a 15–25% premium.</p>
-            </div>
-        </section>
-<section id="robotics" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for Robotics and Advanced Manufacturing</h2>
-            <p style="margin-bottom: 30px; font-weight: 500;">For manufacturers, robotics companies, and automation specialists navigating one of the tightest talent markets in engineering.</p>
-
-        <div id="salary-robotics" style="margin-top: 40px;">
-            <h3 style="color: var(--blue); margin-bottom: 20px;">2026 Compensation Benchmarks: Robotics</h3>
+            <h3>AI/ML Compensation Benchmarks (2026 Base)</h3>
             <table class="data-table">
                 <thead>
-                    <tr>
-                        <th>Role</th>
-                        <th>Seniority</th>
-                        <th>Base Salary Range (US)</th>
-                    </tr>
+                    <tr><th>Role</th><th>Seniority</th><th>Salary Range (US)</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Robotics Engineer</td><td>Senior</td><td>$155,000 – $195,000</td></tr>
-                    <tr><td>Robotics Software Engineer</td><td>Senior</td><td>$165,000 – $210,000</td></tr>
-                    <tr><td>Automation Engineer</td><td>Senior</td><td>$135,000 – $175,000</td></tr>
-                    <tr><td>Controls Engineer</td><td>Senior</td><td>$130,000 – $165,000</td></tr>
-                    <tr><td>Director of Automation</td><td>Leadership</td><td>$180,000 – $250,000</td></tr>
+                    <tr><td>ML Engineer</td><td>Senior (6-10 yrs)</td><td>$195,000 – $240,000 [cite: 63]</td></tr>
+                    <tr><td>AI Engineer</td><td>Senior</td><td>$190,000 – $235,000 </td></tr>
+                    <tr><td>LLM/RAG Engineer</td><td>Senior</td><td>$200,000 – $260,000 </td></tr>
+                    <tr><td>VP / Head of AI</td><td>Executive</td><td>$280,000 – $400,000+ </td></tr>
                 </tbody>
             </table>
-            <div class="streamline-data">
-                <strong style="color: white;">The 8x Speed Advantage:</strong> While the 2025 industry average for hybrid PLC/ROS roles has stretched to **7.8 months** to fill, Streamline Recruiting’s total cycle time averages just **32 days**.
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="employers" class="faq-section">
-        <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 60px;">A Guide for Employers</h2>
-        
-        <div class="card">
-            <span class="guide-label">Winning the Talent War</span>
-            <h4>How do we compete with big tech for AI and robotics talent?</h4>
-            <p>You likely can't match their salaries dollar-for-dollar. What you can offer is **Meaningful Impact** and **Technical Ownership**. At a growth-stage company, an engineer's work ships and matters immediately. If you can't articulate why a great engineer would want to work for you in under two minutes, start there before you post the job.</p>
-        </div>
-
-        <div class="card">
-            <h4>What makes a job description work in these markets?</h4>
-            <p>Most JDs are counterproductive. Lead with the <strong>problem</strong> they'll solve, be specific about the <strong>tech stack</strong>, and describe what the first 6 months actually looks like. Be honest about what’s hard—great engineers are attracted to hard problems.</p>
-        </div>
-
-        <div class="card" style="background-color: #00264d !important; border-left: 5px solid #00d2ff !important; padding: 30px; border-radius: 12px; margin: 30px 0;">
-            <h4 style="color: #00d2ff !important; margin-top: 0; font-size: 1.5rem;">Why Work With Streamline Recruiting?</h4>
-            <p style="color: #e6f1ff !important; margin-bottom: 15px;"><strong>We Speak the Language:</strong> You will not have to spend forty minutes explaining the difference between a Controls Engineer and a Field Automation Specialist to us. Our team brings real-world experience in operations and manufacturing to every search.</p>
-            <p style="color: #e6f1ff !important; margin-bottom: 15px;"><strong>Quality Over Quantity:</strong> We do not believe in just shuffling paper. We give you the two or three people who are actually qualified and vetted.</p>
-            <p style="color: #e6f1ff !important;"><strong>The Streamline Standard:</strong> We operate on a permanent placement, contingency basis. We only get paid when we deliver a hire that sticks.</p>
-        </div>
-    </section>
-            <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for Robotics and Advanced Manufacturing</h2>
-            <p style="margin-bottom: 30px; font-weight: 500;">For manufacturers, robotics companies, and automation specialists navigating one of the tightest talent markets in engineering.</p>
-
+        <section id="robotics">
+            <h2>Hiring for Robotics and Advanced Manufacturing</h2>
+            
             <div class="card">
-                <span class="guide-label">The Talent Shortage</span>
-                <h4>Why is it so hard to find robotics and automation engineers?</h4>
-                <p>Robotics requires a rare combination of mechanical engineering, electrical engineering, software development, and systems thinking. Most engineering programs produce specialists, not generalists. A software engineer who has never worked with motor controllers or robot kinematics isn't a robotics engineer.</p>
-                <p>The problem is compounded by demographics. A significant portion of experienced automation expertise sits with engineers who are 55 and older. As they retire, that institutional knowledge is leaving. Meanwhile, the incoming generation often gravitates toward pure software roles where pay has historically been higher.</p>
+                <span class="guide-label">The "Silver Tsunami"</span>
+                <h4>The Robotics Talent Shortage</h4>
+                <p>Robotics requires a rare mix of mechanical, electrical, and software engineering[cite: 69]. The "Silver Tsunami" refers to the fact that much expertise is held by engineers aged 55+ who are now retiring.</p>
                 <div class="streamline-data">
-                    Market reality: For every 10 open senior robotics engineer positions, there are roughly 3 to 4 qualified candidates actively looking. The rest must be found and cultivated.
+                    Market Reality: For every 10 open senior robotics positions, there are only 3 to 4 qualified candidates looking[cite: 74].
                 </div>
             </div>
 
             <div class="card">
-                <h4>What's driving increased demand for robotics talent in 2026?</h4>
-                <ul style="line-height: 1.8; margin-left: 20px;">
-                    <li><strong>Warehouse Automation:</strong> Rapid expansion of robotic picking and sorting by 3PLs.</li>
-                    <li><strong>Collaborative Robotics (Cobots):</strong> Affordable platforms making automation accessible to mid-size manufacturers.</li>
-                    <li><strong>AI-Enabled Perception:</strong> Computer vision unlocking new possibilities in quality control and bin picking.</li>
-                    <li><strong>Reshoring:</strong> Significant government investment (CHIPS Act) driving domestic factory construction.</li>
+                <h4>Portfolio vs. Resume</h4>
+                <p>Robotics work is physical and demonstrable; the portfolio matters more than the resume[cite: 80].</p>
+                <h5>What to look for:</h5>
+                <ul>
+                    <li>Videos of systems actually built and deployed[cite: 81].</li>
+                    <li>GitHub repos with real robotics code, not just tutorials[cite: 81].</li>
+                    <li>Handling messy real-world problems like sensor drift or mechanical failure[cite: 81].</li>
                 </ul>
             </div>
 
             <div class="card">
-                <span class="guide-label">Role-Specific Guide</span>
-                <h4>How to Hire a Robotics Engineer</h4>
-                <h5>What skills define a strong robotics engineer?</h5>
-                <p>In 2026, look for <strong>ROS/ROS2 proficiency</strong> (the de facto standard), C++ for performance, Python for tooling, and experience with simulation environments like Gazebo or Isaac Sim. They should understand PID controllers, motion planning, and perception (LIDAR/depth cameras).</p>
-                
-                <h5>Portfolio vs. Resume</h5>
-                <p>The portfolio matters far more. Look for videos of systems they've actually built and deployed. Look for GitHub repos with real robotics code. A candidate who can walk you through how they handled sensor drift or mechanical failure is worth far more than someone with a list of certifications.</p>
-
-                <h5 style="color: #d97706;">⚠️ Red Flags</h5>
-                <p>Watch for vagueness about actual contributions, a lack of experience with physical systems (everything works in simulation, but fails in the real world), and engineers who stay "stuck" in one era of tooling without staying current.</p>
-            </div>
-
-            <div class="card" style="margin-top: 30px;">
                 <h4>Robotics Engineer vs. Automation Specialist</h4>
-                <p>Robotics engineers focus on the robot itself—motion and perception. <strong>Automation Specialists</strong> have a broader mandate: they design entire production systems, ensuring conveyors, vision inspection, and robotic arms all work together. They are often fluent in industrial protocols like OPC-UA, Profinet, and EtherCAT.</p>
+                <p><strong>Robotics Engineer:</strong> Focuses on the robot—motion planning and perception[cite: 508].</p>
+                <p><strong>Automation Specialist:</strong> Broader mandate—designing entire production systems (conveyors, PLCs, SCADA)[cite: 508, 509].</p>
+            </div>
+        </section>
+
+        <section id="employers">
+            <h2>The Employer's Guide: Winning the Talent War</h2>
+            
+            <div class="card">
+                <h4>How to Compete with Big Tech</h4>
+                <p>You can't always match Big Tech salaries. You must offer **Meaningful Impact** and **Technical Ownership**[cite: 655]. If you can't articulate your "Technical Why" in two minutes, you will lose the candidate[cite: 657].</p>
             </div>
 
-            <div id="salary-robotics" style="margin-top: 50px;">
-                <h3 style="color: var(--blue); margin-bottom: 20px;">Compensation Benchmarks: Robotics & Manufacturing (2026)</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Role</th>
-                            <th>Seniority</th>
-                            <th>2026 Base Salary Range (US)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Robotics Engineer</td><td>Mid-level</td><td>$120,000 – $155,000</td></tr>
-                        <tr><td>Robotics Engineer</td><td>Senior</td><td>$155,000 – $195,000</td></tr>
-                        <tr><td>Robotics Software Engineer</td><td>Senior</td><td>$165,000 – $210,000</td></tr>
-                        <tr><td>Automation Engineer</td><td>Senior</td><td>$135,000 – $175,000</td></tr>
-                        <tr><td>Controls Engineer</td><td>Senior</td><td>$130,000 – $165,000</td></tr>
-                        <tr><td>Director of Automation</td><td>Leadership</td><td>$180,000 – $250,000</td></tr>
-                    </tbody>
-                </table>
-          <div class="streamline-data">
-    <strong style="color: white;">The 8x Speed Advantage:</strong> While the 2025 industry average for hybrid PLC/ROS roles has stretched to **7.8 months** to fill, Streamline Recruiting’s **Total Cycle Time** (from initial search to signed offer) averages just **32 days**. We don't just find talent; we accelerate your entire growth engine.
-</div>
+            <div class="card">
+                <h4>Hiring Timelines (The Reality Check)</h4>
+                <p>Senior IC roles take 4–7 months to fill; leadership roles take 6–9 months[cite: 54, 55].</p>
+                <div class="streamline-data">
+                    Velocity Bonus: Companies moving from first interview to offer in under 21 days have a 68% higher acceptance rate[cite: 60].
+                </div>
+            </div>
         </section>
-<section id="employers" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">A Guide for Employers</h2>
-    <p style="margin-bottom: 30px; font-weight: 500;">What companies need to know before starting a search in competitive technical markets.</p>
 
-    <div class="card">
-        <span class="guide-label">Winning the Talent War</span>
-        <h4>How do we compete with big tech companies for AI and robotics talent?</h4>
-        <p>You likely can't match their salaries dollar-for-dollar. What you can offer that big tech often can't is <strong>Meaningful Impact</strong>. At a growth-stage company, an engineer's work ships and matters immediately. At a megacorp, they are often just a cog in a massive machine.</p>
-        <p>Focus on <strong>Technical Ownership</strong> and <strong>Speed</strong>. Great engineers want to architect systems and make real decisions. If you can't articulate why a great engineer would want to work for you in under two minutes, start there before you post the job.</p>
-    </div>
-        <div class="card">
-        <h4>What makes a job description work in these markets?</h4>
-        <p>Most JDs are counterproductive. They list 50 requirements and use generic buzzwords. What works is leading with the <strong>problem</strong> they'll solve, being specific about the <strong>tech stack</strong>, and describing what the first 6 months actually looks like.</p>
-        <p>Be honest about what's hard—great engineers are attracted to hard problems, not sanitized descriptions. Also, include a genuine compensation range. Not including salary ranges in 2026 costs you the best candidates immediately.</p>
-    </div>
-<div class="card" style="background-color: #00264d !important; border-left: 5px solid #00d2ff !important; padding: 30px; border-radius: 12px; margin: 30px 0; display: block;">
-    <h4 style="color: #00d2ff !important; margin-top: 0; font-size: 1.5rem;">Why Work With Streamline Recruiting?</h4>
-    
-    <p style="color: #e6f1ff !important; margin-bottom: 15px; line-height: 1.6;">
-        <strong style="color: white;">We Speak the Language:</strong> 
-        You will not have to spend forty minutes explaining the difference between a Controls Engineer and a Field Automation Specialist to us. Our team brings real-world experience in operations and manufacturing to every search.
-    </p>
-    
-    <p style="color: #e6f1ff !important; margin-bottom: 15px; line-height: 1.6;">
-        <strong style="color: white;">Quality Over Quantity:</strong> 
-        We do not believe in just shuffling paper. We give you the two or three people who are actually qualified, vetted, and genuinely interested in your specific mission.
-    </p>
-    
-    <p style="color: #e6f1ff !important; line-height: 1.6;">
-        <strong style="color: white;">The Streamline Standard:</strong> 
-        We operate on a permanent placement, contingency basis. Our interests are perfectly aligned with yours. We only get paid when we deliver a hire that sticks.
-    </p>
-</div>
+        <section id="candidates">
+            <h2>The Candidate’s Playbook</h2>
+            
+            <div class="card">
+                <span class="guide-label">The AMO Framework</span>
+                <h4>Building an "Impact-First" Resume</h4>
+                <p>Use the **Action-Metric-Outcome** framework:</p>
+                <ul>
+                    <li>❌ "Experienced with RAG and LLMs."</li>
+                    <li>✅ "Architected RAG pipeline using LangChain, reducing latency by 40% while maintaining accuracy." [cite: 37, 635]</li>
+                </ul>
+            </div>
 
-    <section id="ai-ml" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for AI and Machine Learning Roles</h2>
-    <p style="margin-bottom: 30px; font-weight: 500;">For companies building AI-powered products and for ML professionals evaluating their next opportunity.</p>
+            <div class="card">
+                <h4>2026 Negotiation Trends</h4>
+                <p>Candidates are no longer just asking for cash. They negotiate for:</p>
+                <ul>
+                    <li>**GPU Compute Credits** for personal research.</li>
+                    <li>**Remote-Flex Stipends** for hardware/home-lab setups.</li>
+                    <li>**Equity Refreshers** to ensure long-term alignment.</li>
+                </ul>
+            </div>
+        </section>
 
-    <div class="card">
-        <span class="guide-label">Understanding the Landscape</span>
-        <h4>Why is it so hard to hire AI and ML talent right now?</h4>
-        <p>Supply and demand are severely mismatched. The number of companies integrating AI into their products has grown exponentially since 2022, but the pipeline of trained ML engineers hasn't kept pace. Most skilled AI professionals are <strong>passive candidates</strong>—they aren't on job boards.</p>
-        <div class="streamline-data">
-            Streamline data point: In 2025, fewer than 18% of the AI/ML candidates we placed were actively job searching. The rest required relationship-building over weeks or months.
-        </div>
-    </div>
+        <section id="why-streamline">
+            <h2>Why Work With Streamline Recruiting?</h2>
+            
+            <div class="card" style="border-left: 6px solid white;">
+                <h4>We Speak the Language</h4>
+                <p>You won't spend 40 minutes explaining the difference between a Controls Engineer and a Field Automation Specialist to us[cite: 660]. We bring real-world operations experience to every search[cite: 660].</p>
+            </div>
 
-    <div class="card">
-        <h4>AI Engineer vs. ML Engineer vs. AI Researcher</h4>
-        <p><strong>ML Engineers</strong> focus on building and training models (Python, PyTorch, Statistics). <strong>AI Engineers</strong> productize—they build systems around existing models (APIs, LangChain, RAG pipelines). <strong>Researchers</strong> (often PhDs) push boundaries and write papers. Most companies need <strong>Engineers</strong> to ship products, not Researchers to invent new math.</p>
-    </div>
+            <div class="card" style="border-left: 6px solid white;">
+                <h4>The 8x Speed Advantage</h4>
+                <p>The industry average for hybrid PLC/ROS roles is 7.8 months to fill. Streamline's average cycle time is just **32 days**[cite: 652].</p>
+            </div>
 
-    <div class="card">
-        <span class="guide-label">Role-Specific Guide</span>
-        <h4>How to Hire an ML Engineer</h4>
-        <p>Look for <strong>impact, not tools.</strong> A strong resume says "Reduced latency by 40%," not just "knows PyTorch." Evaluate them via a technical screen built around their actual past work, not abstract puzzles. If your process takes more than 3 weeks, you will lose them to competing offers.</p>
-        <div class="streamline-data">
-            Streamline benchmark: The average time-to-fill for senior AI/ML roles in 2025 was 5.8 months.
-        </div>
-    </div>
+            <div class="card" style="border-left: 6px solid white;">
+                <h4>The Streamline Standard</h4>
+                <p>We operate on a permanent placement, contingency basis. We only get paid when we deliver a hire that sticks[cite: 661, 662].</p>
+            </div>
+        </section>
 
-    <div id="salary-ai" style="margin-top: 50px;">
-        <h3 style="color: var(--blue); margin-bottom: 20px;">Compensation Benchmarks: AI and ML (2026)</h3>
-        <table class="data-table">
-            <thead>
-                <tr><th>Role</th><th>Seniority</th><th>2026 Base Salary Range (US)</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>ML Engineer</td><td>Senior (6–10 yrs)</td><td>$195,000 – $240,000</td></tr>
-                <tr><td>AI Engineer</td><td>Senior</td><td>$190,000 – $235,000</td></tr>
-                <tr><td>LLM / RAG Engineer</td><td>Senior</td><td>$200,000 – $260,000</td></tr>
-                <tr><td>VP / Head of AI</td><td>Executive</td><td>$280,000 – $400,000+</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section id="robotics" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for Robotics and Advanced Manufacturing</h2>
-    
-    <div class="card">
-        <h4>The Robotics Talent Shortage</h4>
-        <p>Robotics requires a rare generalist mix of mechanical, electrical, and software engineering. We are seeing a <strong>"silver tsunami"</strong> as senior engineers (55+) retire, taking institutional knowledge with them. For every 10 open senior roles, there are only 3 to 4 qualified candidates looking.</p>
-    </div>
-
-    <div class="card">
-        <h4>Portfolio vs. Resume</h4>
-        <p>Robotics work is physical. The <strong>portfolio matters more</strong> than the resume. Look for videos of systems they've deployed and how they handled real-world failures like sensor drift. A candidate who only works in simulation is a major red flag.</p>
-    </div>
-
-    <div class="card">
-        <h4>Robotics Engineer vs. Automation Specialist</h4>
-        <p>Robotics engineers focus on motion and perception. <strong>Automation Specialists</strong> design entire production systems (PLCs, SCADA, Conveyors). In 2026, the hardest role to fill is an engineer who knows both <strong>ROS2 and PLC</strong>—these searches averaged 7.8 months to fill.</p>
-    </div>
-</section>
-<section id="ai-ml" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for AI and Machine Learning Roles</h2>
-    <p style="margin-bottom: 30px; font-weight: 500;">For companies building AI-powered products and for ML professionals evaluating their next opportunity.</p>
-
-    <div class="card">
-        <span class="guide-label">Landscape</span>
-        <h4>Why is it so hard to hire AI and ML talent right now?</h4>
-        <p>Supply and demand are severely mismatched. The number of companies integrating AI into their products has grown exponentially since 2022, but the pipeline of trained ML engineers and AI product managers hasn't kept pace. Most skilled AI professionals are already employed, well-compensated, and not actively looking. They're passive candidates — which means you can't find them on a job board.</p>
-        <p>Compounding this is the fact that the role definitions themselves keep shifting. An ML engineer hired in 2022 may have a very different skill set than what a company needs in 2026. Specializations like LLM fine-tuning, retrieval-augmented generation (RAG), and AI safety are in high demand but relatively new as standalone disciplines.</p>
-        <div class="streamline-data">
-            Streamline data point: In 2025, fewer than 18% of the AI/ML candidates we placed were actively job searching at the time we first contacted them. The rest required relationship-building over weeks or months before they were ready to engage.
-        </div>
-    </div>
-
-    <div class="card">
-        <h4>What's the difference between an AI engineer and an ML engineer?</h4>
-        <p>An <strong>ML engineer</strong> typically focuses on building, training, evaluating, and deploying machine learning models. They work with data pipelines, feature engineering, model selection, and optimization. They're comfortable in Python, familiar with frameworks like PyTorch or TensorFlow, and understand statistics deeply.</p>
-        <p>An <strong>AI engineer</strong> is usually more application-focused. They take existing models — often foundation models or APIs — and build systems around them. Think prompt engineering, orchestration frameworks like LangChain, RAG pipelines, and integrating AI capabilities into production software. AI engineers often have stronger software engineering backgrounds than pure ML engineers.</p>
-        <p>For most companies that are not doing fundamental research, you need AI engineers far more than ML engineers. The distinction matters enormously when writing job descriptions.</p>
-    </div>
-
-    <div class="card">
-        <h4>AI Engineer vs. AI Researcher</h4>
-        <p>Researchers push the boundaries of what's technically possible. They write papers, run experiments, and develop novel architectures. They typically have PhDs and measure success in publications.</p>
-        <p>Engineers productize. They take what's possible and turn it into reliable, scalable systems that work in the real world. They measure success in uptime, latency, cost-per-inference, and user outcomes. Most companies need engineers. Researchers are relevant if you're doing genuinely novel model development.</p>
-    </div>
-
-    <div class="card">
-        <span class="guide-label">Role-Specific Guide</span>
-        <h4>How to Hire an ML Engineer</h4>
-        <h5>What skills define a strong ML engineer in 2026?</h5>
-        <p>Look for deep Python proficiency, PyTorch/JAX experience, and fluency in MLOps tools (MLflow, W&B). They should have data engineering fluency and be able to build and maintain the pipelines that feed their models. The best ML engineers are rigorous thinkers who can translate business problems into modeling problems.</p>
-        
-        <h5>How do you evaluate an ML engineer's work?</h5>
-        <p>The most reliable signal is a technical screen built around their actual work, not abstract puzzles. Ask them to walk through a project from problem definition to production deployment. Probe for specifics: What was the baseline? How did they handle class imbalance? What went wrong, and how did they debug it? Take-home projects that mirror real work are more predictive than algorithmic coding challenges.</p>
-    </div>
-</section>
-<section class="faq-section">
-    <div class="card">
-        <h4>How to Hire an AI Product Manager</h4>
-        <p>Hiring an AI PM is tricky because you need someone at the intersection of product, data science, and engineering. Look for <strong>machine learning literacy</strong> (they must understand model limitations), <strong>data fluency</strong>, and <strong>systems thinking</strong>. Avoid generic PM questions; ask real scenarios like: "How would you prioritize between improving model accuracy by 2% and reducing inference cost by 30%?"</p>
-    </div>
-
-    <div class="card">
-        <h4>New Roles: LLM and Generative AI</h4>
-        <p>In 2026, we see a demand for specialized niches: Prompt Engineers, RAG Engineers, Fine-tuning Engineers (LoRA/instruction tuning), and AI Safety Engineers. If your process for these roles takes more than 3 weeks from first interview to offer, you will lose candidates.</p>
-        <div class="streamline-data">
-            Streamline benchmark: Companies that moved from first interview to offer in under 21 days had a 68% higher offer acceptance rate.
-        </div>
-    </div>
-
-    <div id="salary-ai" style="margin-top: 50px;">
-        <h3 style="color: var(--blue);">2026 Compensation Benchmarks (AI/ML)</h3>
-        <table class="data-table">
-            <thead>
-                <tr><th>Role</th><th>Seniority</th><th>Base Salary Range (US)</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>ML Engineer</td><td>Senior (6–10 yrs)</td><td>$195,000 – $240,000</td></tr>
-                <tr><td>ML Engineer</td><td>Staff / Principal</td><td>$240,000 – $310,000</td></tr>
-                <tr><td>AI Engineer</td><td>Senior</td><td>$190,000 – $235,000</td></tr>
-                <tr><td>LLM / RAG Engineer</td><td>Senior</td><td>$200,000 – $260,000</td></tr>
-                <tr><td>AI Product Manager</td><td>Senior / Director</td><td>$180,000 – $240,000</td></tr>
-                <tr><td>VP / Head of AI</td><td>Executive</td><td>$280,000 – $400,000+</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section id="robotics" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">Hiring for Robotics and Advanced Manufacturing</h2>
-    <p style="margin-bottom: 30px; font-weight: 500;">For manufacturers, robotics companies, and automation specialists navigating one of the tightest talent markets in engineering.</p>
-
-    <div class="card">
-        <span class="guide-label">The Talent Shortage</span>
-        <h4>Why is it so hard to find robotics and automation engineers?</h4>
-        <p>Robotics requires a rare combination: mechanical engineering, electrical engineering, software development, and systems thinking. Most engineering programs produce specialists, not generalists. A software engineer who has never worked with motor controllers, PLCs, or robot kinematics isn't a robotics engineer.</p>
-        <p>The problem is compounded by demographics. A significant portion of experienced automation expertise sits with engineers who are 55 and older. As they retire, that institutional knowledge is walking out the door. Meanwhile, the incoming generation often gravitates toward pure software roles where pay has historically been higher.</p>
-        <div class="streamline-data">
-            Market reality: For every 10 open senior robotics engineer positions, there are roughly 3 to 4 qualified candidates actively looking. The rest must be found and cultivated.
-        </div>
-    </div>
-
-    <div class="card">
-        <h4>What's driving increased demand for robotics talent in 2026?</h4>
-        <ul style="line-height: 1.8;">
-            <li><strong>Warehouse Automation:</strong> Rapid expansion of robotic picking and sorting by 3PLs.</li>
-            <li><strong>Collaborative Robotics (Cobots):</strong> Affordable platforms making automation accessible to mid-size manufacturers.</li>
-            <li><strong>AI-Enabled Perception:</strong> Computer vision unlocking new possibilities in quality control.</li>
-            <li><strong>Reshoring:</strong> Government investment (CHIPS Act) driving domestic factory construction.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <span class="guide-label">Role-Specific Guide</span>
-        <h4>How to Hire a Robotics Engineer</h4>
-        <h5>Skills & Portfolios</h5>
-        <p>In 2026, look for <strong>ROS/ROS2 proficiency</strong>, C++ for performance, and experience with simulation (Gazebo/Isaac Sim). The portfolio matters far more than the resume. Look for videos of systems they've actually built and deployed. A candidate who can walk you through how they handled sensor drift or mechanical failure is worth far more than someone with a list of certifications.</p>
-
-        <h5 style="color: #d97706; margin-top: 20px;">⚠️ Red Flags</h5>
-        <p>Watch for vagueness about actual contributions, a lack of experience with physical systems (everything works in simulation, but fails in the real world), and engineers who stay "stuck" in one era of tooling without staying current.</p>
-    </div>
-
-    <div class="card">
-        <h4>Robotics Engineer vs. Automation Specialist</h4>
-        <p>Robotics engineers focus on the robot itself—motion and perception. <strong>Automation Specialists</strong> have a broader mandate: they design entire production systems (conveyors, vision inspection, PLCs, SCADA). They are often fluent in industrial protocols like OPC-UA, Profinet, and EtherCAT.</p>
-    </div>
-
-    <div id="salary-robotics" style="margin-top: 50px;">
-        <h3 style="color: var(--blue);">2026 Compensation Benchmarks: Robotics</h3>
-        <table class="data-table">
-            <thead>
-                <tr><th>Role</th><th>Seniority</th><th>Base Salary Range (US)</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Robotics Engineer</td><td>Senior (6–10 yrs)</td><td>$155,000 – $195,000</td></tr>
-                <tr><td>Robotics Software Engineer</td><td>Senior</td><td>$165,000 – $210,000</td></tr>
-                <tr><td>Automation Engineer</td><td>Senior</td><td>$135,000 – $175,000</td></tr>
-                <tr><td>Controls Engineer</td><td>Senior</td><td>$130,000 – $165,000</td></tr>
-                <tr><td>Director of Automation</td><td>Leadership</td><td>$180,000 – $250,000</td></tr>
-            </tbody>
-        </table>
-        <div class="streamline-data">
-            Streamline benchmark: In 2025, roles requiring both PLC expertise and ROS experience averaged 7.8 months to fill.
-        </div>
-    </div>
-</section>
-
-<section id="employers" class="faq-section" style="background: transparent !important;">
-    <h2 style="color: white; border-bottom: 2px solid #00d2ff; padding-bottom: 10px; margin-bottom: 30px;">Employer Guide</h2>
-
-    <div class="card" style="background-color: #00264d !important; border-left: 5px solid #00d2ff !important; padding: 30px; border-radius: 12px; margin: 30px 0; display: block; border-top: none; border-right: none; border-bottom: none;">
-        <h4 style="color: #00d2ff !important; margin-top: 0; font-size: 1.5rem;">Why Work With Streamline Recruiting?</h4>
-        
-        <p style="color: #e6f1ff !important; margin-bottom: 15px; line-height: 1.6;">
-            <strong style="color: white;">We Speak the Language:</strong> 
-            You will not have to spend forty minutes explaining the difference between a Controls Engineer and a Field Automation Specialist to us. Our team brings real-world experience in operations and manufacturing to every search.
-        </p>
-        
-        <p style="color: #e6f1ff !important; margin-bottom: 15px; line-height: 1.6;">
-            <strong style="color: white;">Quality Over Quantity:</strong> 
-            We do not believe in just shuffling paper. We give you the two or three people who are actually qualified, vetted, and genuinely interested in your specific mission.
-        </p>
-        
-        <p style="color: #e6f1ff !important; line-height: 1.6;">
-            <strong style="color: white;">The Streamline Standard:</strong> 
-            We operate on a permanent placement, contingency basis. Our interests are perfectly aligned with yours. We only get paid when we deliver a hire that sticks.
-        </p>
-    </div>
-</section>
-
-<section id="candidates" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">A Guide for Candidates</h2>
-    
-    <div class="card">
-        <h4>How do I position myself for a senior AI or ML role?</h4>
-        <p>The most common mistake is leading with skills instead of outcomes. Every senior ML engineer knows Python and PyTorch. What separates senior candidates is evidence of impact. <strong>Quantify your work:</strong> Improved model accuracy by X% or reduced inference cost by Y%. Show ownership—not "worked on" but "designed" or "led."</p>
-    </div>
-
-    <div class="card">
-        <h4>How do I evaluate whether a company is actually serious about AI?</h4>
-        <p>Signs a company is genuinely AI-serious: They have existing AI in production, engineers make real technical decisions, and they have high-quality data. Warning signs: "We want to integrate AI into everything" without a clear use case or data infrastructure.</p>
-    </div>
-
-    <div class="card">
-        <h4>How do I negotiate compensation?</h4>
-        <p>Know your market rate before you start. Negotiate <strong>total compensation</strong>, not just base. Often, the largest leverage is in equity or signing bonuses. Be honest about competing offers—it's information that helps the company make a real offer.</p>
-    </div>
-</section>
-    
-Here is the final block to close out your page. This includes the 2026 Market Trends, the specific data on offer rejections, and the "Agentic" workflow shift, followed by the footer.
-
-Block 5: 2026 Market Trends & Data (The Finale)
-Paste this directly after the Candidate section to finish the page:
-
-HTML
-<section id="market" class="faq-section">
-    <h2 style="color: var(--blue); border-bottom: 2px solid var(--border); padding-bottom: 10px; margin-top: 40px;">State of the Market — 2026</h2>
-    <p style="margin-bottom: 30px; font-weight: 500;">Current data points from Streamline Recruiting placements and market observation.</p>
-
-    <div class="card">
-        <h4>The Shift to "Agentic" Workflows</h4>
-        <p>In 2025, the focus was on Chatbots. In 2026, the focus is on <strong>AI Agents</strong>—systems that don't just talk, but actually <em>do</em>. This has created a massive surge in demand for engineers who understand tool-calling, long-term memory architectures, and multi-agent orchestration.</p>
-    </div>
-
-    <div class="card">
-        <h4>Why Offers are Being Rejected</h4>
-        <p>Based on Streamline Recruiting placement data: the overall offer acceptance rate for AI/ML roles was 71%. The most common reasons for rejection include:</p>
-        <ul style="line-height: 1.8;">
-            <li><strong>Compensation below expectation:</strong> 39%</li>
-            <li><strong>Role scope narrower than described:</strong> 28%</li>
-            <li><strong>Concern about company trajectory:</strong> 18%</li>
-            <li><strong>Competing offer:</strong> 15%</li>
-        </ul>
-        <div class="streamline-data">
-            <strong>Key Insight:</strong> 28% of offers are rejected because the role scope was perceived as narrower than described during the interview. Over-promising in interviews costs you candidates at the finish line.
-        </div>
-    </div>
-
-    <div class="card">
-        <h4>What's Changing in Technical Hiring?</h4>
-        <p><strong>Skills-based hiring</strong> is gaining ground; portfolio work is outweighing degrees. We are also seeing <strong>longer evaluation periods</strong>, with companies using paid trial projects to reduce hiring risk. Finally, <strong>Employer Branding</strong> is seeing serious investment—companies are realizing they must build a technical reputation to attract the best passive talent.</p>
-    </div>
-
-    <div class="card">
-        <h4>The "Hybrid-First" Reality</h4>
-        <p>While some firms tried to force a full return to office, the 2026 market for top-tier technical talent remains <strong>Hybrid</strong>. For AI and Robotics roles, 2-3 days on-site is the gold standard. Companies insisting on 5 days in-office are seeing a 30-40% reduction in their qualified candidate pool.</p>
-</div> 
-</section>
-
-<section style="text-align: center; padding: 80px 20px; background: var(--card-bg); border: 1px solid #233554; border-radius: 12px; margin-top: 50px; margin-bottom: 80px;">
-    <h3 style="color: white; font-size: 2rem; margin-bottom: 15px;">Ready to Streamline Your Search?</h3>
-    <p style="color: var(--text-main); max-width: 600px; margin: 0 auto 40px auto; line-height: 1.6;">
-        Whether you are a company looking for 1% technical talent or a candidate ready for your next career move, we have a path for you.
-    </p>
-    
-<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-    <a href="contact.html" class="btn-primary-sl" style="padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; display: inline-block; text-align: center;">
-        Hire Expert Talent
-    </a>
-    
-    <a href="jobs.html" class="btn-secondary-sl" style="padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; display: inline-block; text-align: center;">
-        View Job Board
-    </a>
-</div>
-</section>
-</main> <footer style="text-align: center; padding: 80px 0; border-top: 1px solid #233554; margin-top: 100px;">
-    <p>© 2026 Streamline Recruiting | Specialized Technical Talent Acquisition</p>
-</footer>
+        <section style="text-align: center; padding: 80px 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-top: 50px; margin-bottom: 80px;">
+            <h3 style="margin-top: 0;">Ready to Streamline Your Search?</h3>
+            <p style="max-width: 600px; margin: 0 auto 40px auto;">Whether you are a company looking for 1% talent or a candidate ready for your next career move[cite: 614].</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="jump-link" style="background: var(--accent-blue); color: var(--dark-bg); padding: 18px 40px;">Hire Expert Talent</a>
+                <a href="jobs.html" class="jump-link" style="padding: 18px 40px;">View Featured Jobs</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
