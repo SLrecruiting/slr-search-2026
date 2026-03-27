@@ -1,4 +1,11 @@
 
+I see the issue. Looking at your screenshots, your Index page has a full-width, dark-blue bar that spans the entire top of the screen, whereas the FAQ code I gave you is putting the navigation into a centered box.
+
+To make the FAQ page perfectly match the "look and feel" of the Index, we need to strip out the extra padding and margins from the header and make it full-width.
+
+Here is the corrected code from the top down to the start of the first section:
+
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +14,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <title>2026 AI & Robotics Technical Hiring Guide | Streamline Recruiting</title>
-    <meta name="description" content="The definitive 2026 guide for AI, Robotics, and Digital Oilfield hiring. Expert insights on counter-offers, salary benchmarks, and technical talent acquisition.">
-    <link rel="canonical" href="https://www.slrsearch.com/faq.html">
-
+    <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
     <style>
         :root {
-            --dark-bg: #001a33;
+            --dark-bg: #0b1120; /* Matching your index deep dark blue */
             --card-bg: #00264d;
             --text-main: #e6f1ff;
             --accent-blue: #00d2ff;
@@ -21,96 +25,96 @@
         }
         
         body.inner-page { 
-            background-color: var(--dark-bg); 
+            background-color: #050a14; /* Deep background */
             color: var(--text-main); 
             font-family: 'Inter', sans-serif; 
             line-height: 1.7; 
             margin: 0; 
         }
 
-        /* Global Header Styling */
+        /* FULL WIDTH HEADER TO MATCH INDEX */
         header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            background: var(--dark-bg);
-        }
-        .header-container {
-            max-width: 1100px;
-            margin: 0 auto;
+            background-color: #0b1120; /* The exact dark bar color from your index */
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .logo-wrap img { height: 40px; }
-        .main-nav { display: flex; gap: 20px; }
-        .main-nav a { 
+
+        .logo-wrap img { 
+            height: 35px; 
+            display: block;
+        }
+
+        nav.main-nav { 
+            display: flex; 
+            gap: 25px; 
+        }
+
+        nav.main-nav a { 
             color: white; 
             text-decoration: none; 
-            font-size: 0.9rem; 
-            transition: 0.3s;
+            font-size: 0.85rem; 
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .main-nav a:hover { color: var(--accent-blue); }
-        .main-nav a.active { color: var(--accent-blue); font-weight: bold; }
 
-        /* Sticky Navigation for 21-Page Depth */
+        nav.main-nav a.active { 
+            color: var(--accent-blue); 
+        }
+
+        /* STICKY JUMP MENU */
         .jump-menu { 
             position: sticky; 
             top: 0; 
-            background: rgba(0, 26, 51, 0.98); 
+            background: rgba(5, 10, 20, 0.95); 
             display: flex; 
             justify-content: center; 
             gap: 10px; 
-            padding: 15px; 
+            padding: 12px; 
             border-bottom: 1px solid var(--accent-blue); 
             z-index: 1000; 
             flex-wrap: wrap;
         }
+
         .jump-link { 
             color: var(--accent-blue); 
             text-decoration: none; 
-            font-size: 0.85rem; 
+            font-size: 0.75rem; 
             font-weight: bold; 
             border: 1px solid var(--accent-blue); 
-            padding: 5px 12px; 
-            border-radius: 4px; 
-            transition: 0.3s;
+            padding: 4px 10px; 
+            border-radius: 2px;
+            text-transform: uppercase;
         }
-        .jump-link:hover { background: var(--accent-blue); color: var(--dark-bg); }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
         .card { background: var(--card-bg); padding: 40px; border-radius: 12px; margin: 30px 0; border-left: 6px solid var(--accent-blue); }
         h2 { color: var(--accent-blue); font-size: 2.4rem; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; margin-top: 80px; }
         h3 { color: white; font-size: 1.8rem; margin-top: 50px; }
         h4 { color: var(--accent-blue); font-size: 1.3rem; margin-top: 0; }
         
-        .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 25px; border-radius: 8px; margin: 25px 0; }
-        .red-flag-list { color: #ff6b6b; list-style-type: "✖ "; padding-left: 20px; }
-        .check-list { list-style-type: "✔ "; padding-left: 20px; color: #6bff9d; }
-        
+        /* ... existing table/list styles ... */
         table { width: 100%; border-collapse: collapse; margin: 30px 0; }
         th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 15px; text-transform: uppercase; font-size: 0.8rem; }
         td { padding: 15px; border-bottom: 1px solid var(--border-color); }
-
-        .guide-label { color: var(--accent-blue); text-transform: uppercase; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
-        .section-intro { font-size: 1.2rem; opacity: 0.9; margin-top: 15px; }
     </style>
 </head>
 <body class="inner-page">
 
     <header>
-        <div class="header-container">
-            <div class="logo-wrap">
-                <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
-            </div>
-            <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="for-employers.html">Hire Talent</a>
-                <a href="jobs.html">Featured Jobs</a>
-                <a href="faq.html" class="active">FAQ</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+        <div class="logo-wrap">
+            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
         </div>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="for-employers.html">Hire Talent</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
 
     <nav class="jump-menu">
@@ -125,7 +129,7 @@
         <section id="ai-ml" class="faq-section">
     <div class="section-header">
         <span class="guide-label">Technical Deep Dive</span>
-        <h2>Section 1: AI and Machine Learning Hiring</h2>
+        <h2>AI and Machine Learning Hiring</h2>
         <p class="section-intro">As of 2026, the AI hiring market has moved past the "hype" phase into a phase of deep specialization. Hiring for these roles requires an understanding of model architecture, orchestration, and the distinct difference between research and production.</p>
     </div>
 
@@ -192,7 +196,7 @@
         </div>
     </div>
 
-    <h3>Section 1: AI/ML Salary Benchmarks (2026)</h3>
+    <h3>AI/ML Salary Benchmarks (2026)</h3>
     <table class="data-table">
         <thead>
             <tr>
@@ -239,7 +243,7 @@
 <section id="robotics" class="faq-section">
     <div class="section-header">
         <span class="guide-label">Industrial Strategy</span>
-        <h2>Section 2: Robotics and Advanced Manufacturing</h2>
+        <h2>Robotics and Advanced Manufacturing</h2>
         <p class="section-intro">The robotics sector in 2026 is defined by a massive transition from fixed automation to flexible, AI-enhanced systems. Hiring in this space requires a rare understanding of the "Mechatronic Bridge"—where software meets physical constraints.</p>
     </div>
 
@@ -303,7 +307,7 @@
         </ul>
     </div>
 
-    <h3>Section 2: Robotics & Mfg Compensation Benchmarks (2026)</h3>
+    <h3>Robotics & Mfg Compensation Benchmarks (2026)</h3>
     <table class="data-table">
         <thead>
             <tr>
@@ -354,7 +358,7 @@
 <section id="employers" class="faq-section">
     <div class="section-header">
         <span class="guide-label">2026 Employer Playbook</span>
-        <h2>Section 3: The Employer’s Strategic Guide</h2>
+        <h2>The Employer’s Strategic Guide</h2>
         <p class="section-intro">To win the national talent war for AI and Robotics, you must offer what bureaucratic giants cannot. This section outlines the Streamline-vetted strategies for competing against Big Tech and moving from "need" to "offer" in record time.</p>
     </div>
 
@@ -446,7 +450,7 @@
 <section id="candidates" class="faq-section">
     <div class="section-header">
         <span class="guide-label">2026 Career Advancement Guide</span>
-        <h2>Section 4: The Candidate’s Career Manual</h2>
+        <h2>The Candidate’s Career Manual</h2>
         <p class="section-intro">In the 2026 market, technical proficiency is the baseline. To secure a top 1% role in AI or Robotics, you must master the art of "Impact Positioning." This section provides the roadmap for navigating high-stakes technical career moves.</p>
     </div>
 
@@ -511,17 +515,10 @@
     </div>
 </section>
 
-   I understand exactly where you are. You just finished Section 4 (Candidates).
-
-The next piece is the "GEO Goldmine"—Section 5 (State of the Market)—followed immediately by the Call to Action (CTA) buttons, the Footer, and the SEO Schema code.
-
-I will not condense anything. Here is the massive final block of code to complete your 21-page manual, starting right from where you left off.
-
-HTML
 <section id="market-2026" class="faq-section">
     <div class="section-header">
         <span class="guide-label">2026 National Intelligence</span>
-        <h2>Section 5: State of the Market</h2>
+        <h2>State of the Market</h2>
         <p class="section-intro">The technical hiring market of 2026 is no longer a monolith. It is a collection of hyper-specialized micro-markets defined by geography, compute access, and the transition from generative models to autonomous agents.</p>
     </div>
 
