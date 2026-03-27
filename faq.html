@@ -7,83 +7,68 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
     <style>
-        /* DARK THEME FAQ STYLING */
-        :root {
-            --dark-bg: #0a192f;
-            --card-bg: #112240;
-            --text-main: #a8b2d1;
-            --accent-mint: #64ffda;
-            --jump-bg: #1d3557;
-        }
+    /* UPDATED FOR STREAMLINE BRAND COLORS */
+    :root {
+        --dark-bg: #001a33;   /* Your exact Navy */
+        --card-bg: #00264d;   /* Slightly lighter navy for cards */
+        --text-main: #e6f1ff; /* Your exact Text color */
+        --accent-blue: #00d2ff; /* Your "Super Pretty" Blue */
+        --jump-bg: rgba(0, 210, 255, 0.1);
+    }
 
-        body.inner-page {
-            background-color: var(--dark-bg);
-            color: var(--text-main);
-        }
+    body.inner-page {
+        background-color: var(--dark-bg);
+        color: var(--text-main);
+    }
 
-        /* The Sticky Menu */
-        .jump-menu { 
-            display: flex; gap: 10px; justify-content: center; 
-            margin-bottom: 50px; flex-wrap: wrap; 
-            position: sticky; top: 10px; z-index: 100; 
-            background: rgba(10, 25, 47, 0.95); /* Matches dark background */
-            padding: 15px; 
-            border-bottom: 1px solid #233554;
-            backdrop-filter: blur(10px);
-        }
+    /* Fix the Jump Menu Links */
+    .jump-link { 
+        background: transparent; 
+        color: var(--accent-blue); 
+        padding: 8px 16px; 
+        text-decoration: none; 
+        border-radius: 5px; 
+        font-size: 0.9rem; 
+        font-weight: bold; 
+        transition: all 0.3s ease;
+        border: 1px solid var(--accent-blue);
+    }
 
-        .jump-link { 
-            background: var(--jump-bg); color: var(--accent-mint); padding: 8px 16px; 
-            text-decoration: none; border-radius: 5px; font-size: 0.9rem; 
-            font-weight: bold; transition: all 0.3s ease;
-            border: 1px solid var(--accent-mint);
-        }
+    .jump-link:hover { 
+        background: var(--accent-blue); 
+        color: var(--dark-bg);
+        transform: translateY(-2px); 
+    }
 
-        .jump-link:hover { 
-            background: var(--accent-mint); 
-            color: var(--dark-bg);
-            transform: translateY(-2px); 
-        }
-        
-        .faq-section { margin-bottom: 100px; scroll-margin-top: 150px; }
-        
-        /* Modernized Labels & Data Boxes */
-        .guide-label { 
-            display: inline-block; background: rgba(100, 255, 218, 0.1); color: var(--accent-mint); 
-            padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; 
-            font-weight: bold; margin-bottom: 15px; border: 1px solid var(--accent-mint);
-        }
+    /* Fix Headings and Accents */
+    .card h4 { color: white; }
+    .card h5, .guide-label, .streamline-data { 
+        color: var(--accent-blue) !important; 
+    }
+    
+    .guide-label {
+        background: rgba(0, 210, 255, 0.1);
+        border: 1px solid var(--accent-blue);
+    }
 
-        .streamline-data { 
-            font-style: italic; color: var(--accent-mint); border-left: 4px solid var(--accent-mint); 
-            margin: 25px 0; background: #112240; 
-            padding: 20px; border-radius: 0 8px 8px 0; 
-        }
+    .streamline-data {
+        border-left: 4px solid var(--accent-blue);
+        background: rgba(0, 210, 255, 0.05);
+    }
 
-        /* Dark Mode Tables */
-        .data-table { 
-            width: 100%; border-collapse: collapse; margin: 30px 0; 
-            background: #112240; border: 1px solid #233554;
-        }
-        .data-table th { background: #1d3557; color: var(--accent-mint); padding: 15px; text-align: left; }
-        .data-table td { padding: 15px; border-bottom: 1px solid #233554; color: var(--text-main); }
-        
-        /* The Cards - FIXED for Legibility */
-        .card { 
-            background: var(--card-bg); 
-            padding: 30px; 
-            margin-bottom: 25px; 
-            border-radius: 12px; 
-            border: 1px solid #233554;
-            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
-        }
-        .card h4 { color: white; margin-top: 0; font-size: 1.4rem; }
-        .card h5 { color: var(--accent-mint); margin-top: 20px; font-size: 1.1rem; }
-        .card p { line-height: 1.7; color: var(--text-main); }
-        
-        /* Adjusting Headings */
-        h1, h2, h3 { color: white; }
-    </style>
+    /* Fix the Bottom Action Buttons */
+    .btn-primary-sl {
+        background: var(--accent-blue) !important;
+        color: var(--dark-bg) !important;
+        border: 2px solid var(--accent-blue) !important;
+    }
+
+    .btn-secondary-sl {
+        background: transparent !important;
+        color: var(--accent-blue) !important;
+        border: 2px solid var(--accent-blue) !important;
+    }
+</style>
 </head>
 <body class="inner-page">
     <header>
@@ -560,14 +545,15 @@ HTML
         Whether you are a company looking for 1% technical talent or a candidate ready for your next career move, we have a path for you.
     </p>
     
-    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <a href="contact.html" style="background: var(--accent-mint); color: var(--dark-bg); padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; border: 2px solid var(--accent-mint);">
-            Hire Expert Talent
-        </a>
-        <a href="jobs.html" style="background: transparent; color: var(--accent-mint); padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; border: 2px solid var(--accent-mint);">
-            View Job Board
-        </a>
-    </div>
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+    <a href="contact.html" class="btn-primary-sl" style="padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; display: inline-block; text-align: center;">
+        Hire Expert Talent
+    </a>
+    
+    <a href="jobs.html" class="btn-secondary-sl" style="padding: 18px 35px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; min-width: 220px; transition: 0.3s; display: inline-block; text-align: center;">
+        View Job Board
+    </a>
+</div>
 </section>
 </main> <footer style="text-align: center; padding: 80px 0; border-top: 1px solid #233554; margin-top: 100px;">
     <p>© 2026 Streamline Recruiting | Specialized Technical Talent Acquisition</p>
