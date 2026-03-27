@@ -9,7 +9,7 @@
     <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
     
     <style>
-        /* FAQ-Specific Content Styles */
+        /* RESET & BASE FONTS */
         :root {
             --dark-bg: #001a33;
             --card-bg: #00264d;
@@ -20,18 +20,26 @@
 
         body.inner-page { 
             background-color: var(--dark-bg); 
-            color: var(--text-main); 
+            color: var(--text-main);
+            font-size: 16px; /* Standardizing base text size */
+            line-height: 1.6;
         }
 
-        /* STICKY JUMP MENU - Larger Buttons, No Numbers */
+        /* HEADER LOGO FIX (Matches Contact/Index) */
+        header .logo-wrap img {
+            max-height: 35px; /* Keeps logo from getting "weirdly big" */
+            width: auto;
+        }
+
+        /* BIGGER JUMP MENU - CLEAN & NO NUMBERS */
         .jump-menu { 
             position: sticky; 
             top: 0; 
             background: rgba(0, 26, 51, 0.98); 
             display: flex; 
             justify-content: center; 
-            gap: 15px; 
-            padding: 20px; 
+            gap: 12px; 
+            padding: 20px 10px; 
             border-bottom: 1px solid var(--accent-blue); 
             z-index: 1000; 
             flex-wrap: wrap;
@@ -40,14 +48,14 @@
         .jump-link { 
             color: var(--accent-blue); 
             text-decoration: none; 
-            font-size: 1rem; /* Bigger Font */
-            font-weight: bold; 
-            border: 2px solid var(--accent-blue); /* Thicker Border */
-            padding: 10px 20px; /* More Padding */
+            font-size: 0.95rem; /* Larger, readable size */
+            font-weight: 700; 
+            border: 1.5px solid var(--accent-blue); 
+            padding: 12px 24px; 
             border-radius: 4px; 
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            transition: 0.2s ease-in-out;
         }
 
         .jump-link:hover {
@@ -55,20 +63,23 @@
             color: var(--dark-bg);
         }
 
-        /* Content Layout */
+        /* TYPOGRAPHY CLEANUP */
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .card { background: var(--card-bg); padding: 40px; border-radius: 12px; margin: 30px 0; border-left: 6px solid var(--accent-blue); }
-        h2 { color: var(--accent-blue); font-size: 2.4rem; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; margin-top: 80px; }
-        h3 { color: white; font-size: 1.8rem; margin-top: 50px; }
-        h4 { color: var(--accent-blue); font-size: 1.3rem; margin-top: 0; }
         
-        .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 25px; border-radius: 8px; margin: 25px 0; }
-        .red-flag-list { color: #ff6b6b; list-style-type: "✖ "; padding-left: 20px; }
-        .check-list { list-style-type: "✔ "; padding-left: 20px; color: #6bff9d; }
+        h1 { font-size: 2.8rem; color: var(--accent-blue); margin-bottom: 20px; }
+        h2 { font-size: 2rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 60px; }
+        h3 { font-size: 1.5rem; color: #fff; margin-top: 40px; }
+        h4 { font-size: 1.2rem; color: var(--accent-blue); margin-top: 0; margin-bottom: 15px; }
         
-        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
-        th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 15px; text-transform: uppercase; font-size: 0.8rem; }
-        td { padding: 15px; border-bottom: 1px solid var(--border-color); }
+        p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 20px; }
+        
+        .card { background: var(--card-bg); padding: 30px; border-radius: 12px; margin: 30px 0; border-left: 5px solid var(--accent-blue); }
+        .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 20px; border-radius: 8px; font-size: 1rem; }
+        
+        /* TABLE STYLES */
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
+        th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 12px; text-transform: uppercase; }
+        td { padding: 12px; border-bottom: 1px solid var(--border-color); }
     </style>
 </head>
 <body class="inner-page">
@@ -96,9 +107,7 @@
 
     <main class="container">
         <section id="ai-ml" class="faq-section">
-    <div class="section-header">
-        <span class="guide-label">Technical Deep Dive</span>
-        <h2>AI and Machine Learning Hiring</h2>
+            <h1>AI and Machine Learning Hiring</h1>
         <p class="section-intro">As of 2026, the AI hiring market has moved past the "hype" phase into a phase of deep specialization. Hiring for these roles requires an understanding of model architecture, orchestration, and the distinct difference between research and production.</p>
     </div>
 
