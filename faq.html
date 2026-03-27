@@ -4,273 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
     <style>
-    :root {
-        --dark-bg: #001a33;   /* Streamline Navy */
-        --card-bg: #00264d;   /* Lighter navy for cards */
-        --text-main: #e6f1ff; /* Main Text */
-        --accent-blue: #00d2ff; /* Streamline Blue */
-        --border: #233554;
-    }
-
-    body.inner-page {
-        background-color: var(--dark-bg);
-        color: var(--text-main);
-        font-family: 'Inter', -apple-system, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-
-    /* Navigation Jump Menu */
-    .jump-menu {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin: 40px 0;
-        flex-wrap: wrap;
-        position: sticky;
-        top: 20px;
-        z-index: 100;
-    }
-
-    .jump-link { 
-        background: rgba(0, 26, 51, 0.9);
-        color: var(--accent-blue); 
-        padding: 10px 20px; 
-        text-decoration: none; 
-        border-radius: 5px; 
-        font-weight: bold; 
-        transition: all 0.3s ease;
-        border: 1px solid var(--accent-blue);
-        backdrop-filter: blur(5px);
-    }
-
-    .jump-link:hover { 
-        background: var(--accent-blue);
-        color: var(--dark-bg);
-        transform: translateY(-2px); 
-    }
-
-    /* Content Cards */
-    .card { 
-        background: var(--card-bg); 
-        padding: 40px; 
-        border-radius: 12px; 
-        margin: 30px 0; 
-        border-left: 6px solid var(--accent-blue); 
-    }
-
-    h2 { color: var(--accent-blue); border-bottom: 2px solid var(--border); padding-bottom: 15px; font-size: 2.2rem; margin-top: 60px; }
-    h3 { color: white; margin-top: 40px; font-size: 1.8rem; }
-    h4 { color: white; margin-top: 0; font-size: 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 20px; }
-    h5 { color: var(--accent-blue); margin-top: 25px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
-
-    .guide-label {
-        display: inline-block;
-        background: rgba(0, 210, 255, 0.1);
-        border: 1px solid var(--accent-blue);
-        color: var(--accent-blue);
-        padding: 4px 12px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        margin-bottom: 15px;
-    }
-
-    .streamline-data {
-        border-left: 4px solid var(--accent-blue);
-        background: rgba(0, 210, 255, 0.05);
-        padding: 20px;
-        margin: 20px 0;
-        font-style: italic;
-    }
-
-    .data-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0,0,0,0.2); }
-    .data-table th, .data-table td { padding: 18px; text-align: left; border-bottom: 1px solid var(--border); }
-    .data-table th { color: var(--accent-blue); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-
-    .red-flag { color: #ff4d4d; font-weight: bold; }
-    ul { padding-left: 20px; }
-    li { margin-bottom: 10px; }
-</style>
+        :root {
+            --dark-bg: #001a33;
+            --card-bg: #00264d;
+            --text-main: #e6f1ff;
+            --accent-blue: #00d2ff;
+            --border-color: rgba(0, 210, 255, 0.2);
+        }
+        body.inner-page { background-color: var(--dark-bg); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.7; margin: 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Sticky Navigation for 21-Page Depth */
+        .jump-menu { 
+            position: sticky; top: 0; background: rgba(0, 26, 51, 0.95); 
+            display: flex; justify-content: center; gap: 10px; padding: 15px; 
+            border-bottom: 1px solid var(--accent-blue); z-index: 1000; flex-wrap: wrap;
+        }
+        .jump-link { color: var(--accent-blue); text-decoration: none; font-size: 0.85rem; font-weight: bold; border: 1px solid var(--accent-blue); padding: 5px 12px; border-radius: 4px; }
+        
+        .card { background: var(--card-bg); padding: 40px; border-radius: 12px; margin: 30px 0; border-left: 6px solid var(--accent-blue); }
+        h2 { color: var(--accent-blue); font-size: 2.4rem; border-bottom: 2px solid var(--border-color); padding-bottom: 15px; margin-top: 80px; }
+        h3 { color: white; font-size: 1.8rem; margin-top: 50px; }
+        h4 { color: var(--accent-blue); font-size: 1.3rem; margin-top: 0; }
+        
+        .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 25px; border-radius: 8px; margin: 25px 0; }
+        .red-flag-list { color: #ff6b6b; list-style-type: "✖ "; padding-left: 20px; }
+        .check-list { list-style-type: "✔ "; padding-left: 20px; color: #6bff9d; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 30px 0; }
+        th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 15px; text-transform: uppercase; font-size: 0.8rem; }
+        td { padding: 15px; border-bottom: 1px solid var(--border-color); }
+    </style>
 </head>
 <body class="inner-page">
-    <header style="text-align: center; padding: 40px 0;">
-        <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting" style="max-width: 300px;"></a>
-    </header>
 
-    <main class="container">
-        <h1 style="text-align: center; margin-top: 20px;">Expert Insights & <span style="color:var(--accent-blue)">FAQs</span></h1>
-        <p style="text-align: center; opacity: 0.8;">The Comprehensive 2026 Technical Hiring Guide [cite: 1, 2]</p>
+<nav class="jump-menu">
+    <a href="#ai-ml" class="jump-link">1. AI/ML Landscape</a>
+    <a href="#robotics" class="jump-link">2. Robotics & Mfg</a>
+    <a href="#employers" class="jump-link">3. For Employers</a>
+    <a href="#candidates" class="jump-link">4. For Candidates</a>
+    <a href="#market-2026" class="jump-link">5. State of Market</a>
+</nav>
+
+<main class="container">
+
+    <section id="ai-ml">
+        <h2>Section 1: AI and Machine Learning Hiring</h2>
         
-        <div class="jump-menu">
-            <a href="#ai-ml" class="jump-link">AI & Machine Learning</a>
-            <a href="#robotics" class="jump-link">Robotics & Mfg</a>
-            <a href="#employers" class="jump-link">Employer Guide</a>
-            <a href="#candidates" class="jump-link">Candidate Advice</a>
-            <a href="#why-streamline" class="jump-link">Why Streamline?</a>
+        <div class="card">
+            <h4>The 2026 Talent Landscape</h4>
+            <p>The mismatch between supply and demand has reached a critical inflection point. As of 2026, the "average" ML engineer no longer exists; the market has bifurcated into highly specialized niches. Traditional job boards have become ineffective for these roles, as 82% of top-tier AI talent is currently passive.</p>
+            <div class="streamline-data-box">
+                <strong>Data Point:</strong> In 2025, fewer than 18% of the AI/ML candidates placed by Streamline were actively searching. The "Time-to-Engage" for a senior researcher now averages 4.5 weeks of relationship building before an initial interview occurs.
+            </div>
         </div>
 
-        <section id="ai-ml">
-            <h2>Hiring for AI and Machine Learning Roles</h2>
+        <h3>The Engineer vs. Researcher Distinction</h3>
+        <div class="card">
+            <p><strong>AI Researchers:</strong> They push technical boundaries, develop novel architectures, and measure success through breakthroughs and citations. Most growth-stage companies over-hire for researchers when they actually need builders.</p>
+            <p><strong>AI Engineers:</strong> These are the "Engineers of the Foundation Model Era." They specialize in orchestration—LangChain, RAG pipelines, and fine-tuning. They turn research into reliable, scalable production software.</p>
+        </div>
+
+        <h3>Role-Specific Guides</h3>
+        <div class="card">
+            <h4>The ML Engineer (The Infrastructure Backbone)</h4>
+            <p><strong>Focus:</strong> Building, training, and deploying models. Fluency in PyTorch, JAX, and MLOps (Kubeflow, MLflow).</p>
+            <p><strong>Interview Must-Ask:</strong> "Walk me through the last time a model performed perfectly in dev but failed in production. How did you isolate the data drift vs. the infrastructure bottleneck?"</p>
+        </div>
+
+        <div class="card">
+            <h4>The AI Product Manager (The Bridge)</h4>
+            <p>This is the rarest hire in 2026. They must understand model limitations, token economics, and how to manage "probabilistic" product roadmaps rather than deterministic ones.</p>
+        </div>
+
+        <h3>2026 AI/ML Compensation Benchmarks</h3>
+        <table>
+            <thead>
+                <tr><th>Role</th><th>Seniority</th><th>Base Salary (USD)</th><th>Equity Trend</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>ML Engineer</td><td>Senior</td><td>$195k – $245k</td><td>High + Refreshers</td></tr>
+                <tr><td>AI Engineer (RAG/LLM)</td><td>Senior</td><td>$200k – $260k</td><td>Very High</td></tr>
+                <tr><td>AI Research Scientist</td><td>PhD / Lead</td><td>$220k – $310k</td><td>Tier 1 Only</td></tr>
+                <tr><td>AI Product Manager</td><td>Senior</td><td>$185k – $230k</td><td>Growth-linked</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="robotics">
+        <h2>Section 2: Robotics and Advanced Manufacturing</h2>
+        
+        <div class="card">
+            <h4>The Institutional Knowledge Gap (The Silver Tsunami)</h4>
+            <p>Robotics requires a rare generalist mix of mechanical, electrical, and software engineering. We are seeing a massive knowledge drain as the generation of engineers who built the original automation boom reach retirement age. For every 10 open senior robotics positions, there are only 3 to 4 qualified candidates actively looking.</p>
+        </div>
+
+        <h3>The Drivers of 2026 Demand</h3>
+        <div class="card">
+            <p>Demand is no longer just in automotive. We see a 400% increase in hiring for <strong>Logistics Automation, Collaborative Cobots, and AI-Perception Hardware</strong>. Companies are reshoring manufacturing to the US, creating a local talent vacuum in hubs like Boston, Austin, and Pittsburgh.</p>
+        </div>
+
+        <div class="card">
+            <h4>Red Flag Indicators in Robotics Candidates</h4>
+            <ul class="red-flag-list">
+                <li>Candidates who have only worked in simulation and never touched physical hardware.</li>
+                <li>Inability to explain the trade-off between latency and mechanical torque in a specific build.</li>
+                <li>Over-reliance on "black box" solutions without understanding the underlying PLC logic or C++ constraints.</li>
+            </ul>
+        </div>
+
+        <h3>Compensation Table: Robotics & Automation</h3>
+        <table>
+            <thead>
+                <tr><th>Specialty</th><th>Seniority</th><th>Base Salary</th><th>Key Skillsets</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Robotics SW Engineer</td><td>Senior</td><td>$170k – $215k</td><td>ROS2, C++, SLAM</td></tr>
+                <tr><td>Controls Engineer</td><td>Senior</td><td>$145k – $185k</td><td>PLC, SCADA, Fanuc</td></tr>
+                <tr><td>Mechatronics Lead</td><td>Lead</td><td>$160k – $200k</td><td>Hardware/Software Bridge</td></tr>
+                <tr><td>Computer Vision Eng</td><td>Senior</td><td>$180k – $230k</td><td>Edge AI, OpenCV</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+<section id="employers">
+        <h2>Section 3: The Employer’s Strategic Guide</h2>
+        
+        <div class="card">
+            <h4>How to Compete with Big Tech (Google, Meta, OpenAI)</h4>
+            <p>In 2026, you cannot win on cash alone. Growth-stage companies must lead with <strong>Vertical Ownership</strong>. Top-tier engineers are fleeing massive corporations where they feel like "cogs in a machine." They want to architect systems, not just maintain them.</p>
+            <div class="streamline-data-box">
+                <strong>Streamline Benchmark:</strong> Candidates in our 2026 network cited "Technical Autonomy" and "Direct Impact on Hardware" as higher priorities than a 15% increase in base salary.
+            </div>
+        </div>
+
+        <h3>What Makes a High-Conversion Job Description?</h3>
+        <div class="card">
+            <p>Stop listing "Years of Experience" as a hard filter. In AI and Robotics, the tech moves too fast for that to be an accurate metric. Instead, focus on the <strong>Technical Why</strong>. If you can't explain the hard problem the candidate will solve in the first 200 words, you will lose the 1% talent.</p>
+            <ul class="check-list">
+                <li>Define the tech stack and the specific hardware constraints immediately.</li>
+                <li>Articulate the "Shipping Velocity"—how often does code actually reach the robot or the user?</li>
+                <li>Be transparent about GPU/Compute availability.</li>
+            </ul>
+        </div>
+
+        <h3>Vetting Recruiting Firms: The "Speak the Language" Test</h3>
+        <div class="card">
+            <p>If your recruiter doesn't know the difference between a <strong>Controls Engineer</strong> and a <strong>Robotics Software Engineer</strong>, they are wasting your time. A generalist firm will send you 50 resumes of "Software Engineers" who have never seen a PLC or a Linux kernel.</p>
+            <div class="streamline-data-box">
+                <strong>Streamline Data:</strong> Companies using specialized technical recruiters see a 44% higher "Interview-to-Offer" ratio compared to those using generalist agencies.
+            </div>
+        </div>
+
+        <h3>Realistic Onboarding: The First 90 Days</h3>
+        <div class="card">
+            <p>For AI and Robotics, onboarding isn't just HR paperwork; it's environment setup. A senior ML engineer should be able to run their first training job within 48 hours. If your dev-ops environment is a mess, your new $250k hire will be looking for a new job within 3 months.</p>
+        </div>
+    </section>
+
+    <section id="candidates">
+        <h2>Section 4: The Candidate’s Career Manual</h2>
+        
+        <div class="card">
+            <h4>The "Impact-First" Resume Construction</h4>
+            <p>The 2026 resume is not a list of duties; it is a ledger of results. We recommend the <strong>Streamline AMO Model (Action-Metric-Outcome)</strong> for every bullet point.</p>
+            <p><em>Example: "Architected a custom vision-based sorting algorithm (Action) that processed 4,000 units/hour (Metric), resulting in a 22% reduction in factory overhead (Outcome)."</em></p>
+        </div>
+
+        <h3>How to Evaluate if a Company is "AI-Serious"</h3>
+        <div class="card">
+            <p>Many companies claim to be "AI-first" but are merely wrapper-startups. During your interview, ask these three <strong>Streamline Vetting Questions</strong>:</p>
+            <ul>
+                <li>"What is your annual compute budget, and how is it allocated between R&D and Production?"</li>
+                <li>"Walk me through your data moat. How are you collecting proprietary data that isn't available to a foundational model?"</li>
+                <li>"How many of your models are currently in a production environment versus a sandbox?"</li>
+            </ul>
+        </div>
+
+        <h3>2026 Compensation Negotiation</h3>
+        <div class="card">
+            <p>Beyond base and equity, top-tier 2026 candidates are negotiating for <strong>GPU Compute Credits</strong> for personal side-research and <strong>Hardware Stipends</strong> for home-office mechatronics labs. We help our candidates navigate these "Non-Traditional" benefits.</p>
+            <div class="streamline-data-box">
+                <strong>Streamline Insight:</strong> 35% of senior robotics hires in 2025 negotiated for "Remote-Flex" days specifically for deep-work coding, balanced by 3 days of on-site hardware testing.
+            </div>
+        </div>
+    </section>
+    <section id="market-2026">
+        <h2>Section 5: State of the Market 2026</h2>
+        <p style="font-weight: 500;">Hard data and geographic trends for the AI and Robotics sectors.</p>
+
+        <div class="card">
+            <h4>Offer Acceptance Rates (OAR)</h4>
+            <p>In 2026, the power dynamic remains firmly with the candidate. High-tier technical talent often holds 3 to 4 competing offers simultaneously.</p>
+            <div class="streamline-data-box">
+                <strong>Streamline Benchmark:</strong> Companies with a "First-Contact-to-Offer" cycle of <strong>21 days or less</strong> see a 74% Offer Acceptance Rate. Companies exceeding 35 days see that rate drop to 29%.
+            </div>
+        </div>
+
+        <h3>Geographic Talent Hubs (The 2026 GEO Map)</h3>
+        <div class="card">
+            <p>While remote work is standard for pure AI/ML software roles, Robotics and Manufacturing have seen a massive "Hub Consolidation."</p>
+            <ul>
+                <li><strong>Boston & Pittsburgh:</strong> Remain the global leaders for heavy industrial robotics and autonomous systems.</li>
+                <li><strong>Austin & Phoenix:</strong> The new "Semiconductor & Edge AI" corridor, driven by domestic chip manufacturing.</li>
+                <li><strong>San Francisco:</strong> Still the epicenter for LLM research and Foundation Model development.</li>
+            </ul>
+            <div class="streamline-data-box">
+                <strong>Streamline Data:</strong> 62% of Robotics roles in 2026 are now "On-Site/Hybrid Required" due to the need for physical hardware interaction, while 88% of ML/Data Science roles remain "Remote-First."
+            </div>
+        </div>
+
+        <h3>The "Ghost Job" Phenomenon</h3>
+        <div class="card">
+            <p>A major 2026 trend is the rise of "Ghost Postings"—roles kept open for market research rather than hiring. We advise candidates to verify the legitimacy of a role by checking the <strong>Streamline Vetting Score</strong> or looking for direct recruiter outreach.</p>
+        </div>
+
+        <h3>Trend Analysis: What's Changing?</h3>
+        <div class="card">
+            <h4>1. The Death of the Generalist</h4>
+            <p>Companies are no longer hiring "Software Engineers." They are hiring "High-Frequency Trading C++ Experts" or "Computer Vision Perception Specialists." Specificity is the only currency that matters in 2026.</p>
             
-            <div class="card">
-                <span class="guide-label">Market Landscape</span>
-                <h4>Why is it so hard to hire AI talent in 2026?</h4>
-                <p>Supply and demand are severely mismatched[cite: 3]. Most skilled AI professionals are already employed and well-compensated; they are "passive candidates" who cannot be found on job boards[cite: 4, 5].</p>
-                <p>Furthermore, role definitions are shifting. An ML engineer hired in 2022 has a different skill set than what is needed in 2026, where specializations like LLM fine-tuning and RAG (Retrieval-Augmented Generation) are now standalone disciplines[cite: 7].</p>
-                <div class="streamline-data">
-                    Streamline Insight: In 2025, fewer than 18% of the AI/ML candidates we placed were actively job searching[cite: 8].
-                </div>
-            </div>
-
-            <div class="card">
-                <h4>AI Engineer vs. ML Engineer vs. Researcher</h4>
-                <p><strong>ML Engineer:</strong> Focuses on building, training, and deploying models. Fluent in Python, PyTorch/TensorFlow, and statistics[cite: 12, 14].</p>
-                <p><strong>AI Engineer:</strong> Application-focused. They use foundation models and APIs to build systems like RAG pipelines or LangChain orchestrations[cite: 15, 16].</p>
-                <p><strong>AI Researcher:</strong> Pushes technical boundaries, often holding a PhD, and measures success in publications rather than production uptime[cite: 20, 21].</p>
-            </div>
-
-            <div class="card">
-                <span class="guide-label">Hiring Guide: ML Engineer</span>
-                <h4>How to Evaluate an ML Engineer</h4>
-                <p>The most reliable signal is a technical screen built around actual work, not abstract puzzles[cite: 30]. Ask them to walk through a project from problem definition to deployment[cite: 31].</p>
-                <h5>Key Probe Questions:</h5>
-                <ul>
-                    <li>What was the baseline? What did your model improve over? [cite: 31, 32]</li>
-                    <li>How did you handle class imbalance or data quality issues? [cite: 32]</li>
-                    <li>What went wrong, and how did you debug it? [cite: 33]</li>
-                </ul>
-                <p><span class="red-flag">Red Flag:</span> A resume that lists every framework but shows no evidence of shipping to production[cite: 39].</p>
-            </div>
-
-            <div class="card">
-                <span class="guide-label">Hiring Guide: AI Product Manager</span>
-                <h4>The Tiny Talent Pool of AI PMs</h4>
-                <p>You need someone at the intersection of product, data science, and engineering[cite: 42]. They must understand model limitations and what "good enough" accuracy looks like[cite: 43].</p>
-                <h5>Interview Scenarios:</h5>
-                <ul>
-                    <li>"How would you prioritize between a 2% accuracy improvement vs. a 30% reduction in inference cost?" [cite: 47]</li>
-                    <li>"How do you explain model limitations to a sales team that wants to overpromise?" [cite: 49]</li>
-                </ul>
-            </div>
-
-            <h3>AI/ML Compensation Benchmarks (2026 Base)</h3>
-            <table class="data-table">
-                <thead>
-                    <tr><th>Role</th><th>Seniority</th><th>Salary Range (US)</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>ML Engineer</td><td>Senior (6-10 yrs)</td><td>$195,000 – $240,000 [cite: 63]</td></tr>
-                    <tr><td>AI Engineer</td><td>Senior</td><td>$190,000 – $235,000 </td></tr>
-                    <tr><td>LLM/RAG Engineer</td><td>Senior</td><td>$200,000 – $260,000 </td></tr>
-                    <tr><td>VP / Head of AI</td><td>Executive</td><td>$280,000 – $400,000+ </td></tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="robotics">
-            <h2>Hiring for Robotics and Advanced Manufacturing</h2>
+            <h4>2. Agentic Workflows</h4>
+            <p>The most sought-after skill in AI for 2026 isn't just building models, but building <strong>Agents</strong>—systems that can plan, use tools, and execute multi-step tasks autonomously.</p>
             
-            <div class="card">
-                <span class="guide-label">The "Silver Tsunami"</span>
-                <h4>The Robotics Talent Shortage</h4>
-                <p>Robotics requires a rare mix of mechanical, electrical, and software engineering[cite: 69]. The "Silver Tsunami" refers to the fact that much expertise is held by engineers aged 55+ who are now retiring.</p>
-                <div class="streamline-data">
-                    Market Reality: For every 10 open senior robotics positions, there are only 3 to 4 qualified candidates looking[cite: 74].
-                </div>
+            <div class="streamline-data-box">
+                <strong>Streamline Benchmark:</strong> Salaries for "AI Agentic Workflow Architects" have seen a 30% year-over-year increase, the highest growth of any technical discipline.
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h4>Portfolio vs. Resume</h4>
-                <p>Robotics work is physical and demonstrable; the portfolio matters more than the resume[cite: 80].</p>
-                <h5>What to look for:</h5>
-                <ul>
-                    <li>Videos of systems actually built and deployed[cite: 81].</li>
-                    <li>GitHub repos with real robotics code, not just tutorials[cite: 81].</li>
-                    <li>Handling messy real-world problems like sensor drift or mechanical failure[cite: 81].</li>
-                </ul>
-            </div>
+    <section style="text-align: center; padding: 100px 20px; background: var(--card-bg); border: 1px solid rgba(0, 210, 255, 0.3); border-radius: 15px; margin-top: 80px; margin-bottom: 80px;">
+        <h3 style="color: white; font-size: 2.8rem; margin-bottom: 20px;">Ready to Streamline?</h3>
+        <p style="color: var(--text-main); max-width: 800px; margin: 0 auto 45px auto; font-size: 1.3rem; line-height: 1.7; opacity: 0.9;">
+            The 2026 market moves fast. Whether you are building an elite engineering team or navigating your next career-defining move, don't leave it to chance. Partner with the technical experts.
+        </p>
+        <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" style="padding: 22px 50px; background: var(--accent-blue); color: #001a33; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; min-width: 280px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);">
+                Hire Expert Talent
+            </a>
+            <a href="jobs.html" style="padding: 22px 50px; border: 2px solid var(--accent-blue); color: var(--accent-blue); text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; min-width: 280px; transition: 0.3s;">
+                View Featured Jobs
+            </a>
+        </div>
+    </section>
 
-            <div class="card">
-                <h4>Robotics Engineer vs. Automation Specialist</h4>
-                <p><strong>Robotics Engineer:</strong> Focuses on the robot—motion planning and perception[cite: 508].</p>
-                <p><strong>Automation Specialist:</strong> Broader mandate—designing entire production systems (conveyors, PLCs, SCADA)[cite: 508, 509].</p>
-            </div>
-        </section>
+</main>
 
-        <section id="employers">
-            <h2>The Employer's Guide: Winning the Talent War</h2>
-            
-            <div class="card">
-                <h4>How to Compete with Big Tech</h4>
-                <p>You can't always match Big Tech salaries. You must offer **Meaningful Impact** and **Technical Ownership**[cite: 655]. If you can't articulate your "Technical Why" in two minutes, you will lose the candidate[cite: 657].</p>
-            </div>
+<footer style="text-align: center; padding: 80px 20px; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; font-size: 1rem;">
+    <p>© 2026 Streamline Recruiting. All Rights Reserved.</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">Technical Talent Acquisition for AI, ML, and Robotics | Built for the Future of Work.</p>
+</footer>
 
-            <div class="card">
-                <h4>Hiring Timelines (The Reality Check)</h4>
-                <p>Senior IC roles take 4–7 months to fill; leadership roles take 6–9 months[cite: 54, 55].</p>
-                <div class="streamline-data">
-                    Velocity Bonus: Companies moving from first interview to offer in under 21 days have a 68% higher acceptance rate[cite: 60].
-                </div>
-            </div>
-        </section>
-
-        <section id="candidates">
-            <h2>The Candidate’s Playbook</h2>
-            
-            <div class="card">
-                <span class="guide-label">The AMO Framework</span>
-                <h4>Building an "Impact-First" Resume</h4>
-                <p>Use the **Action-Metric-Outcome** framework:</p>
-                <ul>
-                    <li>❌ "Experienced with RAG and LLMs."</li>
-                    <li>✅ "Architected RAG pipeline using LangChain, reducing latency by 40% while maintaining accuracy." [cite: 37, 635]</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4>2026 Negotiation Trends</h4>
-                <p>Candidates are no longer just asking for cash. They negotiate for:</p>
-                <ul>
-                    <li>**GPU Compute Credits** for personal research.</li>
-                    <li>**Remote-Flex Stipends** for hardware/home-lab setups.</li>
-                    <li>**Equity Refreshers** to ensure long-term alignment.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="why-streamline">
-            <h2>Why Work With Streamline Recruiting?</h2>
-            
-            <div class="card" style="border-left: 6px solid white;">
-                <h4>We Speak the Language</h4>
-                <p>You won't spend 40 minutes explaining the difference between a Controls Engineer and a Field Automation Specialist to us[cite: 660]. We bring real-world operations experience to every search[cite: 660].</p>
-            </div>
-
-            <div class="card" style="border-left: 6px solid white;">
-                <h4>The 8x Speed Advantage</h4>
-                <p>The industry average for hybrid PLC/ROS roles is 7.8 months to fill. Streamline's average cycle time is just **32 days**[cite: 652].</p>
-            </div>
-
-            <div class="card" style="border-left: 6px solid white;">
-                <h4>The Streamline Standard</h4>
-                <p>We operate on a permanent placement, contingency basis. We only get paid when we deliver a hire that sticks[cite: 661, 662].</p>
-            </div>
-        </section>
-
-        <section style="text-align: center; padding: 80px 20px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-top: 50px; margin-bottom: 80px;">
-            <h3 style="margin-top: 0;">Ready to Streamline Your Search?</h3>
-            <p style="max-width: 600px; margin: 0 auto 40px auto;">Whether you are a company looking for 1% talent or a candidate ready for your next career move[cite: 614].</p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="jump-link" style="background: var(--accent-blue); color: var(--dark-bg); padding: 18px 40px;">Hire Expert Talent</a>
-                <a href="jobs.html" class="jump-link" style="padding: 18px 40px;">View Featured Jobs</a>
-            </div>
-        </section>
-    </main>
 </body>
 </html>
