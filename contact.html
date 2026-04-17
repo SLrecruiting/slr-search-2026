@@ -27,6 +27,17 @@
         }
         form textarea { resize: vertical; }
 
+        /* Social Link Styling */
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--blue);
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .social-link:hover { text-decoration: underline; }
+
         /* Mobile fix for the grid */
         @media (max-width: 768px) {
             .grid { grid-template-columns: 1fr; }
@@ -56,6 +67,14 @@
                     Top-tier technical talent isn't found through job postings. It’s recruited. If you’re ready to bring on the engineers and leaders who actually move the needle, we want to hear about what you’re building.
                 </p>
 
+                <div style="margin-bottom: 40px; background: rgba(0, 210, 255, 0.05); padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 210, 255, 0.1);">
+                    <h4 style="margin-bottom: 10px; color: var(--blue);">Connect With Us</h4>
+                    <p style="font-size: 0.95rem; margin-bottom: 10px;">Follow Streamline Recruiting for legal tech insights and talent trends.</p>
+                    <a href="https://www.linkedin.com/company/streamline-recruiting" target="_blank" class="social-link">
+                        View LinkedIn Company Page →
+                    </a>
+                </div>
+
                 <h2 style="text-align: left; font-size: 1.8rem; margin-top: 50px; margin-bottom: 15px;">Elevate Your Talent Strategy Today</h2>
                 <p style="margin-bottom: 35px; opacity: 0.9;">
                     As a thank you for visiting, please accept these exclusive resources designed to help you refine and transform your hiring process.
@@ -63,7 +82,7 @@
 
                 <div style="margin-bottom: 40px; border-left: 3px solid var(--blue); padding-left: 20px;">
                     <h4 style="margin-bottom: 10px;">The 5 Steps to a Streamlined Hiring Process</h4>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Access the complete blueprint for a winning talent strategy, authored by industry expert Jackie Curtsinger.</p>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Access the complete blueprint for a winning talent strategy, authored by Jackie Curtsinger.</p>
                     <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="btn" style="padding: 12px 24px; font-size: 0.9rem; text-decoration: none;">Download Ebook</a>
                 </div>
 
@@ -88,7 +107,8 @@
     </main>
 
     <footer style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 60px;">
-        <p style="opacity: 0.5; font-size: 0.9rem;">© 2026 Streamline Recruiting</p>
+        <p style="opacity: 0.8; font-size: 0.9rem; font-weight: bold;">Streamline Recruiting (SLR Search)</p>
+        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 5px;">© 2026 All Rights Reserved</p>
         <p style="margin-top: 15px;">
             <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--blue); font-size: 0.8rem; text-decoration: none; opacity: 0.7;">Privacy Policy & SMS Terms</a>
         </p>
