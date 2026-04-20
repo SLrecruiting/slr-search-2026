@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,19 +6,29 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Streamline Recruiting",
-  "alternateName": "SLR Search",
-  "url": "https://www.slrsearch.com",
-  "logo": "https://www.slrsearch.com/logo.png", 
-  "sameAs": [
-    "https://www.linkedin.com/company/streamline-recruiting"
-  ]
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Streamline Recruiting",
+      "alternateName": "SLR Search",
+      "url": "https://www.slrsearch.com",
+      "logo": "https://www.slrsearch.com/logo.png"
+    }
+    </script>
     <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
+    <style>
+        .home-form input, .home-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        .home-form textarea { resize: none; }
+    </style>
 </head>
 <body class="home-page">
     <header>
@@ -28,7 +37,7 @@
         </div>
         <nav>
             <a href="/" class="active">Home</a>
-            <a href="/engineering">Engineering & Tech</a>
+            <a href="/engineering">Engineering</a>
             <a href="/legal">Legal</a>
             <a href="/jobs">Featured Jobs</a>
             <a href="/faq">FAQ</a>
@@ -40,67 +49,75 @@
         <section class="container" style="text-align: center; padding: 100px 0 40px 0;">
             <h1 style="font-size: 3.2rem; margin-bottom: 20px; line-height: 1.2;">The Future Belongs to Companies Who<br><span style="color:var(--blue)">Hire Ahead of It.</span></h1>
             <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                We help AI, Legal, Robotics, Emerging Technology, and Advanced Manufacturing companies find the engineers and leaders they actually need.
+                Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
             <div style="display: flex; gap: 20px; justify-content: center;">
-                <a href="#divisions" class="btn">Explore Divisions</a>
-                <a href="/jobs" class="btn" style="background: transparent; border: 1px solid var(--blue); color: var(--blue);">Explore Open Roles</a>
+                <a href="#hire-engineering" class="btn">Hire Engineering</a>
+                <a href="#hire-legal" class="btn" style="background: transparent; border: 1px solid var(--blue); color: var(--blue);">Hire Legal</a>
             </div>
         </section>
 
-        <section style="padding: 40px 0 60px 0; text-align: center;">
-            <div class="container">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Precision Over <span style="color:var(--blue)">Volume.</span></h2>
-                <p style="font-size: 1.15rem; max-width: 800px; margin: 0 auto 20px auto; opacity: 0.9; line-height: 1.6;">
-                    We provide candidates who are vetted, interviewed, and genuinely aligned with your mission and team.
-                </p>
-                <p style="color: var(--blue); font-style: italic; font-weight: 600;">
-                    We recruit for where your industry is going, not where it's been.
-                </p>
-            </div>
-        </section>
-
-        <section id="divisions" class="container" style="padding-bottom: 100px;">
+        <section class="container" style="padding-bottom: 80px;">
             <div class="home-split-grid">
                 <div>
                     <h2 style="font-size: 2.2rem; margin-bottom: 30px;">Specialized <span style="color:var(--blue)">Intelligence.</span></h2>
                     
                     <h3 style="font-size: 1.2rem; color: var(--blue); margin-bottom: 15px;">Legal & Counsel</h3>
                     <ul style="list-style: none; font-size: 1.1rem; margin-bottom: 30px; padding: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Chief Legal Officer & General Counsel</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Lateral Partners (Data Center & Infrastructure)</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> AI Regulatory & Governance Counsel</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Commercial Real Estate & Land Use Counsel</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Intellectual Property & Emerging Tech Counsel</li>
+                        <li style="margin-bottom: 10px;">→ Chief Legal Officer & General Counsel</li>
+                        <li style="margin-bottom: 10px;">→ Lateral Partners</li>
+                        <li style="margin-bottom: 10px;">→ AI Regulatory & Governance Counsel</li>
+                        <li style="margin-bottom: 10px;">→ Commercial Real Estate Associate Attorneys</li>
+                        <li style="margin-bottom: 10px;">→ Paralegals and Support Staff</li>
                     </ul>
 
                     <h3 style="font-size: 1.2rem; color: var(--blue); margin-bottom: 15px;">Engineering & Technology</h3>
                     <ul style="list-style: none; font-size: 1.1rem; padding: 0;">
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> AI & Machine Learning Architects</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> AI Product Management & Strategy</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Neural Networks & Risk AI Specialists</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Robotics & Autonomous Systems Engineering</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Aerospace & Defense Manufacturing</li>
-                        <li style="margin-bottom: 10px;"><span style="color:var(--blue); margin-right: 10px;">→</span> Oil & Gas Automation & Infrastructure</li>
+                        <li style="margin-bottom: 10px;">→ AI & Machine Learning Architects</li>
+                        <li style="margin-bottom: 10px;">→ AI Product Management & Strategy</li>
+                        <li style="margin-bottom: 10px;">→ Neural Networks & Risk AI Specialists</li>
+                        <li style="margin-bottom: 10px;">→ Robotics & Autonomous Systems</li>
+                        <li style="margin-bottom: 10px;">→ Aerospace & Defense Manufacturing</li>
+                        <li style="margin-bottom: 10px;">→ Oil & Gas Automation & Infrastructure</li>
                     </ul>
                 </div>
 
                 <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
                     <h4 style="color: var(--blue); margin-bottom: 15px; font-size: 1.1rem;">The Streamline Standard</h4>
                     <p style="margin-bottom: 25px; opacity: 0.9;">Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <p style="font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; text-align: center;">Secure Talent Acquisition:</p>
-                        <a href="/engineering" class="btn" style="width: 100%; text-align: center;">Hire Engineering & Tech</a>
-                        <a href="/legal" class="btn" style="width: 100%; text-align: center; background: transparent; border: 1px solid var(--blue); color: var(--blue);">Hire Legal Talent</a>
-                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding-bottom: 100px;">
+            <div class="grid-2" style="gap: 40px;">
+                <div id="hire-engineering" class="card home-form">
+                    <h3 style="color:var(--blue); margin-bottom:15px;">Hire Engineering Talent</h3>
+                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
+                        <input type="hidden" name="_subject" value="New Engineering Hire Request">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Work Email" required>
+                        <textarea name="message" rows="4" placeholder="Role details (e.g. Senior AI Engineer)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Send Engineering Request</button>
+                    </form>
+                </div>
+
+                <div id="hire-legal" class="card home-form" style="border-color: rgba(0, 212, 255, 0.3);">
+                    <h3 style="color:var(--blue); margin-bottom:15px;">Hire Legal Talent</h3>
+                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
+                        <input type="hidden" name="_subject" value="New Legal Hire Request">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Work Email" required>
+                        <textarea name="message" rows="4" placeholder="Role details (e.g. Lateral Partner or Paralegal)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%; background: transparent; border: 1px solid var(--blue); color: var(--blue);">Send Legal Request</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border);">
-        <p>© 2026 Streamline Recruiting (SLR Search) All rights reserved</p>
+        <p>© 2026 Streamline Recruiting (SLR Search)</p>
     </footer>
 </body>
 </html>
