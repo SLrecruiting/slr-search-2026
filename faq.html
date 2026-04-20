@@ -2,137 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <title>2026 Expert Insights & FAQ | Streamline Recruiting</title>
-    
+    <title>FAQ | Streamline Recruiting</title>
     <style>
-        /* RESET & BASE FONTS */
-        :root {
-            --dark-bg: #001a33;
-            --card-bg: #00264d;
-            --text-main: #e6f1ff;
-            --accent-blue: #00d2ff;
-            --border-color: rgba(0, 210, 255, 0.2);
+        /* CRITICAL MOBILE FIXES: Prevents the horizontal cutoff seen in screenshots */
+        html, body {
+            overflow-x: hidden; /* Stops the "side-to-side" wiggle */
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
         }
 
-        body.inner-page { 
-            background-color: var(--dark-bg); 
-            color: var(--text-main);
-            font-size: 16px; 
-            line-height: 1.6;
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
 
-        /* LOGO FIX */
-        header .logo-wrap img {
-            height: 50px; 
-            width: auto;
-            display: block;
+        /* HEADER & NAV REPAIR for Mobile */
+        @media (max-width: 768px) {
+            header {
+                height: auto !important; 
+                padding: 15px 0 !important;
+                flex-direction: column !important;
+                gap: 15px;
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+            }
+
+            .logo-wrap {
+                width: 100%;
+                justify-content: center;
+                display: flex;
+            }
+
+            .logo-wrap img {
+                height: 40px !important;
+                width: auto;
+            }
+
+            header nav {
+                width: 100% !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 10px 15px !important;
+                padding: 0 10px !important;
+            }
+
+            header nav a {
+                font-size: 0.75rem !important;
+                white-space: nowrap !important;
+                padding: 5px 0;
+            }
+
+            /* Jump Menu Fix: Makes the blue boxes stack and not cut off */
+            .jump-menu {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 10px !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+            }
+
+            .jump-link {
+                font-size: 0.7rem !important;
+                padding: 8px 12px !important;
+                flex: 1 1 40% !important; /* Forces 2-column grid on mobile */
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.2;
+                text-align: left;
+            }
         }
-
-        /* NAVIGATION FIX */
-        header nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        header nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            opacity: 0.8;
-            transition: 0.3s;
-        }
-
-        header nav a:hover, header nav a.active {
-            opacity: 1;
-            color: var(--accent-blue);
-        }
-
-        /* JUMP MENU - Fixed top: 0 to sit below the main header if needed */
-        .jump-menu { 
-            position: sticky; 
-            top: 0; 
-            background: rgba(0, 26, 51, 0.98); 
-            display: flex; 
-            justify-content: center; 
-            gap: 10px; 
-            padding: 15px 10px; 
-            border-bottom: 1.5px solid var(--accent-blue); 
-            z-index: 1000; 
-            flex-wrap: wrap;
-        }
-
-        .jump-link { 
-            color: var(--accent-blue); 
-            text-decoration: none; 
-            font-size: 0.8rem; /* Slightly smaller to fit the new Legal button */
-            font-weight: 700; 
-            border: 1.5px solid var(--accent-blue); 
-            padding: 8px 16px; 
-            border-radius: 4px; 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: 0.2s ease-in-out;
-        }
-
-        .jump-link:hover {
-            background: var(--accent-blue);
-            color: var(--dark-bg);
-        }
-
-        /* Prevents the header from covering section titles when you jump */
-        .faq-section { scroll-margin-top: 120px; }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        h1 { font-size: 2.8rem; color: var(--accent-blue); margin-bottom: 20px; }
-        h2 { font-size: 2rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 60px; }
-        h3 { font-size: 1.5rem; color: #fff; margin-top: 40px; }
-        h4 { font-size: 1.2rem; color: var(--accent-blue); margin-top: 0; margin-bottom: 15px; }
-        p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 12px; margin: 30px 0; border-left: 5px solid var(--accent-blue); }
-        .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 20px; border-radius: 8px; font-size: 1rem; }
-        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
-        th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 12px; text-transform: uppercase; }
-        td { padding: 12px; border-bottom: 1px solid var(--border-color); }
     </style>
 </head>
 <body class="inner-page">
-
-<header>
-    <div class="logo-wrap">
-        <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
-    </div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="engineering.html">Engineering</a>
-        <a href="legal.html">Legal</a>
-        <a href="jobs.html">Featured Jobs</a>
-        <a href="faq.html" class="active">FAQ</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo-wrap">
+            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="legal.html">Legal</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html" class="active">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
     <nav class="jump-menu">
-        <a href="#legal-landscape" class="jump-link" style="background: rgba(0,210,255,0.2); border-color: var(--accent-blue);">Legal Regulatory</a>
+        <a href="#legal-landscape" class="jump-link" style="background: rgba(0, 210, 255, 0.2); border-color: var(--accent-blue);">Legal Regulatory</a>
         <a href="#ai-ml" class="jump-link">AI/ML Landscape</a>
         <a href="#robotics" class="jump-link">Robotics & Mfg</a>
         <a href="#employers" class="jump-link">For Employers</a>
         <a href="#candidates" class="jump-link">For Candidates</a>
         <a href="#market-2026" class="jump-link">State of Market</a>
     </nav>
+
     <main class="container">
-<section id="legal-landscape" class="faq-section">
-    <div class="section-header">
-        <span class="guide-label" style="color: var(--blue); text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; font-size: 0.85rem; border: 1.5px solid var(--blue); padding: 5px 15px; border-radius: 4px; display: inline-block; margin-bottom: 20px;">Regulatory Strategy</span>
-        <h1 style="font-size: 3.5rem; color: var(--blue); margin-top: 10px;">Legal & Regulatory Landscape.</h1>
-        <p class="section-intro" style="font-size: 1.25rem; line-height: 1.8; opacity: 0.9;">
-            In 2026 the legal hiring market is defined by Technical Portability. As regulatory frameworks like the EU AI Act and CA SB-1047 mature, specialized legal talent has become a strategic asset for startups and V10 firms alike.
-        </p>
-    </div>
+        <section id="legal-landscape" class="faq-section">
+            <div class="section-header">
+                <span class="guide-label" style="color: var(--blue); text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; font-size: 0.85rem; border: 1.5px solid var(--blue); padding: 5px 10px; display: inline-block; margin-bottom: 10px;">Regulatory Strategy</span>
+                <h1 style="font-size: 3.5rem; color: var(--blue); margin-top: 10px;">Legal & Regulatory Landscape.</h1>
+                <p class="section-intro" style="font-size: 1.25rem; line-height: 1.8; opacity: 0.9;">
+                    In 2026 the legal hiring market is defined by Technical Portability. As regulatory frameworks like the EU AI Act and CA SB-1047 mature, specialized legal talent has become a strategic asset for startups and V10 firms alike.
+                </p>
+            </div>
 
     <div class="card">
         <h4>Optimal Timing for Technical General Counsel Hires</h4>
