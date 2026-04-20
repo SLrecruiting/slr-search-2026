@@ -7,10 +7,10 @@
     <title>Contact | Streamline Recruiting</title>
     <style>
         /* This ensures your grid works correctly on this page */
-        .grid {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 50px;
             align-items: start;
             margin-top: 40px;
         }
@@ -40,7 +40,8 @@
 
         /* Mobile fix for the grid */
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+            header { height: auto !important; padding: 20px !important; }
         }
     </style>
 </head>
@@ -55,20 +56,20 @@
             <a href="legal.html">Legal</a>
             <a href="jobs.html">Featured Jobs</a>
             <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
     <main class="container">
-        <div class="grid">
-            <div style="padding-right: 20px;">
+        <div class="contact-grid">
+            <div class="contact-info">
                 <h1 style="text-align: left; margin-bottom: 25px;">Contact</h1>
                 
                 <p style="margin-bottom: 30px; font-size: 1.15rem; line-height: 1.6;">
                     Top-tier technical talent isn't found through job postings. It’s recruited. If you’re ready to bring on the engineers and leaders who actually move the needle, we want to hear about what you’re building.
                 </p>
 
-                <div style="margin-bottom: 40px; background: rgba(0, 210, 255, 0.05); padding: 20px; border-radius: 8px; border: 1px solid rgba(0, 210, 255, 0.1);">
+                <div style="margin-bottom: 40px; background: rgba(0, 210, 255, 0.05); padding: 25px; border-radius: 8px; border: 1px solid rgba(0, 210, 255, 0.1);">
                     <h4 style="margin-bottom: 10px; color: var(--blue);">Connect With Us</h4>
                     <p style="font-size: 0.95rem; margin-bottom: 10px;">Follow Streamline Recruiting for legal tech insights and talent trends.</p>
                     <a href="https://www.linkedin.com/company/streamline-recruiting" target="_blank" class="social-link">
@@ -81,20 +82,20 @@
                     As a thank you for visiting, please accept these exclusive resources designed to help you refine and transform your hiring process.
                 </p>
 
-                <div style="margin-bottom: 40px; border-left: 3px solid var(--blue); padding-left: 20px;">
+                <div style="margin-bottom: 30px; border-left: 3px solid var(--blue); padding-left: 20px;">
                     <h4 style="margin-bottom: 10px;">The 5 Steps to a Streamlined Hiring Process</h4>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Access the complete blueprint for a winning talent strategy, authored by Jackie Curtsinger.</p>
-                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="btn" style="padding: 12px 24px; font-size: 0.9rem; text-decoration: none;">Download Ebook</a>
+                    <p style="margin-bottom: 20px; font-size: 0.95rem; opacity: 0.8;">Access the complete blueprint for a winning talent strategy, authored by Jackie Curtsinger.</p>
+                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="btn" style="text-decoration: none;">Download Ebook</a>
                 </div>
 
-                <div style="margin-bottom: 40px; border-left: 3px solid var(--blue); padding-left: 20px;">
+                <div style="margin-bottom: 30px; border-left: 3px solid var(--blue); padding-left: 20px;">
                     <h4 style="margin-bottom: 10px;">Advanced Hiring Scorecard Template</h4>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Empower your team to make data-driven, objective hiring decisions immediately with this specialized tool.</p>
-                    <a href="Advanced Strategic Hiring Scorecard.pdf" download class="btn" style="padding: 12px 24px; font-size: 0.9rem; text-decoration: none;">Hiring Scorecard</a>
+                    <p style="margin-bottom: 20px; font-size: 0.95rem; opacity: 0.8;">Empower your team to make data-driven, objective hiring decisions immediately with this specialized tool.</p>
+                    <a href="Advanced Strategic Hiring Scorecard.pdf" download class="btn" style="text-decoration: none;">Hiring Scorecard</a>
                 </div>
             </div>
 
-            <div class="card" style="align-self: start;">
+            <div class="card">
                 <h3 style="margin-bottom: 25px; color: var(--blue);">Send a Message</h3>
                 <form action="https://formspree.io/f/mjgpkbyq" method="POST">
                     <input type="text" name="name" placeholder="Full Name" required>
@@ -107,8 +108,8 @@
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 60px;">
-        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 5px;">© 2026 Streamline Recruiting (SLR Search) All rights reserved</p>
+    <footer>
+        <p style="opacity: 0.5; font-size: 0.8rem;">© 2026 Streamline Recruiting (SLR Search) All rights reserved</p>
         <p style="margin-top: 15px;">
             <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--blue); font-size: 0.8rem; text-decoration: none; opacity: 0.7;">Privacy Policy & SMS Terms</a>
         </p>
@@ -118,14 +119,9 @@
         <div style="background-color: #041530; margin: 10% auto; padding: 40px; border: 1px solid #00d2ff; width: 85%; max-width: 650px; border-radius: 12px; position:relative; color: #e6f1ff; text-align: left; line-height: 1.5;">
             <span onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute; top:15px; right:25px; color:#fff; font-size:30px; cursor:pointer;">&times;</span>
             <h2 style="margin-bottom: 15px;">Privacy Policy & SMS Terms</h2>
-            <p style="font-size: 0.8rem; margin-bottom: 20px; opacity: 0.6;">Last Updated: March 2026</p>
             <p>Streamline Recruiting is committed to protecting your privacy. This policy explains how we handle your info and our SMS process.</p>
-            <h4 style="color:#00d2ff; margin-top: 20px;">Information Collection & Use</h4>
-            <p>We collect personal information (name, email, phone, and resume) only to provide recruiting services and assess qualifications.</p>
             <h4 style="color:#00d2ff; margin-top: 20px;">SMS Program & Consent</h4>
             <p>By providing your number, you consent to receive recruitment updates. Up to 3 msgs/week. Text STOP to opt-out.</p>
-            <h4 style="color:#00d2ff; margin-top: 20px;">No Third-Party Sharing</h4>
-            <p>We do not sell or share your data or SMS consent with third parties for marketing purposes.</p>
             <p style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">Questions? Contact 425-818-3962.</p>
         </div>
     </div>
