@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Streamline Recruiting",
+      "url": "https://www.slrsearch.com",
+      "logo": "https://www.slrsearch.com/SLR%20Header.png"
+    }
+    </script>
+
     <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
+    
     <style>
-        /* Fix for visual balance */
+        /* Logic for visual balance and symmetry */
         .intelligence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             margin-top: 40px;
+            align-items: start;
         }
+        
         .standard-card {
-            grid-column: 1 / -1; /* Makes the guarantee box full width for balance */
             background: rgba(0, 210, 255, 0.05);
             border: 1px solid var(--accent-blue);
-            padding: 20px;
+            padding: 30px;
             text-align: center;
-            border-radius: 8px;
-            margin-bottom: 40px;
+            border-radius: 12px;
+            max-width: 850px;
+            margin: 0 auto 60px;
         }
+
+        /* Forces the headline to break cleanly without leaving 'Who' stranded */
+        .hero-title {
+            font-size: 3.5rem; 
+            line-height: 1.2; 
+            max-width: 900px; 
+            margin: 0 auto 20px;
+        }
+
         @media (max-width: 768px) {
-            .intelligence-grid { grid-template-columns: 1fr; }
+            .intelligence-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-title { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo-wrap">
             <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting" style="height: 50px; width: auto;"></a>
@@ -44,9 +69,14 @@
     </header>
 
     <main class="container">
-        <section style="text-align: center; padding: 80px 0 40px;">
-            <h1 style="font-size: 3.5rem; line-height: 1.1;">The Future Belongs to Companies Who<br><span style="color: var(--accent-blue);">Hire Ahead of It.</span></h1>
-            <p style="opacity: 0.8; margin: 20px 0 40px;">Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.</p>
+        <section style="text-align: center; padding: 100px 0 60px;">
+            <h1 class="hero-title">
+                The Future Belongs to Companies Who <br>
+                <span style="color: var(--accent-blue);">Hire Ahead of It.</span>
+            </h1>
+            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
+                Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
+            </p>
             
             <div style="display: flex; gap: 20px; justify-content: center;">
                 <a href="engineering.html#hire" class="btn">Hire Engineering</a>
@@ -54,18 +84,15 @@
             </div>
         </section>
 
-        <div class="standard-card">
-            <h4 style="color: var(--accent-blue); margin-bottom: 10px;">The Streamline Standard</h4>
-            <p>Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
-        </div>
-
-        <section>
-            <h2 style="text-align: center; margin-bottom: 40px;">Specialized <span style="color: var(--accent-blue);">Intelligence.</span></h2>
+        <section style="padding-bottom: 40px;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px; text-align: center;">
+                Specialized <span style="color: var(--accent-blue);">Intelligence.</span>
+            </h2>
             
             <div class="intelligence-grid">
                 <div>
-                    <h3 style="color: var(--accent-blue); border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Legal & Counsel</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Legal & Counsel</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2.2;">
                         <li>→ Chief Legal Officer & General Counsel</li>
                         <li>→ Lateral Partners</li>
                         <li>→ AI Regulatory & Governance Counsel</li>
@@ -76,8 +103,8 @@
                 </div>
 
                 <div>
-                    <h3 style="color: var(--accent-blue); border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Engineering & Tech</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <h3 style="color: var(--accent-blue); margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Engineering & Tech</h3>
+                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2.2;">
                         <li>→ AI & Machine Learning Architects</li>
                         <li>→ AI Product Management & Strategy</li>
                         <li>→ Neural Networks & Risk AI Specialists</li>
@@ -88,10 +115,16 @@
                 </div>
             </div>
         </section>
+
+        <div class="standard-card">
+            <h4 style="color: var(--accent-blue); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The Streamline Standard</h4>
+            <p style="font-size: 1.1rem;">Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
+        </div>
     </main>
 
     <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px;">
         <p>© 2026 Streamline Recruiting (SLR Search)</p>
     </footer>
+
 </body>
 </html>
