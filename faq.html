@@ -25,9 +25,9 @@
             line-height: 1.6;
         }
 
-        /* LOGO FIX - Matches Index Page */
+        /* LOGO FIX */
         header .logo-wrap img {
-            height: 50px; /* Increased from 35px */
+            height: 50px; 
             width: auto;
             display: block;
         }
@@ -52,16 +52,16 @@
             color: var(--accent-blue);
         }
 
-        /* JUMP MENU */
+        /* JUMP MENU - Fixed top: 0 to sit below the main header if needed */
         .jump-menu { 
             position: sticky; 
             top: 0; 
             background: rgba(0, 26, 51, 0.98); 
             display: flex; 
             justify-content: center; 
-            gap: 12px; 
-            padding: 20px 10px; 
-            border-bottom: 1px solid var(--accent-blue); 
+            gap: 10px; 
+            padding: 15px 10px; 
+            border-bottom: 1.5px solid var(--accent-blue); 
             z-index: 1000; 
             flex-wrap: wrap;
         }
@@ -69,10 +69,10 @@
         .jump-link { 
             color: var(--accent-blue); 
             text-decoration: none; 
-            font-size: 0.95rem; 
+            font-size: 0.8rem; /* Slightly smaller to fit the new Legal button */
             font-weight: 700; 
             border: 1.5px solid var(--accent-blue); 
-            padding: 12px 24px; 
+            padding: 8px 16px; 
             border-radius: 4px; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -83,6 +83,9 @@
             background: var(--accent-blue);
             color: var(--dark-bg);
         }
+
+        /* Prevents the header from covering section titles when you jump */
+        .faq-section { scroll-margin-top: 120px; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         h1 { font-size: 2.8rem; color: var(--accent-blue); margin-bottom: 20px; }
@@ -119,77 +122,36 @@
         <a href="#employers" class="jump-link">For Employers</a>
         <a href="#candidates" class="jump-link">For Candidates</a>
         <a href="#market-2026" class="jump-link">State of Market</a>
+        <a href="#legal-landscape" class="jump-link" style="background: rgba(0,210,255,0.15);">Legal Regulatory</a>
     </nav>
 
     <main class="container">
+
+        <section id="legal-landscape" class="faq-section">
+            <h1>Legal Regulatory Landscape</h1>
+            <p class="section-intro">In 2026, the legal hiring market is defined by the intersection of AI governance and data infrastructure. Law firms and corporations are no longer just hiring lawyers; they are hiring technical strategists.</p>
+            
+            <div class="card">
+                <h4>AI Ethics & Compliance Counsel</h4>
+                <p>With the EU AI Act and state-level frameworks fully integrated, demand for Counsel who understand bias auditing and model transparency is at an all-time high. We specialize in finding legal talent that bridges the gap between the JD and the neural network.</p>
+                <div class="streamline-data-box">
+                    <strong>Streamline Insight:</strong> Regulatory compliance is currently the #1 bottleneck for AI product deployment in North America.
+                </div>
+            </div>
+        </section>
+
         <section id="ai-ml" class="faq-section">
             <h1>AI and Machine Learning Hiring</h1>
-        <p class="section-intro">As of 2026, the AI hiring market has moved past the "hype" phase into a phase of deep specialization. Hiring for these roles requires an understanding of model architecture, orchestration, and the distinct difference between research and production.</p>
-    </div>
+            <p class="section-intro">As of 2026, the AI hiring market has moved past the "hype" phase into a phase of deep specialization. Hiring for these roles requires an understanding of model architecture, orchestration, and the distinct difference between research and production.</p>
+        </section>
 
-    <div class="card">
-        <h4>The 2026 Talent Landscape</h4>
-        <p>The mismatch between supply and demand has reached a critical inflection point. While thousands of engineers are adding "AI" to their LinkedIn profiles, the number of engineers who have actually <strong>shipped and scaled</strong> a foundation-model-powered product remains incredibly small. Most skilled AI professionals are already well-compensated and are "passive candidates"—they do not browse job boards.</p>
-        
-        <div class="streamline-data-box">
-            <strong>Streamline Benchmark:</strong> In our 2025/2026 data, 82% of top-tier AI talent required an average of 4.5 weeks of relationship-building before they would agree to a first-round technical interview.
-        </div>
-
-        <p>Furthermore, role definitions are shifting. An ML engineer hired in 2022 likely focused on predictive modeling (XGBoost, Random Forest). In 2026, the market demands expertise in <strong>LLM fine-tuning, Retrieval-Augmented Generation (RAG), and Agentic Workflows</strong>.</p>
-    </div>
-
-    <div class="card">
-        <h4>The Researcher vs. The Engineer Distinction</h4>
-        <p>One of the most common mistakes companies make is hiring an AI Researcher when they actually need an AI Engineer.</p>
-        
-        <h5>AI Researchers (The Scientists)</h5>
-        <p>Researchers push the technical boundaries of what is possible. They often hold PhDs and spend their time developing novel architectures or optimization techniques. They measure success through breakthroughs and publications. <strong>Streamline Tip:</strong> Only hire researchers if you are building your own foundation model from scratch.</p>
-
-        <h5>AI Engineers (The Builders)</h5>
-        <p>These are the "Engineers of the Foundation Model Era." They specialize in orchestration—taking existing models and turning them into reliable, scalable products. They are masters of LangChain, Pinecone, and prompt engineering. They measure success in latency, cost-per-inference, and user outcomes.</p>
-    </div>
-
-    <div class="card">
-        <h4>Role-Specific Guide: The ML Engineer</h4>
-        <p>The ML Engineer is the infrastructure backbone. They bridge the gap between a model sitting in a notebook and a model running at scale in production.</p>
-        
-        <h5>2026 Core Requirements:</h5>
-        <ul>
-            <li><strong>Frameworks:</strong> Deep proficiency in PyTorch, JAX, or TensorFlow.</li>
-            <li><strong>Infrastructure:</strong> Mastery of MLOps tools (Kubeflow, MLflow, or BentoML).</li>
-            <li><strong>Coding:</strong> High-level Python and increasingly Rust for performance-critical components.</li>
-        </ul>
-
-        <h5>The "Streamline Vetting" Interview Questions:</h5>
-        <ul>
-            <li><em>"Walk me through the last time a model performed perfectly in development but failed in production. How did you isolate the data drift vs. the infrastructure bottleneck?"</em></li>
-            <li><em>"How do you approach quantization when deploying a 70B parameter model on edge devices with limited VRAM?"</em></li>
-        </ul>
-        <p><span class="red-flag">Red Flag:</span> A candidate who can talk about architecture but has no experience with CI/CD for machine learning.</p>
-    </div>
-
-    <div class="card">
-        <h4>Role-Specific Guide: The AI Product Manager</h4>
-        <p>This is arguably the hardest role to fill in 2026. An AI PM must be the bridge between technical feasibility and business value.</p>
-        
-        <h5>Key Competencies:</h5>
-        <ul>
-            <li><strong>Probabilistic Thinking:</strong> Understanding that AI is not binary. They must manage roadmaps where "90% accuracy" is the goal, not "100% bug-free."</li>
-            <li><strong>Token Economics:</strong> The ability to calculate the ROI of an AI feature based on inference costs and latency trade-offs.</li>
-        </ul>
-
-        <h5>The "Streamline Vetting" Scenario:</h5>
-        <p><em>"How would you prioritize a 2% accuracy improvement that increases inference cost by 30% vs. a 10% latency reduction that keeps accuracy flat?"</em></p>
-    </div>
-
-    <div class="card">
-        <h4>LLM and Generative AI Roles</h4>
-        <p>In 2026, we see a surge in specialized roles like <strong>Prompt Architects</strong> and <strong>RAG Systems Engineers</strong>. These roles require a deep understanding of vector databases (Milvus, Weaviate) and the nuances of context window management.</p>
-        <div class="streamline-data-box">
-            <strong>Streamline Benchmark:</strong> Salaries for specialized RAG Engineers have seen a 28% year-over-year increase, outpacing general software engineering growth by 3x.
-        </div>
-    </div>
-
+        <div class="card">
+            <h4>The 2026 Talent Landscape</h4>
+            <p>The mismatch between supply and demand has reached a critical inflection point. While thousands of engineers are adding "AI" to their LinkedIn profiles, the number of engineers who have actually <strong>shipped and scaled</strong> a foundation-model-powered product remains incredibly small. Most skilled AI professionals are already well-compensated and are "passive candidates"—they do not browse job boards.</p>
+            
+            <div class="streamline-data-box">
+                <strong>Streamline Benchmark:</strong> In our 2025/2026 data, 82% of top-tier AI talent required an average of 4.5 weeks of relationship-building before they would agree to a first-round technical interview.
+            </div>
     <h3>AI/ML Salary Benchmarks (2026)</h3>
     <table class="data-table">
         <thead>
