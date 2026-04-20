@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
 
-        /* Matches the Engineering page header layout */
+        /* Fixed Header Layout */
         header {
             display: flex;
             justify-content: space-between;
@@ -28,30 +28,33 @@
         }
 
         .logo-wrap img {
-            height: 50px;
+            height: 45px;
             width: auto;
         }
 
         nav {
             display: flex;
-            gap: 25px;
+            gap: 20px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav a.active {
             color: #00d2ff;
         }
 
-        /* HERO: Locked Background & Phrasing */
+        /* HERO: Fixed Background & Phrasing */
         .hero-container {
             text-align: center;
-            padding: 140px 20px;
-            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.8)), 
+            padding: 160px 20px;
+            background: linear-gradient(rgba(5, 10, 20, 0.8), rgba(5, 10, 20, 0.8)), 
                         url('hero.jpg'); 
             background-size: cover;
             background-position: center;
@@ -64,14 +67,33 @@
 
         .hero-title {
             font-size: 3.5rem; 
-            line-height: 1.2; 
+            line-height: 1.1; 
             margin: 0 auto 20px;
-            max-width: 1000px;
+            max-width: 900px;
             font-weight: 800;
         }
 
         .hero-title span.blue-text {
             color: #00d2ff;
+        }
+
+        /* Fixed Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: #00d2ff;
+            color: #050a14;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+            border: 1px solid #00d2ff;
+        }
+
+        .btn:hover {
+            background-color: #008cba;
+            border-color: #008cba;
         }
 
         /* GRID: Symmetrical Lists */
@@ -86,18 +108,19 @@
 
         .standard-card {
             background: rgba(0, 210, 255, 0.05);
-            border: 1px solid #00d2ff;
-            padding: 30px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            padding: 40px;
             text-align: center;
             border-radius: 12px;
-            max-width: 850px;
+            max-width: 800px;
             margin: 40px auto 80px;
         }
 
         @media (max-width: 768px) {
             .hero-title { font-size: 2.2rem; }
-            .intelligence-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; }
+            .intelligence-grid { grid-template-columns: 1fr; gap: 40px; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -125,7 +148,7 @@
                 The Future Belongs to Companies<br>
                 <span class="blue-text">Who Hire Ahead of It.</span>
             </h1>
-            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; max-width: 700px;">
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; max-width: 700px; line-height: 1.6;">
                 Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
@@ -135,14 +158,14 @@
         </section>
 
         <section>
-            <h2 style="text-align: center; font-size: 2.2rem; margin-top: 60px;">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-top: 80px; font-weight: 700;">
                 Specialized <span style="color: #00d2ff;">Intelligence.</span>
             </h2>
             
             <div class="intelligence-grid">
                 <div>
-                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px;">Legal & Counsel</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem;">
+                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.4rem;">Legal & Counsel</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem; opacity: 0.9;">
                         <li>→ Chief Legal Officer & General Counsel</li>
                         <li>→ Lateral Partners</li>
                         <li>→ AI Regulatory & Governance Counsel</li>
@@ -152,8 +175,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px;">Engineering & Tech</h3>
-                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem;">
+                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.4rem;">Engineering & Tech</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem; opacity: 0.9;">
                         <li>→ AI & Machine Learning Architects</li>
                         <li>→ AI Product Management & Strategy</li>
                         <li>→ Neural Networks & Risk AI Specialists</li>
@@ -165,13 +188,13 @@
             </div>
 
             <div class="standard-card">
-                <h4 style="color: #00d2ff; margin-bottom: 15px;">The Streamline Standard</h4>
-                <p>Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
+                <h4 style="color: #00d2ff; margin-bottom: 15px; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;">The Streamline Standard</h4>
+                <p style="font-size: 1.1rem; line-height: 1.6;">Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <footer style="text-align: center; padding: 60px 20px; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.6; font-size: 0.9rem;">
         <p>© 2026 Streamline Recruiting (SLR Search)</p>
     </footer>
 
