@@ -1,7 +1,6 @@
-
 /* --- 1. CORE THEME --- */
 :root {
-    --navy: #001a33; /* Matches your logo background perfectly */
+    --navy: #001a33; 
     --blue: #00d2ff;
     --text: #e6f1ff;
     --border: rgba(0, 210, 255, 0.2);
@@ -21,19 +20,17 @@ body {
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.6;
-    /* This ensures the background stays fixed and covers the whole screen */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow-x: hidden; /* Fixes the "white space on the right" issue */
 }
 
-/* Home Page Background */
+/* Page Backgrounds */
 body.home-page {
     background-image: linear-gradient(rgba(2, 11, 26, 0.75), rgba(2, 11, 26, 0.75)), url('hero.jpg');
 }
-
-/* Other Pages Background */
 body.inner-page {
     background-image: linear-gradient(rgba(2, 11, 26, 0.85), rgba(2, 11, 26, 0.85)), url('hero 2.jpg');
 }
@@ -44,13 +41,14 @@ main {
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 40px 0 0; /* 0 on left lets logo touch the edge */
+    padding: 0 5%;
     border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; 
-    background-color: var(--navy); /* Now perfectly synced with the logo */
+    height: 90px; /* Slight bump for better spacing */
+    background-color: var(--navy);
+    width: 100%;
 }
 
 .logo-wrap, .logo-wrap a { 
@@ -60,25 +58,24 @@ header {
 }
 
 .logo-wrap img { 
-    height: 100%; 
+    height: 60px; /* Standardized size */
     width: auto; 
     display: block;
     object-fit: contain;
-    /* We'll remove the brightness filter so the logo's native blue shows through */
 }
 
 nav { 
     display: flex; 
-    gap: 30px;
-    padding-right: 20px; /* Gives the nav links a little breathing room from the edge */
+    gap: 25px;
 }
 
 nav a {
     color: var(--text);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
+    white-space: nowrap; /* Prevents text from cutting off */
 }
 
 /* --- 3. LAYOUT & GRIDS --- */
@@ -111,12 +108,12 @@ nav a {
 
 /* --- 4. COMPONENTS --- */
 .card {
-    background: rgba(2, 11, 26, 0.6); /* Slightly darker for better contrast over photos */
+    background: rgba(2, 11, 26, 0.6);
     border: 1px solid var(--border);
     padding: 30px;
     border-radius: 8px;
     height: 100%;
-    backdrop-filter: blur(8px); /* The "Glass" effect */
+    backdrop-filter: blur(8px);
 }
 
 .btn {
@@ -147,27 +144,25 @@ footer p {
 /* --- 6. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     header {
+        flex-direction: column !important;
+        height: auto !important;
         padding: 20px !important;
-        width: 100vw !important; /* Forces header to full screen width */
+        gap: 15px;
     }
-    nav {
-        padding-right: 0 !important;
-        width: 100%;
-        justify-content: center;
-    }
-    body {
-        overflow-x: hidden; /* Prevents the horizontal scroll glitch */
-    }
-}
-    
+
     .logo-wrap img {
-        height: 60px; 
+        height: 50px !important;
     }
 
     nav {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        justify-content: center !important;
+        gap: 12px;
+        padding-right: 0 !important;
+    }
+
+    nav a {
+        font-size: 0.75rem;
     }
 
     .grid-3, .home-split-grid {
