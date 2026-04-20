@@ -33,6 +33,29 @@
         }
 
         @media (max-width: 768px) {
+            /* 1. SURGICAL FIX: Prevent text and blocks from cutting off */
+            .container {
+                width: 100% !important;
+                padding: 20px 15px !important;
+                overflow: hidden !important;
+            }
+
+            .card {
+                width: 100% !important;
+                padding: 20px !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+
+            /* 2. SURGICAL FIX: Force long words (like Manufacturing) to wrap */
+            h1, h2, h3, h4, p, li, td {
+                word-wrap: break-word !important;
+                overflow-wrap: break-word !important;
+                white-space: normal !important;
+            }
+
             header {
                 flex-direction: column !important;
                 height: auto !important;
@@ -44,15 +67,25 @@
                 justify-content: center;
                 flex-wrap: wrap;
             }
+
+            /* 3. SURGICAL FIX: Fix Jump Menu from sliding off screen */
+            .jump-menu {
+                flex-wrap: wrap !important;
+                padding: 10px !important;
+            }
             .jump-link {
-                flex: 1 1 calc(50% - 15px);
+                flex: 1 1 calc(50% - 10px);
                 text-align: center;
                 font-size: 0.75rem;
                 padding: 10px 5px;
+                white-space: normal !important; /* Allows labels to wrap if needed */
             }
+
             .section-header h1 { 
-                font-size: 2.2rem !important; 
+                font-size: 1.8rem !important; /* Slightly smaller for mobile fitting */
+                line-height: 1.2 !important;
             }
+
             /* Fixes the table cutoff on mobile */
             .table-scroll {
                 overflow-x: auto;
