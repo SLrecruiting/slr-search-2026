@@ -12,6 +12,11 @@
     box-sizing: border-box; 
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* This kills the space on the right side */
+}
+
 body {
     background-color: var(--navy);
     color: var(--text);
@@ -23,49 +28,40 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow-x: hidden; /* Fixes the "white space on the right" issue */
 }
 
-/* Page Backgrounds */
-body.home-page {
-    background-image: linear-gradient(rgba(2, 11, 26, 0.75), rgba(2, 11, 26, 0.75)), url('hero.jpg');
-}
-body.inner-page {
-    background-image: linear-gradient(rgba(2, 11, 26, 0.85), rgba(2, 11, 26, 0.85)), url('hero 2.jpg');
-}
+body.home-page { background-image: linear-gradient(rgba(2,11,26,0.75), rgba(2,11,26,0.75)), url('hero.jpg'); }
+body.inner-page { background-image: linear-gradient(rgba(2,11,26,0.85), rgba(2,11,26,0.85)), url('hero 2.jpg'); }
 
-main { 
-    flex: 1; 
-}
+main { flex: 1; }
 
 /* --- 2. HEADER: LOGO & NAV --- */
 header {
-    padding: 0 5%;
-    border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px; /* Slight bump for better spacing */
+    padding: 0 5%;
+    min-height: 90px;
     background-color: var(--navy);
+    border-bottom: 1px solid var(--border);
     width: 100%;
+    position: relative;
+    z-index: 1000;
 }
 
-.logo-wrap, .logo-wrap a { 
+.logo-wrap {
     display: flex;
     align-items: center;
-    height: 100%;
 }
 
-.logo-wrap img { 
-    height: 60px; /* Standardized size */
-    width: auto; 
-    display: block;
+.logo-wrap img {
+    height: 60px; /* Strong, consistent size */
+    width: auto;
     object-fit: contain;
 }
 
-nav { 
-    display: flex; 
+nav {
+    display: flex;
     gap: 25px;
 }
 
@@ -75,35 +71,20 @@ nav a {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevents text from cutting off */
+    white-space: nowrap; /* Prevents words from cutting off */
 }
 
 /* --- 3. LAYOUT & GRIDS --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
-}
-
-.jobs-full-width {
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 40px auto !important;
-    padding: 0 20px;
-}
-
-.home-split-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 50px;
-    align-items: start;
+    padding: 40px 20px;
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 40px;
 }
 
 /* --- 4. COMPONENTS --- */
@@ -112,42 +93,21 @@ nav a {
     border: 1px solid var(--border);
     padding: 30px;
     border-radius: 8px;
-    height: 100%;
     backdrop-filter: blur(8px);
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--blue);
-    color: var(--navy);
-    padding: 12px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    text-align: center;
-}
-
-/* --- 5. CLEAN FOOTER --- */
-footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-}
-
-footer p { 
-    opacity: 0.5; 
-    font-size: 0.85rem; 
-}
-
-/* --- 6. MOBILE RESPONSIVENESS --- */
+/* --- 5. MOBILE RESPONSIVENESS (THE REAL FIX) --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column !important;
-        height: auto !important;
-        padding: 20px !important;
+        flex-direction: column !important; /* Stacks logo over nav */
+        height: auto !important; /* Header grows to fit stacked links */
+        padding: 20px 0 !important; /* Centers everything */
         gap: 15px;
+    }
+
+    .logo-wrap {
+        justify-content: center;
+        width: 100%;
     }
 
     .logo-wrap img {
@@ -155,21 +115,22 @@ footer p {
     }
 
     nav {
-        flex-wrap: wrap;
+        width: 100%;
         justify-content: center !important;
-        gap: 12px;
-        padding-right: 0 !important;
+        flex-wrap: wrap;
+        gap: 10px 15px;
+        padding: 0 10px !important;
     }
 
     nav a {
         font-size: 0.75rem;
     }
 
-    .grid-3, .home-split-grid {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 20px;
     }
 
-    h1 {
-        font-size: 1.8rem !important;
+    .grid-3 {
+        grid-template-columns: 1fr;
     }
 }
