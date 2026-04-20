@@ -5,21 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Streamline Recruiting",
-      "url": "https://www.slrsearch.com",
-      "logo": "https://www.slrsearch.com/SLR%20Header.png"
-    }
-    </script>
-
     <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
     
     <style>
-        /* Logic for visual balance and symmetry */
+        /* This ensures the two columns stay perfectly side-by-side */
         .intelligence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -28,6 +17,7 @@
             align-items: start;
         }
         
+        /* Centered styling for the guarantee box */
         .standard-card {
             background: rgba(0, 210, 255, 0.05);
             border: 1px solid var(--accent-blue);
@@ -35,19 +25,20 @@
             text-align: center;
             border-radius: 12px;
             max-width: 850px;
-            margin: 0 auto 60px;
+            margin: 40px auto 60px;
         }
 
-        /* Forces the headline to break cleanly without leaving 'Who' stranded */
+        /* FIX: Prevents "Who" from being stranded on its own line */
         .hero-title {
             font-size: 3.5rem; 
             line-height: 1.2; 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: 0 auto 20px;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
-            .intelligence-grid { grid-template-columns: 1fr; gap: 40px; }
+            .intelligence-grid { grid-template-columns: 1fr; gap: 30px; }
             .hero-title { font-size: 2.5rem; }
         }
     </style>
@@ -69,12 +60,12 @@
     </header>
 
     <main class="container">
-        <section style="text-align: center; padding: 100px 0 60px;">
+        <section style="padding: 100px 0 60px;">
             <h1 class="hero-title">
                 The Future Belongs to Companies Who <br>
                 <span style="color: var(--accent-blue);">Hire Ahead of It.</span>
             </h1>
-            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
+            <p style="text-align: center; font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px;">
                 Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
             
@@ -84,8 +75,8 @@
             </div>
         </section>
 
-        <section style="padding-bottom: 40px;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 20px; text-align: center;">
+        <section style="padding-bottom: 20px;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 40px; text-align: center;">
                 Specialized <span style="color: var(--accent-blue);">Intelligence.</span>
             </h2>
             
@@ -118,7 +109,9 @@
 
         <div class="standard-card">
             <h4 style="color: var(--accent-blue); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The Streamline Standard</h4>
-            <p style="font-size: 1.1rem;">Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
+            <p style="font-size: 1.1rem; margin: 0;">
+                Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.
+            </p>
         </div>
     </main>
 
