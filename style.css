@@ -14,7 +14,7 @@
 
 html, body {
     width: 100%;
-    overflow-x: hidden; /* This kills the space on the right side */
+    overflow-x: hidden; /* Stops the mobile side-scrolling */
 }
 
 body {
@@ -24,40 +24,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    line-height: 1.6;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
-body.home-page { background-image: linear-gradient(rgba(2,11,26,0.75), rgba(2,11,26,0.75)), url('hero.jpg'); }
-body.inner-page { background-image: linear-gradient(rgba(2,11,26,0.85), rgba(2,11,26,0.85)), url('hero 2.jpg'); }
-
-main { flex: 1; }
-
-/* --- 2. HEADER: LOGO & NAV --- */
+/* --- 2. HEADER: SLIM & RESPONSIVE --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
-    min-height: 90px;
+    padding: 0 40px;
+    height: 80px; /* Locked slim height for desktop */
     background-color: var(--navy);
     border-bottom: 1px solid var(--border);
     width: 100%;
-    position: relative;
-    z-index: 1000;
-}
-
-.logo-wrap {
-    display: flex;
-    align-items: center;
 }
 
 .logo-wrap img {
-    height: 60px; /* Strong, consistent size */
+    height: 50px; /* Clean, professional size */
     width: auto;
-    object-fit: contain;
+    display: block;
 }
 
 nav {
@@ -71,7 +55,7 @@ nav a {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    white-space: nowrap; /* Prevents words from cutting off */
+    white-space: nowrap;
 }
 
 /* --- 3. LAYOUT & GRIDS --- */
@@ -96,38 +80,23 @@ nav a {
     backdrop-filter: blur(8px);
 }
 
-/* --- 5. MOBILE RESPONSIVENESS (THE REAL FIX) --- */
+/* --- 5. MOBILE FIXES --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column !important; /* Stacks logo over nav */
-        height: auto !important; /* Header grows to fit stacked links */
-        padding: 20px 0 !important; /* Centers everything */
-        gap: 15px;
-    }
-
-    .logo-wrap {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .logo-wrap img {
-        height: 50px !important;
+        flex-direction: column !important;
+        height: auto !important; /* Only grows on mobile to fit text */
+        padding: 15px 10px !important;
+        gap: 10px;
     }
 
     nav {
-        width: 100%;
-        justify-content: center !important;
         flex-wrap: wrap;
-        gap: 10px 15px;
-        padding: 0 10px !important;
+        justify-content: center;
+        gap: 10px;
     }
 
     nav a {
-        font-size: 0.75rem;
-    }
-
-    .container {
-        padding: 20px;
+        font-size: 0.7rem;
     }
 
     .grid-3 {
