@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Contact | Streamline Recruiting</title>
     <style>
-        /* This ensures your grid works correctly on this page */
+        /* Local Grid Fix to prevent footer overlap */
         .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -27,7 +27,6 @@
         }
         form textarea { resize: vertical; }
 
-        /* Social Link Styling */
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -38,7 +37,6 @@
         }
         .social-link:hover { text-decoration: underline; }
 
-        /* Mobile fix for the grid */
         @media (max-width: 768px) {
             .contact-grid { grid-template-columns: 1fr; gap: 30px; }
             header { height: auto !important; padding: 20px !important; }
@@ -82,36 +80,36 @@
                     As a thank you for visiting, please accept these exclusive resources designed to help you refine and transform your hiring process.
                 </p>
 
-                <div style="margin-bottom: 30px; border-left: 3px solid var(--blue); padding-left: 20px;">
+                <div style="margin-bottom: 40px; border-left: 3px solid var(--blue); padding-left: 20px;">
                     <h4 style="margin-bottom: 10px;">The 5 Steps to a Streamlined Hiring Process</h4>
                     <p style="margin-bottom: 20px; font-size: 0.95rem; opacity: 0.8;">Access the complete blueprint for a winning talent strategy, authored by Jackie Curtsinger.</p>
-                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="btn" style="text-decoration: none;">Download Ebook</a>
+                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download style="display: inline-block; background-color: #00d2ff; color: #001a33; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 0.85rem; text-transform: uppercase;">Download Ebook</a>
                 </div>
 
-                <div style="margin-bottom: 30px; border-left: 3px solid var(--blue); padding-left: 20px;">
+                <div style="margin-bottom: 40px; border-left: 3px solid var(--blue); padding-left: 20px;">
                     <h4 style="margin-bottom: 10px;">Advanced Hiring Scorecard Template</h4>
                     <p style="margin-bottom: 20px; font-size: 0.95rem; opacity: 0.8;">Empower your team to make data-driven, objective hiring decisions immediately with this specialized tool.</p>
-                    <a href="Advanced Strategic Hiring Scorecard.pdf" download class="btn" style="text-decoration: none;">Hiring Scorecard</a>
+                    <a href="Advanced Strategic Hiring Scorecard.pdf" download style="display: inline-block; background-color: #00d2ff; color: #001a33; padding: 12px 24px; border-radius: 4px; text-decoration: none; font-weight: 800; font-size: 0.85rem; text-transform: uppercase;">Hiring Scorecard</a>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" style="align-self: start;">
                 <h3 style="margin-bottom: 25px; color: var(--blue);">Send a Message</h3>
                 <form action="https://formspree.io/f/mjgpkbyq" method="POST">
                     <input type="text" name="name" placeholder="Full Name" required>
                     <input type="email" name="email" placeholder="Email Address" required>
                     <input type="tel" name="phone" placeholder="Phone Number" required>
                     <textarea name="message" rows="6" placeholder="Tell us about what you're building..." required></textarea>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px; border: none; cursor: pointer;">Send Request</button>
+                    <button type="submit" style="width: 100%; background-color: #00d2ff; color: #001a33; padding: 14px; border-radius: 4px; border: none; font-weight: 800; text-transform: uppercase; cursor: pointer; font-family: inherit;">Send Request</button>
                 </form>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p style="opacity: 0.5; font-size: 0.8rem;">© 2026 Streamline Recruiting (SLR Search) All rights reserved</p>
+    <footer style="width: 100%; text-align: center; padding: 60px 0; border-top: 1px solid rgba(0, 210, 255, 0.2); margin-top: 80px; clear: both; display: block;">
+        <p style="opacity: 0.5; font-size: 0.8rem; margin: 0 auto;">© 2026 Streamline Recruiting (SLR Search) All rights reserved</p>
         <p style="margin-top: 15px;">
-            <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--blue); font-size: 0.8rem; text-decoration: none; opacity: 0.7;">Privacy Policy & SMS Terms</a>
+            <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: #00d2ff; font-size: 0.8rem; text-decoration: none; opacity: 0.7;">Privacy Policy & SMS Terms</a>
         </p>
     </footer>
 
@@ -119,9 +117,14 @@
         <div style="background-color: #041530; margin: 10% auto; padding: 40px; border: 1px solid #00d2ff; width: 85%; max-width: 650px; border-radius: 12px; position:relative; color: #e6f1ff; text-align: left; line-height: 1.5;">
             <span onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute; top:15px; right:25px; color:#fff; font-size:30px; cursor:pointer;">&times;</span>
             <h2 style="margin-bottom: 15px;">Privacy Policy & SMS Terms</h2>
+            <p style="font-size: 0.8rem; margin-bottom: 20px; opacity: 0.6;">Last Updated: March 2026</p>
             <p>Streamline Recruiting is committed to protecting your privacy. This policy explains how we handle your info and our SMS process.</p>
+            <h4 style="color:#00d2ff; margin-top: 20px;">Information Collection & Use</h4>
+            <p>We collect personal information (name, email, phone, and resume) only to provide recruiting services and assess qualifications.</p>
             <h4 style="color:#00d2ff; margin-top: 20px;">SMS Program & Consent</h4>
             <p>By providing your number, you consent to receive recruitment updates. Up to 3 msgs/week. Text STOP to opt-out.</p>
+            <h4 style="color:#00d2ff; margin-top: 20px;">No Third-Party Sharing</h4>
+            <p>We do not sell or share your data or SMS consent with third parties for marketing purposes.</p>
             <p style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">Questions? Contact 425-818-3962.</p>
         </div>
     </div>
