@@ -6,82 +6,58 @@
     <link rel="stylesheet" href="style.css">
     <title>FAQ | Streamline Recruiting</title>
     <style>
-        /* CRITICAL MOBILE FIXES: Prevents the horizontal cutoff seen in screenshots */
+        /* FIXES THE MOBILE CUTOFF WITHOUT BREAKING DESKTOP */
         html, body {
-            overflow-x: hidden; /* Stops the "side-to-side" wiggle */
+            overflow-x: hidden;
             width: 100%;
             margin: 0;
             padding: 0;
-            position: relative;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
+        /* Desktop Jump Menu (Matches your image_5a7816.jpg) */
+        .jump-menu {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0;
+            flex-wrap: nowrap; 
         }
 
-        /* HEADER & NAV REPAIR for Mobile */
+        .jump-link {
+            padding: 8px 16px;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            color: #00d2ff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1024px) {
+            .jump-menu { flex-wrap: wrap; padding: 10px; }
+        }
+
         @media (max-width: 768px) {
             header {
-                height: auto !important; 
-                padding: 15px 0 !important;
                 flex-direction: column !important;
-                gap: 15px;
-                width: 100% !important;
-                display: flex !important;
-                align-items: center !important;
+                height: auto !important;
+                padding: 15px !important;
             }
-
-            .logo-wrap {
-                width: 100%;
-                justify-content: center;
-                display: flex;
-            }
-
-            .logo-wrap img {
-                height: 40px !important;
-                width: auto;
-            }
-
             header nav {
-                width: 100% !important;
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: center !important;
-                gap: 10px 15px !important;
-                padding: 0 10px !important;
-            }
-
-            header nav a {
-                font-size: 0.75rem !important;
-                white-space: nowrap !important;
-                padding: 5px 0;
-            }
-
-            /* Jump Menu Fix: Makes the blue boxes stack and not cut off */
-            .jump-menu {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: center !important;
+                margin-top: 15px;
                 gap: 10px !important;
-                padding: 10px !important;
-                margin: 10px 0 !important;
+                justify-content: center;
+                flex-wrap: wrap;
             }
-
             .jump-link {
-                font-size: 0.7rem !important;
-                padding: 8px 12px !important;
-                flex: 1 1 40% !important; /* Forces 2-column grid on mobile */
+                flex: 1 1 calc(50% - 15px); /* 2 per row on mobile */
                 text-align: center;
+                font-size: 0.75rem;
+                padding: 10px 5px;
             }
-
-            h1 {
-                font-size: 1.8rem !important;
-                line-height: 1.2;
-                text-align: left;
+            .section-header h1 { 
+                font-size: 2.2rem !important; 
             }
         }
     </style>
@@ -120,22 +96,17 @@
                 </p>
             </div>
 
-    <div class="card">
-        <h4>Optimal Timing for Technical General Counsel Hires</h4>
-        <p>The 2026 threshold for the first legal hire has shifted earlier in the company lifecycle. Due to <strong>Model-as-a-Service (MaaS)</strong> liability and data provenance requirements, AI-first startups are now appointing Technical GCs at the Seed or Series A stage. This approach prevents the accumulation of Regulatory Debt that frequently stalls acquisitions during mid-2026 due diligence cycles.</p>
-        <div class="streamline-data-box">
-            <strong>2026 Salary Data:</strong> Base compensation for Technical GCs has risen 22% year-over-year, often exceeding $285,000 for candidates with proven AI safety audit experience.
-        </div>
-    </div>
+            <div class="card" style="margin-top: 30px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
+                <h4 style="color: #00d2ff; margin-bottom: 10px;">Optimal Timing for Technical General Counsel Hires</h4>
+                <p style="opacity: 0.9; line-height: 1.6;">The 2026 threshold for the first legal hire has shifted earlier in the company lifecycle. Due to Model-as-a-Service (MaaS) liability and data provenance requirements, AI-first startups are now appointing Technical GCs at the Seed or Series A stage. This approach prevents the accumulation of Regulatory Debt that frequently stalls acquisitions during mid-2026 due diligence cycles.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: #00d2ff;">2026 Salary Data: Base compensation for Technical GCs has risen 22% year-over-year, often exceeding $285,000 for candidates with proven AI safety audit experience.</p>
+            </div>
 
-    <div class="card">
-        <h4>Lateral Partner Portability Metrics in 2026</h4>
-        <p>A book of business is only as portable as its technical alignment with the receiving firm. We are seeing a massive migration of Partners specializing in <strong>Hyperscale Digital Infrastructure</strong> and <strong>Energy Procurement</strong>. Portability is now audited through three lenses: <strong>Client Institutionalization</strong>, <strong>Rate Hygiene</strong>, and <strong>Infrastructure Alignment</strong>.</p>
-        <div class="streamline-data-box">
-            <strong>Streamline Insight:</strong> Technical Portability for IP and Infrastructure Partners is currently valued 40% higher than general corporate litigation books.
-        </div>
-    </div>
-
+            <div class="card" style="margin-top: 25px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
+                <h4 style="color: #00d2ff; margin-bottom: 10px;">Lateral Partner Portability Metrics in 2026</h4>
+                <p style="opacity: 0.9; line-height: 1.6;">A book of business is only as portable as its technical alignment with the receiving firm. We are seeing a massive migration of Partners specializing in Hyperscale Digital Infrastructure and Energy Procurement. Portability is now audited through three lenses: Client Institutionalization, Rate Hygiene, and Infrastructure Alignment.</p>
+                <p style="margin-top: 15px; font-style: italic; color: #00d2ff;">Streamline Insight: Technical Portability for IP and Infrastructure Partners is currently valued 40% higher than general corporate litigation books.</p>
+            </div>
     <div class="card">
         <h4>Infrastructure Law and Power Grid Interconnection</h4>
         <p>Zoning is no longer the primary bottleneck for Data Center development. The new critical path involves <strong>High-Density Cooling Rights</strong> and <strong>Power Grid Interconnection Agreements</strong>. We specialize in placing Counsel who have specifically negotiated with utilities like ERCOT, PJM, or CAISO.</p>
