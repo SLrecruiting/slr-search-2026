@@ -8,166 +8,130 @@
     <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
     
     <style>
-        /* BASE STYLES */
-        :root {
-            --accent-blue: #00d2ff; /* Ensure this matches your style.css */
-        }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif; /* Your style.css will override this */
-            background: #050a14;
+            background-color: #050a14;
             color: white;
+            font-family: sans-serif;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER FIX: Identical logo size everywhere */
-        header {
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 5%; 
-            background: #050a14; 
+        /* HEADER: Logo Left, Nav Right */
+        .master-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(5, 10, 20, 0.95);
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        header .logo-wrap img {
-            height: 50px; 
-            width: auto; 
-            display: block;
+        .logo-wrap img {
+            height: 50px;
+            width: auto;
         }
 
-        nav {
-            display: flex; 
+        .main-nav {
+            display: flex;
             gap: 25px;
         }
 
-        nav a {
-            color: white; 
-            text-decoration: none; 
+        .main-nav a {
+            color: white;
+            text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
         }
 
-        nav a:hover, nav a.active {
-            color: var(--accent-blue);
+        /* HERO: The Headline Logic */
+        .hero-container {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.8)), 
+                        url('hero.jpg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* HERO FIX: Prevents "Who" from being stranded */
         .hero-title {
             font-size: 3.5rem; 
             line-height: 1.2; 
-            max-width: 1000px; 
             margin: 0 auto 20px;
-            text-align: center;
+            max-width: 900px;
         }
 
-        /* GRID FIX: Perfectly Symmetrical 2 Columns */
+        .hero-title span.blue-text {
+            color: #00d2ff;
+        }
+
+        /* GRID: Symmetrical Lists */
         .intelligence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            margin-top: 40px;
-            align-items: start;
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        /* GUARANTEE BOX */
         .standard-card {
             background: rgba(0, 210, 255, 0.05);
-            border: 1px solid var(--accent-blue);
+            border: 1px solid #00d2ff;
             padding: 30px;
             text-align: center;
             border-radius: 12px;
             max-width: 850px;
-            margin: 40px auto 60px;
+            margin: 40px auto 80px;
         }
 
-        /* MOBILE RESPONSIVENESS */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            nav {
-                gap: 15px;
-                font-size: 0.9rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-title {
-                font-size: 2.2rem;
-                padding: 0 10px;
-            }
-
-            .intelligence-grid {
-                grid-template-columns: 1fr; /* Stacks columns on phone */
-                gap: 40px;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-btns .btn {
-                width: 80%;
-                text-align: center;
-            }
+            .hero-title { font-size: 2.2rem; }
+            .intelligence-grid { grid-template-columns: 1fr; }
+            .master-header { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <header class="master-header">
         <div class="logo-wrap">
-            <a href="index.html">
-                <img src="SLR Header.png" alt="Streamline Recruiting">
-            </a>
+            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
         </div>
-        <nav>
-            <a href="index.html" class="active">Home</a>
+        <nav class="main-nav">
+            <a href="index.html" style="color: #00d2ff;">Home</a>
             <a href="engineering.html">Engineering</a>
             <a href="legal.html">Legal</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <main class="container">
-        <section style="padding: 80px 0 60px;">
+    <main>
+        <section class="hero-container">
             <h1 class="hero-title">
-                The Future Belongs to Companies Who <br>
-                <span style="color: var(--accent-blue);">Hire Ahead of It.</span>
+                The Future Belongs to Companies<br>
+                <span class="blue-text">Who Hire Ahead of It.</span>
             </h1>
-            <p style="text-align: center; font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
+            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
                 Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
-            
-            <div class="hero-btns" style="display: flex; gap: 20px; justify-content: center;">
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <a href="engineering.html#hire" class="btn">Hire Engineering</a>
-                <a href="legal.html#hire" class="btn" style="background: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue);">Hire Legal</a>
+                <a href="legal.html#hire" class="btn" style="background: transparent; border: 1px solid #00d2ff; color: #00d2ff;">Hire Legal</a>
             </div>
         </section>
 
-        <section style="padding-bottom: 40px;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 40px; text-align: center;">
-                Specialized <span style="color: var(--accent-blue);">Intelligence.</span>
+        <section>
+            <h2 style="text-align: center; font-size: 2.2rem; margin-top: 60px;">
+                Specialized <span style="color: #00d2ff;">Intelligence.</span>
             </h2>
             
             <div class="intelligence-grid">
                 <div>
-                    <h3 style="color: var(--accent-blue); margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Legal & Counsel</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2.2;">
+                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px;">Legal & Counsel</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem;">
                         <li>→ Chief Legal Officer & General Counsel</li>
                         <li>→ Lateral Partners</li>
                         <li>→ AI Regulatory & Governance Counsel</li>
@@ -176,10 +140,9 @@
                         <li>→ Paralegals and Support Staff</li>
                     </ul>
                 </div>
-
                 <div>
-                    <h3 style="color: var(--accent-blue); margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px;">Engineering & Tech</h3>
-                    <ul style="list-style: none; padding: 0; font-size: 1.1rem; line-height: 2.2;">
+                    <h3 style="color: #00d2ff; border-bottom: 1px solid rgba(0,210,255,0.2); padding-bottom: 10px; margin-bottom: 20px;">Engineering & Tech</h3>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 1.1rem;">
                         <li>→ AI & Machine Learning Architects</li>
                         <li>→ AI Product Management & Strategy</li>
                         <li>→ Neural Networks & Risk AI Specialists</li>
@@ -189,17 +152,15 @@
                     </ul>
                 </div>
             </div>
-        </section>
 
-        <div class="standard-card">
-            <h4 style="color: var(--accent-blue); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px;">The Streamline Standard</h4>
-            <p style="font-size: 1.1rem; margin: 0;">
-                Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.
-            </p>
-        </div>
+            <div class="standard-card">
+                <h4 style="color: #00d2ff; margin-bottom: 15px;">The Streamline Standard</h4>
+                <p>Every search is <strong>contingency-based</strong>. You only pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
+            </div>
+        </section>
     </main>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px;">
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1);">
         <p>© 2026 Streamline Recruiting (SLR Search)</p>
     </footer>
 
