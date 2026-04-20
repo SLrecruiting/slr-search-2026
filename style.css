@@ -147,11 +147,18 @@ footer p {
 /* --- 6. MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 20px;
-        height: auto; 
+        padding: 20px !important;
+        width: 100vw !important; /* Forces header to full screen width */
     }
+    nav {
+        padding-right: 0 !important;
+        width: 100%;
+        justify-content: center;
+    }
+    body {
+        overflow-x: hidden; /* Prevents the horizontal scroll glitch */
+    }
+}
     
     .logo-wrap img {
         height: 60px; 
