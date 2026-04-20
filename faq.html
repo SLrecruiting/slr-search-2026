@@ -21,17 +21,38 @@
         body.inner-page { 
             background-color: var(--dark-bg); 
             color: var(--text-main);
-            font-size: 16px; /* Standardizing base text size */
+            font-size: 16px; 
             line-height: 1.6;
         }
 
-        /* HEADER LOGO FIX (Matches Contact/Index) */
+        /* LOGO FIX - Matches Index Page */
         header .logo-wrap img {
-            max-height: 35px; /* Keeps logo from getting "weirdly big" */
+            height: 50px; /* Increased from 35px */
             width: auto;
+            display: block;
         }
 
-        /* BIGGER JUMP MENU - CLEAN & NO NUMBERS */
+        /* NAVIGATION FIX */
+        header nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        header nav a:hover, header nav a.active {
+            opacity: 1;
+            color: var(--accent-blue);
+        }
+
+        /* JUMP MENU */
         .jump-menu { 
             position: sticky; 
             top: 0; 
@@ -48,7 +69,7 @@
         .jump-link { 
             color: var(--accent-blue); 
             text-decoration: none; 
-            font-size: 0.95rem; /* Larger, readable size */
+            font-size: 0.95rem; 
             font-weight: 700; 
             border: 1.5px solid var(--accent-blue); 
             padding: 12px 24px; 
@@ -63,20 +84,14 @@
             color: var(--dark-bg);
         }
 
-        /* TYPOGRAPHY CLEANUP */
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        
         h1 { font-size: 2.8rem; color: var(--accent-blue); margin-bottom: 20px; }
         h2 { font-size: 2rem; color: var(--accent-blue); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 60px; }
         h3 { font-size: 1.5rem; color: #fff; margin-top: 40px; }
         h4 { font-size: 1.2rem; color: var(--accent-blue); margin-top: 0; margin-bottom: 15px; }
-        
         p { font-size: 1.05rem; opacity: 0.95; margin-bottom: 20px; }
-        
         .card { background: var(--card-bg); padding: 30px; border-radius: 12px; margin: 30px 0; border-left: 5px solid var(--accent-blue); }
         .streamline-data-box { background: rgba(0, 210, 255, 0.05); border: 1px solid var(--accent-blue); padding: 20px; border-radius: 8px; font-size: 1rem; }
-        
-        /* TABLE STYLES */
         table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.95rem; }
         th { text-align: left; color: var(--accent-blue); border-bottom: 2px solid var(--accent-blue); padding: 12px; text-transform: uppercase; }
         td { padding: 12px; border-bottom: 1px solid var(--border-color); }
@@ -84,13 +99,14 @@
 </head>
 <body class="inner-page">
 
-    <header>
+    <header style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: var(--dark-bg);">
         <div class="logo-wrap">
             <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="for-employers.html">Hire Talent</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="legal.html">Legal</a>
             <a href="jobs.html">Featured Jobs</a>
             <a href="faq.html" class="active">FAQ</a>
             <a href="contact.html">Contact</a>
