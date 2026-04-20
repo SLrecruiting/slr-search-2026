@@ -8,7 +8,67 @@
     <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
     
     <style>
-        /* This ensures the two columns stay perfectly side-by-side */
+        /* BASE STYLES */
+        :root {
+            --accent-blue: #00d2ff; /* Ensure this matches your style.css */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif; /* Your style.css will override this */
+            background: #050a14;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER FIX: Identical logo size everywhere */
+        header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 5%; 
+            background: #050a14; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header .logo-wrap img {
+            height: 50px; 
+            width: auto; 
+            display: block;
+        }
+
+        nav {
+            display: flex; 
+            gap: 25px;
+        }
+
+        nav a {
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-blue);
+        }
+
+        /* HERO FIX: Prevents "Who" from being stranded */
+        .hero-title {
+            font-size: 3.5rem; 
+            line-height: 1.2; 
+            max-width: 1000px; 
+            margin: 0 auto 20px;
+            text-align: center;
+        }
+
+        /* GRID FIX: Perfectly Symmetrical 2 Columns */
         .intelligence-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -16,8 +76,8 @@
             margin-top: 40px;
             align-items: start;
         }
-        
-        /* Centered styling for the guarantee box */
+
+        /* GUARANTEE BOX */
         .standard-card {
             background: rgba(0, 210, 255, 0.05);
             border: 1px solid var(--accent-blue);
@@ -28,18 +88,40 @@
             margin: 40px auto 60px;
         }
 
-        /* FIX: Prevents "Who" from being stranded on its own line */
-        .hero-title {
-            font-size: 3.5rem; 
-            line-height: 1.2; 
-            max-width: 1000px; 
-            margin: 0 auto 20px;
-            text-align: center;
-        }
-
+        /* MOBILE RESPONSIVENESS */
         @media (max-width: 768px) {
-            .intelligence-grid { grid-template-columns: 1fr; gap: 30px; }
-            .hero-title { font-size: 2.5rem; }
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            nav {
+                gap: 15px;
+                font-size: 0.9rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+                padding: 0 10px;
+            }
+
+            .intelligence-grid {
+                grid-template-columns: 1fr; /* Stacks columns on phone */
+                gap: 40px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns .btn {
+                width: 80%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -47,7 +129,9 @@
 
     <header>
         <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting" style="height: 50px; width: auto;"></a>
+            <a href="index.html">
+                <img src="SLR Header.png" alt="Streamline Recruiting">
+            </a>
         </div>
         <nav>
             <a href="index.html" class="active">Home</a>
@@ -60,22 +144,22 @@
     </header>
 
     <main class="container">
-        <section style="padding: 100px 0 60px;">
+        <section style="padding: 80px 0 60px;">
             <h1 class="hero-title">
                 The Future Belongs to Companies Who <br>
                 <span style="color: var(--accent-blue);">Hire Ahead of It.</span>
             </h1>
-            <p style="text-align: center; font-size: 1.1rem; opacity: 0.8; margin-bottom: 40px;">
+            <p style="text-align: center; font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
                 Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
             
-            <div style="display: flex; gap: 20px; justify-content: center;">
+            <div class="hero-btns" style="display: flex; gap: 20px; justify-content: center;">
                 <a href="engineering.html#hire" class="btn">Hire Engineering</a>
                 <a href="legal.html#hire" class="btn" style="background: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue);">Hire Legal</a>
             </div>
         </section>
 
-        <section style="padding-bottom: 20px;">
+        <section style="padding-bottom: 40px;">
             <h2 style="font-size: 2.2rem; margin-bottom: 40px; text-align: center;">
                 Specialized <span style="color: var(--accent-blue);">Intelligence.</span>
             </h2>
