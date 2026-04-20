@@ -17,8 +17,8 @@
             overflow-x: hidden;
         }
 
-        /* HEADER: Logo Left, Nav Right */
-        .master-header {
+        /* Matches the Engineering page header layout */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -32,21 +32,25 @@
             width: auto;
         }
 
-        .main-nav {
+        nav {
             display: flex;
             gap: 25px;
         }
 
-        .main-nav a {
+        nav a {
             color: white;
             text-decoration: none;
             font-weight: 500;
         }
 
-        /* HERO: The Headline Logic */
+        nav a.active {
+            color: #00d2ff;
+        }
+
+        /* HERO: Locked Background & Phrasing */
         .hero-container {
             text-align: center;
-            padding: 120px 20px;
+            padding: 140px 20px;
             background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.8)), 
                         url('hero.jpg'); 
             background-size: cover;
@@ -54,13 +58,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .hero-title {
             font-size: 3.5rem; 
             line-height: 1.2; 
             margin: 0 auto 20px;
-            max-width: 900px;
+            max-width: 1000px;
+            font-weight: 800;
         }
 
         .hero-title span.blue-text {
@@ -90,20 +97,24 @@
         @media (max-width: 768px) {
             .hero-title { font-size: 2.2rem; }
             .intelligence-grid { grid-template-columns: 1fr; }
-            .master-header { flex-direction: column; gap: 15px; }
+            header { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="master-header">
+    <header>
         <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+            <a href="index.html">
+                <img src="SLR Header.png" alt="Streamline Recruiting">
+            </a>
         </div>
-        <nav class="main-nav">
-            <a href="index.html" style="color: #00d2ff;">Home</a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
             <a href="engineering.html">Engineering</a>
             <a href="legal.html">Legal</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
@@ -114,12 +125,12 @@
                 The Future Belongs to Companies<br>
                 <span class="blue-text">Who Hire Ahead of It.</span>
             </h1>
-            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">
+            <p style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; max-width: 700px;">
                 Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
             </p>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="engineering.html#hire" class="btn">Hire Engineering</a>
-                <a href="legal.html#hire" class="btn" style="background: transparent; border: 1px solid #00d2ff; color: #00d2ff;">Hire Legal</a>
+                <a href="engineering.html" class="btn">Hire Engineering</a>
+                <a href="legal.html" class="btn" style="background: transparent; border: 1px solid #00d2ff; color: #00d2ff;">Hire Legal</a>
             </div>
         </section>
 
