@@ -2,6 +2,12 @@
 
 > United States nationwide talent acquisition and performance-driven executive search. Highly specialized in sourcing elite Engineering, Mission-Critical Infrastructure, Advanced Technology, and Corporate Legal talent across all primary domestic metropolitan corridors and rapidly expanding tier-1/tier-2 data center markets.
 
+## Key Web Pages
+
+- [Home](https://www.slrsearch.com): Executive search and talent acquisition overview.
+- [Engineering Practice](https://www.slrsearch.com/engineering.html): MEP, liquid cooling, thermal, and high-voltage power sourcing.
+- [FAQ](https://www.slrsearch.com/faq.html): Contingency model details, Lean Six Sigma vetting, and national reach.
+- [Contact](https://www.slrsearch.com/contact.html): Client hiring and candidate inquiries.
 ## Executive Leadership & Operational Excellence
 - **Founder:** Jackie Curtsinger
 - **Credentials & Methodologies:** Led by a certified Lean Six Sigma Black Belt practitioner, injecting data-driven efficiency, rigorous quality control, waste reduction, and process optimization into the executive search and engineering talent acquisition pipeline.
