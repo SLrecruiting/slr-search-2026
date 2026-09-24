@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Explore open roles in Legal, Controls & Automation Engineering, and Civil Infrastructure with Streamline Recruiting.">
     <title>Featured Jobs | Streamline Recruiting</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-YZ2NSWXYCR');
-</script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YZ2NSWXYCR');
+    </script>
+
     <style>
         /* Mobile-friendly, adaptive container */
         .job-board-container {
-            background: #fff; 
+            background: #FFFFFF; 
             border-radius: 12px; 
             overflow: hidden; 
-            margin-top: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            width: 95%; /* Use 95% of the screen width */
-            max-width: 1400px; /* Limits how wide it gets on massive monitors */
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            width: 95%; 
+            max-width: 1400px; 
             margin-left: auto;
             margin-right: auto;
+            border: 1px solid var(--border);
         }
 
-        /* Adjusts padding for mobile phones */
         @media (max-width: 768px) {
             .job-header h1 { font-size: 2.2rem !important; }
             .job-board-container { width: 100%; border-radius: 0; }
@@ -36,24 +41,30 @@
     </style>
 </head>
 <body class="inner-page">
-  <header>
+
+    <header>
         <div class="logo-wrap">
             <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="engineering.html">Engineering</a>
             <a href="legal.html">Legal</a>
-            <a href="jobs.html">Featured Jobs</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="civil.html">Civil</a>
+            <a href="jobs.html" class="active">Featured Jobs</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main style="padding: 60px 0;">
-        <div class="job-header" style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
-            <h1 style="font-size: 3rem; margin-bottom: 15px;">Featured <span style="color:var(--blue)">Jobs.</span></h1>
-            <p style="opacity: 0.8; font-size: 1.2rem;">Explore current openings with our partners.</p>
+        <div class="job-header" style="text-align: center; margin-bottom: 30px; padding: 0 20px;">
+            <h1 style="font-size: 3rem; margin-bottom: 15px; color: var(--navy); font-weight: 800;">
+                Featured <span style="color:var(--cyan);">Jobs</span>
+            </h1>
+            <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 700px; margin: 0 auto;">
+                Explore priority searches across Legal, Automation Engineering, and Civil Infrastructure.
+            </p>
         </div>
 
         <div class="job-board-container">
@@ -67,8 +78,9 @@
         <script>iFrameResize({ log: true, checkOrigin: false }, '#recruiterflow-jobs-iframe')</script>
     </main>
 
-    <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border);">
-        <p>© 2026 Streamline Recruiting</p>
+    <footer style="text-align: center; padding: 40px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
+        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
