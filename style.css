@@ -10,7 +10,7 @@
     --text-dark: #0f172a;
     --text-muted: #475569;
     --text-light: #ffffff;
-    --text-light-muted: #94a3b8;
+    --text-light-muted: #cbd5e1;
     --brand-navy: #020b1a;
     --brand-cyan: #00d2ff;
     --brand-blue: #0284c7;
@@ -36,7 +36,7 @@ body {
    ========================================================================== */
 header {
     background-color: var(--brand-navy);
-    padding: 16px 30px;
+    padding: 12px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,20 +50,16 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
+    max-height: 48px;
 }
 
+/* Strict image sizing fix to stop logo from stretching */
 .logo-img {
-    height: 40px; /* Adjust height if needed */
-    width: auto;
+    height: 44px !important;
+    width: auto !important;
+    max-width: 260px !important;
+    object-fit: contain;
     display: block;
-}
-
-.logo-text {
-    color: var(--text-light);
-    font-weight: 800;
-    font-size: 1.15rem;
-    letter-spacing: 0.5px;
-    text-decoration: none;
 }
 
 nav a {
@@ -235,7 +231,7 @@ nav a.active {
 }
 
 /* ==========================================================================
-   Streamline Standard Banner (Light Box)
+   Standard Banner Box
    ========================================================================== */
 .standard-banner {
     background: #ffffff;
