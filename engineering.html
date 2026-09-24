@@ -3,188 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mission-critical recruiting for Controls Engineers, PLC Specialists, Robotics, Computer Vision, and Manufacturing Leadership. Operational continuity and deployment focus.">
-    <title>Engineering & Automation Division | Streamline Recruiting</title>
-    
+    <title>Engineering & Advanced Hardware Recruiting | Streamline Recruiting</title>
+    <meta name="description" content="Specialized technical search for Controls, Automation, Mechatronics, Computer Vision, and Plant Leadership. Streamline Recruiting delivers precision engineering talent.">
+    <link rel="canonical" href="https://slrsearch.com/engineering.html">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YZ2NSWXYCR');
-    </script>
-
     <style>
-        /* Form-specific styling for Light Theme */
-        .card form input, .card form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-        .card form input:focus, .card form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            background: #FFFFFF;
-        }
-        .card form textarea { resize: vertical; }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .home-split-grid {
+        /* Page-Specific Layout Adjustments */
+        .page-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 40px;
-            align-items: start;
+            margin-top: 40px;
+        }
+
+        .lead-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        /* Form Styling */
+        .form-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-card h3 {
+            font-size: 1.3rem;
+            color: var(--brand-navy);
+            margin-bottom: 8px;
+        }
+
+        .form-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.825rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: var(--bg-main);
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-blue);
+            background-color: #ffffff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--brand-navy);
+            color: var(--text-light);
+            border: none;
+            padding: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0d1b30;
+        }
+
+        /* Track Record Grid */
+        .track-record-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .track-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .track-card h4 {
+            color: var(--brand-navy);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .track-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.925rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--brand-navy);
+        }
+
+        .section-heading {
+            font-size: 1.6rem;
+            color: var(--brand-navy);
+            margin-top: 50px;
+            margin-bottom: 10px;
+            font-weight: 800;
         }
 
         @media (max-width: 850px) {
-            .home-split-grid {
-                grid-template-columns: 1fr;
-            }
+            .page-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body class="inner-page">
+<body>
 
     <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
-        </div>
+        <a href="index.html" class="logo-link">
+            <img src="SLR Header.png" alt="Streamline Recruiting" class="logo-img">
+        </a>
         <nav>
             <a href="index.html">Home</a>
             <a href="legal.html">Legal</a>
             <a href="engineering.html" class="active">Engineering</a>
+            <a href="civil.html">Civil</a>
             <a href="jobs.html">Featured Jobs</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section class="container" style="padding: 60px 20px;">
-            
-            <!-- PAGE HERO -->
-            <div style="margin-bottom: 60px;">
-                <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--navy); font-weight: 800;">
-                    Mission-Critical <span style="color:var(--cyan);">Engineering Talent.</span>
-                </h1>
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
-                    When an automated line sits idle, a commissioning deadline slips, or a plant lacks key technical oversight, every hour costs real revenue. We place the hands-on engineering talent that keeps facilities running and launches multi-million dollar capital projects on time.
+    <main class="content-section">
+        
+        <div class="page-grid">
+            <!-- Left Column: Copy -->
+            <div>
+                <h1 style="font-size: 2.4rem; color: var(--brand-navy); margin-bottom: 15px; font-weight: 900;">Mission-Critical Engineering Talent</h1>
+                
+                <p class="lead-text">
+                    When an automated line sits idle, a commissioning deadline slips, or a plant lacks technical oversight, every hour impacts real revenue. We place hands-on engineering specialists who keep facilities running smoothly and launch capital projects on schedule.
                 </p>
-                <p style="font-style: italic; color: var(--cyan); font-weight: 600; font-size: 1.05rem;">
-                    Permanent placements only. No keyword matching, no resume blasts—just the precise Controls, PLC, and Technical Execution talent required to maintain capacity and scale operations.
+
+                <p class="lead-text">
+                    Our team delivers permanent placements across Controls, PLC, Mechatronics, Computer Vision, and Site Operations. Every candidate is thoroughly screened for hardware familiarity, operational execution capacity, and long-term commitment.
+                </p>
+
+                <h2 style="font-size: 1.4rem; color: var(--brand-navy); margin-top: 30px; margin-bottom: 10px;">Operational Continuity & Execution</h2>
+                <p style="color: var(--text-muted); font-size: 0.975rem; margin-bottom: 15px;">
+                    We focus on critical roles where precise technical skill is required immediately: Automation Engineers, PLC Specialists, Mechatronics Engineers, Computer Vision Developers, Electrical Engineers, and Plant Operations Managers.
+                </p>
+                
+                <p style="font-weight: 700; color: var(--brand-navy); font-size: 0.95rem;">
+                    Performance-backed delivery with contingency search structure.
                 </p>
             </div>
 
-            <!-- SPLIT SECTION: WHY STREAMLINE & CONTACT FORM -->
-            <div class="home-split-grid" style="margin-bottom: 80px;">
-                <div>
-                    <h2 style="margin-bottom:20px; color: var(--navy); font-size: 1.8rem; font-weight: 700;">Operational Continuity & Execution</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        We target the roles where an empty chair creates an immediate operational bottleneck: Automation & Controls Engineers, PLC Specialists, Mechatronics, Computer Vision, Electrical Engineers, and Plant Operations Managers.
-                    </p>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        Whether you are bringing a new automated line online, retrofitting existing machinery, or trying to eliminate plant downtime, every candidate is screened for real-world execution capacity, hardware familiarity, and long-term retention.
-                    </p>
-                    <p style="margin-top: 15px; font-weight: 700; color: var(--navy); font-size: 1.05rem;">
-                        Contingency-based search. Performance-backed delivery.
-                    </p>
-                </div>
-
-                <!-- LEAD CAPTURE FORM CARD -->
-                <div class="card" style="text-align: left; background: var(--card-bg); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-                    <h3 style="color:var(--navy); margin-bottom:10px; text-align: center; font-size: 1.4rem;">Solve a Technical Bottleneck</h3>
-                    <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">Briefly tell us what roles need immediate coverage.</p>
+            <!-- Right Column: Form -->
+            <div>
+                <div class="form-card">
+                    <h3>Solve a Technical Bottleneck</h3>
+                    <p>Briefly tell us what roles need immediate coverage.</p>
                     
-                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Work Email" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                        <textarea name="message" rows="3" placeholder="Role details (e.g. Controls Engineer, Plant Manager, PLC Lead)" required></textarea>
-                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Request Talent</button>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Work Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Role Details</label>
+                            <textarea id="details" name="details" rows="4" placeholder="e.g. Controls Engineer, Plant Manager, PLC Lead"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Request Talent</button>
                     </form>
                 </div>
             </div>
+        </div>
 
-            <!-- PROOF OF PERFORMANCE GRID -->
-            <div style="margin-bottom: 80px;">
-                <h2 style="margin-bottom: 30px; border-left: 4px solid var(--cyan); padding-left: 15px; color: var(--navy); font-weight: 700;">
-                    Proven Execution Track Record
-                </h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Automation & Controls Engineer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Engineered end-to-end PLC/HMI architecture for multi-arm robotic cells, eliminating line assembly bottlenecks and boosting output by 30%.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Perception & Computer Vision Engineer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Architected real-time spatial perception hardware for autonomous systems, driving a 40% improvement in obstacle avoidance latency.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Electrical Systems Engineer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Redesigned high-speed signal integrity and power distribution systems for specialized lithography tools, drastically reducing unplanned downtime.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Plant Operations Manager</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Restructured plant workflows and preventative maintenance schedules, driving a 10% net increase in overall production capacity.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior AI & Data Architect</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Engineered automated data pipelines for predictive maintenance models, cutting manual inspection cycle times in half.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">CNC / Precision Programmer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Optimized tool paths for complex 5-axis geometries, maintaining sub-micron tolerances while cutting scrap rates by 10%.</p>
-                    </div>
-                </div>
+        <!-- Proven Track Record Grid -->
+        <h2 class="section-heading">Proven Execution Track Record</h2>
+        <div class="track-record-grid">
+            <div class="track-card">
+                <h4>Automation & Controls Engineer</h4>
+                <p>Engineered end-to-end PLC/HMI architecture for multi-arm robotic cells, eliminating line assembly bottlenecks and boosting output by 30%.</p>
             </div>
+            <div class="track-card">
+                <h4>Senior Perception & Computer Vision Engineer</h4>
+                <p>Architected real-time spatial perception hardware for autonomous systems, driving a 40% improvement in obstacle avoidance latency.</p>
+            </div>
+            <div class="track-card">
+                <h4>Electrical Systems Engineer</h4>
+                <p>Redesigned high-speed signal integrity and power distribution systems for specialized lithography tools, drastically reducing unplanned downtime.</p>
+            </div>
+            <div class="track-card">
+                <h4>Plant Operations Manager</h4>
+                <p>Restructured plant workflows and preventative maintenance schedules, driving a 10% net increase in overall production capacity.</p>
+            </div>
+            <div class="track-card">
+                <h4>Senior AI & Data Architect</h4>
+                <p>Engineered automated data pipelines for predictive maintenance models, cutting manual inspection cycle times in half.</p>
+            </div>
+            <div class="track-card">
+                <h4>CNC / Precision Programmer</h4>
+                <p>Optimized tool paths for complex 5-axis geometries, maintaining sub-micron tolerances while cutting cycle rates by 10%.</p>
+            </div>
+        </div>
 
-            <!-- BANNER -->
-            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 80px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);">
-                <h2 style="margin-bottom: 15px; color: var(--navy);">Cross-Functional Plant & Site Leadership</h2>
-                <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
-                    Keeping operations smooth requires coordination across the entire facility. Beyond hands-on technical roles, we deliver key site leadership across Plant Management, EHS, Operations, and Engineering Directors.
-                </p>
-            </div>
+        <!-- Cross-Functional Leadership Header -->
+        <h2 class="section-heading">Cross-Functional Plant & Site Leadership</h2>
+        <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 30px;">
+            Keeping operations smooth requires coordination across the entire facility. Beyond hands-on technical roles, we deliver key site leadership across Plant Management, EHS, Operations, and Engineering Directors.
+        </p>
 
-            <!-- TESTIMONIALS -->
-            <div style="margin-top:60px;">
-                <h2 style="text-align:center; margin-bottom:40px; color: var(--navy); font-weight: 800;">Client Delivery Feedback</h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"If you've been trying to find a Controls Engineer lately, you know it’s nearly impossible. We went through three other firms with zero luck. Streamline listened to our hardware spec and delivered a specialist who hit the shop floor running."</p>
-                        <strong style="color: var(--navy);">— Mark D., Director of Engineering</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Streamline really knows site-level hardware. They found us an automation engineer who actually knew the physical systems and could step right into our site commissioning without weeks of hand-holding."</p>
-                        <strong style="color: var(--navy);">— Jessica L., Operations Manager</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"We spent months looking for a Computer Vision engineer with surgical robotics depth. Streamline delivered two qualified candidates within a week and solved a major bottleneck on our R&D roadmap."</p>
-                        <strong style="color: var(--navy);">— Sarah K., Technical Co-Founder</strong>
-                    </div>
-                </div>
+        <!-- Testimonials -->
+        <h2 class="section-heading">Client Delivery Feedback</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <blockquote>"If you have been trying to find a Controls Engineer lately, you know it requires real technical depth. Streamline listened to our hardware spec and delivered a specialist who hit the shop floor running."</blockquote>
+                <cite>Mark D., Director of Engineering</cite>
             </div>
-        </section>
+            <div class="testimonial-card">
+                <blockquote>"Streamline really knows site-level hardware. They found us an automation engineer who actually knew the physical systems and could step right into our site commissioning without weeks of hand-holding."</blockquote>
+                <cite>Jessica L., Operations Manager</cite>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"We spent months looking for a Computer Vision engineer with surgical robotics depth. Streamline delivered two qualified candidates within a week and solved a major bottleneck on our R&D roadmap."</blockquote>
+                <cite>Sarah K., Technical Co-Founder</cite>
+            </div>
+        </div>
+
     </main>
 
-    <footer style="text-align: center; padding: 30px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
-        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
+    <footer>
+        &copy; 2026 Streamline Recruiting. All rights reserved.
     </footer>
+
 </body>
 </html>
