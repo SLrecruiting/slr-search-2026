@@ -1,9 +1,12 @@
-/* --- 1. CORE THEME --- */
+/* --- 1. CORE THEME (LOGO-MATCHED LIGHT PALETTE) --- */
 :root {
-    --navy: #001a33; 
-    --blue: #00d2ff;
-    --text: #e6f1ff;
-    --border: rgba(0, 210, 255, 0.2);
+    --navy: #0B192C;         /* Deep Midnight Navy from your logo */
+    --cyan: #00A3E0;         /* Electric Cyan accent from your logo */
+    --bg-main: #F8FAFC;      /* Crisp light off-white background */
+    --card-bg: #FFFFFF;      /* Pure white for cards/content boxes */
+    --text-dark: #0F172A;    /* Very dark slate for primary body text */
+    --text-muted: #475569;   /* Medium slate for secondary text */
+    --border: #E2E8F0;       /* Soft light gray for clean borders */
 }
 
 * { 
@@ -18,8 +21,8 @@ html, body {
 }
 
 body {
-    background-color: var(--navy);
-    color: var(--text);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
     font-family: 'Inter', -apple-system, sans-serif;
     display: flex;
     flex-direction: column;
@@ -33,8 +36,8 @@ header {
     align-items: center;
     padding: 0 40px;
     height: 80px;
-    background-color: var(--navy);
-    border-bottom: 1px solid var(--border);
+    background-color: var(--navy); /* Deep Navy header keeps the logo grounded */
+    border-bottom: 1px solid var(--navy);
     width: 100%;
 }
 
@@ -50,86 +53,126 @@ header nav {
 }
 
 header nav a {
-    color: var(--text);
+    color: #FFFFFF;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
+    transition: color 0.2s ease;
 }
 
-/* --- 3. HOMEPAGE HERO (RESTORED) --- */
+header nav a:hover {
+    color: var(--cyan);
+}
+
+/* --- 3. HOMEPAGE HERO --- */
 .hero {
-    padding: 140px 20px 100px;
+    padding: 120px 20px 90px;
     text-align: center;
-    background: linear-gradient(rgba(0,26,51,0.8), rgba(0,26,51,0.8)), url('hero-bg.jpg');
+    background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.85)), url('hero-bg.jpg');
     background-size: cover;
     background-position: center;
+    color: #FFFFFF;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    color: var(--blue);
+    font-size: 3.2rem;
+    color: #FFFFFF;
     margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero p {
+    color: #E2E8F0;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .hero-btns {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .btn {
-    padding: 12px 30px;
-    background: var(--blue);
-    color: var(--navy);
+    padding: 14px 32px;
+    background: var(--cyan);
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 4px;
+    border-radius: 6px;
     text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: #0082B3;
+    box-shadow: 0 4px 12px rgba(0, 163, 224, 0.3);
 }
 
 .btn-outline {
     background: transparent;
-    border: 2px solid var(--blue);
-    color: var(--blue);
+    border: 2px solid var(--cyan);
+    color: var(--cyan);
 }
 
-/* --- 4. FAQ & TABLES --- */
+.btn-outline:hover {
+    background: var(--cyan);
+    color: #FFFFFF;
+}
+
+/* --- 4. CONTENT CARDS & TABLES --- */
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .card {
-    background: rgba(2, 11, 26, 0.6);
+    background: var(--card-bg);
     border: 1px solid var(--border);
-    padding: 30px;
-    border-radius: 8px;
+    padding: 35px;
+    border-radius: 10px;
     margin-bottom: 25px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Fixes the "smooshed" salary stuff */
+.card h2, .card h3 {
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
 .data-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    background: var(--card-bg);
 }
 
 .data-table th, .data-table td {
-    padding: 15px;
+    padding: 16px;
     text-align: left;
     border-bottom: 1px solid var(--border);
+    color: var(--text-dark);
 }
 
 .data-table th {
-    color: var(--blue);
+    background-color: #F1F5F9;
+    color: var(--navy);
     text-transform: uppercase;
     font-size: 0.8rem;
+    font-weight: 700;
 }
 
-/* Hide the labels you hate */
 .guide-label {
     display: none !important;
 }
@@ -138,17 +181,25 @@ header nav a {
 .jump-menu {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     padding: 20px 0;
 }
 
 .jump-link {
-    padding: 8px 16px;
+    padding: 10px 18px;
     border: 1px solid var(--border);
-    color: var(--blue);
+    background: var(--card-bg);
+    color: var(--navy);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.jump-link:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
 }
 
 /* --- 6. MOBILE FIXES --- */
@@ -156,7 +207,7 @@ header nav a {
     header {
         flex-direction: column !important;
         height: auto !important;
-        padding: 15px !important;
+        padding: 20px 15px !important;
     }
     header nav {
         margin-top: 15px;
