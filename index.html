@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Streamline talent acquisition with SLR Search. Specialized executive recruitment in Washington and nationwide for legal, AI engineering, and mission-critical infrastructure talent.">
-    <title>Streamline Recruiting | Technical & Legal Talent Acquisition</title>
+    <meta name="description" content="Streamline Recruiting (SLR Search). Specialized recruitment for Legal, Engineering, and Civil Infrastructure. Operational continuity and high-impact talent delivery.">
+    <title>Streamline Recruiting | Legal, Engineering & Civil Talent Acquisition</title>
 
     <link rel="stylesheet" href="style.css"> 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -20,37 +20,72 @@
       gtag('config', 'G-YZ2NSWXYCR');
     </script>
 
-    <!-- Google Schema Markup: Defines "Streamline Recruiting" brand entity -->
+    <!-- Google Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "RecruitmentBusiness",
       "name": "Streamline Recruiting",
-      "alternateName": ["SLR Search", "Streamline Recruiting Legal & Tech"],
+      "alternateName": ["SLR Search", "Streamline Recruiting Legal & Tech & Engineering"],
       "url": "https://www.slrsearch.com",
-      "logo": "https://www.slrsearch.com/Logo.png",
+      "logo": "https://www.slrsearch.com/SLR Header.png",
       "sameAs": [
-        "https://www.linkedin.com/company/slrsearch"
+        "https://www.linkedin.com/company/streamline-recruiting"
       ],
-      "description": "Specialized executive recruitment and talent acquisition for Legal Tech, AI Engineering, and Advanced Manufacturing.",
+      "description": "Specialized recruitment for Legal practice groups, Automation & Controls Engineering, and Civil Infrastructure.",
       "areaServed": [
         {
           "@type": "Country",
           "name": "United States"
-        },
-        {
-          "@type": "State",
-          "name": "Washington"
         }
       ],
       "knowsAbout": [
-        "Executive Recruitment",
-        "Talent Acquisition",
-        "Mission-Critical Infrastructure",
-        "Legal Tech Sourcing"
+        "Legal Recruitment",
+        "Mid-Level Associate Hiring",
+        "Immigration Counsel",
+        "Controls & Automation Engineering",
+        "Civil & Infrastructure Engineering"
       ]
     }
     </script>
+
+    <style>
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .practice-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .practice-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            line-height: 2.2;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .practice-card ul li {
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .practice-card ul li:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body class="inner-page"> 
 
@@ -62,8 +97,9 @@
         </div>
         <nav>
             <a href="index.html" class="active">Home</a>
-            <a href="engineering.html">Engineering</a>
             <a href="legal.html">Legal</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="civil.html">Civil</a>
             <a href="jobs.html">Featured Jobs</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
@@ -71,71 +107,97 @@
     </header>
 
     <main>
-        <section style="padding: 100px 20px; text-align: center; background: linear-gradient(rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.7)), url('hero.jpg'); background-size: cover; background-position: center; border-bottom: 1px solid var(--border);">
-            <div style="max-width: 1100px; margin: 0 auto;">
-                <h1 style="font-size: 3.5rem; line-height: 1.2; font-weight: 800; margin-bottom: 20px;">
-                    The Future Belongs to Companies <br> 
-                    <span style="color: var(--blue);">Who Hire Ahead of It.</span>
+        <!-- HERO SECTION -->
+        <section style="padding: 90px 20px 70px; text-align: center; background: #F8FAFC; border-bottom: 1px solid var(--border);">
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <h1 style="font-size: 3.2rem; line-height: 1.25; font-weight: 800; margin-bottom: 20px; color: var(--navy);">
+                    Mission-Critical Talent for <br>
+                    <span style="color: var(--cyan);">Legal, Engineering & Infrastructure.</span>
                 </h1>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9;">
-                    Specialized talent acquisition for AI, Legal, Robotics, and Advanced Manufacturing.
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 35px; color: var(--text-muted); line-height: 1.6;">
+                    Whether maintaining billable legal capacity, keeping automated production lines running, or delivering stamped engineering submittals on time—we recruit the essential talent that drives operational continuity.
                 </p>
                 <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="engineering.html" class="btn">Hire Engineering</a>
-                    <a href="legal.html" class="btn" style="background: transparent; border: 2px solid var(--blue); color: var(--blue);">Hire Legal</a>
+                    <a href="legal.html" class="btn">Explore Legal</a>
+                    <a href="engineering.html" class="btn" style="background: var(--navy); color: #FFFFFF;">Explore Engineering</a>
+                    <a href="civil.html" class="btn" style="background: transparent; border: 2px solid var(--navy); color: var(--navy);">Explore Civil</a>
                 </div>
             </div>
         </section>
 
-        <section style="padding: 80px 20px; display: flex; flex-direction: column; align-items: center;">
-            <div style="width: 100%; max-width: 1000px; text-align: center;">
-                
-                <h2 style="font-size: 2.2rem; margin-bottom: 60px; font-weight: 700;">
-                    Specialized <span style="color: var(--blue);">Intelligence.</span>
+        <!-- SPECIALIZED PRACTICE AREAS -->
+        <section style="padding: 80px 20px; max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 2.4rem; color: var(--navy); font-weight: 800; margin-bottom: 15px;">
+                    Specialized Practice <span style="color: var(--cyan);">Divisions</span>
                 </h2>
-                
-                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;"> 
-                    
-                    <div style="flex: 1; min-width: 320px; max-width: 400px; margin-bottom: 40px;">
-                        <h3 style="color: var(--blue); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 25px; font-size: 1.4rem;">Legal & Counsel</h3>
-                        <div style="display: inline-block; text-align: left; width: fit-content; margin: 0 auto;">
-                            <ul style="list-style: none; padding: 0; line-height: 2.4; font-size: 1.05rem;">
-                                <li>→ Chief Legal Officer & GC</li>
-                                <li>→ Lateral Partners</li>
-                                <li>→ AI Regulatory Counsel</li>
-                                <li>→ Energy & Infra Counsel</li>
-                                <li>→ Commercial RE Attorneys</li>
-                                <li>→ Paralegals & Support Staff</li>
-                            </ul>
-                        </div>
-                    </div>
+                <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+                    We don't do generic resume blasts. We focus strictly on core utility roles where vacancies immediately impact revenue and operations.
+                </p>
+            </div>
 
-                    <div style="flex: 1; min-width: 320px; max-width: 400px;">
-                        <h3 style="color: var(--blue); border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 25px; font-size: 1.4rem;">Engineering & Tech</h3>
-                        <div style="display: inline-block; text-align: left; width: fit-content; margin: 0 auto;">
-                            <ul style="list-style: none; padding: 0; line-height: 2.4; font-size: 1.05rem;">
-                                <li>→ AI & ML Architects</li>
-                                <li>→ Product Management</li>
-                                <li>→ Neural Networks & Risk</li>
-                                <li>→ Robotics & Autonomous</li>
-                                <li>→ Aerospace & Defense</li>
-                                <li>→ Oil & Gas Automation</li>
-                            </ul>
-                        </div>
+            <div class="grid-3">
+                <!-- LEGAL CARD -->
+                <div class="practice-card">
+                    <div>
+                        <h3 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 10px; font-weight: 700;">Legal & Law Firms</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Protecting billable capacity and practice group workflow.</p>
+                        <ul>
+                            <li><strong>→ Mid-Level Associates</strong> (3–6 yrs)</li>
+                            <li><strong>→ Corporate Immigration</strong></li>
+                            <li><strong>→ AI Regulatory Counsel</strong></li>
+                            <li><strong>→ Data Center Real Estate</strong></li>
+                            <li><strong>→ Lateral Partners</strong></li>
+                        </ul>
                     </div>
+                    <a href="legal.html" style="color: var(--cyan); text-decoration: none; font-weight: 700; font-size: 0.95rem;">View Legal Practice →</a>
                 </div>
 
-                <div style="margin: 80px auto 0; text-align: center; background: rgba(0, 210, 255, 0.05); padding: 30px; border-radius: 12px; border: 1px solid var(--border); width: 100%; max-width: 800px; box-sizing: border-box;">
-                    <h4 style="color: var(--blue); margin-bottom: 10px; font-size: 1.2rem; text-transform: uppercase;">The Streamline Standard</h4>
-                    <p style="font-size: 1rem; opacity: 0.9;">Every search is <strong>contingency-based</strong>. You pay when we deliver. We stand by our placements with a <strong>full guarantee</strong>.</p>
+                <!-- ENGINEERING CARD -->
+                <div class="practice-card">
+                    <div>
+                        <h3 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 10px; font-weight: 700;">Engineering & Tech</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Eliminating operational downtime and scaling hardware lines.</p>
+                        <ul>
+                            <li><strong>→ Controls & PLC Engineers</strong></li>
+                            <li><strong>→ Automation & Mechatronics</strong></li>
+                            <li><strong>→ Computer Vision Specialists</strong></li>
+                            <li><strong>→ Plant & Site Operations</strong></li>
+                            <li><strong>→ Electrical Systems Leads</strong></li>
+                        </ul>
+                    </div>
+                    <a href="engineering.html" style="color: var(--cyan); text-decoration: none; font-weight: 700; font-size: 0.95rem;">View Engineering Practice →</a>
                 </div>
 
+                <!-- CIVIL CARD -->
+                <div class="practice-card">
+                    <div>
+                        <h3 style="color: var(--navy); font-size: 1.4rem; margin-bottom: 10px; font-weight: 700;">Civil & Infrastructure</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Delivering stamped plans and licensed project execution.</p>
+                        <ul>
+                            <li><strong>→ Structural PEs</strong></li>
+                            <li><strong>→ Water / Wastewater Leads</strong></li>
+                            <li><strong>→ Site Development Engineers</strong></li>
+                            <li><strong>→ Transportation & Traffic PEs</strong></li>
+                            <li><strong>→ Geotechnical Specialists</strong></li>
+                        </ul>
+                    </div>
+                    <a href="civil.html" style="color: var(--cyan); text-decoration: none; font-weight: 700; font-size: 0.95rem;">View Civil Practice →</a>
+                </div>
+            </div>
+
+            <!-- STREAMLINE STANDARD BANNER -->
+            <div style="margin: 70px auto 0; text-align: center; background: #F8FAFC; padding: 35px; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);">
+                <h4 style="color: var(--navy); margin-bottom: 10px; font-size: 1.25rem; font-weight: 800; text-transform: uppercase;">The Streamline Standard</h4>
+                <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 750px; margin: 0 auto; line-height: 1.6;">
+                    Every search is <strong>contingency-based</strong>. You pay when we deliver. We stand behind our work with a full retention guarantee.
+                </p>
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border); opacity: 0.6;">
-        <p>© 2026 Streamline Recruiting</p>
+    <footer style="text-align: center; padding: 40px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
+        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
     </footer>
 
 </body>
