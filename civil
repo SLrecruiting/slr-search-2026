@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Specialized recruitment for Licensed Civil Engineers, Professional Engineers (PE), Water/Wastewater, Structural, and Site Development specialists. Permanent placements only.">
+    <title>Civil & Infrastructure Division | Streamline Recruiting</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YZ2NSWXYCR');
+    </script>
+
+    <style>
+        /* Form-specific styling for Light Theme */
+        .card form input, .card form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        .card form input:focus, .card form textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            background: #FFFFFF;
+        }
+        .card form textarea { resize: vertical; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .home-split-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .home-split-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="inner-page">
+
+    <header>
+        <div class="logo-wrap">
+            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="legal.html">Legal</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="civil.html" class="active">Civil</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container" style="padding: 60px 20px;">
+            
+            <!-- PAGE HERO -->
+            <div style="margin-bottom: 60px;">
+                <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--navy); font-weight: 800;">
+                    Essential <span style="color:var(--cyan);">Civil & Infrastructure Talent.</span>
+                </h1>
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
+                    Without stamped plans and licensed engineers, multi-million dollar developments stall, public works freeze, and permitting stalls out. We deliver the Professional Engineers (PE), structural specialists, and site development leaders who move projects from drawing boards to execution.
+                </p>
+                <p style="font-style: italic; color: var(--cyan); font-weight: 600; font-size: 1.05rem;">
+                    Permanent placements for civil engineering firms, infrastructure groups, and municipal consultants. We recruit the licensed talent that keeps your project backlog moving.
+                </p>
+            </div>
+
+            <!-- SPLIT SECTION: WHY STREAMLINE & CONTACT FORM -->
+            <div class="home-split-grid" style="margin-bottom: 80px;">
+                <div>
+                    <h2 style="margin-bottom:20px; color: var(--navy); font-size: 1.8rem; font-weight: 700;">Zero Downtime for Stamped Engineering Capacity</h2>
+                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
+                        Civil engineering is pure infrastructure—when key PE talent leaves or a project scales beyond team capacity, firms face missed submittal deadlines, lost project bids, and burnt-out staff.
+                    </p>
+                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
+                        We specialize in placing hard-to-find licensed professionals across Water/Wastewater, Transportation, Structural, Land Development, Geotechnical, and Environmental Engineering. Every candidate is verified for licensure, project portfolio history, and software proficiency.
+                    </p>
+                    <p style="margin-top: 15px; font-weight: 700; color: var(--navy); font-size: 1.05rem;">
+                        Contingency based. You only pay when we deliver.
+                    </p>
+                </div>
+
+                <!-- LEAD CAPTURE FORM CARD -->
+                <div class="card" style="text-align: left; background: var(--card-bg); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
+                    <h3 style="color:var(--navy); margin-bottom:10px; text-align: center; font-size: 1.4rem;">Expand Stamped Capacity</h3>
+                    <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">Tell us what project roles need coverage.</p>
+                    
+                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Work Email" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <textarea name="message" rows="3" placeholder="Role details (e.g. Senior Structural PE, Water/Wastewater Project Manager)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Request Talent</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- PROOF OF PERFORMANCE GRID -->
+            <div style="margin-bottom: 80px;">
+                <h2 style="margin-bottom: 30px; border-left: 4px solid var(--cyan); padding-left: 15px; color: var(--navy); font-weight: 700;">
+                    Proven Civil Placements
+                </h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Structural Engineer (PE)</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed a licensed Structural PE to lead bridge inspection and design submittals for a $45M highway expansion project.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Water/Wastewater Project Manager</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Secured a seasoned PM with municipal treatment facility expertise to oversee a regional water utility upgrade program.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Site Development Civil Engineer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Delivered a Project Engineer specializing in grading, stormwater management, and zoning approvals for industrial site builds.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Transportation & Traffic Engineer (PE)</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed a PE specializing in traffic impact studies and signalization design for large-scale commercial developments.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Geotechnical Lead Engineer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Recruited a senior geotech specialist for foundation engineering and soil risk mitigation on heavy civil infrastructure projects.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Director of Land Development</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed an executive engineering director to lead civil operations and expansion for a regional consulting engineering firm.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BANNER -->
+            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 80px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);">
+                <h2 style="margin-bottom: 15px; color: var(--navy);">Engineered for Project Delivery</h2>
+                <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
+                    When deadlines are set by municipalities or developer funding, delays are non-negotiable. We source civil engineering professionals who understand regulatory compliance, local permitting environments, and technical precision.
+                </p>
+            </div>
+
+            <!-- TESTIMONIALS -->
+            <div style="margin-top:60px;">
+                <h2 style="text-align:center; margin-bottom:40px; color: var(--navy); font-weight: 800;">Client Feedback</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Finding licensed PEs who can actually manage clients and stamp plans is brutal right now. Streamline delivered a Water/Wastewater PM within two weeks who took over our active project backlog without a hitch."</p>
+                        <strong style="color: var(--navy);">— Dave M., Vice President of Infrastructure</strong>
+                    </div>
+                    <div class="card">
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Our site dev team was sinking under submittal deadlines. Streamline matched us with a senior civil engineer who knew our local municipality codes cold. Saved our project timeline."</p>
+                        <strong style="color: var(--navy);">— Karen T., Principal Civil Engineer</strong>
+                    </div>
+                    <div class="card">
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Streamline doesn't send warm bodies. They send qualified, licensed professionals who understand the civil consulting space. They're our first call when we win new municipal work."</p>
+                        <strong style="color: var(--navy);">— Strategic Partner, Civil Consulting Firm</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 30px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
+        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
