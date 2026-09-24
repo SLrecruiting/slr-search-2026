@@ -7,12 +7,119 @@
     <meta name="description" content="Specialized executive and technical search for Legal, Advanced Engineering, and Civil Infrastructure teams. Streamline Recruiting delivers precision talent.">
     <link rel="canonical" href="https://slrsearch.com/index.html">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Layout Split for High-Converting Lead Form */
+        .hero-split {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+        }
+
+        .hero-split h1 {
+            font-size: 2.3rem;
+            color: var(--brand-navy);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero-split p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* Lead Capture Card Style */
+        .hero-form-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-form-card h3 {
+            font-size: 1.3rem;
+            color: var(--brand-navy);
+            margin-bottom: 6px;
+            font-weight: 800;
+        }
+
+        .hero-form-card p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            background-color: var(--bg-main);
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-blue);
+            background-color: #ffffff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--brand-navy);
+            color: var(--text-light);
+            border: none;
+            padding: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+            margin-top: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #0d1b30;
+        }
+
+        @media (max-width: 850px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo-link">
-            <!-- Fixed capitalization to match your GitHub repository file -->
             <img src="SLR Header.png" alt="Streamline Recruiting" class="logo-img">
         </a>
         <nav>
@@ -26,16 +133,48 @@
         </nav>
     </header>
 
-    <!-- Clean Light Hero Section -->
+    <!-- Hero Section with Embedded Conversion Form -->
     <section class="hero">
-        <div class="hero-container">
-            <h1>Specialized Talent Search for Legal, Engineering & Critical Infrastructure</h1>
-            <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced engineering operations, and municipal civil infrastructure.</p>
-            
-            <div class="cta-group">
-                <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
-                <a href="engineering.html" class="btn btn-navy">Explore Engineering</a>
-                <a href="civil.html" class="btn btn-outline">Explore Civil</a>
+        <div class="hero-split">
+            <div>
+                <h1>Specialized Talent Search for Legal, Engineering & Infrastructure</h1>
+                <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced engineering operations, and municipal civil infrastructure.</p>
+                
+                <div class="cta-group" style="justify-content: flex-start;">
+                    <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
+                    <a href="engineering.html" class="btn btn-navy">Explore Engineering</a>
+                    <a href="civil.html" class="btn btn-outline">Explore Civil</a>
+                </div>
+            </div>
+
+            <!-- Fast Response Lead Form -->
+            <div class="hero-form-card">
+                <h3>Speak With Our Desk</h3>
+                <p>Briefly outline your open technical or legal hiring needs.</p>
+                
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Sarah Jenkins" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" placeholder="s.jenkins@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="details">Role Requirements</label>
+                        <textarea id="details" name="details" rows="3" placeholder="e.g. Controls Engineer, Corporate Legal Counsel, Water PE"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Request Dedicated Search &rarr;</button>
+                </form>
             </div>
         </div>
     </section>
@@ -80,7 +219,7 @@
                 <div>
                     <p class="card-header">Delivering licensed Professional Engineers for water, land, and structural design.</p>
                     <ul>
-                        <li>&rarr; Water & Wastewater Infrastructure PEs</li>
+                        <li>&rarr; Water & Infrastructure PEs</li>
                         <li>&rarr; Licensed Structural Engineers</li>
                         <li>&rarr; Land & Site Development Leads</li>
                         <li>&rarr; Transportation & Traffic PEs</li>
