@@ -1,599 +1,480 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
-    <title>FAQ | Streamline Recruiting</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Streamline Recruiting</title>
+    <meta name="description" content="Find answers to common questions about Streamline Recruiting's direct-hire search services across Legal, Controls & Automation, and Civil Infrastructure.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  gtag('config', 'G-YZ2NSWXYCR');
-</script>
+    <!-- Google Tag Manager / Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YZ2NSWXYCR');
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#020b1a',
+                            800: '#07162c',
+                            700: '#0f274a',
+                            600: '#1e3a8a',
+                        },
+                        cyan: {
+                            400: '#38bdf8',
+                            500: '#00d2ff',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* This style block stays ONLY in faq.html to protect your homepage */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            margin: 0;
-            padding: 0;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
         }
 
-        .jump-menu {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px 0;
-            flex-wrap: nowrap; 
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.12) 0%, rgba(2, 11, 26, 0) 70%);
         }
 
-        .jump-link {
-            padding: 8px 16px;
-            border: 1px solid rgba(0, 210, 255, 0.3);
-            color: #00d2ff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            border-radius: 4px;
-            white-space: nowrap;
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(2, 11, 26, 0.08);
         }
 
-        @media (max-width: 768px) {
-            /* 1. SURGICAL FIX: Prevent text and blocks from cutting off */
-            .container {
-                width: 100% !important;
-                padding: 20px 15px !important;
-                overflow: hidden !important;
-            }
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
 
-            .card {
-                width: 100% !important;
-                padding: 20px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
-            }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .6; }
+        }
 
-            /* 2. SURGICAL FIX: Force long words (like Manufacturing) to wrap */
-            h1, h2, h3, h4, p, li, td {
-                word-wrap: break-word !important;
-                overflow-wrap: break-word !important;
-                white-space: normal !important;
-            }
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
 
-            header {
-                flex-direction: column !important;
-                height: auto !important;
-                padding: 15px !important;
-            }
-            header nav {
-                margin-top: 15px;
-                gap: 10px !important;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+        }
 
-            /* 3. SURGICAL FIX: Fix Jump Menu from sliding off screen */
-            .jump-menu {
-                flex-wrap: wrap !important;
-                padding: 10px !important;
-            }
-            .jump-link {
-                flex: 1 1 calc(50% - 10px);
-                text-align: center;
-                font-size: 0.75rem;
-                padding: 10px 5px;
-                white-space: normal !important; /* Allows labels to wrap if needed */
-            }
+        .accordion-content.active {
+            max-height: 500px;
+            transition: max-height 0.35s ease-in-out;
+        }
 
-            .section-header h1 { 
-                font-size: 1.8rem !important; /* Slightly smaller for mobile fitting */
-                line-height: 1.2 !important;
-            }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
 
-            /* Fixes the table cutoff on mobile */
-            .table-scroll {
-                overflow-x: auto;
-                display: block;
-                width: 100%;
-            }
+        .accordion-icon.active {
+            transform: rotate(180deg);
         }
     </style>
 </head>
-<body class="inner-page">
-    <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+<body class="antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="bg-navy-900 text-white sticky top-0 z-50 border-b border-navy-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <a href="index.html" class="logo-link flex items-center">
+                <img src="SLR Header.png" alt="Streamline Recruiting" class="logo-img">
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="legal.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Legal</a>
+                <a href="engineering.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Engineering</a>
+                <a href="civil.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Civil</a>
+                <a href="jobs.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Featured Jobs</a>
+                <a href="faq.html" class="text-sm font-bold text-cyan-400 border-b-2 border-cyan-400 pb-1 active">FAQ</a>
+                <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-xs font-extrabold uppercase px-4 py-2.5 rounded-md transition-all shadow-md">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden">
+                <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle Navigation">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="engineering.html">Engineering</a>
-            <a href="civil.html">Civil</a>
-            <a href="legal.html">Legal</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html" class="active">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Home</a>
+            <a href="legal.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Legal</a>
+            <a href="engineering.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Engineering</a>
+            <a href="civil.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Civil</a>
+            <a href="jobs.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Featured Jobs</a>
+            <a href="faq.html" class="block px-3 py-2 text-base font-bold text-cyan-400 bg-navy-900 rounded">FAQ</a>
+            <a href="contact.html" class="block px-3 py-2 text-base font-bold text-cyan-400">Contact</a>
+        </div>
     </header>
 
-    <nav class="jump-menu">
-        <a href="#legal-landscape" class="jump-link" style="background: rgba(0, 210, 255, 0.2); border-color: var(--accent-blue);">Legal Regulatory</a>
-        <a href="#ai-ml" class="jump-link">AI/ML Landscape</a>
-        <a href="#robotics" class="jump-link">Controls & Robotics</a>
-        <a href="#civil-engineering" class="jump-link">Civil Engineering</a>
-        <a href="#employers" class="jump-link">For Employers</a>
-        <a href="#candidates" class="jump-link">For Candidates</a>
-        <a href="#market-2026" class="jump-link">State of Market</a>
-    </nav>
-
-    <main class="container">
-        <section id="legal-landscape" class="faq-section">
-            <div class="section-header">
-                <span class="guide-label" style="color: var(--blue); text-transform: uppercase; font-weight: 700; letter-spacing: 1.5px; font-size: 0.85rem; border: 1.5px solid var(--blue); padding: 5px 10px; display: inline-block; margin-bottom: 10px;">Regulatory Strategy</span>
-                <h1 style="font-size: 3.5rem; color: var(--blue); margin-top: 10px;">Legal & Regulatory Landscape.</h1>
-                <p class="section-intro" style="font-size: 1.25rem; line-height: 1.8; opacity: 0.9;">
-                    In 2026 the legal hiring market is defined by Technical Portability. As regulatory frameworks like the EU AI Act and CA SB-1047 mature, specialized legal talent has become a strategic asset for startups, civil infrastructure projects, and V10 firms alike.
-                </p>
+    <!-- Hero Section -->
+    <section class="bg-navy-900 text-white relative overflow-hidden hero-glow border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center">
+            
+            <div class="inline-flex items-center space-x-2 bg-navy-800 border border-navy-600 px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-400 mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 badge-pulse"></span>
+                <span class="uppercase tracking-wider">Help & Resource Center</span>
             </div>
 
-            <div class="card" style="margin-top: 30px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
-                <h4 style="color: #00d2ff; margin-bottom: 10px;">Optimal Timing for Technical General Counsel Hires</h4>
-                <p style="opacity: 0.9; line-height: 1.6;">The 2026 threshold for the first legal hire has shifted earlier in the company lifecycle. Due to Model-as-a-Service (MaaS) liability, civil land-use compliance, and data provenance requirements, tech-first startups are now appointing Technical GCs at the Seed or Series A stage.</p>
-            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                Frequently Asked <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Questions & Insights</span>
+            </h1>
 
-            <div class="card" style="margin-top: 25px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
-                <h4 style="color: #00d2ff; margin-bottom: 10px;">Lateral Partner Portability Metrics in 2026</h4>
-                <p style="opacity: 0.9; line-height: 1.6;">A book of business is only as portable as its technical alignment with the receiving firm. Portability is now audited through three lenses: Client Institutionalization, Rate Hygiene, and Infrastructure Alignment.</p>
-            </div>
+            <p class="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto mt-6">
+                Everything you need to know about our specialized direct-hire placement model across Legal, Controls & Automation, and Civil Infrastructure.
+            </p>
 
-            <div class="card" style="margin-top: 25px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
-                <h4 style="color: #00d2ff; margin-bottom: 10px;">Infrastructure Law and Power Grid Interconnection</h4>
-                <p style="opacity: 0.9; line-height: 1.6;">Zoning is no longer the primary bottleneck for Data Center and heavy civil development. The new critical path involves <strong>High-Density Cooling Rights</strong> and <strong>Power Grid Interconnection Agreements</strong>. We specialize in placing Counsel who have specifically negotiated with utilities like ERCOT, PJM, or CAISO.</p>
-            </div>
-        </section>
-
-        <section id="ai-ml" class="faq-section">
-            <h1 style="font-size: 3.5rem; color: var(--blue); margin-top: 10px;">AI and Machine Learning Hiring</h1>
-            <p class="section-intro" style="font-size: 1.25rem; line-height: 1.8; opacity: 0.9;">As of 2026, the AI hiring market has moved past the "hype" phase into a phase of deep specialization. Hiring for these roles requires an understanding of model architecture, orchestration, and the distinct difference between research and production.</p>
-
-            <div class="card" style="margin-top: 30px; background: rgba(2, 11, 26, 0.6); padding: 30px; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 8px;">
-                <h4 style="color: #00d2ff; margin-bottom: 10px;">The 2026 Talent Landscape</h4>
-                <p style="opacity: 0.9; line-height: 1.6;">The mismatch between supply and demand has reached a critical inflection point. While thousands of engineers are adding "AI" to their LinkedIn profiles, the number of engineers who have actually <strong>shipped and scaled</strong> a foundation-model-powered product remains incredibly small.</p>
-                <div style="margin-top: 15px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-left: 3px solid var(--blue);">
-                    <strong>Streamline Benchmark:</strong> In our 2025/2026 data, 82% of top-tier passive AI talent required an average of 4.5 weeks of relationship-building.
+            <!-- Key Quick Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12 pt-8 border-t border-navy-800">
+                <div class="bg-navy-800/50 p-4 rounded-xl border border-navy-700">
+                    <span class="text-2xl font-black text-cyan-400 block">100% Free</span>
+                    <span class="text-xs text-slate-400 uppercase font-semibold">For Job Seekers</span>
+                </div>
+                <div class="bg-navy-800/50 p-4 rounded-xl border border-navy-700">
+                    <span class="text-2xl font-black text-white block">Contingency</span>
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Employer Risk-Free</span>
+                </div>
+                <div class="bg-navy-800/50 p-4 rounded-xl border border-navy-700">
+                    <span class="text-2xl font-black text-cyan-400 block">10–14 Days</span>
+                    <span class="text-xs text-slate-400 uppercase font-semibold">Avg Shortlist Speed</span>
                 </div>
             </div>
 
-            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--blue);">AI/ML Salary Benchmarks (2026)</h3>
-            <div class="table-scroll">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Role Title</th>
-                            <th>Experience Level</th>
-                            <th>Base Salary Range (USD)</th>
-                            <th>Equity / Variable</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Machine Learning Engineer</td>
-                            <td>Senior (6-10 yrs)</td>
-                            <td>$195,000 – $245,000</td>
-                            <td>High (Refreshers Common)</td>
-                        </tr>
-                        <tr>
-                            <td>AI Engineer (Agentic/RAG)</td>
-                            <td>Senior (5-8 yrs)</td>
-                            <td>$200,000 – $260,000</td>
-                            <td>Top Tier</td>
-                        </tr>
-                        <tr>
-                            <td>AI Research Scientist</td>
-                            <td>Lead / PhD</td>
-                            <td>$220,000 – $310,000</td>
-                            <td>Significant (LTI Plans)</td>
-                        </tr>
-                        <tr>
-                            <td>AI Product Manager</td>
-                            <td>Senior / Director</td>
-                            <td>$185,000 – $235,000</td>
-                            <td>Bonus + Growth Equity</td>
-                        </tr>
-                        <tr>
-                            <td>VP / Head of AI</td>
-                            <td>Executive</td>
-                            <td>$285,000 – $450,000+</td>
-                            <td>Executive Package</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="robotics" class="faq-section">
-            <div class="section-header">
-                <h2 style="color: var(--blue); font-size: 2.5rem; margin-bottom: 20px;">Controls, Robotics & Advanced Manufacturing</h2>
-                <p class="section-intro">The robotics and automation sector in 2026 is defined by a massive transition from fixed automation to flexible, AI-enhanced systems. Hiring in this space requires a rare understanding of the "Mechatronic Bridge"—where software meets physical constraints.</p>
-            </div>
+    <!-- Main Content Section -->
+    <main class="flex-grow py-16 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="card">
-                <h4 style="color: var(--blue);">The "Silver Tsunami" and the Institutional Knowledge Gap</h4>
-                <p>The single greatest threat to American manufacturing and automation in 2026 is the "Silver Tsunami." A significant percentage of the nation's most experienced Controls and Automation Engineers are reaching retirement age. These are the individuals who built the original industrial backbones of the 80s and 90s.</p>
-                
-                <div style="margin-top: 15px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-left: 3px solid var(--blue);">
-                    <strong>Streamline Benchmark:</strong> For every 10 open Senior Robotics & Controls roles in 2026, there are currently only 3.4 qualified candidates actively seeking new opportunities. This represents a 66% talent deficit.
-                </div>
-                
-                <p style="margin-top: 15px;">This gap is not being filled quickly enough by university programs, which often focus on theoretical robotics rather than the "gritty" reality of PLC logic, industrial protocols, and hardware-software integration.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">2026 Demand Drivers: Why Hiring is Accelerating</h4>
-                <p>We are tracking four primary drivers that have made robotics and controls hiring more competitive than ever:</p>
-                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Logistics & E-commerce:</strong> The shift from "person-to-goods" to "goods-to-person" robotic picking.</li>
-                    <li><strong>Collaborative Robotics (Cobots):</strong> Mid-sized manufacturers adopting robots that work alongside humans without safety cages.</li>
-                    <li><strong>AI-Enabled Perception:</strong> High demand for engineers who can implement Computer Vision (OpenCV, ROS2) to help robots handle unstructured environments.</li>
-                    <li><strong>Domestic Reshoring:</strong> Incentives from the CHIPS Act have created a massive talent vacuum in the Midwest and Southwest.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Role Guide: The Robotics Software Engineer (RSE)</h4>
-                <p>The RSE is the brain of the operation. They focus on the high-level software stack that allows a robot to navigate, perceive, and make decisions.</p>
-                
-                <h5 style="margin-top: 15px; color: var(--blue);">Technical Vetting Requirements:</h5>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>ROS/ROS2 Mastery:</strong> Deep understanding of node communication, move_group, and navigation stacks.</li>
-                    <li><strong>C++ vs. Python:</strong> While Python is used for prototyping, a true Senior RSE must be fluent in modern C++ for real-time performance.</li>
-                    <li><strong>Linux Systems:</strong> Proficiency in real-time kernels and hardware drivers.</li>
-                </ul>
-
-                <h5 style="margin-top: 15px; color: var(--blue);">Streamline Vetting Question:</h5>
-                <p><em>"Walk me through a time a physical system didn't behave like the Gazebo or Isaac Sim simulation. How did you isolate the sensor noise from the mechanical backlash?"</em></p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Role Guide: The Automation & Controls Engineer</h4>
-                <p>While the RSE is the "brain," the Controls Engineer is the "nervous system." They handle the low-level logic that keeps the factory floor moving safely.</p>
-                
-                <h5 style="margin-top: 15px; color: var(--blue);">Essential Skills:</h5>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>PLC Programming:</strong> Mastery of Allen-Bradley (Studio 5000), Siemens (TIA Portal), or Beckhoff.</li>
-                    <li><strong>Industrial Networking:</strong> Proficiency in EtherNet/IP, Profinet, and EtherCAT.</li>
-                    <li><strong>Safety Standards:</strong> Deep knowledge of ISO 13849 and RIA safety requirements.</li>
-                </ul>
-                <p style="margin-top: 10px;"><span style="color: #ff4d4d; font-weight: bold;">Red Flag:</span> A Controls Engineer who cannot read a complex P&ID or electrical schematic is a liability on a live production line.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Portfolio vs. Certifications</h4>
-                <p>In 2026, a "Fanuc Certification" is a baseline, not a differentiator. We advise our clients to look for the "Mechatronic Portfolio."</p>
-                <ul style="padding-left: 20px; line-height: 1.8; list-style-type: '✓ ';">
-                    <li>Videos of actual deployed systems (with proprietary info redacted).</li>
-                    <li>Evidence of handling "Edge Cases" like varying light conditions for vision systems.</li>
-                    <li>Documentation of "Cycle Time" improvements—can they quantify the ROI they delivered?</li>
-                </ul>
-            </div>
-
-            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--blue);">Robotics & Controls Compensation Benchmarks (2026)</h3>
-            <div class="table-scroll">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Role Title</th>
-                            <th>Experience Level</th>
-                            <th>Base Salary Range (USD)</th>
-                            <th>Streamline Bonus Data</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Robotics Software Engineer</td>
-                            <td>Senior (ROS2/C++)</td>
-                            <td>$165,000 – $215,000</td>
-                            <td>Sign-on Bonuses Common</td>
-                        </tr>
-                        <tr>
-                            <td>Automation Engineer</td>
-                            <td>Senior (PLC/SCADA)</td>
-                            <td>$135,000 – $180,000</td>
-                            <td>High Overtime Potential</td>
-                        </tr>
-                        <tr>
-                            <td>Computer Vision Engineer</td>
-                            <td>Senior (Edge AI)</td>
-                            <td>$180,000 – $230,000</td>
-                            <td>Equity/LTI Heavy</td>
-                        </tr>
-                        <tr>
-                            <td>Controls Engineer</td>
-                            <td>Mid-Senior</td>
-                            <td>$125,000 – $165,000</td>
-                            <td>Retention Bonuses (2yr)</td>
-                        </tr>
-                        <tr>
-                            <td>Director of Automation</td>
-                            <td>Leadership</td>
-                            <td>$190,000 – $260,000+</td>
-                            <td>Full Executive Package</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div style="margin-top: 20px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-radius: 8px;">
-                <strong>Geographic Premium:</strong> Streamline data shows a 15-22% salary premium for Robotics and Controls roles in the <strong>Boston, MA</strong> and <strong>Pittsburgh, PA</strong> hubs compared to the national average.
-            </div>
-        </section>
-
-        <!-- NEW DEDICATED CIVIL SECTION -->
-        <section id="civil-engineering" class="faq-section">
-            <div class="section-header">
-                <h2 style="color: var(--blue); font-size: 2.5rem; margin-bottom: 20px;">Civil Infrastructure & Land Development</h2>
-                <p class="section-intro">In 2026, Civil Engineering is undergoing a generational boom driven by federal infrastructure investment, data center construction, and modern grid resiliency. Sourcing licensed Professional Engineers (P.E.) requires deep regional network intelligence.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Licensure and Regional Mobility (P.E. & NCEES)</h4>
-                <p>Unlike software disciplines, Civil talent mobility is constrained by state licensure and local environmental regulations (e.g., CEQA, NEPA). Streamline maintains a pre-vetted network of licensed Professional Engineers (P.E.) with NCEES record portability ready for multi-state infrastructure initiatives.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Role Guide: Senior Civil & Land Development PE</h4>
-                <p>The technical backbone of site engineering, grading, stormwater management, and municipal entitlements.</p>
-                <h5 style="margin-top: 15px; color: var(--blue);">Essential Vetting Criteria:</h5>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Design Mastery:</strong> Civil 3D, Hydraflow, and HEC-RAS proficiency.</li>
-                    <li><strong>Agency Entitlements:</strong> Proven track record defending plans in public planning commission hearings.</li>
-                    <li><strong>Water Resources Alignment:</strong> Hydrology modeling for high-density site development.</li>
-                </ul>
-            </div>
-
-            <h3 style="margin-top: 40px; margin-bottom: 20px; color: var(--blue);">Civil Engineering Compensation Benchmarks (2026)</h3>
-            <div class="table-scroll">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Role Title</th>
-                            <th>Experience Level / License</th>
-                            <th>Base Salary Range (USD)</th>
-                            <th>Incentives & Bonuses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Civil Project Engineer</td>
-                            <td>EIT / Mid-Level (3-6 yrs)</td>
-                            <td>$95,000 – $125,000</td>
-                            <td>PE Exam Incentive + Bonus</td>
-                        </tr>
-                        <tr>
-                            <td>Senior Civil Engineer</td>
-                            <td>P.E. Licensed (7-12 yrs)</td>
-                            <td>$135,000 – $175,000</td>
-                            <td>Performance Discretionary</td>
-                        </tr>
-                        <tr>
-                            <td>Water Resources Engineer</td>
-                            <td>P.E. / Senior Specialist</td>
-                            <td>$140,000 – $185,000</td>
-                            <td>Project Milestone Bonuses</td>
-                        </tr>
-                        <tr>
-                            <td>Structural / Bridge Engineer</td>
-                            <td>S.E. / Senior Lead</td>
-                            <td>$145,000 – $195,000</td>
-                            <td>Profit Sharing / Utilization</td>
-                        </tr>
-                        <tr>
-                            <td>Civil Division Lead / Director</td>
-                            <td>Executive P.E.</td>
-                            <td>$190,000 – $270,000+</td>
-                            <td>Equity / Partnership Track</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="employers" class="faq-section">
-            <div class="section-header">
-                <h2 style="color: var(--blue); font-size: 2.5rem; margin-bottom: 20px;">The Employer’s Strategic Guide</h2>
-                <p class="section-intro">To win the national talent war across Legal, Controls, and Civil engineering, you must offer what bureaucratic giants cannot. This section outlines the Streamline-vetted strategies for moving from "need" to "offer" in record time.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">How to Compete for Specialized Engineering & Legal Talent</h4>
-                <p>You likely will not beat industry conglomerates on base salary alone. To win, you must lead with the unique advantages of a high-growth or high-ownership environment.</p>
-                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Meaningful Impact:</strong> Direct alignment between technical execution and project trajectory.</li>
-                    <li><strong>True Technical Ownership:</strong> Builders and engineers want to architect systems rather than just maintain legacy projects.</li>
-                    <li><strong>The Agility Advantage:</strong> Fast-moving decision-making environments are a massive draw for top talent.</li>
-                    <li><strong>Equity & Clear Partner Tracks:</strong> Ground-floor potential for life-changing financial incentives or partnership equity.</li>
-                </ul>
-
-                <div style="margin-top: 15px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-left: 3px solid var(--blue);">
-                    <strong>The Streamline 2-Minute Rule:</strong> If you cannot articulate why a world-class engineer or legal partner should join you in under two minutes, fix the story before starting recruitment.
+            <!-- Category Filter Tabs -->
+            <div class="mb-12">
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3" id="tab-container">
+                    <button onclick="filterCategory('all')" id="tab-all" class="tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-navy-900 text-cyan-400 shadow-md">
+                        All Questions
+                    </button>
+                    <button onclick="filterCategory('employers')" id="tab-employers" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        For Employers
+                    </button>
+                    <button onclick="filterCategory('candidates')" id="tab-candidates" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        For Candidates
+                    </button>
+                    <button onclick="filterCategory('specializations')" id="tab-specializations" class="tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200">
+                        Specializations
+                    </button>
                 </div>
             </div>
 
-            <div class="card">
-                <h4 style="color: var(--blue);">What Makes a Technical Job Description Effective?</h4>
-                <p>Most job descriptions are wish lists. To attract top talent, write for candidates who value clarity and challenge.</p>
-                <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Lead with the Problem:</strong> Start with the massive technical or regulatory hurdle they are being hired to solve.</li>
-                    <li><strong>Radical Location Transparency:</strong> Be explicit about hybrid, field-time, or remote expectations.</li>
-                    <li><strong>Stack & Tooling Specificity:</strong> Be transparent about your tech stack, CAD/modeling tools, or PLC environments.</li>
-                    <li><strong>Transparent Compensation:</strong> Including a genuine salary range shows immediate respect for talent.</li>
-                </ul>
+            <!-- FAQ Accordions Container -->
+            <div class="space-y-10">
+
+                <!-- SECTION 1: FOR EMPLOYERS -->
+                <div class="faq-section" data-category="employers">
+                    <div class="flex items-center space-x-3 mb-6 pb-2 border-b-2 border-cyan-500">
+                        <div class="w-8 h-8 rounded-lg bg-navy-900 text-cyan-400 flex items-center justify-center font-black text-sm">01</div>
+                        <h2 class="text-xl sm:text-2xl font-black text-navy-900 tracking-tight">For Employers & Hiring Managers</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- Item 1 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-1')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">How does your contingency pricing model work?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-1" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>Our search services operate strictly on a performance-backed contingency basis. You only incur a fee when a candidate we present is successfully hired and starts work at your organization. There are zero upfront fees, retains, or hidden administrative costs to initiate a search with our desk.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-2')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">What is your typical turnaround time for providing candidate shortlists?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-2" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>Our specialized focus on Controls, Civil, and Technical Legal practices allows us to maintain pre-vetted, active candidate networks. For standard technical requisitions, you can expect an initial vetted shortlist within <strong>10 to 14 business days</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-3')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">What guarantee or replacement period do you offer?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-3">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-3" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>Every placement is backed by our standard 90-day replacement guarantee. If a placed candidate leaves or does not meet performance requirements within the guarantee window, we will source a qualified replacement candidate at no additional charge.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-4')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">Do you handle contract or temporary staffing?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-4">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-4" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>No. Streamline Recruiting focuses exclusively on direct-hire, permanent placements. We build high-performing engineering, legal, and operational teams designed for long-term organizational retention.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- SECTION 2: FOR CANDIDATES -->
+                <div class="faq-section" data-category="candidates">
+                    <div class="flex items-center space-x-3 mb-6 pb-2 border-b-2 border-navy-900">
+                        <div class="w-8 h-8 rounded-lg bg-navy-900 text-cyan-400 flex items-center justify-center font-black text-sm">02</div>
+                        <h2 class="text-xl sm:text-2xl font-black text-navy-900 tracking-tight">For Candidates & Job Seekers</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- Item 5 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-5')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">Does it cost anything for candidates to work with Streamline Recruiting?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-5">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-5" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>No. Our career advisory, resume feedback, interview preparation, and placement services are <strong>100% free for job seekers</strong>. All fees are paid entirely by our hiring employers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-6')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">How is my confidential information handled if I am currently employed?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-6">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-6" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>We maintain absolute discretion. Your resume, portfolio, or identity will <strong>never</strong> be submitted to any client company without your explicit advance permission during a 1-on-1 consultation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-7')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">What industries and specialties do you focus on?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-7">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-7" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>We concentrate in three primary verticals:</p>
+                                    <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700 font-medium">
+                                        <li><strong>Controls & Automation Engineering:</strong> PLC/HMI, Robotics, Computer Vision, SCADA.</li>
+                                        <li><strong>Civil Infrastructure & Heavy Engineering:</strong> Transportation, Utilities, Structural, Power Grid.</li>
+                                        <li><strong>Legal & Regulatory:</strong> In-house General Counsel, IP/Patent, AI Governance, Data Center Interconnection Counsel.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- SECTION 3: SPECIALIZATIONS -->
+                <div class="faq-section" data-category="specializations">
+                    <div class="flex items-center space-x-3 mb-6 pb-2 border-b-2 border-cyan-500">
+                        <div class="w-8 h-8 rounded-lg bg-navy-900 text-cyan-400 flex items-center justify-center font-black text-sm">03</div>
+                        <h2 class="text-xl sm:text-2xl font-black text-navy-900 tracking-tight">Specializations & Technical Vetting</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- Item 8 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-8')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">How do you verify Professional Engineer (PE) licensure and technical competency?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-8">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-8" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>Our technical recruitment leads verify state licensure status directly through state licensing boards and verify NCEES record history. Furthermore, candidates undergo structured technical evaluations regarding hardware stacks, fieldbus protocols, and design software before submission.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 9 -->
+                        <div class="bg-white rounded-xl border border-slate-200 card-shadow overflow-hidden">
+                            <button onclick="toggleAccordion('faq-9')" class="w-full px-6 py-5 text-left font-bold text-navy-900 flex justify-between items-center hover:bg-slate-50 transition-colors focus:outline-none">
+                                <span class="text-base sm:text-lg pr-4">What types of legal roles do you place?</span>
+                                <div class="accordion-icon w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-navy-900 flex-shrink-0" id="icon-faq-9">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                            </button>
+                            <div id="faq-9" class="accordion-content">
+                                <div class="px-6 pb-6 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 pt-4 bg-slate-50/50">
+                                    <p>Our Legal Desk places specialized attorneys and leadership across in-house Counsel, Lateral Partners, IP & Patent Prosecutors, Regulatory Compliance Leads, and Data Center Infrastructure Interconnection Counsel.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
-            <div class="card">
-                <h4 style="color: var(--blue);">Evaluating Specialized Recruiting Firms and Headhunters</h4>
-                <p>Whether you are hiring in <strong>Silicon Valley, Boston, Pittsburgh, Austin, Seattle, or Dallas</strong>, grill your recruiting partner on their actual technical network.</p>
-                <h5 style="margin-top: 15px; color: var(--blue);">The Four Questions for Your Search Partner:</h5>
-                <ol style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Domain Expertise:</strong> How many placements in Legal, Controls, or Civil engineering in the last 12 months?</li>
-                    <li><strong>Point of Contact:</strong> Is the search being handed off to an entry-level recruiter?</li>
-                    <li><strong>Network vs. Sourcing:</strong> Do you have pre-vetted passive candidates ready to talk?</li>
-                    <li><strong>Technical Vetting:</strong> What is your process for qualifying license viability or code mastery?</li>
-                </ol>
+            <!-- Call To Action Banner -->
+            <div class="mt-16 bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl p-8 sm:p-10 text-white shadow-2xl border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-xl">
+                    <span class="text-xs font-black uppercase tracking-widest text-cyan-400 block mb-2">Have a Specific Question?</span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Ready to Fill a Mission-Critical Role?</h3>
+                    <p class="text-slate-300 text-sm sm:text-base mt-2">Connect directly with our specialized recruitment team or explore our current featured positions.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                    <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-center font-extrabold uppercase text-xs tracking-wider px-6 py-4 rounded-lg transition-all shadow-lg">
+                        Speak With Our Desk
+                    </a>
+                    <a href="jobs.html" class="bg-navy-800 hover:bg-navy-700 text-white border border-navy-600 text-center font-bold uppercase text-xs tracking-wider px-6 py-4 rounded-lg transition-all">
+                        View Featured Jobs
+                    </a>
+                </div>
             </div>
 
-            <div class="card">
-                <h4 style="color: var(--blue);">The Streamline Sprint: 4 Weeks to Offer</h4>
-                <p>We advocate for a 4 to 6 week timeline. We often have "ready-to-interview" candidates before the search officially kicks off.</p>
-                <div style="margin-top: 15px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-radius: 8px;">
-                    <strong>The Accelerated Roadmap:</strong>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>Day 1 to 3:</strong> Kickoff and hiring scorecard finalization.</li>
-                        <li><strong>Day 4 to 10:</strong> Tapping the Streamline Passive Network.</li>
-                        <li><strong>Week 2 to 3:</strong> High-intensity interview loops.</li>
-                        <li><strong>Week 4:</strong> Offer construction and acceptance.</li>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 py-12 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-navy-800">
+                <div class="md:col-span-2 space-y-4">
+                    <a href="index.html" class="logo-link inline-block">
+                        <img src="SLR Header.png" alt="Streamline Recruiting" class="logo-img">
+                    </a>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">Specialized technical search for Legal, Advanced Engineering, and Civil Infrastructure teams. Precision placements backed by performance guarantees.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Practice Desks</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="engineering.html" class="hover:text-white transition-colors">Engineering & Controls</a></li>
+                        <li><a href="legal.html" class="hover:text-white transition-colors">Legal & Regulatory</a></li>
+                        <li><a href="civil.html" class="hover:text-white transition-colors">Civil Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Company</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="jobs.html" class="hover:text-white transition-colors">Featured Jobs</a></li>
+                        <li><a href="faq.html" class="text-cyan-400 font-semibold">FAQ</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Streamlining the Interview Loop: The Dinner Party Rule</h4>
-                <p>Not everyone on the team needs to interview every candidate. We use a <strong>Hiring Scorecard</strong> to assign specific technical modules to only 3 or 4 key stakeholders.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">National Market Reality: Salary Expectations</h4>
-                <div style="padding: 15px; background: rgba(0, 210, 255, 0.1); border-left: 3px solid var(--blue);">
-                    <strong>Streamline Salary Benchmarks:</strong>
-                    <ul style="padding-left: 20px; margin-top: 10px;">
-                        <li><strong>AI and Machine Learning:</strong> 20% to 40% above standard software roles.</li>
-                        <li><strong>Robotics and Controls:</strong> 10% to 25% above traditional mechanical engineering.</li>
-                        <li><strong>Licensed Civil Engineers (P.E.):</strong> Command 15% premiums due to national infrastructure labor shortages.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Onboarding for Long-Term Retention</h4>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Skip the Bureaucracy:</strong> Get hires integrated into code, plans, or active cases immediately.</li>
-                    <li><strong>The Technical Ramp:</strong> Provide a clear map of systems, projects, or regulatory landscapes to master.</li>
-                    <li><strong>Early Wins:</strong> Assign a meaningful project they can complete in their first 30 days.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="candidates" class="faq-section">
-            <div class="section-header">
-                <h2 style="color: var(--blue); font-size: 2.5rem; margin-bottom: 20px;">The Candidate’s Career Manual</h2>
-                <p class="section-intro">In 2026, technical and legal proficiency is the baseline. To secure a top 1% role across AI, Controls, Civil, or Legal, you must master "Impact Positioning."</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">The "Impact-First" Resume: The Streamline AMO Model</h4>
-                <p>Stand out with a resume that acts as a ledger of measurable outcomes.</p>
-                <div style="margin-top: 15px; padding: 15px; background: rgba(0, 210, 255, 0.1); border-radius: 8px;">
-                    <strong>The AMO Framework (Action-Metric-Outcome):</strong>
-                    <p style="margin-top: 10px;"><em>"Architected a custom RAG pipeline using Pinecone and LangChain (Action) that reduced inference latency by 42% (Metric), enabling real-time customer support for 500k monthly users (Outcome)."</em></p>
-                </div>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">How to Evaluate if a Firm is Genuinely Technical or Growth-Focused</h4>
-                <ol style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>The Asset Moat:</strong> How are they collecting proprietary data, land rights, or patent portfolios?</li>
-                    <li><strong>Production vs. Sandbox:</strong> How many systems or projects are actively generating revenue?</li>
-                    <li><strong>Resource Budget:</strong> Do engineers and attorneys have autonomous access to compute clusters, modern software, or support staff?</li>
-                    <li><strong>Strategy Source:</strong> Is the roadmap driven by technical innovation and market realities?</li>
-                </ol>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Mastering the "Deep-Dive" Technical Walkthrough</h4>
-                <p>The interviewer is looking for your <strong>Failure Path</strong>, your problem-solving resilience, and your ability to communicate complex concepts clearly.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">The 2026 Negotiation Landscape: Beyond Base Salary</h4>
-                <div style="padding: 15px; background: rgba(0, 210, 255, 0.1); border-left: 3px solid var(--blue);">
-                    <strong>Negotiation Benchmarks:</strong> Sign-on bonuses, relocation support, GPU Compute Credits, Equity Refreshers, and P.E./Bar fee reimbursements.
-                </div>
-            </div>
-        </section>
-
-        <section id="market-2026" class="faq-section">
-            <div class="section-header">
-                <h2 style="color: var(--blue); font-size: 2.5rem; margin-bottom: 20px;">State of the Market</h2>
-                <p class="section-intro">The technical hiring market of 2026 is defined by geographic hubs, compute access, infrastructure demands, and rapid automation shifts.</p>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Geographic Talent Hubs: The 2026 Reality</h4>
-                <ul style="padding-left: 20px; line-height: 1.8;">
-                    <li><strong>Boston & Pittsburgh:</strong> National leaders for Heavy Industrial Robotics & Automation.</li>
-                    <li><strong>Silicon Valley & NYC:</strong> Epicenters for Foundation Models and Corporate/Tech Legal Practices.</li>
-                    <li><strong>Austin, Phoenix & Columbus:</strong> Hubs for Civil Infrastructure, Edge AI, and Megaproject Construction.</li>
-                    <li><strong>Seattle:</strong> Cloud Infrastructure, Systems Engineering, and AI-Ops.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4 style="color: var(--blue);">Trend Forecast: From Generative to Agentic & Infrastructure Resiliency</h4>
-                <p>The most significant shift across engineering is the move away from static systems toward <strong>Agentic Workflows</strong> in software and resilient, scalable physical infrastructure in civil and manufacturing sectors.</p>
-            </div>
-
-            <div style="background: rgba(0, 210, 255, 0.05); border: 1px solid var(--blue); border-radius: 12px; padding: 60px 40px; text-align: center; margin-top: 60px; margin-bottom: 60px;">
-                <h3 style="color: white; margin-top: 0; font-size: 2.2rem;">Ready to Streamline Your Search?</h3>
-                <p style="max-width: 700px; margin: 0 auto 40px auto; font-size: 1.2rem; opacity: 0.9; line-height: 1.8;">
-                    Partner with the recruiting experts in Legal, Controls, Civil, and AI Engineering.
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 Streamline Recruiting. All rights reserved.</p>
+                <p class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
                 </p>
-                <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
-                    <a href="contact.html" style="background: var(--blue); color: var(--navy); padding: 20px 45px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; min-width: 260px;">Hire Expert Talent</a>
-                    <a href="jobs.html" style="border: 2px solid var(--blue); color: var(--blue); padding: 18px 45px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.2rem; min-width: 260px;">View Featured Jobs</a>
-                </div>
             </div>
-        </section>
-    </main> 
-
-    <footer style="background: rgba(0, 10, 20, 0.5); padding: 80px 20px; border-top: 1px solid var(--border); text-align: center; margin-top: 40px;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <p style="font-weight: bold; color: var(--blue); font-size: 1.2rem; margin-bottom: 15px;">Streamline Recruiting</p>
-            <p style="opacity: 0.7; max-width: 600px; margin: 0 auto 30px auto; font-size: 0.95rem;">
-                The Definitive Partner for AI, Controls, Civil Engineering, and Legal Talent Acquisition. 
-            </p>
-            <p style="font-size: 0.8rem; opacity: 0.4;">
-                © 2026 Streamline Recruiting. All Rights Reserved.
-            </p>
         </div>
     </footer>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I compete with Big Tech in San Francisco and New York for AI talent?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Competing in San Francisco and NYC requires more than just salary. At Streamline Recruiting (slrsearch.com), we focus on 'Ownership Velocity.' Our 2026 data shows that 74% of top-tier engineers in these hubs will leave a FAANG-level role for a growth-stage company that offers direct technical autonomy and a faster path to shipping production-level AI."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How should a company handle a counter-offer for an AI, Controls, or Civil engineer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Streamline Recruiting warns that 80% of employees who accept a counter-offer leave within 12 months. We use a 'Resignation Management' protocol that addresses underlying technical friction, ensuring our clients in high-pressure markets maintain long-term retention."
-      }
-    }
-  ]
-}
-</script>
+    <!-- Interactive Scripts -->
+    <script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            const isOpen = content.classList.contains('active');
+
+            if (isOpen) {
+                content.classList.remove('active');
+                icon.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                icon.classList.add('active');
+            }
+        }
+
+        function filterCategory(category) {
+            // Update Tab Styles
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.className = "tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200";
+            });
+
+            const activeTab = document.getElementById('tab-' + category);
+            if (activeTab) {
+                activeTab.className = "tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-navy-900 text-cyan-400 shadow-md";
+            }
+
+            // Filter Sections
+            const sections = document.querySelectorAll('.faq-section');
+            sections.forEach(section => {
+                if (category === 'all' || section.getAttribute('data-category') === category) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
