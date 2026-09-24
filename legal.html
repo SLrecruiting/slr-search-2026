@@ -3,12 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Division & Partner Search | Streamline Recruiting</title>
     <meta name="description" content="Specialized legal recruitment for law firms and corporate counsel. Mid-level associate capacity, lateral partners, immigration, and specialized compliance talent.">
-    <title>Legal Division | Streamline Recruiting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#020b1a',
+                            800: '#07162c',
+                            700: '#0f274a',
+                            600: '#1e3a8a',
+                        },
+                        cyan: {
+                            400: '#38bdf8',
+                            500: '#00d2ff',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
     <script>
@@ -20,171 +45,352 @@
     </script>
 
     <style>
-        /* Form-specific styling for Light Theme */
-        .card form input, .card form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-        .card form input:focus, .card form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            background: #FFFFFF;
-        }
-        .card form textarea { resize: vertical; }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
         }
 
-        .home-split-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: start;
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.12) 0%, rgba(2, 11, 26, 0) 70%);
         }
 
-        @media (max-width: 850px) {
-            .home-split-grid {
-                grid-template-columns: 1fr;
-            }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(2, 11, 26, 0.08);
+        }
+
+        .form-shadow {
+            box-shadow: 0 20px 25px -5px rgba(2, 11, 26, 0.15), 0 8px 10px -6px rgba(2, 11, 26, 0.1);
+        }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .6; }
         }
     </style>
 </head>
-<body class="inner-page">
+<body class="antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen">
 
-    <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+    <!-- BULLETPROOF LEFT-ALIGNED HEADER -->
+    <header class="bg-navy-900 text-white sticky top-0 z-50 border-b border-navy-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end relative">
+            
+            <!-- Absolutely Locked to Hard Left Margin -->
+            <div class="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 flex items-center">
+                <a href="index.html" class="block">
+                    <img src="SLR Header.png" alt="Streamline Recruiting" class="h-10 sm:h-12 w-auto object-contain block max-w-[200px] sm:max-w-[260px]">
+                </a>
+            </div>
+
+            <!-- Navigation Links (Pushed Right) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="legal.html" class="text-sm font-bold text-cyan-400 border-b-2 border-cyan-400 pb-1">Legal</a>
+                <a href="engineering.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Engineering</a>
+                <a href="civil.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Civil</a>
+                <a href="jobs.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Featured Jobs</a>
+                <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">FAQ</a>
+                <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-xs font-extrabold uppercase px-4 py-2.5 rounded-md transition-all shadow-md">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="legal.html" class="active">Legal</a>
-            <a href="engineering.html">Engineering</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Home</a>
+            <a href="legal.html" class="block px-3 py-2 text-base font-bold text-cyan-400 bg-navy-900 rounded">Legal</a>
+            <a href="engineering.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Engineering</a>
+            <a href="civil.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Civil</a>
+            <a href="jobs.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Featured Jobs</a>
+            <a href="faq.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">FAQ</a>
+            <a href="contact.html" class="block px-3 py-2 text-base font-bold text-cyan-400">Contact</a>
+        </div>
     </header>
 
-    <main>
-        <section class="container" style="padding: 60px 20px;">
-            
-            <!-- PAGE HERO -->
-            <div style="margin-bottom: 60px;">
-                <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--navy); font-weight: 800;">
-                    High-Margin <span style="color:var(--cyan);">Legal Talent & Capacity.</span>
-                </h1>
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
-                    When practice groups are stretched thin, unbilled hours sit on the table, and client deadlines press, talent availability is a direct driver of firm revenue. We deliver the mid-level associates, portable partners, and specialized counsel that keep law firms running at peak billable capacity.
-                </p>
-                <p style="font-style: italic; color: var(--cyan); font-weight: 600; font-size: 1.05rem;">
-                    From high-volume Immigration and Commercial Real Estate to emerging AI Regulatory and Data Center infrastructure counsel, we place attorneys who show up ready to execute.
-                </p>
+    <!-- HERO SECTION -->
+    <section class="bg-navy-900 text-white relative overflow-hidden hero-glow border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-navy-800 border border-navy-600 px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-400">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 badge-pulse"></span>
+                        <span class="uppercase tracking-wider">Specialized Legal & Attorney Practice</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        High-Margin <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Legal Talent & Capacity</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        When practice groups are stretched thin, unbilled hours sit on the table, and client deadlines press, talent availability is a direct driver of firm revenue. We deliver the mid-level associates, portable partners, and specialized counsel that keep law firms running at peak billable capacity.
+                    </p>
+
+                    <p class="text-base text-slate-400 leading-relaxed max-w-2xl">
+                        From high-volume Immigration and Commercial Real Estate to emerging AI Regulatory and Data Center infrastructure counsel, we place attorneys who show up ready to execute.
+                    </p>
+
+                    <!-- Key Metrics Bar -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-navy-800">
+                        <div>
+                            <span class="text-3xl font-black text-white block">100%</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Confidential Search</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-black text-cyan-400 block">$4M+</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Portable Books Placed</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-black text-white block">10 Days</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Avg. Shortlist Time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead Capture Form -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-8 text-slate-900 form-shadow border-2 border-cyan-400 relative">
+                        <div class="absolute -top-3 right-6 bg-cyan-500 text-navy-900 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                            Confidential Legal Search
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black text-navy-900 tracking-tight">Expand Practice Capacity</h3>
+                            <p class="text-sm text-slate-600 mt-1">Start a confidential inquiry with our specialized legal practice team.</p>
+                        </div>
+
+                        <form action="https://formspree.io/f/mjgpkbyq" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Work Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Role Details</label>
+                                <textarea id="message" name="message" rows="3" placeholder="e.g. Mid-Level Immigration Associate, Data Center Real Estate Counsel" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-navy-900 hover:bg-navy-800 text-white font-extrabold uppercase text-xs tracking-wider rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                                <span>Send Confidential Request</span>
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </button>
+                        </form>
+
+                        <p class="text-[11px] text-center text-slate-500 mt-4 flex items-center justify-center space-x-1">
+                            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>100% Confidential. Contingency or Retained Options.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PLACEMENT PROOF SECTION -->
+    <section class="py-20 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-600 block mb-2">Proven Execution</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 tracking-tight">Proven Legal Placements</h2>
+                <p class="text-slate-600 text-base mt-2">Attorneys and practice group leaders integrated into high-volume legal environments.</p>
             </div>
 
-            <!-- SPLIT SECTION: WHY STREAMLINE & CONTACT FORM -->
-            <div class="home-split-grid" style="margin-bottom: 80px;">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded">Corporate Immigration</span>
+                        <span class="text-xs text-slate-400 font-bold">Placed in 10 Days</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Senior Immigration Attorney</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed a high-volume corporate immigration specialist to clear a massive visa backlog for a national law firm’s tech client practice group.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded">Land & Infrastructure</span>
+                        <span class="text-xs text-slate-400 font-bold">+1,800 Billable Hrs</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Mid-Level Real Estate Associate</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Secured a 4th-year associate specializing in commercial land acquisition and zoning, immediately adding critical execution capacity.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded">Lateral Partner</span>
+                        <span class="text-xs text-slate-400 font-bold">$4M Book</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Partner (Data Center Infrastructure)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Facilitated the move of a Partner with a $4M portable book specializing in hyperscale land use, power procurement, and utility agreements.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded">Tech & Compliance</span>
+                        <span class="text-xs text-slate-400 font-bold">In-House Placement</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Senior Counsel (AI Regulatory)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed lead regulatory counsel for an emerging fintech firm to architect their compliance, algorithmic risk, and governance framework.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded">Executive Leadership</span>
+                        <span class="text-xs text-slate-400 font-bold">General Counsel</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">General Counsel (Robotics)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed the first in-house General Counsel for a fast-growing robotics firm, managing outside counsel spend and IP portfolio expansion.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded">Private Equity & Cyber</span>
+                        <span class="text-xs text-slate-400 font-bold">Ex-DOJ Specialist</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Privacy & Cybersecurity Counsel</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Secured a former DOJ cyber specialist for a private equity firm’s digital healthcare portfolio companies.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIALIZATION SECTION -->
+    <section class="bg-navy-900 text-white py-20 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-400">Practice Group Continuity</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Protecting Workhorse Capacity & Margins</h2>
+                <p class="text-slate-400 mt-3 text-base">Mid-level attorneys (3–6 years) and high-volume practice specialists are the engine of law firm profitability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-navy-800 rounded-xl p-6 border border-navy-700 hover:border-cyan-500 transition-colors">
+                    <div class="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center text-cyan-400 font-black mb-4 border border-navy-700">01</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Corporate Immigration</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Sourcing high-volume immigration associates and special counsel to clear PERM/H-1B backlogs and support global mobility desks.</p>
+                </div>
+
+                <div class="bg-navy-800 rounded-xl p-6 border border-navy-700 hover:border-cyan-500 transition-colors">
+                    <div class="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center text-cyan-400 font-black mb-4 border border-navy-700">02</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Real Estate & Infrastructure</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Placing land use, zoning, and project finance counsel for hyperscale data centers, energy transition, and commercial developments.</p>
+                </div>
+
+                <div class="bg-navy-800 rounded-xl p-6 border border-navy-700 hover:border-cyan-500 transition-colors">
+                    <div class="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center text-cyan-400 font-black mb-4 border border-navy-700">03</div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI, IP & Regulatory</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Securing specialized tech-compliance attorneys, cybersecurity leads, and AI governance experts for law firms and high-growth corporations.</p>
+                </div>
+
+                <div class="bg-navy-800 rounded-xl p-6 border border-navy-700 hover:border-cyan-500 transition-colors">
+                    <div class="w-12 h-12 bg-navy-900 rounded-lg flex items-center justify-center text-cyan-400 font-black mb-4 border border-navy-700">04</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Lateral Partners</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">Managing high-discretion partner moves with portable books of business, aligning firm culture with strategic practice expansion.</p>
+                </div>
+
+            </div>
+
+            <!-- Callout Banner -->
+            <div class="mt-16 bg-gradient-to-r from-navy-800 to-navy-900 border border-cyan-500/30 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
                 <div>
-                    <h2 style="margin-bottom:20px; color: var(--navy); font-size: 1.8rem; font-weight: 700;">Practice Group Continuity & Revenue Protection</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        Mid-level attorneys (3–6 years) and high-volume practice specialists are the engine of law firm profitability. When key talent leaves, partner burnout rises and client work risks falling behind.
+                    <span class="text-xs font-black uppercase tracking-widest text-cyan-400 block mb-1">Confidential Placement Services</span>
+                    <h3 class="text-2xl font-black text-white">Need to Scale Practice Capacity?</h3>
+                    <p class="text-sm text-slate-300 mt-1 max-w-2xl">Prevent partner burnout and keep client work moving with vetted mid-level associate and lateral partner placements.</p>
+                </div>
+                <a href="contact.html" class="whitespace-nowrap bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-black uppercase text-xs tracking-wider px-6 py-3.5 rounded-lg transition-colors shadow-lg">
+                    Speak With Our Legal Desk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-600 block mb-2">Verified Client Feedback</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 tracking-tight">Law Firm & Client Feedback</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        Our immigration group was overwhelmed with corporate filings after two mid-levels left. Streamline brought us two mid-level attorneys within 10 days who stepped right in without missing a single deadline.
                     </p>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        We manage delicate lateral transitions with absolute discretion. Whether you need to expand an Immigration group to handle growing corporate client demand, bring in specialized Counsel for tech compliance, or secure Lateral Partners with portable books, we deliver vetted candidates who seamlessly integrate.
+                    <div class="pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-cyan-400 flex items-center justify-center font-bold text-sm">PL</div>
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Practice Group Leader</span>
+                            <span class="text-xs text-slate-500">Am Law 200 Firm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        Streamline actually understood the technical nuance of our search. They didn't just send us a stack of resumes; they found a Lateral Partner with a portable practice that perfectly complemented our Infrastructure group.
                     </p>
-                    <p style="margin-top: 15px; font-weight: 700; color: var(--navy); font-size: 1.05rem;">
-                        Contingency or Retained. Confidential, high-impact results.
+                    <div class="pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-cyan-400 flex items-center justify-center font-bold text-sm">JR</div>
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Jonathan R.</span>
+                            <span class="text-xs text-slate-500">Managing Partner</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        The discretion shown during our search was exceptional. They managed the entire process flawlessly, from initial outreach to the final book-of-business analysis.
                     </p>
-                </div>
-
-                <!-- LEAD CAPTURE FORM CARD -->
-                <div class="card" style="text-align: left; background: var(--card-bg); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-                    <h3 style="color:var(--navy); margin-bottom:10px; text-align: center; font-size: 1.4rem;">Expand Practice Capacity</h3>
-                    <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">Start a confidential inquiry with our team.</p>
-                    
-                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Work Email" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                        <textarea name="message" rows="3" placeholder="Role details (e.g. Mid-Level Immigration Associate, Data Center Real Estate Counsel)" required></textarea>
-                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Confidential Request</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- PROOF OF PERFORMANCE GRID -->
-            <div style="margin-bottom: 80px;">
-                <h2 style="margin-bottom: 30px; border-left: 4px solid var(--cyan); padding-left: 15px; color: var(--navy); font-weight: 700;">
-                    Proven Legal Placements
-                </h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Immigration Attorney</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed a high-volume corporate immigration specialist to clear a massive visa backlog for a national law firm’s tech client practice group.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Mid-Level Real Estate & Infrastructure Associate</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Secured a 4th-year associate specializing in commercial land acquisition and zoning, immediately adding 1,800+ billable hours of capacity.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Lateral Partner (Data Center Infrastructure)</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Facilitated the move of a Partner with a $4M portable book specializing in hyperscale land use and power procurement.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Counsel (AI Regulatory & Governance)</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed lead regulatory counsel for an emerging fintech firm to architect their compliance and risk-mitigation framework.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">General Counsel</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed the first in-house General Counsel for a fast-growing robotics firm, managing outside counsel spend and IP portfolio scale.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Privacy & Cybersecurity Counsel</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Secured a former DOJ cyber specialist for a private equity firm’s digital healthcare portfolio companies.</p>
+                    <div class="pt-4 border-t border-slate-200 flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-cyan-400 flex items-center justify-center font-bold text-sm">RS</div>
+                        <div>
+                            <span class="text-sm font-bold text-navy-900 block">Robert S.</span>
+                            <span class="text-xs text-slate-500">Head of Partner Recruiting</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- BANNER -->
-            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 80px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);">
-                <h2 style="margin-bottom: 15px; color: var(--navy);">Protecting Workhorse Capacity</h2>
-                <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
-                    A law firm’s reputation rests on execution and responsiveness. We focus heavily on sourcing mid-level associates and specialized counsel who do the heavy lifting, protecting partner sanity and maintaining firm margins.
-                </p>
             </div>
+        </div>
+    </section>
 
-            <!-- TESTIMONIALS -->
-            <div style="margin-top:60px;">
-                <h2 style="text-align:center; margin-bottom:40px; color: var(--navy); font-weight: 800;">Law Firm & Client Feedback</h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Our immigration group was overwhelmed with corporate filings after two mid-levels left. Streamline brought us two mid-level attorneys within 10 days who stepped right in without missing a deadline."</p>
-                        <strong style="color: var(--navy);">— Practice Group Leader, Am Law 200 Firm</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Streamline actually understood the technical nuance of our search. They didn't just send us a stack of resumes; they found a Lateral Partner with a portable practice that perfectly complemented our Infrastructure group."</p>
-                        <strong style="color: var(--navy);">— Jonathan R., Managing Partner</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"The discretion shown during our search was exceptional. They managed the entire process flawlessly, from initial outreach to the final book-of-business analysis."</p>
-                        <strong style="color: var(--navy);">— Robert S., Head of Partner Recruiting</strong>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer style="text-align: center; padding: 30px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
-        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-auto">
+        &copy; 2026 Streamline Recruiting. All rights reserved.
     </footer>
+
 </body>
 </html>
