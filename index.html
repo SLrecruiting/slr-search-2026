@@ -3,265 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streamline Recruiting | Technical, Legal & Civil Infrastructure Talent</title>
-    <meta name="description" content="Mission-critical recruiting for Legal, Engineering, and Civil Infrastructure. Streamline Recruiting connects top-tier talent with operational precision.">
+    <title>Streamline Recruiting | Technical, Legal & Infrastructure Search</title>
+    <meta name="description" content="Specialized executive and technical search for Legal, Advanced Engineering, and Civil Infrastructure teams. Streamline Recruiting delivers precision talent.">
     <link rel="canonical" href="https://slrsearch.com/index.html">
-
-    <style>
-        :root {
-            --bg-main: #f8fafc;
-            --bg-card-dark: #020b1a;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --text-light: #ffffff;
-            --text-light-muted: #94a3b8;
-            --brand-navy: #020b1a;
-            --brand-cyan: #00d2ff;
-            --border-dark: #1e293b;
-            --border-light: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Top Navigation Header */
-        header {
-            background-color: var(--brand-navy);
-            padding: 16px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-dark);
-        }
-
-        .logo-text {
-            color: var(--text-light);
-            font-weight: 800;
-            font-size: 1.15rem;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.825rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.2s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--brand-cyan);
-        }
-
-        /* Light Hero Banner */
-        .hero {
-            background-color: #ffffff;
-            padding: 70px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .hero-container {
-            max-width: 850px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 2.6rem;
-            color: var(--brand-navy);
-            font-weight: 900;
-            line-height: 1.25;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            max-width: 720px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-        }
-
-        /* Action Buttons */
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 26px;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 6px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            transition: all 0.2s ease-in-out;
-        }
-
-        .btn-cyan {
-            background-color: var(--brand-cyan);
-            color: var(--brand-navy);
-            border: 2px solid var(--brand-cyan);
-        }
-
-        .btn-navy {
-            background-color: var(--brand-navy);
-            color: var(--text-light);
-            border: 2px solid var(--brand-navy);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--brand-navy);
-            border: 2px solid var(--brand-navy);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        /* Content Section */
-        .content-section {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Practice Areas (Dark Blue Cards) */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card-dark {
-            background: var(--bg-card-dark);
-            border: 1px solid var(--border-dark);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-dark .card-header {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            min-height: 45px;
-            line-height: 1.5;
-        }
-
-        .card-dark ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .card-dark ul li {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--text-light);
-            padding: 10px 0;
-            border-bottom: 1px dashed var(--border-dark);
-        }
-
-        .card-dark .card-link {
-            display: inline-block;
-            color: var(--brand-cyan);
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.3px;
-        }
-
-        .card-dark .card-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Streamline Standard Banner (White Box on Light Gray) */
-        .standard-banner {
-            background: #ffffff;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 40px 25px;
-            text-align: center;
-            margin-top: 50px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .standard-banner h2 {
-            font-size: 1.5rem;
-            color: var(--brand-navy);
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-            font-weight: 800;
-        }
-
-        .standard-banner p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 650px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-            background-color: var(--brand-navy);
-            color: var(--text-light-muted);
-            font-size: 0.85rem;
-            margin-top: 70px;
-            border-top: 1px solid var(--border-dark);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            nav a { margin-left: 10px; font-size: 0.75rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo-text">STREAMLINE RECRUITING</a>
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Streamline Recruiting" class="logo-img">
+        </a>
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="legal.html">Legal</a>
@@ -276,8 +28,8 @@
     <!-- Clean Light Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <h1>Mission-Critical Talent for<br>Legal, Engineering & Infrastructure.</h1>
-            <p>Whether maintaining billable legal capacity, keeping automated production lines running, or delivering stamped engineering submittals on time—we recruit the essential talent that drives operational continuity.</p>
+            <h1>Specialized Talent Search for Legal, Engineering & Critical Infrastructure</h1>
+            <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced engineering operations, and municipal civil infrastructure.</p>
             
             <div class="cta-group">
                 <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
@@ -289,18 +41,18 @@
 
     <!-- Main Content Area with Dark Navy Practice Cards -->
     <main class="content-section">
-        <p class="section-intro">We don't do generic resume blasts. We focus strictly on core utility roles where vacancies immediately impact revenue and operations.</p>
+        <p class="section-intro">We do not send generic resume floods. We deliver precise candidates for key technical and leadership roles that directly drive revenue and operational capacity.</p>
 
         <div class="grid-3">
             <!-- Legal Card -->
             <div class="card-dark">
                 <div>
-                    <p class="card-header">Protecting billable capacity and practice group workflow.</p>
+                    <p class="card-header">Protecting billable capacity, deal flow, and practice group expansion.</p>
                     <ul>
-                        <li>&rarr; Mid-Level Associates (3–6 yrs)</li>
-                        <li>&rarr; Corporate Immigration</li>
-                        <li>&rarr; AI Regulatory Counsel</li>
-                        <li>&rarr; Data Center Real Estate</li>
+                        <li>&rarr; Mid-Level Associates (3 to 6 yrs)</li>
+                        <li>&rarr; Corporate Immigration Specialists</li>
+                        <li>&rarr; AI & Regulatory Counsel</li>
+                        <li>&rarr; Data Center Real Estate Attorneys</li>
                         <li>&rarr; Lateral Partners</li>
                     </ul>
                 </div>
@@ -310,12 +62,12 @@
             <!-- Engineering Card -->
             <div class="card-dark">
                 <div>
-                    <p class="card-header">Eliminating operational downtime and scaling hardware lines.</p>
+                    <p class="card-header">Eliminating operational downtime and scaling automated production.</p>
                     <ul>
                         <li>&rarr; Controls & PLC Engineers</li>
-                        <li>&rarr; Automation & Mechatronics</li>
+                        <li>&rarr; Automation & Mechatronics Leads</li>
                         <li>&rarr; Computer Vision Specialists</li>
-                        <li>&rarr; Plant & Site Operations</li>
+                        <li>&rarr; Plant & Site Operations Managers</li>
                         <li>&rarr; Electrical Systems Leads</li>
                     </ul>
                 </div>
@@ -325,11 +77,11 @@
             <!-- Civil Card -->
             <div class="card-dark">
                 <div>
-                    <p class="card-header">Delivering stamped plans and licensed project execution.</p>
+                    <p class="card-header">Delivering licensed Professional Engineers for water, land, and structural design.</p>
                     <ul>
-                        <li>&rarr; Structural PEs</li>
-                        <li>&rarr; Water / Wastewater Leads</li>
-                        <li>&rarr; Site Development Engineers</li>
+                        <li>&rarr; Water & Wastewater Infrastructure PEs</li>
+                        <li>&rarr; Licensed Structural Engineers</li>
+                        <li>&rarr; Land & Site Development Leads</li>
                         <li>&rarr; Transportation & Traffic PEs</li>
                         <li>&rarr; Geotechnical Specialists</li>
                     </ul>
@@ -340,8 +92,8 @@
 
         <!-- Light Standard Card -->
         <div class="standard-banner">
-            <h2>THE STREAMLINE STANDARD</h2>
-            <p>Every search is contingency-based. You pay when we deliver. We stand behind our work with a full retention guarantee.</p>
+            <h2>THE STREAMLINE GUARANTEE</h2>
+            <p>Every search is performance-based. You invest when we deliver the right hire. Every placement is backed by a full retention guarantee.</p>
         </div>
     </main>
 
