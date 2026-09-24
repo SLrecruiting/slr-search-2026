@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Streamline Recruiting. Connect with our team for specialized Legal, Engineering, and Civil recruitment services.">
     <title>Contact | Streamline Recruiting</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Get in touch with Streamline Recruiting. Connect with our team for specialized Legal, Engineering, and Civil recruitment services.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google tag (gtag.js) -->
@@ -19,158 +17,258 @@
       gtag('config', 'G-YZ2NSWXYCR');
     </script>
 
-    <style>
-        /* Contact-specific Light Theme Styling */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: start;
-            margin-top: 40px;
-            margin-bottom: 60px;
-        }
-
-        .card form input, .card form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-        .card form input:focus, .card form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            background: #FFFFFF;
-        }
-        .card form textarea { resize: vertical; }
-
-        .resource-card {
-            margin-bottom: 30px;
-            border-left: 4px solid var(--cyan);
-            padding-left: 20px;
-            background: #F8FAFC;
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-            border-top: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        @media (max-width: 850px) {
-            .contact-grid { 
-                grid-template-columns: 1fr; 
-                gap: 30px; 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#020b1a',
+                            800: '#07162c',
+                            700: '#0f274a',
+                            600: '#1e3a8a',
+                        },
+                        cyan: {
+                            400: '#38bdf8',
+                            500: '#00d2ff',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
             }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.1) 0%, rgba(2, 11, 26, 0) 70%);
+        }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .6; }
         }
     </style>
 </head>
-<body class="inner-page">
+<body class="antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen">
 
-    <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="legal.html">Legal</a>
-            <a href="engineering.html">Engineering</a>
-            <a href="civil.html">Civil</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
-
-    <main class="container" style="padding: 60px 20px;">
-        <div class="contact-grid">
+    <!-- HEADER (Matching modern site navbar) -->
+    <header class="bg-navy-900 text-white sticky top-0 z-50 border-b border-navy-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end relative">
             
-            <!-- LEFT COLUMN: INFO & RESOURCES -->
-            <div class="contact-info">
-                <h1 style="text-align: left; margin-bottom: 25px; color: var(--navy); font-weight: 800; font-size: 2.8rem;">
-                    Get in <span style="color:var(--cyan);">Touch</span>
-                </h1>
-                
-                <p style="margin-bottom: 30px; font-size: 1.15rem; line-height: 1.6; color: var(--text-muted);">
-                    Essential technical talent and high-margin legal professionals aren't sitting on job boards waiting to apply. They are actively recruited. Tell us about your operational bottleneck or practice area expansion goals.
-                </p>
-
-                <!-- LINKEDIN CONNECT BOX -->
-                <div style="margin-bottom: 40px; background: #F8FAFC; padding: 25px; border-radius: 8px; border: 1px solid var(--border);">
-                    <h4 style="margin-bottom: 10px; color: var(--navy); font-size: 1.2rem; font-weight: 700;">Connect With Us</h4>
-                    <p style="font-size: 0.95rem; margin-bottom: 15px; color: var(--text-muted);">
-                        Follow Streamline Recruiting for industry insights, market trends, and executive talent news.
-                    </p>
-                    <a href="https://www.linkedin.com/company/streamline-recruiting" target="_blank" style="color: var(--cyan); text-decoration: none; font-weight: 700;">
-                        View LinkedIn Company Page →
-                    </a>
-                </div>
-
-                <!-- EBOOKS & RESOURCES -->
-                <h2 style="text-align: left; font-size: 1.8rem; margin-top: 50px; margin-bottom: 15px; color: var(--navy); font-weight: 700;">
-                    Hiring Strategy Resources
-                </h2>
-                <p style="margin-bottom: 35px; color: var(--text-muted); line-height: 1.5;">
-                    Explore our complimentary resources designed to help leadership teams refine candidate evaluation and streamline hiring workflows.
-                </p>
-
-                <div class="resource-card">
-                    <h4 style="margin-bottom: 8px; color: var(--navy); font-size: 1.1rem;">The 5 Steps to a Streamlined Hiring Process</h4>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">Access the complete blueprint for a winning talent execution strategy, authored by Jackie Curtsinger.</p>
-                    <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="btn" style="padding: 10px 20px; font-size: 0.85rem;">Download Ebook</a>
-                </div>
-
-                <div class="resource-card">
-                    <h4 style="margin-bottom: 8px; color: var(--navy); font-size: 1.1rem;">Advanced Hiring Scorecard Template</h4>
-                    <p style="margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">Empower your hiring managers to make objective, data-backed candidate assessments across technical skills and cultural alignment.</p>
-                    <a href="The Strategic Hiring Scorecard.pdf" download class="btn" style="padding: 10px 20px; font-size: 0.85rem;">Download Scorecard</a>
-                </div>
+            <!-- Logo Left-Aligned -->
+            <div class="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 flex items-center">
+                <a href="index.html" class="block">
+                    <img src="SLR Header.png" alt="Streamline Recruiting" class="h-10 sm:h-12 w-auto object-contain block max-w-[200px] sm:max-w-[260px]">
+                </a>
             </div>
 
-            <!-- RIGHT COLUMN: FORM CARD -->
-            <div class="card" style="background: var(--card-bg); border: 1px solid var(--border); padding: 35px; border-radius: 10px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-                <h3 style="margin-bottom: 10px; color: var(--navy); font-size: 1.6rem; font-weight: 700; text-align: center;">Send a Message</h3>
-                <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">We typically respond within 1 business day.</p>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="legal.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Legal</a>
+                <a href="engineering.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Engineering</a>
+                <a href="civil.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Civil</a>
+                <a href="jobs.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Featured Jobs</a>
+                <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-xs font-extrabold uppercase px-4 py-2.5 rounded-md transition-all shadow-md">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Home</a>
+            <a href="legal.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Legal</a>
+            <a href="engineering.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Engineering</a>
+            <a href="civil.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Civil</a>
+            <a href="jobs.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Featured Jobs</a>
+            <a href="contact.html" class="block px-3 py-2 text-base font-bold text-cyan-400 bg-navy-900 rounded">Contact</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="py-12 lg:py-16 flex-grow hero-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                 
-                <form action="https://formspree.io/f/mjgpkbyq" method="POST">
-                    <input type="text" name="name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Work Email" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" required>
-                    <textarea name="message" rows="5" placeholder="Tell us about the roles or technical challenges you are looking to address..." required></textarea>
-                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Request</button>
-                </form>
+                <!-- LEFT COLUMN: INFO & DOWNLOADABLE RESOURCES -->
+                <div class="lg:col-span-7 space-y-10">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-slate-200 border border-slate-300 px-3 py-1.5 rounded-full text-xs font-semibold text-navy-900 mb-4">
+                            <span class="w-2 h-2 rounded-full bg-cyan-500 badge-pulse"></span>
+                            <span class="uppercase tracking-wider">Direct Engagement</span>
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-navy-900 tracking-tight mb-4">
+                            Get in <span class="text-cyan-600">Touch</span>
+                        </h1>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            Essential technical talent and high-margin legal professionals aren't sitting on job boards waiting to apply. They are actively recruited. Tell us about your operational bottleneck or practice area expansion goals.
+                        </p>
+                    </div>
+
+                    <!-- LINKEDIN CONNECT BOX -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start space-x-4">
+                        <div class="bg-cyan-50 p-3 rounded-lg text-cyan-600 shrink-0 mt-1">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.49 1.49 0 0 0-1.5 1.5c0 .82.68 1.5 1.5 1.5a1.5 1.5 0 0 0 0-3Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-lg mb-1">Connect With Us</h4>
+                            <p class="text-slate-600 text-sm mb-3">
+                                Follow Streamline Recruiting on LinkedIn for industry insights, market trends, and executive talent updates.
+                            </p>
+                            <a href="https://www.linkedin.com/company/streamline-recruiting" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-600 hover:text-cyan-500 font-bold text-sm transition-colors">
+                                View LinkedIn Company Page &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- EBOOKS & RESOURCES SECTION -->
+                    <div class="pt-4">
+                        <h2 class="text-2xl font-bold text-navy-900 tracking-tight mb-2">
+                            Hiring Strategy Resources
+                        </h2>
+                        <p class="text-slate-600 text-sm mb-6">
+                            Explore our complimentary resources designed to help leadership teams refine candidate evaluation and streamline hiring workflows.
+                        </p>
+
+                        <div class="space-y-4">
+                            
+                            <!-- EBOOK CARD -->
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-l-cyan-500 border-y border-r border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h4 class="font-bold text-navy-900 text-base mb-1">The 5 Steps to a Streamlined Hiring Process</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed">Access the complete blueprint for a winning talent execution strategy, authored by Jackie Curtsinger.</p>
+                                </div>
+                                <a href="The 5 Steps to a Streamlined Hiring Process.pdf" download class="shrink-0 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors inline-flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    <span>Download Ebook</span>
+                                </a>
+                            </div>
+
+                            <!-- SCORECARD CARD -->
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-l-navy-900 border-y border-r border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h4 class="font-bold text-navy-900 text-base mb-1">Advanced Hiring Scorecard Template</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed">Empower your hiring managers to make objective, data-backed candidate assessments across technical skills and culture.</p>
+                                </div>
+                                <a href="The Strategic Hiring Scorecard.pdf" download class="shrink-0 bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors inline-flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    <span>Download Scorecard</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN: FORMSPREE CONTACT FORM -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-xl relative">
+                        <div class="mb-6 text-center">
+                            <h3 class="text-2xl font-black text-navy-900">Send a Message</h3>
+                            <p class="text-xs font-medium text-slate-500 mt-1">We typically respond within 1 business day.</p>
+                        </div>
+                        
+                        <form action="https://formspree.io/f/mjgpkbyq" method="POST" class="space-y-4">
+                            <input type="hidden" name="_subject" value="New Contact Inquiry - Streamline Recruiting">
+                            
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Full Name *</label>
+                                <input type="text" name="name" placeholder="e.g. Sarah Jenkins" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Work Email *</label>
+                                <input type="email" name="email" placeholder="e.g. sarah@firm.com" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="e.g. (555) 000-0000" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Message *</label>
+                                <textarea name="message" rows="5" placeholder="Tell us about the roles or technical challenges you are looking to address..." required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-cyan-500 focus:bg-white transition-all resize-y"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-black uppercase text-xs tracking-wider py-4 rounded-lg transition-all shadow-md hover:shadow-lg">
+                                Send Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </main>
 
-    <!-- FOOTER WITH PRIVACY MODAL -->
-    <footer style="text-align: center; padding: 40px 20px; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem; margin-top: 60px;">
-        <p style="opacity: 0.8; margin-bottom: 10px;">© 2026 Streamline Recruiting (SLR Search). All rights reserved.</p>
-        <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').style.display='block'" style="color: var(--cyan); text-decoration: none;">Privacy Policy & SMS Terms</a>
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-auto">
+        <p class="mb-2">&copy; 2026 Streamline Recruiting (SLR Search). All rights reserved.</p>
+        <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="text-cyan-400 hover:underline">
+            Privacy Policy & SMS Terms
+        </button>
     </footer>
 
-    <!-- PRIVACY MODAL -->
-    <div id="privacy-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color: rgba(0,0,0,0.7); overflow:auto;">
-        <div style="background-color: #FFFFFF; margin: 8% auto; padding: 40px; border: 1px solid var(--border); width: 85%; max-width: 650px; border-radius: 12px; position:relative; color: var(--text-dark); text-align: left; line-height: 1.5; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);">
-            <span onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute; top:15px; right:25px; color:var(--text-muted); font-size:30px; cursor:pointer; font-weight:bold;">&times;</span>
-            <h2 style="margin-bottom: 15px; color: var(--navy);">Privacy Policy & SMS Terms</h2>
-            <p style="font-size: 0.85rem; margin-bottom: 20px; color: var(--text-muted);">Last Updated: March 2026</p>
-            <p>Streamline Recruiting is committed to protecting your privacy. This policy explains how we handle your personal information and our SMS outreach processes.</p>
+    <!-- PRIVACY POLICY MODAL -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 relative text-left shadow-2xl my-8">
+            <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
             
-            <h4 style="color:var(--navy); margin-top: 20px; font-weight: 700;">Information Collection & Use</h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">We collect personal information (such as name, work email, phone number, and resume credentials) solely to provide executive recruiting services and evaluate candidates.</p>
+            <h2 class="text-2xl font-bold text-navy-900 mb-1">Privacy Policy & SMS Terms</h2>
+            <p class="text-xs text-slate-400 mb-6">Last Updated: March 2026</p>
             
-            <h4 style="color:var(--navy); margin-top: 20px; font-weight: 700;">SMS Program & Consent</h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">By providing your mobile phone number, you consent to receive recruitment updates regarding relevant active searches. Message frequency varies (up to 3 msgs/week). Text STOP to opt-out at any time.</p>
-            
-            <h4 style="color:var(--navy); margin-top: 20px; font-weight: 700;">No Third-Party Sharing</h4>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">We do not sell, rent, or share your personal data or SMS consent info with third parties for marketing purposes.</p>
-            
-            <p style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.9rem; color: var(--text-muted);">Questions? Direct inquiries to 425-818-3962.</p>
+            <div class="space-y-4 text-xs text-slate-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+                <p>Streamline Recruiting is committed to protecting your privacy. This policy explains how we handle your personal information and our SMS outreach processes.</p>
+                
+                <h4 class="font-bold text-navy-900 text-sm pt-2">Information Collection & Use</h4>
+                <p>We collect personal information (such as name, work email, phone number, and resume credentials) solely to provide executive recruiting services and evaluate candidates.</p>
+                
+                <h4 class="font-bold text-navy-900 text-sm pt-2">SMS Program & Consent</h4>
+                <p>By providing your mobile phone number, you consent to receive recruitment updates regarding relevant active searches. Message frequency varies (up to 3 msgs/week). Text STOP to opt-out at any time.</p>
+                
+                <h4 class="font-bold text-navy-900 text-sm pt-2">No Third-Party Sharing</h4>
+                <p>We do not sell, rent, or share your personal data or SMS consent info with third parties for marketing purposes.</p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                <span>Inquiries: 425-818-3962</span>
+                <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="bg-navy-900 text-white px-4 py-2 rounded-md font-semibold">Close</button>
+            </div>
         </div>
     </div>
 
