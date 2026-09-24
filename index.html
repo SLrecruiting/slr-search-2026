@@ -8,110 +8,99 @@
     <link rel="canonical" href="https://slrsearch.com/index.html">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Hero Layout Split for High-Converting Lead Form */
-        .hero-split {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 40px;
-            align-items: center;
-            text-align: left;
-        }
-
-        .hero-split h1 {
-            font-size: 2.3rem;
-            color: var(--brand-navy);
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 18px;
-        }
-
-        .hero-split p {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        /* Lead Capture Card Style */
-        .hero-form-card {
-            background: #ffffff;
+        /* Bottom Lead Capture Form Section */
+        .bottom-form-section {
+            background-color: #ffffff;
             border: 1px solid var(--border-light);
             border-radius: 8px;
-            padding: 28px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .hero-form-card h3 {
-            font-size: 1.3rem;
+        .bottom-form-section h2 {
+            font-size: 1.8rem;
             color: var(--brand-navy);
-            margin-bottom: 6px;
             font-weight: 800;
+            text-align: center;
+            margin-bottom: 8px;
         }
 
-        .hero-form-card p {
-            font-size: 0.875rem;
+        .bottom-form-section p {
+            text-align: center;
             color: var(--text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 12px;
-            text-align: left;
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .form-group label {
+        .form-group-full {
+            grid-column: 1 / -1;
+            margin-top: 10px;
+        }
+
+        .form-label {
             display: block;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-dark);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .form-group input, 
-        .form-group textarea {
+        .form-input, .form-textarea {
             width: 100%;
-            padding: 10px 12px;
+            padding: 12px 14px;
             border: 1px solid var(--border-light);
-            border-radius: 4px;
-            font-size: 0.9rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
             font-family: inherit;
             background-color: var(--bg-main);
+            color: var(--text-dark);
         }
 
-        .form-group input:focus, 
-        .form-group textarea:focus {
+        .form-input:focus, .form-textarea:focus {
             outline: none;
             border-color: var(--brand-blue);
             background-color: #ffffff;
         }
 
+        .submit-btn-wrap {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 15px;
+        }
+
         .btn-submit {
-            width: 100%;
             background-color: var(--brand-navy);
-            color: var(--text-light);
+            color: #ffffff;
             border: none;
-            padding: 12px;
+            padding: 14px 32px;
             font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: background 0.2s ease-in-out;
-            margin-top: 5px;
+            transition: all 0.2s ease-in-out;
         }
 
         .btn-submit:hover {
-            background-color: #0d1b30;
+            opacity: 0.9;
+            transform: translateY(-2px);
         }
 
-        @media (max-width: 850px) {
-            .hero-split {
+        @media (max-width: 768px) {
+            .form-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
         }
     </style>
@@ -133,53 +122,21 @@
         </nav>
     </header>
 
-    <!-- Hero Section with Embedded Conversion Form -->
+    <!-- Clean Centered Hero Section -->
     <section class="hero">
-        <div class="hero-split">
-            <div>
-                <h1>Specialized Talent Search for Legal, Engineering & Infrastructure</h1>
-                <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced engineering operations, and municipal civil infrastructure.</p>
-                
-                <div class="cta-group" style="justify-content: flex-start;">
-                    <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
-                    <a href="engineering.html" class="btn btn-navy">Explore Engineering</a>
-                    <a href="civil.html" class="btn btn-outline">Explore Civil</a>
-                </div>
-            </div>
-
-            <!-- Fast Response Lead Form -->
-            <div class="hero-form-card">
-                <h3>Speak With Our Desk</h3>
-                <p>Briefly outline your open technical or legal hiring needs.</p>
-                
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="e.g. Sarah Jenkins" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Work Email</label>
-                        <input type="email" id="email" name="email" placeholder="s.jenkins@company.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="details">Role Requirements</label>
-                        <textarea id="details" name="details" rows="3" placeholder="e.g. Controls Engineer, Corporate Legal Counsel, Water PE"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Request Dedicated Search &rarr;</button>
-                </form>
+        <div class="hero-container">
+            <h1>Specialized Talent Search for Legal, Engineering & Infrastructure</h1>
+            <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced engineering operations, and municipal civil infrastructure.</p>
+            
+            <div class="cta-group">
+                <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
+                <a href="engineering.html" class="btn btn-navy">Explore Engineering</a>
+                <a href="civil.html" class="btn btn-outline">Explore Civil</a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Area with Dark Navy Practice Cards -->
+    <!-- Main Content Area -->
     <main class="content-section">
         <p class="section-intro">We deliver highly vetted candidates for key technical, legal, and operational roles where precision hires directly accelerate revenue and project momentum.</p>
 
@@ -234,6 +191,36 @@
         <div class="standard-banner">
             <h2>THE STREAMLINE GUARANTEE</h2>
             <p>Every search is performance-based. You invest when we deliver the right hire. Every placement is backed by a full retention guarantee.</p>
+        </div>
+
+        <!-- Dedicated Bottom Lead Capture Form Section -->
+        <div class="bottom-form-section">
+            <h2>INITIATE A TALENT SEARCH</h2>
+            <p>Submit your current open role requirements to speak directly with a specialized desk lead.</p>
+            
+            <form action="#" method="POST">
+                <div class="form-grid">
+                    <div>
+                        <label class="form-label" for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="work-email">Work Email</label>
+                        <input type="email" id="work-email" name="work-email" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label" for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone-number" class="form-input">
+                    </div>
+                    <div class="form-group-full">
+                        <label class="form-label" for="role-details">Role Requirements & Scope</label>
+                        <textarea id="role-details" name="role-details" rows="3" class="form-textarea" required></textarea>
+                    </div>
+                    <div class="submit-btn-wrap">
+                        <button type="submit" class="btn-submit">Submit Search Request &rarr;</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </main>
 
