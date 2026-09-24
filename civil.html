@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Specialized recruitment for Licensed Civil Engineers, Professional Engineers (PE), Water/Wastewater, Structural, and Site Development specialists. Permanent placements only.">
     <title>Civil & Infrastructure Division | Streamline Recruiting</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Specialized recruitment for Licensed Civil Engineers, Professional Engineers (PE), Water/Wastewater, Structural, and Site Development specialists. Permanent placements only.">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
     <script>
@@ -19,173 +17,330 @@
       gtag('config', 'G-YZ2NSWXYCR');
     </script>
 
-    <style>
-        /* Form-specific styling for Light Theme */
-        .card form input, .card form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #F8FAFC;
-            border: 1px solid var(--border);
-            color: var(--text-dark);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-        .card form input:focus, .card form textarea:focus {
-            outline: none;
-            border-color: var(--cyan);
-            background: #FFFFFF;
-        }
-        .card form textarea { resize: vertical; }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .home-split-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        @media (max-width: 850px) {
-            .home-split-grid {
-                grid-template-columns: 1fr;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#020b1a',
+                            800: '#07162c',
+                            700: '#0f274a',
+                            600: '#1e3a8a',
+                        },
+                        cyan: {
+                            400: '#38bdf8',
+                            500: '#00d2ff',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
             }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.12) 0%, rgba(2, 11, 26, 0) 70%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(2, 11, 26, 0.08);
+        }
+
+        .form-shadow {
+            box-shadow: 0 20px 25px -5px rgba(2, 11, 26, 0.15), 0 8px 10px -6px rgba(2, 11, 26, 0.1);
+        }
+
+        .badge-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .6; }
         }
     </style>
 </head>
-<body class="inner-page">
+<body class="antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen">
 
-    <header>
-        <div class="logo-wrap">
-            <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
+    <!-- HEADER -->
+    <header class="bg-navy-900 text-white sticky top-0 z-50 border-b border-navy-700 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end relative">
+            
+            <!-- Logo Left-Aligned -->
+            <div class="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 flex items-center">
+                <a href="index.html" class="block">
+                    <img src="SLR Header.png" alt="Streamline Recruiting" class="h-10 sm:h-12 w-auto object-contain block max-w-[200px] sm:max-w-[260px]">
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Home</a>
+                <a href="legal.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Legal</a>
+                <a href="engineering.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Engineering</a>
+                <a href="civil.html" class="text-sm font-bold text-cyan-400 border-b-2 border-cyan-400 pb-1">Civil</a>
+                <a href="jobs.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Featured Jobs</a>
+                <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">FAQ</a>
+                <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-xs font-extrabold uppercase px-4 py-2.5 rounded-md transition-all shadow-md">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="legal.html">Legal</a>
-            <a href="engineering.html">Engineering</a>
-            <a href="civil.html" class="active">Civil</a>
-            <a href="jobs.html">Featured Jobs</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Home</a>
+            <a href="legal.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Legal</a>
+            <a href="engineering.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Engineering</a>
+            <a href="civil.html" class="block px-3 py-2 text-base font-bold text-cyan-400 bg-navy-900 rounded">Civil</a>
+            <a href="jobs.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Featured Jobs</a>
+            <a href="faq.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">FAQ</a>
+            <a href="contact.html" class="block px-3 py-2 text-base font-bold text-cyan-400">Contact</a>
+        </div>
     </header>
 
-    <main>
-        <section class="container" style="padding: 60px 20px;">
-            
-            <!-- PAGE HERO -->
-            <div style="margin-bottom: 60px;">
-                <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--navy); font-weight: 800;">
-                    Essential <span style="color:var(--cyan);">Civil & Infrastructure Talent.</span>
-                </h1>
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
-                    Without stamped plans and licensed engineers, multi-million dollar developments stall, public works freeze, and permitting stalls out. We deliver the Professional Engineers (PE), structural specialists, and site development leaders who move projects from drawing boards to execution.
+    <!-- HERO & FORM SECTION -->
+    <section class="bg-navy-900 text-white relative overflow-hidden hero-glow border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-navy-800 border border-navy-600 px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-400">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 badge-pulse"></span>
+                        <span class="uppercase tracking-wider">Civil & Infrastructure Practice</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Essential <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Civil & Infrastructure Talent</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Without stamped plans and licensed engineers, multi-million dollar developments stall, public works freeze, and permitting stalls out. We deliver the Professional Engineers (PE), structural specialists, and site development leaders who move projects from drawing boards to execution.
+                    </p>
+
+                    <p class="text-base text-cyan-400 font-semibold leading-relaxed max-w-2xl">
+                        Permanent placements for civil engineering firms, infrastructure groups, and municipal consultants. We recruit the licensed talent that keeps your project backlog moving.
+                    </p>
+
+                    <!-- Key Metrics Bar -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-navy-800">
+                        <div>
+                            <span class="text-3xl font-black text-white block">100%</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">PE / License Vetted</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-black text-cyan-400 block">14 Days</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Avg. Shortlist Time</span>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-black text-white block">Zero</span>
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Upfront Cost</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-8 text-slate-900 form-shadow border-2 border-cyan-400 relative">
+                        <div class="absolute -top-3 right-6 bg-cyan-500 text-navy-900 text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow">
+                            Fast Response Desk
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-black text-navy-900 tracking-tight">Expand Stamped Capacity</h3>
+                            <p class="text-sm text-slate-600 mt-1">Tell us what project roles need coverage.</p>
+                        </div>
+
+                        <form action="https://formspree.io/f/mjgpkbyq" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Work Email</label>
+                                <input type="email" id="email" name="email" required placeholder="Work Email" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">Role Requirements</label>
+                                <textarea id="message" name="message" rows="3" placeholder="e.g. Senior Structural PE, Water/Wastewater Project Manager" required class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all font-medium resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-navy-900 hover:bg-navy-800 text-white font-extrabold uppercase text-xs tracking-wider rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                                <span>Request Talent</span>
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            </button>
+                        </form>
+
+                        <p class="text-[11px] text-center text-slate-500 mt-4 flex items-center justify-center space-x-1">
+                            <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span>Contingency based. You only pay when we deliver.</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ZERO DOWNTIME -->
+    <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-600 block mb-2">Technical Capacity</span>
+                <h2 class="text-3xl font-black text-navy-900 tracking-tight mb-4">Zero Downtime for Stamped Engineering Capacity</h2>
+                <p class="text-slate-600 text-base leading-relaxed mb-4">
+                    Civil engineering is pure infrastructure—when key PE talent leaves or a project scales beyond team capacity, firms face missed submittal deadlines, lost project bids, and burnt-out staff.
                 </p>
-                <p style="font-style: italic; color: var(--cyan); font-weight: 600; font-size: 1.05rem;">
-                    Permanent placements for civil engineering firms, infrastructure groups, and municipal consultants. We recruit the licensed talent that keeps your project backlog moving.
+                <p class="text-slate-600 text-base leading-relaxed mb-4">
+                    We specialize in placing hard-to-find licensed professionals across Water/Wastewater, Transportation, Structural, Land Development, Geotechnical, and Environmental Engineering. Every candidate is verified for licensure, project portfolio history, and software proficiency.
+                </p>
+                <p class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-2">
+                    Contingency based. You only pay when we deliver.
                 </p>
             </div>
+        </div>
+    </section>
 
-            <!-- SPLIT SECTION: WHY STREAMLINE & CONTACT FORM -->
-            <div class="home-split-grid" style="margin-bottom: 80px;">
-                <div>
-                    <h2 style="margin-bottom:20px; color: var(--navy); font-size: 1.8rem; font-weight: 700;">Zero Downtime for Stamped Engineering Capacity</h2>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        Civil engineering is pure infrastructure—when key PE talent leaves or a project scales beyond team capacity, firms face missed submittal deadlines, lost project bids, and burnt-out staff.
-                    </p>
-                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
-                        We specialize in placing hard-to-find licensed professionals across Water/Wastewater, Transportation, Structural, Land Development, Geotechnical, and Environmental Engineering. Every candidate is verified for licensure, project portfolio history, and software proficiency.
-                    </p>
-                    <p style="margin-top: 15px; font-weight: 700; color: var(--navy); font-size: 1.05rem;">
-                        Contingency based. You only pay when we deliver.
-                    </p>
-                </div>
-
-                <!-- LEAD CAPTURE FORM CARD -->
-                <div class="card" style="text-align: left; background: var(--card-bg); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
-                    <h3 style="color:var(--navy); margin-bottom:10px; text-align: center; font-size: 1.4rem;">Expand Stamped Capacity</h3>
-                    <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">Tell us what project roles need coverage.</p>
-                    
-                    <form action="https://formspree.io/f/mjgpkbyq" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Work Email" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                        <textarea name="message" rows="3" placeholder="Role details (e.g. Senior Structural PE, Water/Wastewater Project Manager)" required></textarea>
-                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Request Talent</button>
-                    </form>
-                </div>
+    <!-- PROOF OF PERFORMANCE GRID (PLACEMENTS) -->
+    <section class="py-20 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-600 block mb-2">Proven Execution</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 tracking-tight">Proven Civil Placements</h2>
             </div>
 
-            <!-- PROOF OF PERFORMANCE GRID -->
-            <div style="margin-bottom: 80px;">
-                <h2 style="margin-bottom: 30px; border-left: 4px solid var(--cyan); padding-left: 15px; color: var(--navy); font-weight: 700;">
-                    Proven Civil Placements
-                </h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Structural Engineer (PE)</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed a licensed Structural PE to lead bridge inspection and design submittals for a $45M highway expansion project.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Water/Wastewater Project Manager</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Secured a seasoned PM with municipal treatment facility expertise to oversee a regional water utility upgrade program.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Site Development Civil Engineer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Delivered a Project Engineer specializing in grading, stormwater management, and zoning approvals for industrial site builds.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Transportation & Traffic Engineer (PE)</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed a PE specializing in traffic impact studies and signalization design for large-scale commercial developments.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Geotechnical Lead Engineer</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Recruited a senior geotech specialist for foundation engineering and soil risk mitigation on heavy civil infrastructure projects.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Director of Land Development</h4>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">Placed an executive engineering director to lead civil operations and expansion for a regional consulting engineering firm.</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded inline-block mb-3">Structural Engineering</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Senior Structural Engineer (PE)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed a licensed Structural PE to lead bridge inspection and design submittals for a $45M highway expansion project.</p>
                 </div>
-            </div>
 
-            <!-- BANNER -->
-            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 80px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);">
-                <h2 style="margin-bottom: 15px; color: var(--navy);">Engineered for Project Delivery</h2>
-                <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded inline-block mb-3">Water / Infrastructure</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Water/Wastewater Project Manager</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Secured a seasoned PM with municipal treatment facility expertise to oversee a regional water utility upgrade program.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded inline-block mb-3">Land Development</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Site Development Civil Engineer</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Delivered a Project Engineer specializing in grading, stormwater management, and zoning approvals for industrial site builds.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded inline-block mb-3">Transportation</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Transportation & Traffic Engineer (PE)</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed a PE specializing in traffic impact studies and signalization design for large-scale commercial developments.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-cyan-500 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-cyan-50 text-cyan-700 px-2.5 py-1 rounded inline-block mb-3">Geotechnical</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Geotechnical Lead Engineer</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Recruited a senior geotech specialist for foundation engineering and soil risk mitigation on heavy civil infrastructure projects.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border-l-4 border-navy-900 card-shadow hover:-translate-y-1 transition-transform">
+                    <span class="text-[10px] font-black uppercase tracking-wider bg-slate-100 text-navy-900 px-2.5 py-1 rounded inline-block mb-3">Executive Leadership</span>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Director of Land Development</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Placed an executive engineering director to lead civil operations and expansion for a regional consulting engineering firm.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER CALLOUT -->
+    <section class="bg-navy-900 text-white py-16 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-navy-800 to-navy-900 border border-cyan-500/30 rounded-2xl p-8 md:p-10 shadow-2xl">
+                <h2 class="text-2xl sm:text-3xl font-black text-white mb-3">Engineered for Project Delivery</h2>
+                <p class="text-slate-300 leading-relaxed text-base max-w-4xl">
                     When deadlines are set by municipalities or developer funding, delays are non-negotiable. We source civil engineering professionals who understand regulatory compliance, local permitting environments, and technical precision.
                 </p>
             </div>
+        </div>
+    </section>
 
-            <!-- TESTIMONIALS -->
-            <div style="margin-top:60px;">
-                <h2 style="text-align:center; margin-bottom:40px; color: var(--navy); font-weight: 800;">Client Feedback</h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Finding licensed PEs who can actually manage clients and stamp plans is brutal right now. Streamline delivered a Water/Wastewater PM within two weeks who took over our active project backlog without a hitch."</p>
-                        <strong style="color: var(--navy);">— Dave M., Vice President of Infrastructure</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Our site dev team was sinking under submittal deadlines. Streamline matched us with a senior civil engineer who knew our local municipality codes cold. Saved our project timeline."</p>
-                        <strong style="color: var(--navy);">— Karen T., Principal Civil Engineer</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Streamline doesn't send warm bodies. They send qualified, licensed professionals who understand the civil consulting space. They're our first call when we win new municipal work."</p>
-                        <strong style="color: var(--navy);">— Strategic Partner, Civil Consulting Firm</strong>
+    <!-- TESTIMONIALS -->
+    <section class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <span class="text-xs font-black uppercase tracking-widest text-cyan-600 block mb-2">Verified Feedback</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-navy-900 tracking-tight">Client Feedback</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        "Finding licensed PEs who can actually manage clients and stamp plans is brutal right now. Streamline delivered a Water/Wastewater PM within two weeks who took over our active project backlog without a hitch."
+                    </p>
+                    <div class="pt-4 border-t border-slate-200">
+                        <strong class="text-sm text-navy-900 block">— Dave M., Vice President of Infrastructure</strong>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer style="text-align: center; padding: 30px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
-        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        "Our site dev team was sinking under submittal deadlines. Streamline matched us with a senior civil engineer who knew our local municipality codes cold. Saved our project timeline."
+                    </p>
+                    <div class="pt-4 border-t border-slate-200">
+                        <strong class="text-sm text-navy-900 block">— Karen T., Principal Civil Engineer</strong>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 relative flex flex-col justify-between">
+                    <div class="text-cyan-500 mb-4 text-3xl font-black">“</div>
+                    <p class="text-sm text-slate-700 leading-relaxed font-medium mb-6">
+                        "Streamline doesn't send warm bodies. They send qualified, licensed professionals who understand the civil consulting space. They're our first call when we win new municipal work."
+                    </p>
+                    <div class="pt-4 border-t border-slate-200">
+                        <strong class="text-sm text-navy-900 block">— Strategic Partner, Civil Consulting Firm</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-auto">
+        &copy; 2026 Streamline Recruiting. All rights reserved.
     </footer>
+
 </body>
 </html>
