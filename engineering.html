@@ -3,41 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mission-critical recruiting for Controls Engineers, PLC Specialists, Robotics, Computer Vision, and Manufacturing Leadership. Operational continuity and deployment focus.">
+    <title>Engineering & Automation Division | Streamline Recruiting</title>
+    
     <link rel="stylesheet" href="style.css">
-    <title>For Employers | Streamline Recruiting</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  gtag('config', 'G-YZ2NSWXYCR');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YZ2NSWXYCR');
+    </script>
+
     <style>
-        /* Ensuring form elements inside the card look professional */
+        /* Form-specific styling for Light Theme */
         .card form input, .card form textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 12px;
+            margin-bottom: 15px;
+            background: #F8FAFC;
             border: 1px solid var(--border);
-            color: white;
-            border-radius: 4px;
+            color: var(--text-dark);
+            border-radius: 6px;
             font-family: inherit;
+            font-size: 0.95rem;
         }
-        .card form textarea { resize: none; }
+        .card form input:focus, .card form textarea:focus {
+            outline: none;
+            border-color: var(--cyan);
+            background: #FFFFFF;
+        }
+        .card form textarea { resize: vertical; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .home-split-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        @media (max-width: 850px) {
+            .home-split-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="inner-page">
-  <header>
+
+    <header>
         <div class="logo-wrap">
             <a href="index.html"><img src="SLR Header.png" alt="Streamline Recruiting"></a>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="engineering.html">Engineering</a>
             <a href="legal.html">Legal</a>
+            <a href="engineering.html" class="active">Engineering</a>
             <a href="jobs.html">Featured Jobs</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
@@ -45,118 +76,115 @@
     </header>
 
     <main>
-        <section class="container" style="padding: 60px 0;">
+        <section class="container" style="padding: 60px 20px;">
+            
+            <!-- PAGE HERO -->
             <div style="margin-bottom: 60px;">
-                <h1 style="font-size: 2.5rem; margin-bottom: 20px;">High-Performance <span style="color:var(--blue)">Talent.</span></h1>
-                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 20px;">We place the engineers and leaders that AI, robotics, emerging technology, and advanced manufacturing companies need to scale. Permanent placements only. No temp fills, no keyword matching.</p>
-                <p style="font-style: italic; color: var(--blue); font-weight: 600;">We recruit for where your industry is going, not where it's been. That means we understand the work, the environment, and what separates a good hire from a transformative one before you finish explaining it.</p>
+                <h1 style="font-size: 2.8rem; margin-bottom: 20px; color: var(--navy); font-weight: 800;">
+                    Mission-Critical <span style="color:var(--cyan);">Engineering Talent.</span>
+                </h1>
+                <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
+                    When an automated line sits idle, a commissioning deadline slips, or a plant lacks key technical oversight, every hour costs real revenue. We place the hands-on engineering talent that keeps facilities running and launches multi-million dollar capital projects on time.
+                </p>
+                <p style="font-style: italic; color: var(--cyan); font-weight: 600; font-size: 1.05rem;">
+                    Permanent placements only. No keyword matching, no resume blasts—just the precise Controls, PLC, and Technical Execution talent required to maintain capacity and scale operations.
+                </p>
             </div>
 
+            <!-- SPLIT SECTION: WHY STREAMLINE & CONTACT FORM -->
             <div class="home-split-grid" style="margin-bottom: 80px;">
                 <div>
-                    <h2 style="margin-bottom:20px;">Why Streamline</h2>
-                    <p style="margin-bottom: 20px; opacity: 0.9;">We specialize in the roles that are hardest to fill. Machine learning and AI engineers, computer vision specialists, controls and automation engineers, software, mechanical, electrical, and the operational leaders who tie it all together.</p>
-                    <p style="opacity: 0.9;">Every candidate is fully vetted and interviewed before they reach you. We screen for technical depth, hands-on experience, and whether this role is actually the right move for them. Placements that stick are the only ones worth making.</p>
-                    <p style="margin-top: 15px; font-weight: bold; color: var(--blue);">Contingency based. You only pay when we deliver.</p>
+                    <h2 style="margin-bottom:20px; color: var(--navy); font-size: 1.8rem; font-weight: 700;">Operational Continuity & Execution</h2>
+                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
+                        We target the roles where an empty chair creates an immediate operational bottleneck: Automation & Controls Engineers, PLC Specialists, Mechatronics, Computer Vision, Electrical Engineers, and Plant Operations Managers.
+                    </p>
+                    <p style="margin-bottom: 20px; color: var(--text-muted); line-height: 1.6;">
+                        Whether you are bringing a new automated line online, retrofitting existing machinery, or trying to eliminate plant downtime, every candidate is screened for real-world execution capacity, hardware familiarity, and long-term retention.
+                    </p>
+                    <p style="margin-top: 15px; font-weight: 700; color: var(--navy); font-size: 1.05rem;">
+                        Contingency-based search. Performance-backed delivery.
+                    </p>
                 </div>
 
-                <div class="card" style="text-align: left;">
-                    <h3 style="color:var(--blue); margin-bottom:15px; text-align: center;">Ready to Hire?</h3>
-                    <p style="margin-bottom: 20px; text-align: center; font-size: 0.9rem;">Briefly tell us what you're looking for.</p>
+                <!-- LEAD CAPTURE FORM CARD -->
+                <div class="card" style="text-align: left; background: var(--card-bg); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);">
+                    <h3 style="color:var(--navy); margin-bottom:10px; text-align: center; font-size: 1.4rem;">Solve a Technical Bottleneck</h3>
+                    <p style="margin-bottom: 25px; text-align: center; font-size: 0.9rem; color: var(--text-muted);">Briefly tell us what roles need immediate coverage.</p>
                     
                     <form action="https://formspree.io/f/mjgpkbyq" method="POST">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Work Email" required>
                         <input type="tel" name="phone" placeholder="Phone Number" required>
-                        <textarea name="message" rows="3" placeholder="Role details (e.g. Senior AI Engineer)" required></textarea>
-                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Send Request</button>
+                        <textarea name="message" rows="3" placeholder="Role details (e.g. Controls Engineer, Plant Manager, PLC Lead)" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Request Talent</button>
                     </form>
                 </div>
             </div>
 
+            <!-- PROOF OF PERFORMANCE GRID -->
             <div style="margin-bottom: 80px;">
-                <h2 style="margin-bottom: 40px; border-left: 4px solid var(--blue); padding-left: 15px;">Proof of Performance</h2>
+                <h2 style="margin-bottom: 30px; border-left: 4px solid var(--cyan); padding-left: 15px; color: var(--navy); font-weight: 700;">
+                    Proven Execution Track Record
+                </h2>
                 <div class="grid-3">
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Senior Perception & Computer Vision Engineer</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Architected a real-time spatial perception system resulting in 40% better obstacle avoidance and reduced onboard latency.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Automation & Controls Engineer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Engineered end-to-end PLC/HMI architecture for multi-arm robotic cells, eliminating line assembly bottlenecks and boosting output by 30%.</p>
                     </div>
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Senior AI Engineer (LLMs & Generative AI)</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Engineered a secure fine-tuned RAG framework for automated financial analysis, cutting report generation time by 50%.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior Perception & Computer Vision Engineer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Architected real-time spatial perception hardware for autonomous systems, driving a 40% improvement in obstacle avoidance latency.</p>
                     </div>
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Product Manager (AI/ML)</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Spearheaded an automated claims processing engine resulting in 35% reduction in cycle time and 20% improvement in fraud detection accuracy.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Electrical Systems Engineer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Redesigned high-speed signal integrity and power distribution systems for specialized lithography tools, drastically reducing unplanned downtime.</p>
                     </div>
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Chief Executive Officer</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Pivoted a legacy portfolio toward digital health, capturing a 20% market share increase in 18 months.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Plant Operations Manager</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Restructured plant workflows and preventative maintenance schedules, driving a 10% net increase in overall production capacity.</p>
                     </div>
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Electrical Engineer</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Architected high-speed signal integrity and power distribution systems for lithography equipment, drastically reducing line downtime.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Senior AI & Data Architect</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Engineered automated data pipelines for predictive maintenance models, cutting manual inspection cycle times in half.</p>
                     </div>
                     <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">R&D Engineer (Agritech Innovation)</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Led development of an automated vertical farming system increasing crop yield by 20% while reducing water consumption by 15%.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">CNC Programmer</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Optimized tool paths for complex 5-axis geometries, reducing material waste by 10% and maintaining sub-micron tolerances for flight-critical components.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Automation & Controls Engineer</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Engineered end-to-end PLC and HMI controls for multi-arm robotic cells, boosting assembly line speed by 30%.</p>
-                    </div>
-                    <div class="card">
-                        <h4 style="color:var(--blue); margin-bottom: 10px;">Plant Manager</h4>
-                        <p style="font-size: 0.9rem; opacity: 0.85;">Transformed operational efficiency driving a 10% increase in production capacity.</p>
+                        <h4 style="color:var(--navy); margin-bottom: 10px; font-size: 1.1rem;">CNC / Precision Programmer</h4>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">Optimized tool paths for complex 5-axis geometries, maintaining sub-micron tolerances while cutting scrap rates by 10%.</p>
                     </div>
                 </div>
             </div>
 
-            <div style="background: rgba(255, 255, 255, 0.02); padding: 40px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 80px;">
-                <h2 style="margin-bottom: 15px;">Beyond Core Engineering</h2>
-                <p style="opacity: 0.9;">Building the future requires excellence across every function. Our reach extends to C-suite, Finance, HR, and Global Logistics leadership for organizations ready to scale.</p>
+            <!-- BANNER -->
+            <div style="background: var(--card-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 80px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);">
+                <h2 style="margin-bottom: 15px; color: var(--navy);">Cross-Functional Plant & Site Leadership</h2>
+                <p style="color: var(--text-muted); line-height: 1.6; font-size: 1.05rem;">
+                    Keeping operations smooth requires coordination across the entire facility. Beyond hands-on technical roles, we deliver key site leadership across Plant Management, EHS, Operations, and Engineering Directors.
+                </p>
             </div>
 
-            <div style="margin-top:80px;">
-                <h2 style="text-align:center; margin-bottom:40px; color: var(--blue);">What Our Partners Say</h2>
+            <!-- TESTIMONIALS -->
+            <div style="margin-top:60px;">
+                <h2 style="text-align:center; margin-bottom:40px; color: var(--navy); font-weight: 800;">Client Delivery Feedback</h2>
                 <div class="grid-3">
                     <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"Streamline Recruiting was instrumental in helping us quickly scale our engineering team. They consistently provided high-impact engineers who truly accelerated our project timelines, and they're all still with us today."</p>
-                        <strong>— Brian H.</strong>
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"If you've been trying to find a Controls Engineer lately, you know it’s nearly impossible. We went through three other firms with zero luck. Streamline listened to our hardware spec and delivered a specialist who hit the shop floor running."</p>
+                        <strong style="color: var(--navy);">— Mark D., Director of Engineering</strong>
                     </div>
                     <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"If you've been trying to find a Controls Engineer lately, you know it’s basically impossible. We went through three other firms with no luck before calling Streamline. They actually listened to what we needed and found a specialist who fit the team perfectly. Definitely using them again."</p>
-                        <strong>— Mark D.</strong>
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"Streamline really knows site-level hardware. They found us an automation engineer who actually knew the physical systems and could step right into our site commissioning without weeks of hand-holding."</p>
+                        <strong style="color: var(--navy);">— Jessica L., Operations Manager</strong>
                     </div>
                     <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"We spent months looking for a Computer Vision person who actually had experience with surgical robotics. It's a very specific niche and most candidates just didn't have the technical depth we needed for a Class III device. Streamline sent over two people who were both great, and we ended up hiring one within a week. Huge win for our team."</p>
-                        <strong>— Sarah K.</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"It’s rare to find a recruiter who understands the regulatory side of Fintech at scale. We needed a PM who could handle our roadmap without breaking compliance. Gigi found the exact person we needed to keep us on track. Simple as that."</p>
-                        <strong>— Greg W.</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"Solid experience working with these guys. They found us a Lead who can actually manage a team and not just code, which is harder than it sounds. We’d been looking for a while and kept getting the same types of candidates who weren't a fit. Streamline changed that in about two weeks."</p>
-                        <strong>— Chris W.</strong>
-                    </div>
-                    <div class="card">
-                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.9rem;">"Streamline really knows the oil field. They found us an automation guy who actually knew the hardware and could jump right into our site work without a bunch of training. It was a smooth process and he’s been a great fit for the crew. We’ll definitely be calling them for our next opening."</p>
-                        <strong>— Jessica L.</strong>
+                        <p style="font-style:italic; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-muted);">"We spent months looking for a Computer Vision engineer with surgical robotics depth. Streamline delivered two qualified candidates within a week and solved a major bottleneck on our R&D roadmap."</p>
+                        <strong style="color: var(--navy);">— Sarah K., Technical Co-Founder</strong>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 Streamline Recruiting</p>
-        </div>
+    <footer style="text-align: center; padding: 30px 0; background-color: var(--navy); color: #FFFFFF; font-size: 0.9rem;">
+        <p>© 2026 Streamline Recruiting. All rights reserved.</p>
     </footer>
 </body>
 </html>
