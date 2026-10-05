@@ -6,71 +6,13 @@
     <title>Streamline Recruiting | Legal, Manufacturing & Engineering Search</title>
     <meta name="description" content="Specialized executive and technical search for Legal, Advanced Manufacturing, and Engineering teams. Streamline Recruiting delivers precision talent.">
     <link rel="canonical" href="https://slrsearch.com/index.html">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZ2NSWXYCR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YZ2NSWXYCR');
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            900: '#020b1a',
-                            800: '#07162c',
-                            700: '#0f274a',
-                            600: '#1e3a8a',
-                        },
-                        cyan: {
-                            400: '#38bdf8',
-                            500: '#00d2ff',
-                            600: '#0284c7',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-        }
-
-        .hero-glow {
-            background: radial-gradient(circle at 50% 0%, rgba(0, 210, 255, 0.1) 0%, rgba(2, 11, 26, 0) 70%);
-        }
-
-        .badge-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .6; }
-        }
-
         /* Bottom Lead Capture Form Section */
         .bottom-form-section {
             background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
             padding: 40px;
             margin-top: 50px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -78,7 +20,7 @@
 
         .bottom-form-section h2 {
             font-size: 1.8rem;
-            color: #020b1a;
+            color: var(--brand-navy);
             font-weight: 800;
             text-align: center;
             margin-bottom: 8px;
@@ -86,7 +28,7 @@
 
         .bottom-form-section p {
             text-align: center;
-            color: #64748b;
+            color: var(--text-muted);
             margin-bottom: 30px;
             font-size: 1rem;
         }
@@ -108,7 +50,7 @@
             display: block;
             font-size: 0.8rem;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--text-dark);
             margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -117,17 +59,17 @@
         .form-input, .form-textarea {
             width: 100%;
             padding: 12px 14px;
-            border: 1px solid #cbd5e1;
+            border: 1px solid var(--border-light);
             border-radius: 6px;
             font-size: 0.95rem;
             font-family: inherit;
-            background-color: #f8fafc;
-            color: #0f172a;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
         }
 
         .form-input:focus, .form-textarea:focus {
             outline: none;
-            border-color: #00d2ff;
+            border-color: var(--brand-blue);
             background-color: #ffffff;
         }
 
@@ -138,7 +80,7 @@
         }
 
         .btn-submit {
-            background-color: #020b1a;
+            background-color: var(--brand-navy);
             color: #ffffff;
             border: none;
             padding: 14px 32px;
@@ -163,211 +105,128 @@
         }
     </style>
 </head>
-<body class="antialiased text-slate-900 bg-slate-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- HEADER NAVIGATION -->
-    <header class="bg-navy-900 text-white sticky top-0 z-50 border-b border-navy-700 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-end relative">
-            
-            <!-- Logo Left-Aligned -->
-            <div class="absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 flex items-center">
-                <a href="index.html" class="block">
-                    <img src="SLR Header.png" alt="Streamline Recruiting" class="h-10 sm:h-12 w-auto object-contain block max-w-[200px] sm:max-w-[260px]">
-                </a>
-            </div>
-
-            <!-- Desktop Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-sm font-semibold text-cyan-400">Home</a>
-                <a href="legal.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Legal</a>
-                <a href="manufacturing.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Manufacturing</a>
-                <a href="engineering.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Engineering</a>
-                <a href="jobs.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">Featured Jobs</a>
-                <a href="faq.html" class="text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors">FAQ</a>
-                <a href="contact.html" class="bg-cyan-500 hover:bg-cyan-400 text-navy-900 text-xs font-extrabold uppercase px-4 py-2.5 rounded-md transition-all shadow-md">Contact</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-300 hover:text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-800 border-b border-navy-700 px-4 pt-2 pb-4 space-y-2">
-            <a href="index.html" class="block px-3 py-2 text-base font-bold text-cyan-400 bg-navy-900 rounded">Home</a>
-            <a href="legal.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Legal</a>
-            <a href="manufacturing.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Manufacturing</a>
-            <a href="engineering.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Engineering</a>
-            <a href="jobs.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">Featured Jobs</a>
-            <a href="faq.html" class="block px-3 py-2 text-base font-medium text-slate-300 hover:text-white">FAQ</a>
-            <a href="contact.html" class="block px-3 py-2 text-base font-bold text-slate-300 hover:text-white">Contact</a>
-        </div>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="SLR Header.png" alt="Streamline Recruiting" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="legal.html">Legal</a>
+            <a href="manufacturing.html">Manufacturing</a>
+            <a href="engineering.html">Engineering</a>
+            <a href="jobs.html">Featured Jobs</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="bg-navy-900 text-white py-16 sm:py-24 relative overflow-hidden hero-glow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 bg-navy-800 border border-navy-700 px-3.5 py-1.5 rounded-full text-xs font-semibold text-cyan-400 mb-6">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 badge-pulse"></span>
-                <span class="uppercase tracking-wider">Executive & Specialized Technical Search</span>
-            </div>
+    <!-- Clean Centered Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Specialized Talent Search for Legal, Manufacturing & Engineering</h1>
+            <p>We connect industry leaders with essential specialized talent across three core sectors: legal practice groups, advanced manufacturing operations, and civil & mechanical engineering teams.</p>
             
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight max-w-4xl mx-auto mb-6">
-                Precision Talent for High-Impact <span class="text-cyan-400">Industries</span>
-            </h1>
-            
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-medium leading-relaxed">
-                Streamline Recruiting delivers specialized executive and direct-hire recruitment across Legal, Advanced Manufacturing, and Civil & PE Engineering.
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="contact.html" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-extrabold uppercase text-xs tracking-wider px-8 py-4 rounded-lg transition-all shadow-lg text-center">
-                    Request Talent
-                </a>
-                <a href="jobs.html" class="w-full sm:w-auto bg-navy-800 hover:bg-navy-700 border border-navy-600 text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-lg transition-all text-center">
-                    View Open Positions
-                </a>
+            <div class="cta-group">
+                <a href="legal.html" class="btn btn-cyan">Explore Legal</a>
+                <a href="manufacturing.html" class="btn btn-navy">Explore Manufacturing</a>
+                <a href="engineering.html" class="btn btn-outline">Explore Engineering</a>
             </div>
         </div>
     </section>
 
-    <!-- PRACTICE DIVISIONS SECTION -->
-    <main class="py-16 bg-slate-50 flex-grow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-navy-900 tracking-tight mb-3">Core Search Divisions</h2>
-                <p class="text-slate-600 text-base max-w-2xl mx-auto">Focused search practice built specifically around technical, legal, and operational leadership.</p>
+    <!-- Main Content Area -->
+    <main class="content-section">
+        <p class="section-intro">We deliver highly vetted candidates for key technical, legal, and operational roles where precision hires directly accelerate revenue and project momentum.</p>
+
+        <div class="grid-3">
+            <!-- Legal Card -->
+            <div class="card-dark">
+                <div>
+                    <p class="card-header">Protecting billable capacity, deal flow, and practice group expansion.</p>
+                    <ul>
+                        <li>&rarr; Mid-Level Associates (3 to 6 yrs)</li>
+                        <li>&rarr; Corporate Immigration Specialists</li>
+                        <li>&rarr; AI & Regulatory Counsel</li>
+                        <li>&rarr; Data Center Real Estate Attorneys</li>
+                        <li>&rarr; Lateral Partners</li>
+                    </ul>
+                </div>
+                <a href="legal.html" class="card-link">View Legal Practice &rarr;</a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- DIVISION 1: LEGAL -->
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-cyan-400 rounded-lg flex items-center justify-center font-bold text-xl mb-6">
-                            §
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Legal Practice</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Partner placements, lateral associate hiring, in-house counsel, and specialized legal staff for top regional and national firms.
-                        </p>
-                    </div>
-                    <a href="legal.html" class="text-cyan-600 hover:text-cyan-500 text-sm font-bold inline-flex items-center">
-                        Explore Legal Search &rarr;
-                    </a>
+            <!-- Manufacturing Card -->
+            <div class="card-dark">
+                <div>
+                    <p class="card-header">Eliminating operational downtime and scaling automated production.</p>
+                    <ul>
+                        <li>&rarr; Controls & PLC Engineers</li>
+                        <li>&rarr; Automation & Mechatronics Leads</li>
+                        <li>&rarr; Computer Vision Specialists</li>
+                        <li>&rarr; Plant & Site Operations Managers</li>
+                        <li>&rarr; Electrical Systems Leads</li>
+                    </ul>
                 </div>
-
-                <!-- DIVISION 2: MANUFACTURING -->
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-cyan-400 rounded-lg flex items-center justify-center font-bold text-xl mb-6">
-                            ⚙
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Advanced Manufacturing</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Plant management, operations directors, supply chain leaders, and specialized automation engineering talent.
-                        </p>
-                    </div>
-                    <a href="manufacturing.html" class="text-cyan-600 hover:text-cyan-500 text-sm font-bold inline-flex items-center">
-                        Explore Manufacturing Search &rarr;
-                    </a>
-                </div>
-
-                <!-- DIVISION 3: ENGINEERING -->
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-cyan-400 rounded-lg flex items-center justify-center font-bold text-xl mb-6">
-                            📐
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-3">Civil & PE Engineering</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Licensed Professional Engineers (PE), structural leads, land development project managers, and civil design experts.
-                        </p>
-                    </div>
-                    <a href="engineering.html" class="text-cyan-600 hover:text-cyan-500 text-sm font-bold inline-flex items-center">
-                        Explore Engineering Search &rarr;
-                    </a>
-                </div>
-
+                <a href="manufacturing.html" class="card-link">View Manufacturing Practice &rarr;</a>
             </div>
 
-            <!-- BOTTOM LEAD CAPTURE FORM -->
-            <section class="bottom-form-section">
-                <h2>Start Your Talent Search</h2>
-                <p>Connect directly with our search team to discuss your open positions or market expansion goals.</p>
+            <!-- Engineering Card -->
+            <div class="card-dark">
+                <div>
+                    <p class="card-header">Delivering licensed Professional Engineers for water, land, and structural design.</p>
+                    <ul>
+                        <li>&rarr; Water & Infrastructure PEs</li>
+                        <li>&rarr; Licensed Structural Engineers</li>
+                        <li>&rarr; Land & Site Development Leads</li>
+                        <li>&rarr; Transportation & Traffic PEs</li>
+                        <li>&rarr; Geotechnical Specialists</li>
+                    </ul>
+                </div>
+                <a href="engineering.html" class="card-link">View Engineering Practice &rarr;</a>
+            </div>
+        </div>
 
-                <form action="https://formspree.io/f/mjgpkbyq" method="POST" class="form-grid">
-                    <input type="hidden" name="_subject" value="New Inquiry - Streamline Recruiting Homepage">
+        <!-- Light Standard Card -->
+        <div class="standard-banner">
+            <h2>THE STREAMLINE GUARANTEE</h2>
+            <p>Every search is performance-based. You invest when we deliver the right hire. Every placement is backed by a full retention guarantee.</p>
+        </div>
 
+        <!-- Dedicated Bottom Lead Capture Form Section -->
+        <div class="bottom-form-section">
+            <h2>INITIATE A TALENT SEARCH</h2>
+            <p>Submit your current open role requirements to speak directly with a specialized desk lead.</p>
+            
+            <form action="https://formspree.io/f/mjgpkbyq" method="POST">
+                <div class="form-grid">
                     <div>
-                        <label class="form-label">Full Name *</label>
-                        <input type="text" name="name" required placeholder="John Doe" class="form-input">
+                        <label class="form-label" for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="name" class="form-input" required>
                     </div>
-
                     <div>
-                        <label class="form-label">Work Email *</label>
-                        <input type="email" name="email" required placeholder="john@company.com" class="form-input">
+                        <label class="form-label" for="work-email">Work Email</label>
+                        <input type="email" id="work-email" name="email" class="form-input" required>
                     </div>
-
                     <div>
-                        <label class="form-label">Phone Number *</label>
-                        <input type="tel" name="phone" required placeholder="(555) 000-0000" class="form-input">
+                        <label class="form-label" for="phone-number">Phone Number</label>
+                        <input type="tel" id="phone-number" name="phone" class="form-input">
                     </div>
-
                     <div class="form-group-full">
-                        <label class="form-label">How Can We Help? *</label>
-                        <textarea name="message" rows="4" required placeholder="Tell us about the roles or technical skills you are looking to recruit..." class="form-textarea"></textarea>
+                        <label class="form-label" for="role-details">Role Requirements & Scope</label>
+                        <textarea id="role-details" name="details" rows="3" class="form-textarea" required></textarea>
                     </div>
-
                     <div class="submit-btn-wrap">
-                        <button type="submit" class="btn-submit">Submit Request</button>
+                        <button type="submit" class="btn-submit">Submit Search Request &rarr;</button>
                     </div>
-                </form>
-            </section>
-
+                </div>
+            </form>
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-navy-900 text-slate-400 py-8 text-center text-xs border-t border-slate-800 mt-auto">
-        <p class="mb-2">&copy; 2026 Streamline Recruiting (SLR Search). All rights reserved.</p>
-        <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="text-cyan-400 hover:underline">
-            Privacy Policy & SMS Terms
-        </button>
+    <footer>
+        &copy; 2026 Streamline Recruiting. All rights reserved.
     </footer>
-
-    <!-- PRIVACY POLICY MODAL -->
-    <div id="privacy-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 relative text-left shadow-2xl my-8">
-            <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl font-bold">&times;</button>
-            
-            <h2 class="text-2xl font-bold text-navy-900 mb-1">Privacy Policy & SMS Terms</h2>
-            <p class="text-xs text-slate-400 mb-6">Last Updated: March 2026</p>
-            
-            <div class="space-y-4 text-xs text-slate-600 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
-                <p>Streamline Recruiting is committed to protecting your privacy. This policy explains how we handle your personal information and our SMS outreach processes.</p>
-                
-                <h4 class="font-bold text-navy-900 text-sm pt-2">Information Collection & Use</h4>
-                <p>We collect personal information (such as name, work email, phone number, and resume credentials) solely to provide executive recruiting services and evaluate candidates.</p>
-                
-                <h4 class="font-bold text-navy-900 text-sm pt-2">SMS Program & Consent</h4>
-                <p>By providing your mobile phone number, you consent to receive recruitment updates regarding relevant active searches. Message frequency varies (up to 3 msgs/week). Text STOP to opt-out at any time.</p>
-                
-                <h4 class="font-bold text-navy-900 text-sm pt-2">No Third-Party Sharing</h4>
-                <p>We do not sell, rent, or share your personal data or SMS consent info with third parties for marketing purposes.</p>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
-                <span>Inquiries: 425-818-3962</span>
-                <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="bg-navy-900 text-white px-4 py-2 rounded-md font-semibold">Close</button>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>
